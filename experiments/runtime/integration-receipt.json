@@ -6,8 +6,8 @@
     {
       "path": "dist/app.mjs",
       "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
-      "currentSourceHash": "3e287670797dcc40ea5ce9a196bd205c17f720295f2e8abb6df5ca49954398ac",
-      "reason": "Host-integrated partial original Headspace source checks and complete adverse/adapted concurrent-commit evidence, separately from prior native source."
+      "currentSourceHash": "d8b914b3ddd500d9925d1a0c55df620b9a50753697146ecd03ae6fa747fa8a8d",
+      "reason": "Host-integrated partial supplied runtime, Headspace and Agent Database evidence panels with complete local cache denominators and unavailable model endpoints; separate from retained prior native source."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "f7f8972420b48b766cf8317a51ec99485ab6175a8ccdd12c3368820dcd85c8f9",
-    "reason": "Host-expanded public introduction, component-family explanations, repository navigation, reproduction, original Headspace checks, adverse diagnostic, evidence interpretation and contribution guidance. Original native README retained unchanged."
+    "currentSourceHash": "3861e014b58e9f0ca47126610167c34c318898a4f3b710fa403e673f108064fc",
+    "reason": "Host-expanded README with original Agent Database ownership, 39 offline tests, ten probes, paired cache protocol, retained failures, reproduction and measurement limits; original native README unchanged."
   },
   "history": [
     {
@@ -66,8 +66,31 @@
         "currentSourceHash": "d0c0f47fbc9edbe2d0e55c76d5602f736bd0552a1b6899e6d5d1901a6702799b",
         "reason": "Host evidence additions for 45 probes, retained historical receipts and the matched local scheduler comparison; prior native README preserved."
       }
+    },
+    {
+      "headspaceSourceRunId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "3e287670797dcc40ea5ce9a196bd205c17f720295f2e8abb6df5ca49954398ac",
+          "reason": "Host-integrated partial original Headspace source checks and complete adverse/adapted concurrent-commit evidence, separately from prior native source."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "f7f8972420b48b766cf8317a51ec99485ab6175a8ccdd12c3368820dcd85c8f9",
+        "reason": "Host-expanded public introduction, component-family explanations, repository navigation, reproduction, original Headspace checks, adverse diagnostic, evidence interpretation and contribution guidance. Original native README retained unchanged."
+      }
     }
   ],
   "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
-  "headspaceSourceRunId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3"
+  "headspaceSourceRunId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
+  "agentdbSourceRunId": "run-1a4b676d-02b1-4843-8b7d-8962e6d5bdc7"
 }

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "agentdb-application-retrieval-cache/1",
+  "seed": 1729,
+  "pairs": 8,
+  "queriesPerArm": 16,
+  "syntheticDocuments": 32,
+  "query": "commonneedle",
+  "budgetBytes": 6000,
+  "resultLimit": 10,
+  "armOrder": "counterbalanced: baseline first on even pair indices",
+  "baseline": "clear application retrieval_cache before every measured original Memory.search call",
+  "candidate": "clear application retrieval_cache, prime once with same original Memory.search, then measure 16 calls",
+  "timing": "external time.perf_counter around each search only; excludes cache clearing, priming and corpus setup",
+  "eligibility": "both arms complete, all requested queries retained, normalized output hashes equal",
+  "bootstrap": {
+    "iterations": 4000,
+    "confidence": 0.95,
+    "seed": 1729
+  },
+  "measurements": {
+    "providerCalls": 0,
+    "providerTokens": null,
+    "billedCost": null,
+    "modelQuality": null
+  },
+  "limits": {
+    "defaultModelComparison": false,
+    "operatingSystemColdCache": false,
+    "modelLatency": false,
+    "populationInference": false
+  }
+}
+

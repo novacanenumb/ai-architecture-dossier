@@ -1,4 +1,15 @@
 {
+  "agentdbOriginalTests": 39,
+  "agentdbAdditionalProbes": 10,
+  "agentdbComponents": 4,
+  "agentdbCacheAttempts": 16,
+  "agentdbMeasuredQueries": 256,
+  "agentdbPrimingCalls": 8,
+  "agentdbEligiblePairs": 8,
+  "agentdbRetainedSetupFailures": 2,
+  "agentdbSourceMatches": 3,
+  "agentdbHostProposalTurns": 3,
+  "agentdbNativeContracts": 2,
   "schemaVersion": 1,
   "status": "PASSED",
   "tests": 24,
@@ -15,14 +26,14 @@
   "headspaceDiagnosticPairs": 12,
   "headspaceSourceMatches": 3,
   "headspacePortableTraceHashVerification": true,
-  "readmeWords": 4277,
+  "readmeWords": 5235,
   "components": 28,
   "acceptanceRequirements": 122,
   "metricEndpoints": 154,
   "fixtureConfigurations": 17,
   "providerCalls": 0,
-  "syntaxChecked": 25,
-  "publicFiles": 13,
+  "syntaxChecked": 27,
+  "publicFiles": 14,
   "nativeSourceMatches": [
     "packages/lab/core.mjs",
     "packages/lab/analytics.mjs",
@@ -34,7 +45,7 @@
   "hostSourceChanges": [
     {
       "path": "dist/app.mjs",
-      "reason": "Host-integrated partial original Headspace source checks and complete adverse/adapted concurrent-commit evidence, separately from prior native source."
+      "reason": "Host-integrated partial supplied runtime, Headspace and Agent Database evidence panels with complete local cache denominators and unavailable model endpoints; separate from retained prior native source."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -44,7 +55,8 @@
   "deterministicStaticRebuild": true,
   "publicFileHashes": {
     "dist/LICENSE.txt": "3c21321c5e4a7183b62a138f581a78202bfad89f1b7b4f54aa64976bd7ca95a8",
-    "dist/app.mjs": "3e287670797dcc40ea5ce9a196bd205c17f720295f2e8abb6df5ca49954398ac",
+    "dist/app.mjs": "d8b914b3ddd500d9925d1a0c55df620b9a50753697146ecd03ae6fa747fa8a8d",
+    "dist/data/agentdb-evidence.json": "bf179fa952cd3faead7f8385a472ff37c8e65ed1a6108dc67b5381151e0a2789",
     "dist/data/catalog.json": "f6091548179bee0789f67307d4bf090857d3def4c12adca2750b7d807bd3491d",
     "dist/data/headspace-evidence.json": "71e95d1f59b46934e089a47d830c0213fc061c80518de007afdfcd2506059ee4",
     "dist/data/headspace-trace.json": "e631791770d89ddb2aedaf31802d44eaa2ea4918821a9f42766e66c17ec12aa3",

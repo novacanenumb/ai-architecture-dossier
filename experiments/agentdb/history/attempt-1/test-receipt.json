@@ -1,0 +1,2675 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-agentdb-source-evidence",
+  "status": "FAILED",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "sourcePackage": {
+    "name": "orpheus-agent-dashboard",
+    "version": "0.1.0",
+    "canonicalComponent": "hypervisor.agent_database",
+    "sourceRedistributed": false
+  },
+  "sourceManifestHash": "sha256:92bc48216d52ee6b75d650f50ae99630c90719ead3ce51962286c9f6f8246d54",
+  "sourceFiles": [
+    {
+      "bytes": 79,
+      "path": "orpheus_agents/__init__.py",
+      "hash": "sha256:0b243a3266ad08f712aa9bae6d69e02817c1a7c5ff86d90a2be342c2ec18a152"
+    },
+    {
+      "bytes": 14518,
+      "path": "orpheus_agents/storage.py",
+      "hash": "sha256:8982d4213f526671dbf4e0a0f0eb8bb9beb3ca18cf376531410e8c050ed62b01"
+    },
+    {
+      "bytes": 11170,
+      "path": "orpheus_agents/memory.py",
+      "hash": "sha256:6855690caa3146382cd5514bb6b6d318d30d8b9bb36d2b92e7e7811a8f201bad"
+    },
+    {
+      "bytes": 16105,
+      "path": "orpheus_agents/collections.py",
+      "hash": "sha256:2d710bcc964e8c5975a8f8876dce853cc31f45598debb2b6d55009ae1517fc94"
+    },
+    {
+      "bytes": 17391,
+      "path": "orpheus_agents/governance.py",
+      "hash": "sha256:50b8696e7401a23e5e55e961843dca26a9ac5e1edc7e7d3bf473626f57da9f34"
+    },
+    {
+      "bytes": 3712,
+      "path": "orpheus_agents/schemas.py",
+      "hash": "sha256:90118be89ea86147f32bb4cfa7269144d0e2813b330fb5d7f921bed3aa30694d"
+    },
+    {
+      "bytes": 44596,
+      "path": "orpheus_agents/signing.py",
+      "hash": "sha256:dcde6d68432ea8d862f6622e2fb8136f12649230385f0e905ef0499aaea27e34"
+    },
+    {
+      "bytes": 8378,
+      "path": "orpheus_agents/bootstrap.py",
+      "hash": "sha256:dbd974a182e374248872850abae854ec22dcde9030c2bb4a7ab8ff006f64f4e4"
+    },
+    {
+      "bytes": 7287,
+      "path": "orpheus_agents/migrations/001_initial.sql",
+      "hash": "sha256:5a3268584574d80b8494bc5199d19cc178964a5710756239b720569e920f78aa"
+    },
+    {
+      "bytes": 977,
+      "path": "orpheus_agents/migrations/002_contracts.sql",
+      "hash": "sha256:85efc00e5a041363957b5d0389dde4704d809605c21e3494e7538ee0d90dbee1"
+    },
+    {
+      "bytes": 1190,
+      "path": "orpheus_agents/migrations/003_services.sql",
+      "hash": "sha256:b2c4fbf7bac2e1d5f5dea4df8db11eb78c2bbaab3fbfe8a9cdec861be998b8fd"
+    },
+    {
+      "bytes": 179,
+      "path": "orpheus_agents/migrations/004_governance.sql",
+      "hash": "sha256:85aa12752486f578cd9ea3424fd4fbd8a5fba9c1d6f7c4880dbded5c8ef33dfe"
+    },
+    {
+      "bytes": 407,
+      "path": "orpheus_agents/migrations/006_contract_approvals.sql",
+      "hash": "sha256:acaadfeae07edff1e874a7edb06d37b9f34407f3b7a7da8b7a2c5e575ffeb0db"
+    },
+    {
+      "bytes": 1518,
+      "path": "orpheus_agents/migrations/007_collections.sql",
+      "hash": "sha256:ebd8d9e3d0eba39ccb68ccda744a7ca3af862907a1edfbbf4420eac28ad1350a"
+    },
+    {
+      "bytes": 728,
+      "path": "orpheus_agents/migrations/008_memory_gc.sql",
+      "hash": "sha256:022dd2460025943fefda54339ed3d5789045ef0e37cd802fec239bc9e50438e6"
+    },
+    {
+      "bytes": 5862,
+      "path": "tests/test_collections.py",
+      "hash": "sha256:bb7087df803befd7922382341876881ff8ed22b218c34a818c61d64c46be5fd1"
+    },
+    {
+      "bytes": 9246,
+      "path": "tests/test_governance.py",
+      "hash": "sha256:75fe9dcaf2b4b72537e87a1cfc70ebc7e383c72e22bad1921bc4aafb686a0eac"
+    },
+    {
+      "bytes": 18308,
+      "path": "tests/test_signing.py",
+      "hash": "sha256:66918bc2013e77e776ed89e9daae35c96f75cb510573e330d4845b184cf3c0a3"
+    },
+    {
+      "bytes": 734,
+      "path": "pyproject.toml",
+      "hash": "sha256:9729faf12a90d77aa83c5da3e8999ad06314d518ea954a657be3dafb40676125"
+    }
+  ],
+  "sourceHashes": {
+    "scripts/test-agentdb-source.mjs": "sha256:bca26da8c9e2642f79dea91a8be6c21ddfaf7bb9a7931bd2f07b9691439539fe",
+    "experiments/agentdb/execute.py": "sha256:081d8762219f158585a84d8cb65aa99deb9ffc388389a7ec4a4365b8cb9aa5d1",
+    "experiments/agentdb/probe.py": "sha256:3ce1cabf7955049a813862f78c520484495ea4ee7b5f21a217c5b5891e1a4e4f",
+    "experiments/agentdb/source-manifest.json": "sha256:92bc48216d52ee6b75d650f50ae99630c90719ead3ce51962286c9f6f8246d54",
+    "experiments/agentdb/cache-protocol.json": "sha256:48cb0a438e71f08d6a2d70388c80422b97fd16faaa78e1f66882645f9c8c6783"
+  },
+  "sourceUnchanged": true,
+  "hypervisorDependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1"
+  },
+  "execution": {
+    "exitCode": 1,
+    "error": null,
+    "signal": null,
+    "timeoutMs": 300000,
+    "interpreterHash": "sha256:d55736b9f3d6b4ca7985b82db8ce11edfa09994cf93ce31c6b506543b74f32eb",
+    "pythonVersion": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "libraries": {
+      "cryptography": "50.0.1",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "rfc8785": "0.1.4"
+    },
+    "stdoutBytes": 3708,
+    "stderrBytes": 0
+  },
+  "tests": {
+    "collected": 0,
+    "collectionErrors": [],
+    "errors": 0,
+    "failed": 0,
+    "passed": 0,
+    "results": [],
+    "skipped": 0
+  },
+  "probe": {
+    "benchmark": {
+      "attempts": [
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8697687508174567,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 0,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.9147999953711405,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 1.1337000032654032,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8941000123741105,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8611999946879223,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8809000137262046,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8901999972295016,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8242000039899722,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8012000034796074,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8307999960379675,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9410000056959689,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8600000001024455,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9405999880982563,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8147000044118613,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7791999960318208,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7707000040682033,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7789999945089221,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.0710062513462617,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 0,
+          "primingCalls": [
+            {
+              "durationMs": 0.7858000026317313,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09699999645818025,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.08070000330917537,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07009999535512179,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06840001151431352,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678999931551516,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06769999163225293,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06819999543949962,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06819999543949962,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06810000922996551,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678000069456175,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07010000990703702,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06770000618416816,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.0700999989931006,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 1,
+          "primingCalls": [
+            {
+              "durationMs": 0.8055000071180984,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08450000314041972,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07049999840091914,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06940000457689166,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06930000381544232,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0712000037310645,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0703999976394698,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06840001151431352,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0709999876562506,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06779999239370227,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8207500004573376,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 1,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8137999975588173,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7888999971328303,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.853999998071231,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8130000060191378,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8145999890984967,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8318000036524609,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7916000031400472,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8272000122815371,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7951999868964776,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8171000081347302,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7986999989952892,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8779000054346398,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8811000006971881,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8276000007754192,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.797400003648363,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8020999957807362,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8128187500915374,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 2,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8091000054264441,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7951000006869435,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8416999917244539,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7947000121930614,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7774999976390973,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7907999970484525,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9225999965565279,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.795899992226623,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8802999946055934,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7958000060170889,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7838000019546598,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7674000080442056,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8070000039879233,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8173999958671629,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7993999897735193,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.826600007712841,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.071237504016608,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 2,
+          "primingCalls": [
+            {
+              "durationMs": 0.8376999903703108,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09390000195708126,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0737000082153827,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07280000136233866,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.08230000094044954,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678000069456175,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06790000770706683,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06770000618416816,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06960000609979033,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06730000313837081,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06730000313837081,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06720000237692147,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06720000237692147,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.06994999694143189,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 3,
+          "primingCalls": [
+            {
+              "durationMs": 0.8322999929077923,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08379999781027436,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07049999840091914,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06909998774062842,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07149999146349728,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07069999992381781,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06790000770706683,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06790000770706683,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06779999239370227,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0695999915478751,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06779999239370227,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0703999976394698,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8026124996831641,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 3,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8212999964598566,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.79189999087248,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8058999956119806,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8016000065254048,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7842000050004572,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8917999948607758,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7987999997567385,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7891999994171783,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7704000017838553,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.778000001446344,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8065000001806766,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8469000022159889,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8050000033108518,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7664000004297122,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7662999996682629,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8175999973900616,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8214874997065635,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 4,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.7665000011911616,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8736999880056828,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8246000070357695,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.781700000516139,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7938000053400174,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7841000042390078,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.843299989355728,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8664000051794574,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8191999950213358,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7412999984808266,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.763599993661046,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 1.109600008931011,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8207000064430758,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8184999896911904,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7666000019526109,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7702000002609566,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07259375252033351,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 4,
+          "primingCalls": [
+            {
+              "durationMs": 0.8629999938420951,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.12530000822152942,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0782000133767724,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07110000296961516,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06920000305399299,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06960000609979033,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07069999992381781,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06770000618416816,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06730000313837081,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06760000542271882,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06750000466126949,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06729998858645558,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06740000389982015,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06740000389982015,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.06978125202294905,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 5,
+          "primingCalls": [
+            {
+              "durationMs": 0.8464999991701916,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.0844999885885045,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07080000068526715,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06880000000819564,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06819999543949962,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06820000999141484,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06810000922996551,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07110000296961516,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06810000922996551,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06760000542271882,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06770000618416816,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06990000838413835,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8277812521555461,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 5,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.7906999962870032,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7896000024629757,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9526000067126006,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8147000044118613,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7829999958630651,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7747999916318804,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8653000113554299,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8267000084742904,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7803000044077635,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8094000077107921,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8753000001888722,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8163000020431355,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.905399996554479,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8464999991701916,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8067000017035753,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8072000055108219,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8016437477635918,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 6,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.803599992650561,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.782300005084835,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7683000003453344,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8772000001044944,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8049000025494024,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8186999912140891,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8547999896109104,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8234999986598268,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8010000019567087,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7698999979766086,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7542999956058338,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7814999989932403,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.79340000229422,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7570000016130507,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8471999899484217,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7886999956099316,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07189374900917755,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 6,
+          "primingCalls": [
+            {
+              "durationMs": 0.824199989438057,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09839999256655574,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07369999366346747,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07390000973828137,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07019999611657113,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06960000609979033,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07890000415500253,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06880000000819564,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07140000525396317,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06819999543949962,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678999931551516,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06790000770706683,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07004375038377475,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 7,
+          "primingCalls": [
+            {
+              "durationMs": 0.821399997221306,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08610000077169389,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07169999298639596,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06960000609979033,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06880000000819564,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06880000000819564,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06810000922996551,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07140000525396317,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06820000999141484,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8217999984481139,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 7,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8348999981535599,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8454000053461641,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7942999945953488,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9329000022262335,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8678000012878329,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8019999950192869,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.767299992730841,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8614999969722703,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8265999931609258,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8196999988285825,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7979999936651438,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.785700001870282,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7563999970443547,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7858000026317313,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8891000034054741,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.781399998231791,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        }
+      ],
+      "denominator": {
+        "attempts": 16,
+        "eligiblePairs": 8,
+        "excludedPairs": 0,
+        "failedAttempts": 0,
+        "failedMeasuredQueries": 0,
+        "notDispatchedQueries": 0,
+        "pairs": 8,
+        "primingCalls": 8,
+        "recordedMeasuredQueries": 256,
+        "requestedMeasuredQueries": 256
+      },
+      "measured": {
+        "baselineMeanQueryMs": 0.8223328123904139,
+        "candidateMeanQueryMs": 0.07082578190420463,
+        "ratioOfPairedMeans": 11.610642202336145
+      },
+      "modelMeasurements": {
+        "billedCost": null,
+        "hostedLatencyMs": null,
+        "providerCalls": 0,
+        "quality": null,
+        "tokens": null
+      },
+      "pairs": [
+        {
+          "baselineMeanMs": 0.8697687508174567,
+          "candidateMeanMs": 0.0710062513462617,
+          "candidateMinusBaselineMs": -0.798762499471195,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 0
+        },
+        {
+          "baselineMeanMs": 0.8207500004573376,
+          "candidateMeanMs": 0.0700999989931006,
+          "candidateMinusBaselineMs": -0.750650001464237,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 1
+        },
+        {
+          "baselineMeanMs": 0.8128187500915374,
+          "candidateMeanMs": 0.071237504016608,
+          "candidateMinusBaselineMs": -0.7415812460749294,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 2
+        },
+        {
+          "baselineMeanMs": 0.8026124996831641,
+          "candidateMeanMs": 0.06994999694143189,
+          "candidateMinusBaselineMs": -0.7326625027417322,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 3
+        },
+        {
+          "baselineMeanMs": 0.8214874997065635,
+          "candidateMeanMs": 0.07259375252033351,
+          "candidateMinusBaselineMs": -0.74889374718623,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 4
+        },
+        {
+          "baselineMeanMs": 0.8277812521555461,
+          "candidateMeanMs": 0.06978125202294905,
+          "candidateMinusBaselineMs": -0.758000000132597,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 5
+        },
+        {
+          "baselineMeanMs": 0.8016437477635918,
+          "candidateMeanMs": 0.07189374900917755,
+          "candidateMinusBaselineMs": -0.7297499987544143,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 6
+        },
+        {
+          "baselineMeanMs": 0.8217999984481139,
+          "candidateMeanMs": 0.07004375038377475,
+          "candidateMinusBaselineMs": -0.7517562480643392,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 7
+        }
+      ],
+      "protocol": {
+        "armOrder": "counterbalanced: baseline first on even pair indices",
+        "baseline": "clear application retrieval_cache before every measured original Memory.search call",
+        "bootstrap": {
+          "confidence": 0.95,
+          "iterations": 4000,
+          "seed": 1729
+        },
+        "budgetBytes": 6000,
+        "candidate": "clear application retrieval_cache, prime once with same original Memory.search, then measure 16 calls",
+        "eligibility": "both arms complete, all requested queries retained, normalized output hashes equal",
+        "limits": {
+          "defaultModelComparison": false,
+          "modelLatency": false,
+          "operatingSystemColdCache": false,
+          "populationInference": false
+        },
+        "measurements": {
+          "billedCost": null,
+          "modelQuality": null,
+          "providerCalls": 0,
+          "providerTokens": null
+        },
+        "pairs": 8,
+        "protocolId": "agentdb-application-retrieval-cache/1",
+        "queriesPerArm": 16,
+        "query": "commonneedle",
+        "resultLimit": 10,
+        "schemaVersion": 1,
+        "seed": 1729,
+        "syntheticDocuments": 32,
+        "timing": "external time.perf_counter around each search only; excludes cache clearing, priming and corpus setup"
+      },
+      "telemetry": {
+        "originalWarmLatencyTelemetryAbsent": true,
+        "provenance": "locally_measured_external_perf_counter",
+        "setupInvalidationPrimingExcludedFromQueryTiming": true,
+        "timingsDeterministic": false
+      },
+      "pairedStatistic": {
+        "meanDifference": -0.7515070304862093,
+        "interval": [
+          -0.7665054679364403,
+          -0.7396945292157397
+        ],
+        "sampleSize": 8,
+        "confidence": 0.95,
+        "iterations": 4000,
+        "seed": 1729,
+        "method": "task-paired percentile bootstrap; candidate minus baseline"
+      },
+      "protocolHashBefore": "sha256:48cb0a438e71f08d6a2d70388c80422b97fd16faaa78e1f66882645f9c8c6783",
+      "protocolHashAfter": "sha256:48cb0a438e71f08d6a2d70388c80422b97fd16faaa78e1f66882645f9c8c6783"
+    },
+    "cases": [
+      {
+        "acceptanceIds": [
+          "C05-T04"
+        ],
+        "detail": {
+          "coldInternalLatencySamples": 1,
+          "queries": 2,
+          "resultEqual": true,
+          "warmHits": 1,
+          "warmInternalLatencySamples": 0
+        },
+        "name": "Original cold and warm results equal; original warm latency telemetry absent",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T02"
+        ],
+        "detail": {
+          "identicalQuery": true,
+          "originResults": 1,
+          "otherTenantResults": 0
+        },
+        "name": "Identical query cannot cross tenant scope",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T01",
+          "C17-T03"
+        ],
+        "detail": {
+          "correctionSourceRetained": true,
+          "epochChanged": true,
+          "oldTombstoned": true,
+          "oldVisible": false
+        },
+        "name": "Source correction invalidates application cache and preserves predecessor reference",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T02"
+        ],
+        "detail": {
+          "afterRevoke": 0,
+          "before": 0,
+          "boundary": "document grant revocation; contract revocation not tested",
+          "granted": 1,
+          "warmEqual": true
+        },
+        "name": "Revoked document grant cannot reuse warmed retrieval",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T02"
+        ],
+        "detail": {
+          "cachedRowReauthorized": true,
+          "code": "NOT_FOUND",
+          "rejected": true
+        },
+        "name": "Every warm reuse rechecks document expiry",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C17-T03"
+        ],
+        "detail": {
+          "attempts": [
+            {
+              "code": "ADMISSION_DENIED",
+              "kind": "sourced_fact",
+              "rejected": true
+            },
+            {
+              "code": "ADMISSION_DENIED",
+              "kind": "validated_lesson",
+              "rejected": true
+            }
+          ],
+          "boundary": "memory admission; no SoulDefinition or human identity claim"
+        },
+        "name": "Worker cannot self-promote assertions into sourced or validated knowledge",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C17-T03"
+        ],
+        "detail": {
+          "retained": 2,
+          "sourceReferences": [
+            "synthetic:assertion-a",
+            "synthetic:assertion-b"
+          ],
+          "timestampsPresent": true,
+          "truthAdjudicated": false
+        },
+        "name": "Conflicting fictional assertions retain sources and timestamps",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C18-T01"
+        ],
+        "detail": {
+          "profileHash": "322a0d0a3ef4a68a22d065e26584a149b4aaa9c745fa8a96d94bca7158699960",
+          "sameSeedSameProfile": true,
+          "source": "authored synthetic fixture"
+        },
+        "name": "Synthetic persona generation repeats for frozen seed",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C18-T01"
+        ],
+        "detail": {
+          "activeAgreementPresent": false,
+          "boundary": "same source state and clock; no qualification or activation demonstrated",
+          "clockChangeSeconds": 60,
+          "expiryChangeSeconds": 60,
+          "frozenClockRepeatable": true,
+          "frozenPackageHash": "2c077ea846a22b24f1bbccf69fa6c03f46608009f1bacc3e369786c133521dc4",
+          "profileRevision": 1,
+          "qualificationCount": 0,
+          "templateRevision": "standard-1"
+        },
+        "name": "Bootstrap digest repeats only with frozen source state and validity clock",
+        "status": "PASSED"
+      }
+    ],
+    "classification": "actual_original_agentdb_offline_synthetic_probes",
+    "limits": {
+      "backupRecovery": false,
+      "contractRevocationThroughMemory": false,
+      "fullSoulsRegistry": false,
+      "heldoutQualification": false,
+      "independentKeyCustody": false,
+      "providerCalls": 0,
+      "realWorkers": false
+    },
+    "schemaVersion": 1,
+    "summary": {
+      "failed": 0,
+      "passed": 9,
+      "total": 9
+    }
+  },
+  "executionError": null,
+  "controls": {
+    "auditHook": "BEST_EFFORT",
+    "operatingSystemConfinement": "UNAVAILABLE",
+    "childEnvironment": "allowlisted noncredential variables",
+    "pytestPluginAutoload": false,
+    "originalWrites": false,
+    "realWorkers": false
+  },
+  "provenance": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "sourceCodeRedistributed": false
+  }
+}

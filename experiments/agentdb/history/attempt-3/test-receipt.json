@@ -1,0 +1,3380 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-agentdb-source-evidence",
+  "status": "PASSED",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "sourcePackage": {
+    "name": "orpheus-agent-dashboard",
+    "version": "0.1.0",
+    "canonicalComponent": "hypervisor.agent_database",
+    "sourceRedistributed": false
+  },
+  "sourceManifestHash": "sha256:92bc48216d52ee6b75d650f50ae99630c90719ead3ce51962286c9f6f8246d54",
+  "sourceFiles": [
+    {
+      "bytes": 79,
+      "path": "orpheus_agents/__init__.py",
+      "hash": "sha256:0b243a3266ad08f712aa9bae6d69e02817c1a7c5ff86d90a2be342c2ec18a152"
+    },
+    {
+      "bytes": 14518,
+      "path": "orpheus_agents/storage.py",
+      "hash": "sha256:8982d4213f526671dbf4e0a0f0eb8bb9beb3ca18cf376531410e8c050ed62b01"
+    },
+    {
+      "bytes": 11170,
+      "path": "orpheus_agents/memory.py",
+      "hash": "sha256:6855690caa3146382cd5514bb6b6d318d30d8b9bb36d2b92e7e7811a8f201bad"
+    },
+    {
+      "bytes": 16105,
+      "path": "orpheus_agents/collections.py",
+      "hash": "sha256:2d710bcc964e8c5975a8f8876dce853cc31f45598debb2b6d55009ae1517fc94"
+    },
+    {
+      "bytes": 17391,
+      "path": "orpheus_agents/governance.py",
+      "hash": "sha256:50b8696e7401a23e5e55e961843dca26a9ac5e1edc7e7d3bf473626f57da9f34"
+    },
+    {
+      "bytes": 3712,
+      "path": "orpheus_agents/schemas.py",
+      "hash": "sha256:90118be89ea86147f32bb4cfa7269144d0e2813b330fb5d7f921bed3aa30694d"
+    },
+    {
+      "bytes": 44596,
+      "path": "orpheus_agents/signing.py",
+      "hash": "sha256:dcde6d68432ea8d862f6622e2fb8136f12649230385f0e905ef0499aaea27e34"
+    },
+    {
+      "bytes": 8378,
+      "path": "orpheus_agents/bootstrap.py",
+      "hash": "sha256:dbd974a182e374248872850abae854ec22dcde9030c2bb4a7ab8ff006f64f4e4"
+    },
+    {
+      "bytes": 7287,
+      "path": "orpheus_agents/migrations/001_initial.sql",
+      "hash": "sha256:5a3268584574d80b8494bc5199d19cc178964a5710756239b720569e920f78aa"
+    },
+    {
+      "bytes": 977,
+      "path": "orpheus_agents/migrations/002_contracts.sql",
+      "hash": "sha256:85efc00e5a041363957b5d0389dde4704d809605c21e3494e7538ee0d90dbee1"
+    },
+    {
+      "bytes": 1190,
+      "path": "orpheus_agents/migrations/003_services.sql",
+      "hash": "sha256:b2c4fbf7bac2e1d5f5dea4df8db11eb78c2bbaab3fbfe8a9cdec861be998b8fd"
+    },
+    {
+      "bytes": 179,
+      "path": "orpheus_agents/migrations/004_governance.sql",
+      "hash": "sha256:85aa12752486f578cd9ea3424fd4fbd8a5fba9c1d6f7c4880dbded5c8ef33dfe"
+    },
+    {
+      "bytes": 407,
+      "path": "orpheus_agents/migrations/006_contract_approvals.sql",
+      "hash": "sha256:acaadfeae07edff1e874a7edb06d37b9f34407f3b7a7da8b7a2c5e575ffeb0db"
+    },
+    {
+      "bytes": 1518,
+      "path": "orpheus_agents/migrations/007_collections.sql",
+      "hash": "sha256:ebd8d9e3d0eba39ccb68ccda744a7ca3af862907a1edfbbf4420eac28ad1350a"
+    },
+    {
+      "bytes": 728,
+      "path": "orpheus_agents/migrations/008_memory_gc.sql",
+      "hash": "sha256:022dd2460025943fefda54339ed3d5789045ef0e37cd802fec239bc9e50438e6"
+    },
+    {
+      "bytes": 5862,
+      "path": "tests/test_collections.py",
+      "hash": "sha256:bb7087df803befd7922382341876881ff8ed22b218c34a818c61d64c46be5fd1"
+    },
+    {
+      "bytes": 9246,
+      "path": "tests/test_governance.py",
+      "hash": "sha256:75fe9dcaf2b4b72537e87a1cfc70ebc7e383c72e22bad1921bc4aafb686a0eac"
+    },
+    {
+      "bytes": 18308,
+      "path": "tests/test_signing.py",
+      "hash": "sha256:66918bc2013e77e776ed89e9daae35c96f75cb510573e330d4845b184cf3c0a3"
+    },
+    {
+      "bytes": 734,
+      "path": "pyproject.toml",
+      "hash": "sha256:9729faf12a90d77aa83c5da3e8999ad06314d518ea954a657be3dafb40676125"
+    }
+  ],
+  "sourceHashes": {
+    "scripts/test-agentdb-source.mjs": "sha256:48edf3d5735b0c6f9214780bc7c0a255da64854d878ec98eb3e14a2aa3a49774",
+    "experiments/agentdb/execute.py": "sha256:a466c42e24906725f7d93368f25b46e535163f713d357faffbbf943a5efa718a",
+    "experiments/agentdb/probe.py": "sha256:3ce1cabf7955049a813862f78c520484495ea4ee7b5f21a217c5b5891e1a4e4f",
+    "experiments/agentdb/source-manifest.json": "sha256:92bc48216d52ee6b75d650f50ae99630c90719ead3ce51962286c9f6f8246d54",
+    "experiments/agentdb/cache-protocol.json": "sha256:48cb0a438e71f08d6a2d70388c80422b97fd16faaa78e1f66882645f9c8c6783"
+  },
+  "sourceUnchanged": true,
+  "hypervisorDependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1"
+  },
+  "execution": {
+    "exitCode": 0,
+    "error": null,
+    "signal": null,
+    "timeoutMs": 300000,
+    "interpreterHash": "sha256:d55736b9f3d6b4ca7985b82db8ce11edfa09994cf93ce31c6b506543b74f32eb",
+    "pythonVersion": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "libraries": {
+      "cryptography": "50.0.1",
+      "pydantic": "2.13.5",
+      "pytest": "9.1.1",
+      "rfc8785": "0.1.4"
+    },
+    "pytestExitCode": 0,
+    "diagnosticClasses": [],
+    "stdoutBytes": 180,
+    "stderrBytes": 0
+  },
+  "tests": {
+    "collected": 39,
+    "collectionErrors": [],
+    "errors": 0,
+    "failed": 0,
+    "passed": 39,
+    "results": [
+      {
+        "id": "tests/test_collections.py::test_resumable_multichunk_import_is_idempotent_after_interruption",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_collections.py::test_precreated_collection_keeps_its_stable_id_when_imported",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_collections.py::test_collection_summary_and_documents_respect_agent_scope",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_collections.py::test_file_key_changed_content_conflicts_and_sensitive_paths_are_rejected",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_collections.py::test_delete_tombstones_metadata_documents_and_invalidates_retrieval",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_collections.py::test_campaign_storage_quota_counts_collections_across_its_agents",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_profile_update_has_optimistic_revision_and_no_authority_fields",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_fork_has_explicit_ancestry_and_only_selected_document_grants",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_policy_escalation_is_recorded_rejected_and_cannot_change_grants",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_direct_fork_obeys_campaign_identity_limit_and_emergency",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_completed_campaign_fork_is_a_valid_draft_without_runtime_or_authority",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_counteroffer_refusal_progression_is_exact_bounded_and_terminal",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_governance.py::test_model_label_is_not_operator_authority",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_rfc8785_section_3_2_3_published_fixture",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_rfc8032_ed25519_test_vector_one",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_demo_keys_are_separate_ephemeral_and_only_sign_approved_contract",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_external_binding_possession_proof_round_trip_and_replay",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_external_agent_and_admin_signatures_round_trip_through_contract_import",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_wrong_party_signature_and_revoked_binding_are_rejected",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_timely_signatures_for_scheduled_activation_and_due_revocation",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_epoch_and_owner_binding_fail_closed",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_actual_runtime_model_mode_settings_or_route_change_requires_requalification[actual_model-fake/gpt-6-astra]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_actual_runtime_model_mode_settings_or_route_change_requires_requalification[settings-{\"max_output_tokens\":1024,\"mode\":\"demo\",\"reasoning\":\"high\"}]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_actual_runtime_model_mode_settings_or_route_change_requires_requalification[settings-{\"max_output_tokens\":1024,\"mode\":\"live\",\"reasoning\":\"low\"}]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_actual_runtime_model_mode_settings_or_route_change_requires_requalification[requested_route-astra]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_no_current_accepted_operator_policy_denies_eligibility",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_stale_contract_revision_is_rejected_before_signature_acceptance",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_accepted_signature_retry_stays_historical_after_revocation",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_signing_requires_two_immutable_exact_hash_approvals",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_explicit_refusal_makes_revision_unsignable_and_immutable",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_counteroffer_amendment_gets_fresh_approval_signature_and_nonce_sets",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch0]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch1]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch2]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch3]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch4]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch5]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_amendment_rejects_authority_expansion_and_unbounded_or_unknown_fields[patch6]",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_signing.py::test_accepted_operator_deny_restriction_is_enforced_as_reduction",
+        "phases": [
+          {
+            "phase": "setup",
+            "status": "PASSED"
+          },
+          {
+            "phase": "call",
+            "status": "PASSED"
+          },
+          {
+            "phase": "teardown",
+            "status": "PASSED"
+          }
+        ],
+        "status": "PASSED"
+      }
+    ],
+    "skipped": 0
+  },
+  "probe": {
+    "benchmark": {
+      "attempts": [
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8319500002471614,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 0,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8777999901212752,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8327000105055049,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8192999957827851,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8020000095712021,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8066000009421259,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8489000028930604,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8639000006951392,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8153999951900914,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8025999995879829,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8384999964619055,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8163000020431355,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8503999997628853,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8073000062722713,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7916000031400472,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8444999984931201,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8933999924920499,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07055624791973969,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 0,
+          "primingCalls": [
+            {
+              "durationMs": 0.8809999999357387,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09309999586548656,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0746000005165115,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07140000525396317,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06930000381544232,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07019999611657113,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678999931551516,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06779999239370227,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0675999908708036,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06819999543949962,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06769999163225293,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07009999535512179,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07043124969641212,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 1,
+          "primingCalls": [
+            {
+              "durationMs": 0.8291999984066933,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08569999772589654,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07179999374784529,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0703000114299357,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06999999459367245,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07189999450929463,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06960000609979033,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06840001151431352,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07090000144671649,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07029999687802047,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8201624987123068,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 1,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8119999984046444,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8200999873224646,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8381000079680234,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8087000023806468,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8131999929901212,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8044999995036051,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9634999878471717,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8358000050066039,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8260999893536791,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7941999938338995,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8153999951900914,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7977000059327111,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.793700004578568,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7877000025473535,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8218000002671033,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7901000062702224,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8344250018126331,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 2,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8927000017138198,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8769999985815957,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8401000086450949,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8167000050889328,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8025999995879829,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8814000029815361,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8508000028086826,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8582000009482726,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8410000009462237,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8066000009421259,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8382000087294728,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8175999973900616,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8136000105878338,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7922999939182773,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8191999950213358,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8028000011108816,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07234375061671017,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 2,
+          "primingCalls": [
+            {
+              "durationMs": 0.890600000275299,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09450000652577728,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07419999747071415,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07049999840091914,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.069500005338341,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07059999916236848,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.09129999671131372,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06820000999141484,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06980000762268901,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.0702874986018287,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 3,
+          "primingCalls": [
+            {
+              "durationMs": 0.8070000039879233,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08320000779349357,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07110000296961516,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0720000098226592,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07189999450929463,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06949999078642577,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0692999892635271,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07069999992381781,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8262124965767725,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 3,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8666999929118901,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8516999951098114,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8158999989973381,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7959000067785382,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8119999984046444,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8272999984910712,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8208999934140593,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8208999934140593,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8276999869849533,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8206000056816265,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8016999927349389,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8585999894421548,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7985999982338399,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8567999902879819,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8365999965462834,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.80750000779517,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.821987498056842,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 4,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.822000001790002,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8124000014504418,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7885999948484823,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8125000022118911,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7922000077087432,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9238999919034541,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.821699999505654,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8135999960359186,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7983999967109412,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8105000015348196,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8071000047493726,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7987999997567385,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7978999929036945,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8356999896932393,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7997999928193167,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9166999952867627,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07051874945318559,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 4,
+          "primingCalls": [
+            {
+              "durationMs": 0.876199992490001,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09419998968951404,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07539999205619097,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07000000914558768,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0712000037310645,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678999931551516,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06760000542271882,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06770000618416816,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06770000618416816,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0675999908708036,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06769999163225293,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07019999611657113,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06779999239370227,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.06947499878151575,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 5,
+          "primingCalls": [
+            {
+              "durationMs": 0.8692999981576577,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08310000703204423,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07299998833332211,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06930000381544232,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678999931551516,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06809999467805028,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06779999239370227,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06749999010935426,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06760000542271882,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06740000389982015,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0678000069456175,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06970000686123967,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.831268750516756,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 5,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8058999956119806,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8087000023806468,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8039999956963584,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8948000031523407,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8157000120263547,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8013000042410567,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8744000078877434,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8206999918911606,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8052000048337504,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8462999976472929,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.901999999769032,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.831899989861995,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8138999983202666,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8140999998431653,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7903999940026551,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8710000111022964,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8346749982592883,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 6,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.854900004924275,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.83710000035353,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7913000008556992,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8652999968035147,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7830999966245145,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8147000044118613,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8288999961223453,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7863999926485121,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8393000025535002,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.9483000030741096,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8501999982399866,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8099999977275729,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.868199989781715,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.80669998715166,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7883999933255836,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8820000075502321,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.07106249995558755,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 6,
+          "primingCalls": [
+            {
+              "durationMs": 0.7870999979786575,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.09580000187270343,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07359999290201813,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.072900002123788,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06910000229254365,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06900000153109431,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07100000220816582,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.0686999992467463,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06850001227576286,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06830001075286418,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06829999620094895,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06799999391660094,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06979999307077378,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "candidate",
+          "billedCost": null,
+          "cacheHitsDelta": 16,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 1,
+          "meanQueryMs": 0.0750187518860912,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 0,
+          "pairIndex": 7,
+          "primingCalls": [
+            {
+              "durationMs": 0.8060999971348792,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.08929999603424221,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07169999298639596,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06960000609979033,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07140000525396317,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06890000076964498,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06839999696239829,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06849999772384763,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06830001075286418,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06819999543949962,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06859999848529696,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06800000846851617,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.10340000153519213,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.10010000551119447,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07570000889245421,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.07080000068526715,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.06940000457689166,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        },
+        {
+          "arm": "baseline",
+          "billedCost": null,
+          "cacheHitsDelta": 0,
+          "error": null,
+          "failedQueries": 0,
+          "internalLatencySamplesDelta": 16,
+          "meanQueryMs": 0.8350937487193733,
+          "modelQuality": null,
+          "modelTokens": null,
+          "notDispatchedQueries": 0,
+          "orderInPair": 1,
+          "pairIndex": 7,
+          "primingCalls": [],
+          "providerCalls": 0,
+          "queries": [
+            {
+              "durationMs": 0.8870999881764874,
+              "queryIndex": 0,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8612999954493716,
+              "queryIndex": 1,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8753000001888722,
+              "queryIndex": 2,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8158999989973381,
+              "queryIndex": 3,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.797100001364015,
+              "queryIndex": 4,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7843000057619065,
+              "queryIndex": 5,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8169000066118315,
+              "queryIndex": 6,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7782999891787767,
+              "queryIndex": 7,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7691999926464632,
+              "queryIndex": 8,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7848999957786873,
+              "queryIndex": 9,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8602000016253442,
+              "queryIndex": 10,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7948999991640449,
+              "queryIndex": 11,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 1.0861999908229336,
+              "queryIndex": 12,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8036000072024763,
+              "queryIndex": 13,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.7815999997546896,
+              "queryIndex": 14,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            },
+            {
+              "durationMs": 0.8647000067867339,
+              "queryIndex": 15,
+              "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+              "rowCount": 10,
+              "status": "fulfilled"
+            }
+          ],
+          "recordedQueries": 16,
+          "requestedQueries": 16,
+          "resultHash": "3335636375880f0d5db92c0ceb46bfeb2fc02fc71395d710ce6001151835c1bd",
+          "status": "fulfilled"
+        }
+      ],
+      "denominator": {
+        "attempts": 16,
+        "eligiblePairs": 8,
+        "excludedPairs": 0,
+        "failedAttempts": 0,
+        "failedMeasuredQueries": 0,
+        "notDispatchedQueries": 0,
+        "pairs": 8,
+        "primingCalls": 8,
+        "recordedMeasuredQueries": 256,
+        "requestedMeasuredQueries": 256
+      },
+      "measured": {
+        "baselineMeanQueryMs": 0.8294718741126417,
+        "candidateMeanQueryMs": 0.07121171836388385,
+        "ratioOfPairedMeans": 11.647968805838023
+      },
+      "modelMeasurements": {
+        "billedCost": null,
+        "hostedLatencyMs": null,
+        "providerCalls": 0,
+        "quality": null,
+        "tokens": null
+      },
+      "pairs": [
+        {
+          "baselineMeanMs": 0.8319500002471614,
+          "candidateMeanMs": 0.07055624791973969,
+          "candidateMinusBaselineMs": -0.7613937523274217,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 0
+        },
+        {
+          "baselineMeanMs": 0.8201624987123068,
+          "candidateMeanMs": 0.07043124969641212,
+          "candidateMinusBaselineMs": -0.7497312490158947,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 1
+        },
+        {
+          "baselineMeanMs": 0.8344250018126331,
+          "candidateMeanMs": 0.07234375061671017,
+          "candidateMinusBaselineMs": -0.762081251195923,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 2
+        },
+        {
+          "baselineMeanMs": 0.8262124965767725,
+          "candidateMeanMs": 0.0702874986018287,
+          "candidateMinusBaselineMs": -0.7559249979749438,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 3
+        },
+        {
+          "baselineMeanMs": 0.821987498056842,
+          "candidateMeanMs": 0.07051874945318559,
+          "candidateMinusBaselineMs": -0.7514687486036564,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 4
+        },
+        {
+          "baselineMeanMs": 0.831268750516756,
+          "candidateMeanMs": 0.06947499878151575,
+          "candidateMinusBaselineMs": -0.7617937517352402,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 5
+        },
+        {
+          "baselineMeanMs": 0.8346749982592883,
+          "candidateMeanMs": 0.07106249995558755,
+          "candidateMinusBaselineMs": -0.7636124983037007,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 6
+        },
+        {
+          "baselineMeanMs": 0.8350937487193733,
+          "candidateMeanMs": 0.0750187518860912,
+          "candidateMinusBaselineMs": -0.7600749968332821,
+          "eligible": true,
+          "exclusionReason": null,
+          "outputEqual": true,
+          "pairIndex": 7
+        }
+      ],
+      "protocol": {
+        "armOrder": "counterbalanced: baseline first on even pair indices",
+        "baseline": "clear application retrieval_cache before every measured original Memory.search call",
+        "bootstrap": {
+          "confidence": 0.95,
+          "iterations": 4000,
+          "seed": 1729
+        },
+        "budgetBytes": 6000,
+        "candidate": "clear application retrieval_cache, prime once with same original Memory.search, then measure 16 calls",
+        "eligibility": "both arms complete, all requested queries retained, normalized output hashes equal",
+        "limits": {
+          "defaultModelComparison": false,
+          "modelLatency": false,
+          "operatingSystemColdCache": false,
+          "populationInference": false
+        },
+        "measurements": {
+          "billedCost": null,
+          "modelQuality": null,
+          "providerCalls": 0,
+          "providerTokens": null
+        },
+        "pairs": 8,
+        "protocolId": "agentdb-application-retrieval-cache/1",
+        "queriesPerArm": 16,
+        "query": "commonneedle",
+        "resultLimit": 10,
+        "schemaVersion": 1,
+        "seed": 1729,
+        "syntheticDocuments": 32,
+        "timing": "external time.perf_counter around each search only; excludes cache clearing, priming and corpus setup"
+      },
+      "telemetry": {
+        "originalWarmLatencyTelemetryAbsent": true,
+        "provenance": "locally_measured_external_perf_counter",
+        "setupInvalidationPrimingExcludedFromQueryTiming": true,
+        "timingsDeterministic": false
+      },
+      "pairedStatistic": {
+        "meanDifference": -0.7582601557487578,
+        "interval": [
+          -0.7613627338542983,
+          -0.7546796869064565
+        ],
+        "sampleSize": 8,
+        "confidence": 0.95,
+        "iterations": 4000,
+        "seed": 1729,
+        "method": "task-paired percentile bootstrap; candidate minus baseline"
+      },
+      "protocolHashBefore": "sha256:48cb0a438e71f08d6a2d70388c80422b97fd16faaa78e1f66882645f9c8c6783",
+      "protocolHashAfter": "sha256:48cb0a438e71f08d6a2d70388c80422b97fd16faaa78e1f66882645f9c8c6783"
+    },
+    "cases": [
+      {
+        "acceptanceIds": [
+          "C05-T04"
+        ],
+        "detail": {
+          "coldInternalLatencySamples": 1,
+          "queries": 2,
+          "resultEqual": true,
+          "warmHits": 1,
+          "warmInternalLatencySamples": 0
+        },
+        "name": "Original cold and warm results equal; original warm latency telemetry absent",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T02"
+        ],
+        "detail": {
+          "identicalQuery": true,
+          "originResults": 1,
+          "otherTenantResults": 0
+        },
+        "name": "Identical query cannot cross tenant scope",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T01",
+          "C17-T03"
+        ],
+        "detail": {
+          "correctionSourceRetained": true,
+          "epochChanged": true,
+          "oldTombstoned": true,
+          "oldVisible": false
+        },
+        "name": "Source correction invalidates application cache and preserves predecessor reference",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T02"
+        ],
+        "detail": {
+          "afterRevoke": 0,
+          "before": 0,
+          "boundary": "document grant revocation; contract revocation not tested",
+          "granted": 1,
+          "warmEqual": true
+        },
+        "name": "Revoked document grant cannot reuse warmed retrieval",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C05-T02"
+        ],
+        "detail": {
+          "cachedRowReauthorized": true,
+          "code": "NOT_FOUND",
+          "rejected": true
+        },
+        "name": "Every warm reuse rechecks document expiry",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C17-T03"
+        ],
+        "detail": {
+          "attempts": [
+            {
+              "code": "ADMISSION_DENIED",
+              "kind": "sourced_fact",
+              "rejected": true
+            },
+            {
+              "code": "ADMISSION_DENIED",
+              "kind": "validated_lesson",
+              "rejected": true
+            }
+          ],
+          "boundary": "memory admission; no SoulDefinition or human identity claim"
+        },
+        "name": "Worker cannot self-promote assertions into sourced or validated knowledge",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C17-T03"
+        ],
+        "detail": {
+          "retained": 2,
+          "sourceReferences": [
+            "synthetic:assertion-a",
+            "synthetic:assertion-b"
+          ],
+          "timestampsPresent": true,
+          "truthAdjudicated": false
+        },
+        "name": "Conflicting fictional assertions retain sources and timestamps",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C18-T01"
+        ],
+        "detail": {
+          "profileHash": "322a0d0a3ef4a68a22d065e26584a149b4aaa9c745fa8a96d94bca7158699960",
+          "sameSeedSameProfile": true,
+          "source": "authored synthetic fixture"
+        },
+        "name": "Synthetic persona generation repeats for frozen seed",
+        "status": "PASSED"
+      },
+      {
+        "acceptanceIds": [
+          "C18-T01"
+        ],
+        "detail": {
+          "activeAgreementPresent": false,
+          "boundary": "same source state and clock; no qualification or activation demonstrated",
+          "clockChangeSeconds": 60,
+          "expiryChangeSeconds": 60,
+          "frozenClockRepeatable": true,
+          "frozenPackageHash": "d3087dab42c829f5193f5a2168e8cc918b2e19b52031c6f2bd4f910819cea9ec",
+          "profileRevision": 1,
+          "qualificationCount": 0,
+          "templateRevision": "standard-1"
+        },
+        "name": "Bootstrap digest repeats only with frozen source state and validity clock",
+        "status": "PASSED"
+      }
+    ],
+    "classification": "actual_original_agentdb_offline_synthetic_probes",
+    "limits": {
+      "backupRecovery": false,
+      "contractRevocationThroughMemory": false,
+      "fullSoulsRegistry": false,
+      "heldoutQualification": false,
+      "independentKeyCustody": false,
+      "providerCalls": 0,
+      "realWorkers": false
+    },
+    "schemaVersion": 1,
+    "summary": {
+      "failed": 0,
+      "passed": 9,
+      "total": 9
+    }
+  },
+  "executionError": null,
+  "controls": {
+    "auditHook": "BEST_EFFORT",
+    "operatingSystemConfinement": "UNAVAILABLE",
+    "childEnvironment": "allowlisted noncredential variables",
+    "pytestPluginAutoload": false,
+    "originalWrites": false,
+    "realWorkers": false
+  },
+  "provenance": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "sourceCodeRedistributed": false
+  }
+}

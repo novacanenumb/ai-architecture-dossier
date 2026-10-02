@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "a1aed6ea-372f-47ed-a431-2eee7192a2d4",
+  "runId": "run-1a4b676d-02b1-4843-8b7d-8962e6d5bdc7",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "artifactHash": "sha256:352196d3be2502e3a1d127df462703a53b44c055d1687cec1d14b44c91403788",
+  "manifestHash": "sha256:1e6e476e8a3bf29e9c9ff317a327bbd72499dd5d6121fd359e46362e8a5694dd",
+  "sourceTextHash": "sha256:07b019d35f15c17fc93018f5f192792b6dd926819835a8fdedb055fdee3c9767",
+  "sourceCharacters": 27405,
+  "validationScope": "Two Sol-role proposals corrected and integrated by parent against inspected original source. Native nonempty/schema/anchor/GTFL checks, separate host 39 original offline tests and 10 new synthetic probes. General semantic validation unavailable.",
+  "nativeCandidateContracts": 2,
+  "hostProposalTurns": 3,
+  "hostTurnAccounting": "Two initial proposal turns and one context-clarification follow-up. Native ledger counts two candidate contracts; it does not account for the extra host turn or establish host call-limit enforcement. Host tokens and cost unavailable.",
+  "originalSourceFiles": 19,
+  "originalTests": 39,
+  "newProbes": 10,
+  "cacheAttempts": 16,
+  "cacheMeasuredQueries": 256,
+  "cachePrimingCalls": 8,
+  "retainedSetupFailures": 2,
+  "usage": null,
+  "cost": null
+}
+

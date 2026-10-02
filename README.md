@@ -57,12 +57,13 @@ ai-architecture-dossier/
   experiments/native/               Retained native source-validation records
   experiments/runtime/              Supplied-runtime probes and scheduler results
   experiments/headspace/            Original-source checks and commit diagnostic
+  experiments/agentdb/              Original offline tests and paired cache experiment
   dist/                             Static site and downloadable derived evidence
   .openai/hosting.json               Existing Sites project and output declaration
   LICENSE                           Custom licence for this repository's additions
 ```
 
-Start with the [source inventory](docs/SOURCE_INVENTORY.md) to understand which implementations were inspected, then use the [evidence guide](docs/EVIDENCE.md) to find the reference results. The [runtime guide](docs/RUNTIME_EVIDENCE.md) explains optional Hypervisor checks; the [Headspace guide](docs/HEADSPACE_EVIDENCE.md) explains original fixture checks and the new concurrency diagnostic. The [reuse plan](docs/REUSE_PLAN.md) records ownership boundaries for further implementation.
+Start with the [source inventory](docs/SOURCE_INVENTORY.md) to understand which implementations were inspected, then use the [evidence guide](docs/EVIDENCE.md) to find the reference results. The [runtime guide](docs/RUNTIME_EVIDENCE.md) explains optional Hypervisor checks; the [Headspace guide](docs/HEADSPACE_EVIDENCE.md) explains original fixture checks and the new concurrency diagnostic. The [Agent Database guide](docs/AGENTDB_EVIDENCE.md) records offline memory, governance, signing and cache evidence. The [reuse plan](docs/REUSE_PLAN.md) records ownership boundaries for further implementation.
 
 ## Architecture and design intent
 
@@ -289,6 +290,55 @@ npm run test:headspace
 ```
 
 Set `HEADSPACE_SOURCE_PATH` when the original source is elsewhere and `DOSSIER_RUNTIME_PATH` for the approved dependency. Missing or changed source fails explicitly. The default fetch guard and allowlisted child environment are best-effort local controls; operating-system network confinement is unavailable. Builds copy the recorded evidence and never invoke the original tests or a model.
+
+## Original Agent Database: memory, governance and signing
+
+The active Python implementation was located at `N:/Development/Production/Hypervisor Standalone/01_AGENT_DATABASE`. Its canonical component is `hypervisor.agent_database`, and its package identifies `orpheus-agent-dashboard` 0.1.0. The Python service owns active state; the retired Node draft is historical. The original ownership documentation also marks SOULS as a deprecated legacy field. The dossier therefore links observed memory, bootstrap and contract behavior to the actual Agent Database owner and does not claim a complete current C16 SOULS registry implementation.
+
+The [source manifest](experiments/agentdb/source-manifest.json) pins 19 inspected files: eight owning Python modules, seven migrations, three original test files and package metadata. The optional runner copies those files into an owned temporary directory, uses synthetic SQLite state, runs the original offline tests and new probes, then verifies all original source hashes again. Original project state, credentials, workers and provider transports are excluded. Original code is not redistributed or relicensed by this repository.
+
+The current [receipt](experiments/agentdb/test-receipt.json) records **39 passing original tests** and **10 passing additional probes**, with no failures, errors or skips. This adds partial source evidence for four components:
+
+| Component | Observed local behavior | Evidence limit |
+| --- | --- | --- |
+| C05 — cache hierarchy | Cold/warm output equality; tenant, document-grant and expiry checks; source correction invalidation | Application retrieval cache only; no complete hierarchy, tokenizer identity or provider cache claim |
+| C17 — memory and knowledge | Selected memory fork behavior, admission restrictions, provenance and retained conflicting assertions | No real-worker relaunch, backup recovery or truth adjudication |
+| C18 — bootstrap | Seeded synthetic persona and package repeatability with frozen source state and validity clock | No held-out qualification, active agreement or campaign activation demonstrated |
+| C20 — contracts and signatures | Exact-byte signature binding, challenges, approval revisions and revocation paths; altered signed term rejected | Synthetic roles and local ephemeral keys; no authenticated human consent or independent key custody |
+
+The new term-alteration probe first verifies both signatures over an approved synthetic contract, then changes only `terms.retention_days`. Both original signatures fail verification over the changed bytes. The public record contains counts and the changed field, with no private keys or signature values. Separate demo keys in one process demonstrate byte binding, not independent custody.
+
+The bootstrap probe freezes both source state and the validity clock. Repeating that fixture produces the same digest; advancing the clock by 60 seconds changes the expiry and package hash. A fixed persona seed alone does not make the entire package deterministic. This fixture has no active agreement or qualification result, so repeatability does not establish permission to activate a worker.
+
+Two earlier [setup attempts](experiments/agentdb/history/attempt-1/test-receipt.json) failed before original test collection. Their receipts and runner bytes remain, including [attempt 2](experiments/agentdb/history/attempt-2/test-receipt.json). The local write guard rejected pytest's default device log. The corrected runner directs the log into its owned directory without weakening that guard. A subsequent [39-test / 9-probe passing receipt](experiments/agentdb/history/attempt-3/test-receipt.json) is retained alongside the current ten-probe result.
+
+## Measured cleared versus primed retrieval cache
+
+The [frozen cache protocol](experiments/agentdb/cache-protocol.json) executes the original `Memory.search` against 32 synthetic documents. Eight counterbalanced pairs compare two application-cache states. The baseline clears the retrieval cache before every measured query. The candidate clears it, performs one retained priming call, then measures 16 queries. Each query uses the same text, byte budget and ten-result limit. Output comparison hashes text, source, kind and revision while excluding generated identifiers and clock fields.
+
+All **16 arms**, **256 measured queries** and **8 priming calls** are retained. No measured query failed or remained undispatched; all eight pairs were eligible and their normalized output hashes matched.
+
+| Locally observed query measure | Result |
+| --- | ---: |
+| Cleared application-cache mean | 0.834 ms |
+| Primed application-cache mean | 0.077 ms |
+| Ratio of paired means | 10.835× |
+| Paired mean difference, primed minus cleared | −0.757 ms |
+| 95% seeded percentile bootstrap interval | −0.768 to −0.746 ms |
+
+External `time.perf_counter` measures each original search call. Corpus setup, cache clearing and priming are excluded from these query durations; priming duration is recorded separately. The original internal telemetry records cold retrieval latency but omits latency samples for warm hits, so external timing is necessary for this comparison. The result is conditional on this local synthetic SQLite workload and machine. It does not measure an operating-system cold cache, end-to-end workflow overhead, model inference, hosted tokens, quality or billing.
+
+The paired bootstrap uses 4,000 iterations, confidence 0.95 and seed 1729. It reproduces exactly for the recorded eight-pair vector; wall times vary across executions. The complete query log, denominator and source bindings are in the [receipt](experiments/agentdb/test-receipt.json), with [partial acceptance coverage](experiments/agentdb/coverage.json) and a separate [native source receipt](experiments/agentdb/native/receipt.json).
+
+Reproduce separately with Node 26 or later, the approved Hypervisor dependency, the exact original Agent Database source and Python 3.12:
+
+```text
+npm run test:agentdb
+```
+
+Set `AGENTDB_SOURCE_PATH` for source location, `DOSSIER_PYTHON_PATH` for the interpreter and `DOSSIER_RUNTIME_PATH` for the dependency. The recorded library versions are pytest 9.1.1, pydantic 2.13.5, cryptography 50.0.1 and rfc8785 0.1.4. Source or dependency mismatch fails explicitly. The runner disables plugin autoload and bytecode writes, uses an allowlisted child environment, and applies a best-effort audit hook to reject network, subprocess and writes outside its temporary copy. Operating-system confinement remains unavailable. Static builds copy the frozen report and do not invoke Python or rerun the experiment.
+
+The source-proposal receipt records two native candidate contracts and three actual host proposal turns, including a clarification follow-up. The native ledger does not account for that extra host turn or prove enforcement of a host call limit. Token usage and cost remain unknown. Native schema/anchor validation and the separately executed Python tests have different scopes.
 
 ## Reading an efficiency claim
 

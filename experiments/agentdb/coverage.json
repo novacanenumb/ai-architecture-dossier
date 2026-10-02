@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "PARTIAL_ORIGINAL_SOURCE_EVIDENCE",
+  "sourceComponent": "hypervisor.agent_database",
+  "fullComponentAcceptance": false,
+  "components": [
+    {
+      "componentId": "C05",
+      "acceptanceIds": [
+        "C05-T01",
+        "C05-T02",
+        "C05-T04"
+      ],
+      "boundary": "Application retrieval cache only: source correction, tenant/agent scope, document grant/expiry checks and actual cold/warm queries. Tokenizer/model/policy hierarchy, contract-revoked cached operations and provider caches not tested."
+    },
+    {
+      "componentId": "C17",
+      "acceptanceIds": [
+        "C17-T02",
+        "C17-T03"
+      ],
+      "boundary": "Original governance forks retain selected source ancestry without keys/contracts/grants; memory assertions retain provenance. Relaunch/resume, real workers and backup restoration excluded."
+    },
+    {
+      "componentId": "C18",
+      "acceptanceIds": [
+        "C18-T01"
+      ],
+      "boundary": "Synthetic persona and bootstrap package repeatability with frozen source state, template and validity clock. Qualification exams, held-out separation and bounded campaign execution excluded."
+    },
+    {
+      "componentId": "C20",
+      "acceptanceIds": [
+        "C20-T01",
+        "C20-T02"
+      ],
+      "boundary": "Exact-byte signatures, single-term alteration, nonce/epoch/revision/approval/revocation checks using session-only synthetic signers. Independent custody, human consent, recovery and production activation excluded."
+    }
+  ],
+  "ownershipBoundary": "SOULS is deprecated in this canonical source; no separate C16 definition registry is implemented or certified by these tests.",
+  "modelMetrics": null,
+  "providerCalls": 0
+}
+

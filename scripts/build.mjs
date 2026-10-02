@@ -15,6 +15,9 @@ await copyFile(path.join(root, 'experiments/runtime/scheduler-results.json'), pa
 // Original source stays outside publication; these are frozen derived synthetic evidence.
 await copyFile(path.join(root, 'experiments/headspace/test-receipt.json'), path.join(root, 'dist/data/headspace-evidence.json'));
 await copyFile(path.join(root, 'experiments/headspace/public-trace.json'), path.join(root, 'dist/data/headspace-trace.json'));
+const agentdbReceipt=JSON.parse(await readFile(path.join(root,'experiments/agentdb/test-receipt.json'),'utf8'));
+const agentdbCoverage=JSON.parse(await readFile(path.join(root,'experiments/agentdb/coverage.json'),'utf8'));
+await writeFile(path.join(root,'dist/data/agentdb-evidence.json'),JSON.stringify({...agentdbReceipt,coverage:agentdbCoverage},null,2)+'\n');
 try { await readFile(path.join(root, 'dist/data/publication.json')); }
 catch (error) { if (error.code !== 'ENOENT') throw error; await writeFile(path.join(root, 'dist/data/publication.json'), JSON.stringify({ author: 'novacanenumb', repositoryUrl: null, siteUrl: null, profileLinkStatus: 'UNAVAILABLE' }, null, 2) + '\n'); }
 run('scripts/benchmark.mjs');

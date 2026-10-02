@@ -1,0 +1,106 @@
+from __future__ import annotations
+import json, time
+from pathlib import Path
+from unittest.mock import patch
+from orpheus_agents.storage import Store, Fault, encode, digest
+from orpheus_agents.memory import Memory, Caller
+from orpheus_agents.bootstrap import Bootstrap, persona
+
+def run_probe(root:Path):
+    protocol=json.loads((root/'cache-protocol.json').read_text(encoding='utf-8'))
+    store=Store(root/'probe-state'); memory=Memory(store)
+    owner=Caller('tenant1','operator'); other=Caller('tenant2','operator')
+    def agent(agent_id,tenant):
+        with store.tx() as db:
+            db.execute("INSERT INTO agents(id,owner,username,role,route,state,created,profile,seed,fingerprint,requested_grants,grants) VALUES(?,?,?,?,?,'ACTIVE',?,?,?,?,?,?)",(agent_id,tenant,agent_id,'general','terra',1.0,'{}',1729,agent_id,'[]','[]'))
+        return store.one('SELECT * FROM agents WHERE id=?',(agent_id,))
+    first=agent('tenant1-agent','tenant1'); peer=agent('tenant1-peer','tenant1'); second=agent('tenant2-agent','tenant2')
+    def admit(text,key,source='synthetic:probe',agent_id=first['id'],caller=owner,**kwargs):
+        return memory.ingest(caller,agent_id,text,'observation',source,key,**kwargs)
+    def search(query,agent_id=first['id'],caller=owner):return memory.search(caller,agent_id,query,budget=6000,limit=10)
+    def clear():
+        with store.tx() as db:db.execute('DELETE FROM retrieval_cache')
+    def stats():return {'queries':memory.stats['queries'],'hits':memory.stats['cache_hits'],'latencies':len(memory.stats['latencies_ms'])}
+    def result_hash(rows):
+        return digest(encode([{k:r[k] for k in ('text','source','kind','revision')} for r in rows]))
+    def safe_error(error):return {'type':type(error).__name__,'code':getattr(error,'code',None)}
+    cases=[]
+    def case(name,ids,function):
+        try:
+            detail=function();passed=detail.pop('passed');cases.append({'name':name,'acceptanceIds':ids,'status':'PASSED' if passed else 'FAILED','detail':detail})
+        except Exception as error:cases.append({'name':name,'acceptanceIds':ids,'status':'ERROR','error':safe_error(error)})
+    def cold_warm():
+        admit('cacheexample commonneedle','cacheexample');before=stats();cold=search('cacheexample');middle=stats();warm=search('cacheexample');after=stats()
+        return {'passed':cold==warm and after['hits']-middle['hits']==1,'resultEqual':cold==warm,'queries':after['queries']-before['queries'],'warmHits':after['hits']-middle['hits'],'coldInternalLatencySamples':middle['latencies']-before['latencies'],'warmInternalLatencySamples':after['latencies']-middle['latencies']}
+    case('Original cold and warm results equal; original warm latency telemetry absent',['C05-T04'],cold_warm)
+    def tenants():
+        admit('tenantonly scopecheck','tenantcheck');a=search('scopecheck');b=search('scopecheck',second['id'],other)
+        return {'passed':len(a)==1 and b==[],'originResults':len(a),'otherTenantResults':len(b),'identicalQuery':True}
+    case('Identical query cannot cross tenant scope',['C05-T02'],tenants)
+    def correction():
+        old=admit('fictionstate old','correctionold');search('fictionstate');before=store.meta('retrieval_epoch');new=admit('fictionstate revised','correctionnew',corrects=old['id']);rows=search('fictionstate')
+        oldrow=store.one('SELECT deleted FROM documents WHERE id=?',(old['id'],));newmeta=store.one('SELECT corrects FROM memory_metadata WHERE document_id=?',(new['id'],))
+        changed=before!=store.meta('retrieval_epoch');visible=[r['text'] for r in rows]
+        return {'passed':changed and oldrow['deleted']==1 and newmeta['corrects']==old['id'] and visible==['fictionstate revised'],'epochChanged':changed,'oldTombstoned':oldrow['deleted']==1,'correctionSourceRetained':newmeta['corrects']==old['id'],'oldVisible':'fictionstate old' in visible}
+    case('Source correction invalidates application cache and preserves predecessor reference',['C05-T01','C17-T03'],correction)
+    def revoke():
+        document=admit('shareprobe authorized','shareprobe');before=search('shareprobe',peer['id']);memory.grant(owner,first['id'],document['id'],peer['id']);cold=search('shareprobe',peer['id']);warm=search('shareprobe',peer['id']);memory.revoke(owner,peer['id'],document['id']);after=search('shareprobe',peer['id'])
+        return {'passed':before==[] and len(cold)==1 and cold==warm and after==[],'before':len(before),'granted':len(cold),'warmEqual':warm==cold,'afterRevoke':len(after),'boundary':'document grant revocation; contract revocation not tested'}
+    case('Revoked document grant cannot reuse warmed retrieval',['C05-T02'],revoke)
+    def expiry():
+        document=admit('expiryprobe fictional','expiryprobe');search('expiryprobe')
+        with store.tx() as db:db.execute('UPDATE memory_metadata SET expires=0 WHERE document_id=?',(document['id'],))
+        try:search('expiryprobe');return {'passed':False,'rejected':False}
+        except Fault as error:return {'passed':error.code=='NOT_FOUND','rejected':True,'code':error.code,'cachedRowReauthorized':True}
+    case('Every warm reuse rechecks document expiry',['C05-T02'],expiry)
+    def promotion():
+        outcomes=[];worker=Caller('tenant1','agent',first['id'])
+        for kind in ('sourced_fact','validated_lesson'):
+            try:memory.ingest(worker,first['id'],'synthetic worker assertion',kind,'synthetic:worker',kind);outcomes.append({'kind':kind,'rejected':False})
+            except Fault as error:outcomes.append({'kind':kind,'rejected':error.code=='ADMISSION_DENIED','code':error.code})
+        return {'passed':all(o['rejected'] for o in outcomes),'attempts':outcomes,'boundary':'memory admission; no SoulDefinition or human identity claim'}
+    case('Worker cannot self-promote assertions into sourced or validated knowledge',['C17-T03'],promotion)
+    def conflicts():
+        admit('fictional beacon blue','assertiona','synthetic:assertion-a');admit('fictional beacon not blue','assertionb','synthetic:assertion-b');rows=search('beacon');sources=sorted(r['source'] for r in rows);timestamped=all(isinstance(r['created'],(int,float)) for r in rows)
+        return {'passed':len(rows)==2 and sources==['synthetic:assertion-a','synthetic:assertion-b'] and timestamped,'retained':len(rows),'sourceReferences':sources,'timestampsPresent':timestamped,'truthAdjudicated':False}
+    case('Conflicting fictional assertions retain sources and timestamps',['C17-T03'],conflicts)
+    def personas():
+        a=persona(1729,0);b=persona(1729,0);return {'passed':a==b,'sameSeedSameProfile':a==b,'profileHash':digest(encode(a)),'source':'authored synthetic fixture'}
+    case('Synthetic persona generation repeats for frozen seed',['C18-T01'],personas)
+    def bootstrap():
+        compiler=Bootstrap(store)
+        with patch('orpheus_agents.bootstrap.time.time',return_value=1790899200.0):a=compiler.package(first,0);b=compiler.package(first,0)
+        with patch('orpheus_agents.bootstrap.time.time',return_value=1790899260.0):c=compiler.package(first,0)
+        equal=a==b; expiry_changed=c['expiry']-a['expiry']==60
+        return {'passed':equal and expiry_changed and digest(encode(a))!=digest(encode(c)),'frozenClockRepeatable':equal,'clockChangeSeconds':60,'expiryChangeSeconds':c['expiry']-a['expiry'],'frozenPackageHash':digest(encode(a)),'templateRevision':a['template_revision'],'profileRevision':a['profile_revision'],'activeAgreementPresent':a['contract'] is not None,'qualificationCount':len(a['qualification']),'boundary':'same source state and clock; no qualification or activation demonstrated'}
+    case('Bootstrap digest repeats only with frozen source state and validity clock',['C18-T01'],bootstrap)
+    benchmark_agent=agent('benchmark-agent','tenant1')
+    for index in range(protocol['syntheticDocuments']):admit(f'synthetic document {index:02d} commonneedle',f'benchmark-{index:02d}',f'synthetic:benchmark:{index:02d}',benchmark_agent['id'])
+    attempts=[]
+    def arm(pair_index,name,order):
+        queries=[];primes=[];before=stats();error=None
+        def query():return memory.search(owner,benchmark_agent['id'],protocol['query'],budget=protocol['budgetBytes'],limit=protocol['resultLimit'])
+        try:
+            if name=='candidate':
+                clear();begin=time.perf_counter();rows=query();primes.append({'status':'fulfilled','durationMs':(time.perf_counter()-begin)*1000,'resultHash':result_hash(rows),'rowCount':len(rows)})
+            for index in range(protocol['queriesPerArm']):
+                if name=='baseline':clear()
+                begin=time.perf_counter()
+                try:
+                    rows=query();queries.append({'queryIndex':index,'status':'fulfilled','durationMs':(time.perf_counter()-begin)*1000,'rowCount':len(rows),'resultHash':result_hash(rows)})
+                except Exception as failure:queries.append({'queryIndex':index,'status':'failed','durationMs':(time.perf_counter()-begin)*1000,'error':safe_error(failure),'resultHash':None,'rowCount':None})
+        except Exception as failure:error=safe_error(failure)
+        after=stats();fulfilled=[q for q in queries if q['status']=='fulfilled'];hashes={q['resultHash'] for q in fulfilled}
+        return {'pairIndex':pair_index,'arm':name,'orderInPair':order,'status':'fulfilled' if error is None and len(fulfilled)==protocol['queriesPerArm'] else 'failed','queries':queries,'primingCalls':primes,'requestedQueries':protocol['queriesPerArm'],'recordedQueries':len(queries),'failedQueries':len(queries)-len(fulfilled),'notDispatchedQueries':protocol['queriesPerArm']-len(queries),'cacheHitsDelta':after['hits']-before['hits'],'internalLatencySamplesDelta':after['latencies']-before['latencies'],'resultHash':next(iter(hashes)) if len(hashes)==1 else None,'meanQueryMs':sum(q['durationMs'] for q in fulfilled)/len(fulfilled) if fulfilled else None,'error':error,'providerCalls':0,'modelTokens':None,'billedCost':None,'modelQuality':None}
+    for index in range(protocol['pairs']):
+        order=('baseline','candidate') if index%2==0 else ('candidate','baseline')
+        for position,name in enumerate(order):attempts.append(arm(index,name,position))
+    pairs=[]
+    for index in range(protocol['pairs']):
+        baseline=next(a for a in attempts if a['pairIndex']==index and a['arm']=='baseline');candidate=next(a for a in attempts if a['pairIndex']==index and a['arm']=='candidate');equal=baseline['resultHash'] is not None and baseline['resultHash']==candidate['resultHash'];eligible=baseline['status']==candidate['status']=='fulfilled' and equal
+        pairs.append({'pairIndex':index,'eligible':eligible,'outputEqual':equal,'exclusionReason':None if eligible else 'FAILED_ARM_OR_OUTPUT_MISMATCH','baselineMeanMs':baseline['meanQueryMs'],'candidateMeanMs':candidate['meanQueryMs'],'candidateMinusBaselineMs':candidate['meanQueryMs']-baseline['meanQueryMs'] if eligible else None})
+    eligible=[p for p in pairs if p['eligible']];bm=sum(p['baselineMeanMs'] for p in eligible)/len(eligible) if eligible else None;cm=sum(p['candidateMeanMs'] for p in eligible)/len(eligible) if eligible else None
+    benchmark={'protocol':protocol,'attempts':attempts,'pairs':pairs,'denominator':{'attempts':len(attempts),'failedAttempts':sum(a['status']=='failed' for a in attempts),'pairs':len(pairs),'eligiblePairs':len(eligible),'excludedPairs':len(pairs)-len(eligible),'requestedMeasuredQueries':protocol['pairs']*2*protocol['queriesPerArm'],'recordedMeasuredQueries':sum(len(a['queries']) for a in attempts),'failedMeasuredQueries':sum(a['failedQueries'] for a in attempts),'notDispatchedQueries':sum(a['notDispatchedQueries'] for a in attempts),'primingCalls':sum(len(a['primingCalls']) for a in attempts)},'measured':{'baselineMeanQueryMs':bm,'candidateMeanQueryMs':cm,'ratioOfPairedMeans':bm/cm if bm is not None and cm is not None and cm>0 else None},'telemetry':{'provenance':'locally_measured_external_perf_counter','timingsDeterministic':False,'originalWarmLatencyTelemetryAbsent':True,'setupInvalidationPrimingExcludedFromQueryTiming':True},'modelMeasurements':{'providerCalls':0,'tokens':None,'billedCost':None,'quality':None,'hostedLatencyMs':None}}
+    store.db.close()
+    failed=sum(c['status']!='PASSED' for c in cases)
+    return {'schemaVersion':1,'classification':'actual_original_agentdb_offline_synthetic_probes','cases':cases,'summary':{'total':len(cases),'passed':len(cases)-failed,'failed':failed},'benchmark':benchmark,'limits':{'fullSoulsRegistry':False,'heldoutQualification':False,'contractRevocationThroughMemory':False,'backupRecovery':False,'realWorkers':False,'providerCalls':0,'independentKeyCustody':False}}

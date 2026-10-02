@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "sourcePackage": {
+    "name": "orpheus-agent-dashboard",
+    "version": "0.1.0",
+    "canonicalComponent": "hypervisor.agent_database",
+    "sourceRedistributed": false
+  },
+  "files": [
+    {
+      "bytes": 79,
+      "path": "orpheus_agents/__init__.py",
+      "hash": "sha256:0b243a3266ad08f712aa9bae6d69e02817c1a7c5ff86d90a2be342c2ec18a152"
+    },
+    {
+      "bytes": 14518,
+      "path": "orpheus_agents/storage.py",
+      "hash": "sha256:8982d4213f526671dbf4e0a0f0eb8bb9beb3ca18cf376531410e8c050ed62b01"
+    },
+    {
+      "bytes": 11170,
+      "path": "orpheus_agents/memory.py",
+      "hash": "sha256:6855690caa3146382cd5514bb6b6d318d30d8b9bb36d2b92e7e7811a8f201bad"
+    },
+    {
+      "bytes": 16105,
+      "path": "orpheus_agents/collections.py",
+      "hash": "sha256:2d710bcc964e8c5975a8f8876dce853cc31f45598debb2b6d55009ae1517fc94"
+    },
+    {
+      "bytes": 17391,
+      "path": "orpheus_agents/governance.py",
+      "hash": "sha256:50b8696e7401a23e5e55e961843dca26a9ac5e1edc7e7d3bf473626f57da9f34"
+    },
+    {
+      "bytes": 3712,
+      "path": "orpheus_agents/schemas.py",
+      "hash": "sha256:90118be89ea86147f32bb4cfa7269144d0e2813b330fb5d7f921bed3aa30694d"
+    },
+    {
+      "bytes": 44596,
+      "path": "orpheus_agents/signing.py",
+      "hash": "sha256:dcde6d68432ea8d862f6622e2fb8136f12649230385f0e905ef0499aaea27e34"
+    },
+    {
+      "bytes": 8378,
+      "path": "orpheus_agents/bootstrap.py",
+      "hash": "sha256:dbd974a182e374248872850abae854ec22dcde9030c2bb4a7ab8ff006f64f4e4"
+    },
+    {
+      "bytes": 7287,
+      "path": "orpheus_agents/migrations/001_initial.sql",
+      "hash": "sha256:5a3268584574d80b8494bc5199d19cc178964a5710756239b720569e920f78aa"
+    },
+    {
+      "bytes": 977,
+      "path": "orpheus_agents/migrations/002_contracts.sql",
+      "hash": "sha256:85efc00e5a041363957b5d0389dde4704d809605c21e3494e7538ee0d90dbee1"
+    },
+    {
+      "bytes": 1190,
+      "path": "orpheus_agents/migrations/003_services.sql",
+      "hash": "sha256:b2c4fbf7bac2e1d5f5dea4df8db11eb78c2bbaab3fbfe8a9cdec861be998b8fd"
+    },
+    {
+      "bytes": 179,
+      "path": "orpheus_agents/migrations/004_governance.sql",
+      "hash": "sha256:85aa12752486f578cd9ea3424fd4fbd8a5fba9c1d6f7c4880dbded5c8ef33dfe"
+    },
+    {
+      "bytes": 407,
+      "path": "orpheus_agents/migrations/006_contract_approvals.sql",
+      "hash": "sha256:acaadfeae07edff1e874a7edb06d37b9f34407f3b7a7da8b7a2c5e575ffeb0db"
+    },
+    {
+      "bytes": 1518,
+      "path": "orpheus_agents/migrations/007_collections.sql",
+      "hash": "sha256:ebd8d9e3d0eba39ccb68ccda744a7ca3af862907a1edfbbf4420eac28ad1350a"
+    },
+    {
+      "bytes": 728,
+      "path": "orpheus_agents/migrations/008_memory_gc.sql",
+      "hash": "sha256:022dd2460025943fefda54339ed3d5789045ef0e37cd802fec239bc9e50438e6"
+    },
+    {
+      "bytes": 5862,
+      "path": "tests/test_collections.py",
+      "hash": "sha256:bb7087df803befd7922382341876881ff8ed22b218c34a818c61d64c46be5fd1"
+    },
+    {
+      "bytes": 9246,
+      "path": "tests/test_governance.py",
+      "hash": "sha256:75fe9dcaf2b4b72537e87a1cfc70ebc7e383c72e22bad1921bc4aafb686a0eac"
+    },
+    {
+      "bytes": 18308,
+      "path": "tests/test_signing.py",
+      "hash": "sha256:66918bc2013e77e776ed89e9daae35c96f75cb510573e330d4845b184cf3c0a3"
+    },
+    {
+      "bytes": 734,
+      "path": "pyproject.toml",
+      "hash": "sha256:9729faf12a90d77aa83c5da3e8999ad06314d518ea954a657be3dafb40676125"
+    }
+  ]
+}
+
