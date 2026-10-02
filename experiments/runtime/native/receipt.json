@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "24d80c9e-e8c5-4def-9c5e-d910292f1e58",
+  "runId": "run-e86d1703-38a4-4b57-8f22-e67d19a3d20f",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "artifactHash": "sha256:295ef3175219b875d1b6b457ca1273f88fef0f2fef73ddd1faebcbe6cd5adfc4",
+  "manifestHash": "sha256:450a49225d3a4a697da325b61da1eaddfb7dba60a04228ada599f32151950193",
+  "sourceTextHash": "sha256:e6618c7d9238a6c3206b20618d9df429d0db9b1333f3544da44317c75fe0d3e9",
+  "sourceCharacters": 24697,
+  "validationScope": "Two actual Sol source proposals, independently corrected and consolidated by parent against observed exact runtime APIs; nonempty/schema/anchor/GTFL native source validation. Host separately verified all 23 runtime probes. General semantic validation unavailable.",
+  "hostTests": 23,
+  "hostFailed": 0,
+  "hostSkipped": 0,
+  "usage": null,
+  "cost": null
+}

@@ -36,20 +36,56 @@ const native=await json('experiments/native/receipt.json'), text=await readFile(
 assert.equal(hash(JSON.stringify(text.slice(0,native.sourceCharacters))),native.sourceTextHash.replace('sha256:',''));
 assert.equal(native.completionState,'REPORTED'); assert.equal(native.persisted,false);
 const nativeSourceMatches=[], hostSourceChanges=[];
+const integration=await json('experiments/runtime/integration-receipt.json');
 for(const match of text.matchAll(/```\n([\s\S]*?)\n```/g)) {
   const node=JSON.parse(match[1]); const actual=await readFile(path.join(root,node.path),'utf8');
   if(actual===node.content) nativeSourceMatches.push(node.path);
-  else { assert.equal(node.path,'scripts/build-catalog.mjs','Unexpected post-validation source change'); hostSourceChanges.push({path:node.path,reason:'Public-registry rebuild fallback added and independently checked by host.'}); }
+  else {
+    assert.ok(['scripts/build-catalog.mjs','dist/app.mjs'].includes(node.path),'Unexpected post-validation source change');
+    const change=integration.hostSourceChanges.find(c=>c.path===node.path);
+    assert.ok(change,'Post-validation change has no retained integration record');
+    assert.equal(hash(node.content),change.previousSourceHash);
+    assert.equal(hash(actual),change.currentSourceHash);
+    hostSourceChanges.push({path:node.path,reason:change.reason});
+  }
 }
-assert.equal(nativeSourceMatches.length,7); assert.equal(hostSourceChanges.length,1);
+assert.equal(nativeSourceMatches.length,6); assert.equal(hostSourceChanges.length,2);
+const runtimeReceipt=await json('experiments/runtime/test-receipt.json');
+assert.equal(runtimeReceipt.status,'PASSED'); assert.equal(runtimeReceipt.passed,23); assert.equal(runtimeReceipt.failed,0); assert.equal(runtimeReceipt.skipped,0); assert.equal(runtimeReceipt.tests.length,runtimeReceipt.total);
+assert.equal(runtimeReceipt.dependency.version,'2.1.0'); assert.equal(runtimeReceipt.dependency.verifiedFiles,85); assert.equal(runtimeReceipt.provenance.providerCalls,0);
+assert.equal(runtimeReceipt.dependency.manifestHash,'sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c');
+assert.equal(runtimeReceipt.dependency.contentRoot,'sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1');
+for(const [file,digest] of Object.entries(runtimeReceipt.sourceHashes)) assert.equal('sha256:'+hash(await readFile(path.join(root,file))),digest,'Stale supplied-runtime receipt: '+file);
+const runtimeCoverage=await json('experiments/runtime/coverage.json');
+assert.equal(runtimeCoverage.components.length,7);
+for(const item of runtimeCoverage.components) {
+  const component=catalog.components.find(c=>c.id===item.componentId); assert.ok(component);
+  assert.ok(item.acceptanceIds.every(id=>component.acceptance.some(a=>a.id===id)));
+  assert.ok(runtimeReceipt.tests.some(t=>t.status==='PASSED'&&t.componentIds.includes(item.componentId)));
+}
+assert.deepEqual(await json('dist/data/runtime-evidence.json'),{...runtimeReceipt,coverage:runtimeCoverage});
+const runtimeNative=await json('experiments/runtime/native/receipt.json'), runtimeText=await readFile(path.join(root,'experiments/runtime/native/validated-source.txt'),'utf8');
+assert.equal(hash(JSON.stringify(runtimeText.slice(0,runtimeNative.sourceCharacters))),runtimeNative.sourceTextHash.replace('sha256:',''));
+assert.equal(runtimeNative.completionState,'REPORTED'); assert.equal(runtimeNative.persisted,false);
+let runtimeSourceMatches=0;
+for(const match of runtimeText.matchAll(/```\n([\s\S]*?)\n```/g)) {
+  const node=JSON.parse(match[1]); assert.ok(runtimeCoverage.testFiles.includes(node.path));
+  assert.equal(await readFile(path.join(root,node.path),'utf8'),node.content); runtimeSourceMatches++;
+}
+assert.equal(runtimeSourceMatches,2);
+assert.equal((await json('experiments/runtime/native/manifest.json')).final_artifact_hash,runtimeNative.artifactHash);
+assert.equal((await json('experiments/runtime/native/performance.json')).gtfl.collapse_validity,'VALID');
 const readmeReceipt=await json('experiments/native/readme-receipt.json');
 const readmeArtifact=await readFile(path.join(root,'experiments/native/readme-validated-source.txt'),'utf8');
 assert.equal(hash(JSON.stringify(readmeArtifact.slice(0,readmeReceipt.sourceCharacters))),readmeReceipt.sourceTextHash.replace('sha256:',''));
 const readmeNode=JSON.parse(readmeArtifact.match(/^```\n([\s\S]*?)\n```/)?.[1] ?? 'null');
 assert.equal(readmeNode.path,'README.md');
-assert.equal(await readFile(path.join(root,'README.md'),'utf8'),readmeNode.content,'README differs from retained proposal');
-for(const match of readmeNode.content.matchAll(/\]\(([^)]+)\)/g)) if(!match[1].startsWith('http')&&!match[1].startsWith('#')) await lstat(path.join(root,match[1]));
-const codeFiles=[...(await tree('packages')), ...(await tree('scripts')), ...(await tree('tests')), ...(await tree('dist'))].filter(f=>f.endsWith('.mjs'));
+const currentReadme=await readFile(path.join(root,'README.md'),'utf8');
+assert.equal(hash(readmeNode.content),integration.readmeChange.previousSourceHash,'Retained README precondition differs');
+assert.equal(hash(currentReadme),integration.readmeChange.currentSourceHash,'README differs from checked host evidence addition');
+assert.ok(currentReadme.includes(readmeNode.content.split('## Next experiments and contributions')[0]),'Original README content was not preserved');
+for(const match of currentReadme.matchAll(/\]\(([^)]+)\)/g)) if(!match[1].startsWith('http')&&!match[1].startsWith('#')) await lstat(path.join(root,match[1]));
+const codeFiles=[...(await tree('packages')), ...(await tree('scripts')), ...(await tree('tests')), ...(await tree('experiments/runtime/tests')), ...(await tree('dist'))].filter(f=>f.endsWith('.mjs'));
 for(const file of codeFiles) { const result=spawnSync(process.execPath,['--check',file],{cwd:root,encoding:'utf8'}); assert.equal(result.status,0,file+' '+result.stderr); }
 const publicFiles=await tree('dist');
 const forbiddenNames=/(?:^|\/)(?:\.env(?:\..*)?|MASTER_SPEC\.md|CODEX_START\.md|hypervisor\.dependency\.json|HYPERVISOR-2\.1-STABLE|.*\.tar(?:\.gz)?|credential.*)$/i;
@@ -57,6 +93,6 @@ const credentialPattern=/(?:sk-proj-[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9]{20,
 for(const file of publicFiles) { assert.ok(!forbiddenNames.test(file),file); assert.ok(!credentialPattern.test(await readFile(path.join(root,file),'utf8')),'Credential pattern found: '+file); }
 const manifest=async()=>Object.fromEntries(await Promise.all((await tree('dist')).map(async f=>[f,hash(await readFile(path.join(root,f)))])));
 const before=await manifest(); const build=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'}); assert.equal(build.status,0,build.stdout+build.stderr); const after=await manifest(); assert.deepEqual(after,before,'Static rebuild differs');
-const report={schemaVersion:1,status:'PASSED',tests:receipt.passed,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
+const report={schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
 await writeFile(path.join(root,'experiments/release-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({...report,publicFileHashes:undefined}));

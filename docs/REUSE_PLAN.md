@@ -17,4 +17,6 @@ ai-architecture-dossier/
 
 No historical source repository is copied or rewritten. Use explicit interfaces rather than introducing parallel Souls, memory, authority or database owners. All unimplemented component mechanisms retain unavailable evidence. The release cannot claim complete implementation of all 28 components.
 
+Reuse now includes optional direct imports of the approved supplied 2.1.0 dependency from `experiments/runtime/tests/runtime-helper.mjs`. These imports happen only after verifying all manifest members; the public checkout retains probes and receipts, not runtime source. The site displays this evidence separately from the browser reference implementation. See `docs/RUNTIME_EVIDENCE.md` and `npm run test:runtime`.
+
 Publication authorization comes from the current human request. The attached documents' preparation-only wording is a source boundary, not a cancellation of that request. Provider calls and model training remain outside this implementation's authority and budget.

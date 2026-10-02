@@ -172,6 +172,16 @@ The native source-proposal run reached ephemeral `REPORTED` completion with thre
 
 Finite secret-pattern checks are not a comprehensive security audit. The task-scoped `HYPERVISOR_BYPASS_APPROVED` exception covers Git initialization, commits, remote setup and pushes; those actions are not Hypervisor Git-handler validated mutations. It does not authorize paid provider calls or redistribution of the supplied runtime.
 
+## Supplied Hypervisor runtime probes
+
+The supplied **Hypervisor 2.1.0 implementation** now has a separate suite of **23 executed behavioral probes**, all passing with zero failures or skips. These establish partial local mechanism evidence for C02, C03, C06, C09, C19, C21 and C27. They complement the 24 public reference tests and do not replace the full component acceptance contracts.
+
+The probes exercise exact archive hashes, header reconstruction, pinned overflow, deterministic retrieval, anchor dependency gates, protected section revisions, authority attenuation, evidence contradictions and complete usage arithmetic. Their runner checks the approved dependency manifest, content root, complete file set and all 85 member hashes before importing runtime code. The separately licensed runtime remains outside this repository and the deployment.
+
+Run `npm run test:runtime` with Node 26 or later and the approved dependency at `../HYPERVISOR-2.1-STABLE`; set `DOSSIER_RUNTIME_PATH` when it is elsewhere. This command fails explicitly if the package is absent or differs from the approved source. The regular reference tests and public site still work without it.
+
+Read the [runtime evidence guide](docs/RUNTIME_EVIDENCE.md), [executed probe receipt](experiments/runtime/test-receipt.json), [partial acceptance map](experiments/runtime/coverage.json), and [native source receipt](experiments/runtime/native/receipt.json). These tests establish implemented local behavior using synthetic inputs; hosted model quality, token consumption, billing and inference latency remain unmeasured.
+
 ## Next experiments and contributions
 
 Further evidence requires the relevant actual implementation, a frozen corpus, declared model/backend revisions, complete call accounting, a quality rubric and matched baseline/candidate runs. Native decoder, training and language-profile experiments require their own implementations and validators. Improvements should be reported only after the corresponding experiment runs, with failed attempts and unknown measurements preserved.

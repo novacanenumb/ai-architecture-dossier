@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "kind": "supplied-runtime-behavioral-evidence",
+  "status": "PASSED",
+  "command": "npm run test:runtime",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "exitCode": 0,
+  "error": null,
+  "passed": 23,
+  "failed": 0,
+  "skipped": 0,
+  "total": 23,
+  "tests": [
+    {
+      "name": "C03 exact source IDs, duplicate rejection, immutable hashes and missing-source failure",
+      "status": "PASSED",
+      "componentIds": [
+        "C03"
+      ]
+    },
+    {
+      "name": "C02 header reconstruction preserves exact approval sources, contradictions and pinned overflow",
+      "status": "PASSED",
+      "componentIds": [
+        "C02"
+      ]
+    },
+    {
+      "name": "C02 deterministic lexical retrieval validates external similarity values",
+      "status": "PASSED",
+      "componentIds": [
+        "C02"
+      ]
+    },
+    {
+      "name": "C02 materialization keeps mandatory sources and fails when pins exceed the window",
+      "status": "PASSED",
+      "componentIds": [
+        "C02"
+      ]
+    },
+    {
+      "name": "C02 synthetic bridges cannot satisfy evidence or exceed the declared fraction",
+      "status": "PASSED",
+      "componentIds": [
+        "C02"
+      ]
+    },
+    {
+      "name": "C02 pressure thresholds preserve the pinned overflow priority",
+      "status": "PASSED",
+      "componentIds": [
+        "C02"
+      ]
+    },
+    {
+      "name": "C06 sealed anchor graphs preserve requirements, deterministic order and authority ceilings",
+      "status": "PASSED",
+      "componentIds": [
+        "C06"
+      ]
+    },
+    {
+      "name": "C06 lifecycle rejects dependency dispatch and requires evidence gates before commit",
+      "status": "PASSED",
+      "componentIds": [
+        "C06"
+      ]
+    },
+    {
+      "name": "C06 graph revisions preserve immutable request and exact ancestry preconditions",
+      "status": "PASSED",
+      "componentIds": [
+        "C06"
+      ]
+    },
+    {
+      "name": "C09 section validators enforce anchor binding, required claims and mutability",
+      "status": "PASSED",
+      "componentIds": [
+        "C09"
+      ]
+    },
+    {
+      "name": "C09 reviewed patches apply without mutation while stale and self approvals fail",
+      "status": "PASSED",
+      "componentIds": [
+        "C09"
+      ]
+    },
+    {
+      "name": "C09 exact and locked nodes remain protected despite independent review",
+      "status": "PASSED",
+      "componentIds": [
+        "C09"
+      ]
+    },
+    {
+      "name": "C21 exact line receipts support an exact claim without claiming semantic entailment",
+      "status": "PASSED",
+      "componentIds": [
+        "C21"
+      ]
+    },
+    {
+      "name": "C21 duplicate source content is not independent evidence and contradictions stay disputed",
+      "status": "PASSED",
+      "componentIds": [
+        "C21"
+      ]
+    },
+    {
+      "name": "C21 synthetic sources, stale hashes, invalid line ranges and absent exact facts are rejected",
+      "status": "PASSED",
+      "componentIds": [
+        "C21"
+      ]
+    },
+    {
+      "name": "C21 context-only receipts and mismatched expected values do not resolve material claims",
+      "status": "PASSED",
+      "componentIds": [
+        "C21"
+      ]
+    },
+    {
+      "name": "C19 authority envelopes require strict attenuation and preserve expiry ceilings",
+      "status": "PASSED",
+      "componentIds": [
+        "C19"
+      ]
+    },
+    {
+      "name": "C19 pure authorized tools receive frozen defensive inputs and return a bound receipt",
+      "status": "PASSED",
+      "componentIds": [
+        "C19"
+      ]
+    },
+    {
+      "name": "C19 missing capabilities, disabled effects and cancellation never execute a tool",
+      "status": "PASSED",
+      "componentIds": [
+        "C19"
+      ]
+    },
+    {
+      "name": "C27 ledger totals keep cache subsets separate and reject duplicate calls",
+      "status": "PASSED",
+      "componentIds": [
+        "C27"
+      ]
+    },
+    {
+      "name": "C27 impossible usage, provenance, timing and cross-run values fail validation",
+      "status": "PASSED",
+      "componentIds": [
+        "C27"
+      ]
+    },
+    {
+      "name": "C27 failed retries remain in totals and missing measurements remain null",
+      "status": "PASSED",
+      "componentIds": [
+        "C27"
+      ]
+    },
+    {
+      "name": "C27 fixture worker intervals yield arithmetic only with a complete consistent DAG",
+      "status": "PASSED",
+      "componentIds": [
+        "C27"
+      ]
+    }
+  ],
+  "dependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1",
+    "verifiedFiles": 85
+  },
+  "sourceHashes": {
+    "experiments/runtime/tests/context-generation.test.mjs": "sha256:c88f9c0bc953c6fbee443092ac5645eec22308aebe5a65decca9c938a746e1cc",
+    "experiments/runtime/tests/evidence-performance.test.mjs": "sha256:38aabcfc633a3ff5a8b3d025719f3d72684e05810bd243863946526b443df659",
+    "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df",
+    "scripts/test-supplied-runtime.mjs": "sha256:f1a5f1dd9aa74dceba8b4a4aaa8743fe37d37a692c1c015f35f5f5c09a9ec3f0"
+  },
+  "inspectedRuntimeSources": {
+    "plugins/hypervisor-standalone/runtime/02_CONTEXT_PLANE/context.mjs": "sha256:c9fdea2990e993b86e22731bc027bb7481054c9741fef3b17d00e6360b93f0fe",
+    "plugins/hypervisor-standalone/runtime/03_GENERATION_PLANE/generation.mjs": "sha256:5129843112715230ee31ed71224ff522a3eea3bec71456bd89900702403e2081",
+    "plugins/hypervisor-standalone/runtime/05_TOOL_AND_AUTHORITY_PLANE/broker.mjs": "sha256:3e1fecc37a452069a3225db0a1db556c719a1a5bcd7b45f318c4360acf28acc2",
+    "plugins/hypervisor-standalone/runtime/06_EVIDENCE_PLANE/evidence.mjs": "sha256:4d7a0e5ab1908524939ff769ab81e2c30e2ebd0d06a74b4ca1ba00519befe42b",
+    "plugins/hypervisor-standalone/runtime/07_PERFORMANCE_PLANE/performance.mjs": "sha256:766e19a2e940069717bbe2f3627861dfa81a199bf266beb5d5f3ada283436157",
+    "plugins/hypervisor-standalone/runtime/shared/core.mjs": "sha256:51461380ad25350db8a1db1c75c104d480c4912936749ff4011d2958afe00f0d"
+  },
+  "provenance": {
+    "measurements": "locally executed behavioral probes with public synthetic inputs",
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "hostedDeterminism": "not established",
+    "sourceRedistributed": false
+  },
+  "acceptanceScope": "Partial component mechanism evidence; not completion of all acceptance requirements or a standalone-model comparison."
+}

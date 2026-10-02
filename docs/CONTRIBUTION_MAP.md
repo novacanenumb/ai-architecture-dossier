@@ -6,4 +6,6 @@ This implementation adds an AI-assisted reference demonstration and public prese
 
 Application orchestration does not change hosted model weights or internal experts. API anchor-bounded generation is distinct from native bidirectional decoding. Designed dialect preferences are distinct from provider probabilities. Native RTL360, rotor/lattice training and longitudinal cognitive hypotheses remain research until executable native evidence exists.
 
-Authorship and license await the user's publication configuration. GitHub account identity was read from the connected account as novacanenumb; no legal name is inferred.
+The supplied Hypervisor 2.1.0 modules are now linked to 23 executed probes across seven components. This records observed local behavior from an existing implementation separately from the new public reference slice. The original runtime is not relicensed or redistributed. Source hashes, probe names, acceptance boundaries and native source receipts are retained in `experiments/runtime/`.
+
+The author is novacanenumb, as explicitly selected by the user. The public dossier and original reference/probe additions use the custom Novacanenumb Open Design License 1.0. No legal name, OSI approval or licence grant over separately supplied code is inferred.

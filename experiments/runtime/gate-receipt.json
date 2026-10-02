@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "status": "PASSED",
+  "checks": [
+    {
+      "case": "unapproved manifest",
+      "exitCode": 1,
+      "expectedDenialObserved": true
+    },
+    {
+      "case": "missing dependency",
+      "exitCode": 1,
+      "expectedDenialObserved": true
+    },
+    {
+      "case": "unsafe import path",
+      "exitCode": 1,
+      "expectedDenialObserved": true
+    }
+  ],
+  "sourceImportOccurred": false,
+  "scope": "Dependency/import denial paths; not OS confinement or external authority."
+}

@@ -8,6 +8,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node scripts/test-and-record.mjs",
+    "test:runtime": "node scripts/test-supplied-runtime.mjs",
     "benchmark": "node scripts/benchmark.mjs",
     "verify": "node scripts/verify-release.mjs",
     "verify:public": "node scripts/verify-public-checkout.mjs",
