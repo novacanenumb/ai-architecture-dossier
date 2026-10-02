@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "command": "node --test --test-reporter=tap tests/*.test.mjs",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "exitCode": 0,
+  "total": 24,
+  "passed": 24,
+  "failed": 0,
+  "skipped": 0,
+  "sourceHashes": {
+    "tests/analytics.test.mjs": "392f010622b95a5c0d3a0ff11b32c4e7ccc2cbbab2fb2c1a876710b88e544a02",
+    "tests/core.test.mjs": "216cc9073061989bda1f59e944e36e5ff131e154f4cef81f74a981b4f0e80179",
+    "packages/lab/core.mjs": "84e188b48b45d2a67a84f1117442c1dae9af7a44fcc22340ad1c9d70bc32157d",
+    "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9"
+  },
+  "claim": "Host-executed behavioral checks; native proposal validation is a separate record."
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "status": "PASSED",
+  "privateMasterPresent": false,
+  "suppliedRuntimePresent": false,
+  "testCommand": "node scripts/test-and-record.mjs",
+  "buildCommand": "node scripts/build.mjs",
+  "verifyCommand": "node scripts/verify-release.mjs",
+  "claim": "Source copy without original documents or runtime rebuilt and passed all checks."
+}

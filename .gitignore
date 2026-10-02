@@ -1,0 +1,13 @@
+node_modules/
+.sites-runtime/
+.sites-checkout*/
+.credentials/
+*.tar.gz
+*.zip
+*.log
+releases/private/
+HYPERVISOR-2.1-STABLE/
+MASTER_SPEC.md
+CODEX_START.md
+.env*
+!.env.example

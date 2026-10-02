@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "E01-E02-fixture-v1",
+  "mode": "fixture",
+  "dataset": "deterministic-synthetic-project-history",
+  "baseline": "full-context-reference",
+  "arms": ["full", "recent", "retrieval", "sparse", "combined"],
+  "primaryEndpoints": ["serialized_utf8_bytes", "exact_required_source_span_coverage"],
+  "hostedEndpoints": {"inputTokens": null, "quality": null, "latencyMs": null, "cost": null},
+  "pairedUnit": "synthetic-history-configuration",
+  "statistics": "seeded percentile bootstrap of paired mean differences; interval describes this fixture configuration set only",
+  "failurePolicy": "keep overflow and unresolved facts in scheduled-arm results; failures never vanish from the denominator",
+  "resourceAccounting": "count every transmitted packet, duplicated shared pins, headers and declared routing overhead",
+  "limitations": ["not a held-out model benchmark", "not a statistical power analysis", "no live quality noninferiority result", "no measured provider speedup"]
+}

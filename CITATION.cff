@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please credit novacanenumb when using these architectural designs or reference mechanisms."
+title: "AI Architecture Dossier"
+type: software
+version: 0.1.0
+repository-code: "https://github.com/novacanenumb/ai-architecture-dossier"
+authors:
+  - name: "novacanenumb"
+license: "LicenseRef-Novacanenumb-Open-Design-1.0"

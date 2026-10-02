@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: ratios preserve missing/nonfinite/zero denominators; amplification and accepted throughput units
+ok 1 - ratios preserve missing/nonfinite/zero denominators; amplification and accepted throughput units
+  ---
+  duration_ms: 10.9198
+  type: 'test'
+  ...
+# Subtest: workflow usage includes failed/retry/review calls without double counting reasoning or cache subsets
+ok 2 - workflow usage includes failed/retry/review calls without double counting reasoning or cache subsets
+  ---
+  duration_ms: 0.2192
+  type: 'test'
+  ...
+# Subtest: missing usage is null with explicit observed coverage; empty calls cannot mean free execution
+ok 3 - missing usage is null with explicit observed coverage; empty calls cannot mean free execution
+  ---
+  duration_ms: 0.1055
+  type: 'test'
+  ...
+# Subtest: costs reject duplicate charge IDs; unknown charges propagate null
+ok 4 - costs reject duplicate charge IDs; unknown charges propagate null
+  ---
+  duration_ms: 0.1286
+  type: 'test'
+  ...
+# Subtest: paired bootstrap is seeded and exact for a constant paired effect
+ok 5 - paired bootstrap is seeded and exact for a constant paired effect
+  ---
+  duration_ms: 3.4999
+  type: 'test'
+  ...
+# Subtest: paired bootstrap rejects short, nonfinite, unaligned and invalid control inputs
+ok 6 - paired bootstrap rejects short, nonfinite, unaligned and invalid control inputs
+  ---
+  duration_ms: 0.1689
+  type: 'test'
+  ...
+# Subtest: Unicode words and apostrophes tokenize precisely
+ok 7 - Unicode words and apostrophes tokenize precisely
+  ---
+  duration_ms: 2.6254
+  type: 'test'
+  ...
+# Subtest: MATTR matches hand computed windows; insufficient samples remain null
+ok 8 - MATTR matches hand computed windows; insufficient samples remain null
+  ---
+  duration_ms: 0.5035
+  type: 'test'
+  ...
+# Subtest: repeated trigram rate counts overlapping occurrences beyond their first use
+ok 9 - repeated trigram rate counts overlapping occurrences beyond their first use
+  ---
+  duration_ms: 0.1516
+  type: 'test'
+  ...
+# Subtest: sample and sentence CV use sample deviation and declared punctuation segmentation
+ok 10 - sample and sentence CV use sample deviation and declared punctuation segmentation
+  ---
+  duration_ms: 0.2442
+  type: 'test'
+  ...
+# Subtest: Jensen Shannon matches base 2 known vectors and rejects nonnormalized or misaligned support
+ok 11 - Jensen Shannon matches base 2 known vectors and rejects nonnormalized or misaligned support
+  ---
+  duration_ms: 0.2209
+  type: 'test'
+  ...
+# Subtest: stable JSON sorts recursive keys, preserves array order; SHA256 known vector
+ok 12 - stable JSON sorts recursive keys, preserves array order; SHA256 known vector
+  ---
+  duration_ms: 5.0598
+  type: 'test'
+  ...
+# Subtest: archive preserves Unicode, BOM, null byte and newline exact bytes; copies cannot alter it
+ok 13 - archive preserves Unicode, BOM, null byte and newline exact bytes; copies cannot alter it
+  ---
+  duration_ms: 1.0711
+  type: 'test'
+  ...
+# Subtest: UTF8 materialization rejects split code points, including interior empty slices
+ok 14 - UTF8 materialization rejects split code points, including interior empty slices
+  ---
+  duration_ms: 0.5573
+  type: 'test'
+  ...
+# Subtest: scope authorization denies private operations and owner filtering isolates permitted scopes
+ok 15 - scope authorization denies private operations and owner filtering isolates permitted scopes
+  ---
+  duration_ms: 0.6983
+  type: 'test'
+  ...
+# Subtest: correction preserves exact revision history and invalidates stale preconditions
+ok 16 - correction preserves exact revision history and invalidates stale preconditions
+  ---
+  duration_ms: 0.4289
+  type: 'test'
+  ...
+# Subtest: concurrent ingestion and correction reject conflicting writers
+ok 17 - concurrent ingestion and correction reject conflicting writers
+  ---
+  duration_ms: 0.3601
+  type: 'test'
+  ...
+# Subtest: deletion purges all historic raw bytes and blocks resurrection
+ok 18 - deletion purges all historic raw bytes and blocks resurrection
+  ---
+  duration_ms: 0.3897
+  type: 'test'
+  ...
+# Subtest: synthetic fixtures are deterministic, public-safe and explicitly source linked
+ok 19 - synthetic fixtures are deterministic, public-safe and explicitly source linked
+  ---
+  duration_ms: 0.6335
+  type: 'test'
+  ...
+# Subtest: lexical rank uses Unicode overlap, deterministic ties, and defensive copies
+ok 20 - lexical rank uses Unicode overlap, deterministic ties, and defensive copies
+  ---
+  duration_ms: 1.4405
+  type: 'test'
+  ...
+# Subtest: five comparison arms replay exactly; bytes include full serialization and duplicated inputs
+ok 21 - five comparison arms replay exactly; bytes include full serialization and duplicated inputs
+  ---
+  duration_ms: 9.5992
+  type: 'test'
+  ...
+# Subtest: pinned and required facts remain atomic; overflow cannot count as efficiency
+ok 22 - pinned and required facts remain atomic; overflow cannot count as efficiency
+  ---
+  duration_ms: 1.7654
+  type: 'test'
+  ...
+# Subtest: required unauthorized, missing or deleted sources fail closed; permitted packets omit private sources
+ok 23 - required unauthorized, missing or deleted sources fail closed; permitted packets omit private sources
+  ---
+  duration_ms: 1.7824
+  type: 'test'
+  ...
+# Subtest: navigation bridge cannot replace missing exact source; zero recent/retrieval preserves declared emptiness
+ok 24 - navigation bridge cannot replace missing exact source; zero recent/retrieval preserves declared emptiness
+  ---
+  duration_ms: 1.9134
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 86.7543

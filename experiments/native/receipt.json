@@ -1,0 +1,25 @@
+{
+  "sessionId": "652c50f9-3f67-46ac-83cb-15795a475d30",
+  "runId": "run-9d765ae5-bce9-4abf-a399-121b43854a4d",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "sourceTextHash": "sha256:c5243dcad92a4123f79a76a988dab5e14277dcb4c4ed44fbf05e2fa7c0a8bf33",
+  "sourceCharacters": 62987,
+  "manifestHash": "sha256:e143bba497207fabc6b943473a7736154932e8806a89f7eed5129cf1db584fdb",
+  "completionRecordHash": "sha256:1a84a9b4cae97954c4b384ae517a8b656afcfd705eb40613fb1e29659cb1e13a",
+  "validationScope": "Three source proposal sections; nonempty structural validator, schema/anchor/GTFL gates. Host tests, catalogue modifications, build scripts, benchmark assembly and publication are separate.",
+  "hostIntegration": "Proposal-only Sol source independently corrected and integrated by parent. Benchmark script assembled by host under the authorized workflow; it is not in this source artifact.",
+  "timingInterpretation": "Runtime durations include host orchestration and proposal waits; reported speedup 1.0220804165148194 uses serial_execution_estimate, not an executed default-model baseline. No model speedup inferred.",
+  "providerUsage": null,
+  "cost": null,
+  "earlierAttempts": [
+    {
+      "runId": "run-a7f16e34-cdfe-4c08-8427-d357f28b4759",
+      "state": "TASK_TIMEOUT"
+    },
+    {
+      "runId": "run-993464cd-c979-493b-8aeb-9224f9817c68",
+      "state": "BUDGET_EXHAUSTED"
+    }
+  ]
+}

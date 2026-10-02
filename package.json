@@ -1,0 +1,17 @@
+{
+  "name": "ai-architecture-dossier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "novacanenumb AI architecture designs, deterministic labs and evidence dossier",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test-and-record.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "verify": "node scripts/verify-release.mjs",
+    "verify:public": "node scripts/verify-public-checkout.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "license": "LicenseRef-Novacanenumb-Open-Design-1.0"
+}

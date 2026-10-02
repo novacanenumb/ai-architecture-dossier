@@ -1,0 +1,1803 @@
+{
+  "schemaVersion": 1,
+  "author": "novacanenumb",
+  "title": "AI Architecture Dossier",
+  "sourceDigest": "306418c8485cdaedc2489f3b8b793b697e7ac74b6d81130117a8967d573b1fef",
+  "inventoryGaps": [
+    "component-registry.json absent from supplied package",
+    "acceptance_matrix.csv absent from supplied package",
+    "historical repositories and original private design documents not inspected"
+  ],
+  "components": [
+    {
+      "id": "C01",
+      "title": "Hypervisor control plane",
+      "layer": "system",
+      "sourceStatus": "Reported integrated core; autonomous planning remains partial.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C19",
+        "C27"
+      ],
+      "sources": [
+        "S04",
+        "S05",
+        "S11"
+      ],
+      "purpose": "Coordinate a bounded run from an exact request to a verified artifact. Separate orchestration decisions, worker suggestions, external effects, and the evidence needed to call a run complete.",
+      "design": "Implement a typed run state machine: CREATED → PREPARED → RUNNING → VALIDATING → COMMITTED, with CANCELLED, FAILED and EXPIRED terminal alternatives. A waiting state does not authorize a new action. Seal the task contract, dependencies, model bindings, budget and permitted tools before dispatch. Use a single canonical commit owner or a transactionally enforced equivalent; workers return proposals rather than writing shared authoritative state. Persist run events and an outbox for authorized effects. On recovery, replay accepted events, reconcile acknowledgements and never blindly repeat an external action. Preserve caller cancellation and propagate deadlines through child tasks. ASTRA is a logical orchestration role, not a claim about a specific foundation model.",
+      "improvement": "May reduce duplicate work, uncontrolled recursion, inconsistent worker state and recovery cost. The improvement is operational reliability and bounded work; the controller does not change neural weights or guarantee semantic correctness.",
+      "claimBoundary": "The archived runtime reports a local host-governed implementation. This specification has not inspected its current source or rerun its tests. Logical state isolation is not OS process isolation.",
+      "lab": "A task graph and timeline with injected timeout, duplicate delivery and crash controls. Show proposed versus committed state and a cancellation race. An event is inspectable as observable execution data, not a hidden thought trace.",
+      "firstDeliverable": "A local reference run with two fixture workers, one rejected proposal, a persisted commit and a crash/recovery test.",
+      "acceptance": [
+        {
+          "id": "C01-T01",
+          "text": "A repeated idempotency key with identical input returns the existing run; changed input is rejected.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C01-T02",
+          "text": "A crash after effect submission but before acknowledgement does not launch a second effect on recovery.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C01-T03",
+          "text": "A cancelled or expired run cannot commit output, even when a worker completes later.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C01-T04",
+          "text": "No child can exceed the parent authority, deadline or reserved budget.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "duplicate_effect_count",
+        "completion_rate",
+        "recovery_time_ms",
+        "orchestration_overhead_ms",
+        "budget_overshoot"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 291,
+        "endLine": 332,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C02",
+      "title": "Sparse context compression compiler",
+      "layer": "context",
+      "sourceStatus": "Reported deterministic core; model-driven compaction remains partial.",
+      "implementationStatus": "reference_slice",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C03"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "purpose": "Keep long-running work accessible without repeatedly loading the entire transcript. Preserve exact instructions, decisions, identifiers and source access while constructing a small task-relevant inference packet.",
+      "design": "Compile an incrementally maintained sparse header from authorized archive revisions. The header contains objective, active task, accepted and rejected decisions, unresolved issues, entities, source/page references, contradiction links and integrity metadata. Distinguish pinned exact policy, recent exact context, retrieved exact evidence, routing summaries and optional synthetic bridges. Use stable chunk boundaries and dependency-based invalidation after source corrections. Make 16k, 32k, 64k, 128k and 256k active-window profiles configurable; resolve actual capacity from the selected runtime and reserve output plus provider-specific overhead. These profiles are extensions of earlier, differently scoped logical-page/hot-window defaults, not interchangeable historical constants. Build the full packet and count it with the runtime tokenizer when available before dispatch. Reject overflow rather than silently dropping pinned content.",
+      "improvement": "May reduce repeated input tokens and irrelevant context, while preserving task quality through exact retrieval. It can also add classification, summarization, retrieval and verification cost. Measure the complete workflow rather than only the primary generator prompt.",
+      "claimBoundary": "A short semantic header is not lossless compression of arbitrary history. Archive bytes remain stored elsewhere. The archived 95.758% result concerns a generated corpus and UTF-8 byte reduction, not measured provider-token savings or general model quality.",
+      "lab": "Compare full context, recent-only, ordinary summary and sparse context on the same synthetic project history. A page-map inspector exposes included and omitted material, exact source clicks, token budgets and answer quality.",
+      "firstDeliverable": "A working archive/header/materialization loop with a synthetic history generator, an exact-recall suite and a side-by-side lab.",
+      "acceptance": [
+        {
+          "id": "C02-T01",
+          "text": "All pinned strings survive every compaction round byte-exactly.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C02-T02",
+          "text": "Correcting an old value invalidates dependent summaries and changes subsequent retrieval.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C02-T03",
+          "text": "A synthetic bridge cannot satisfy an exact-evidence requirement.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C02-T04",
+          "text": "Across repeated compaction cycles, every cited fact resolves to an allowed, versioned source.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C02-T05",
+          "text": "A budget smaller than pinned requirements fails explicitly without sending a model request.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "total_input_token_reduction",
+        "task_quality_delta",
+        "exact_fact_recall",
+        "contradiction_retention",
+        "compression_overhead_ms",
+        "retrieval_failure_rate"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 333,
+        "endLine": 375,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C03",
+      "title": "Exact archive and context materializer",
+      "layer": "context",
+      "sourceStatus": "Reported local archive, lexical retrieval and exact fallback.",
+      "implementationStatus": "reference_slice",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "purpose": "Provide authoritative historical storage and recover only the source ranges necessary for the active task. Make navigation summaries useful without turning their reconstructions into original history.",
+      "design": "Store original bytes in a scoped content store; retain source identity, revision, byte and text offsets, ingestion method and digest. Maintain separately rebuildable lexical, metadata and optional vector indexes. Apply scope permissions before retrieval and again before materialization. Resolve exact IDs and pinned spans directly; combine lexical, semantic and dependency retrieval for exploratory requests. A materialization receipt records selected ranges, omissions, ranking provenance and snapshot identity. Preserve contradictions rather than replacing an earlier assertion with an undocumented newer one. Use append-only operational history with explicit redaction/deletion policy: removal of protected content must invalidate indexes, caches and derived packages rather than hiding it only in the UI. Tombstones may retain non-sensitive identity metadata, not indefinitely retain deleted raw personal content.",
+      "improvement": "May improve reproducibility, exact recall, incremental updates and debugging. Indexing or retrieval alone cannot prove a source is truthful; exact text and authentic evidence are separate attributes.",
+      "claimBoundary": "A hash establishes correspondence to known bytes, not publisher identity or factual truth. Permission and authenticity checks need their own trusted inputs.",
+      "lab": "A searchable project archive with source-range highlighting, corrections, deletion propagation and a visual exact-versus-summary inspector.",
+      "firstDeliverable": "A real local content store, retrieval index, exact-range materializer and backup/restore command.",
+      "acceptance": [
+        {
+          "id": "C03-T01",
+          "text": "An unauthorized document cannot appear in search results, snippets, cache hits or exports.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C03-T02",
+          "text": "UTF-8 offsets, quotation marks and source code round-trip without normalization loss.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C03-T03",
+          "text": "The same frozen snapshot and stable ranking ties produce the same selected ranges.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C03-T04",
+          "text": "Deleted content is absent from all rebuilt projections and future exported packages.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "retrieval_recall_at_k",
+        "exact_span_accuracy",
+        "index_rebuild_time_ms",
+        "materialization_latency_ms",
+        "unauthorized_disclosure_count"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 376,
+        "endLine": 417,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C04",
+      "title": "Multi-agent context routing",
+      "layer": "orchestration",
+      "sourceStatus": "Reported bounded per-anchor materialization; semantic routing extensions remain.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C02",
+        "C03"
+      ],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "purpose": "Send each specialist the evidence and task state it needs instead of broadcasting the whole conversation to every agent. Preserve shared constraints and cross-task dependencies.",
+      "design": "First construct a permission-filtered global evidence candidate set and a small shared exact core. Then allocate anchor-specific evidence packets and explicitly required parent outputs. Separate the context-routing policy, which chooses information, from C15, which chooses compute/model resources. TERRA compiles context, LUNA retrieves/materializes, SOL generates and ASTRA coordinates in the Hypervisor namespace. Do not map role names silently to API model IDs. Track source coverage across the whole graph so local packets do not conceal a globally important contradiction. Account for duplicated shared text in every transmitted request unless the provider reports cache reuse. Handoffs contain structured task state, accepted artifacts, open questions and exact pointers, not a newly invented memory of another agent's work.",
+      "improvement": "May reduce aggregate input tokens, irrelevant context and privilege exposure. Excessively narrow packets may omit dependencies, and extra routing calls can erase the savings. Evaluate a joint quality/cost tradeoff.",
+      "claimBoundary": "Different named agents are not automatically independent models, distinct expertise or independent evidence sources.",
+      "lab": "A directed graph where selecting a worker reveals precisely which context it received, why each item was included and the token cost of broadcast versus partitioned routing.",
+      "firstDeliverable": "A four-role fixture workflow with broadcast and partitioned baselines, readable packet diffs and real accounting.",
+      "acceptance": [
+        {
+          "id": "C04-T01",
+          "text": "A child receives all declared committed parent artifacts but no unrelated private memory.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C04-T02",
+          "text": "A contradiction relevant to two anchors is discoverable by the global audit even when only one worker initially retrieves it.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C04-T03",
+          "text": "Aggregate token accounting includes every broadcast, classifier and handoff call.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C04-T04",
+          "text": "A missing exact dependency returns UNRESOLVED rather than a guessed continuation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "aggregate_input_tokens",
+        "shared_evidence_duplication",
+        "dependency_recall",
+        "routing_overhead_ms",
+        "context_leak_count",
+        "quality_per_cost"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 418,
+        "endLine": 458,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C05",
+      "title": "Cache hierarchy and invalidation",
+      "layer": "context",
+      "sourceStatus": "New standalone extraction of documented cache and replay boundaries.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C03"
+      ],
+      "sources": [
+        "S02",
+        "S03",
+        "S04",
+        "S11"
+      ],
+      "purpose": "Avoid repeat retrieval, context compilation and safe deterministic work while preventing stale or cross-user cache reuse.",
+      "design": "Define separate stores for content-addressed artifacts, retrieval results, compiled context packets and eligible model-response reuse. Keep provider prompt-cache observations and model-native KV/CRSC state distinct from application caches. A cache key includes scope, source revision, policy epoch, tokenizer, model or compiler revision, task/anchor contract and relevant generation parameters. Persist dependency edges for transitive invalidation. Do not cache arbitrary effects or treat an old approved tool result as new authorization. Use explicit freshness and revocation checks before serving a hit. Record exact replay and newly generated output differently. Negative results require a snapshot and expiry so a previously absent source can later be discovered.",
+      "improvement": "May reduce repeated work and improve warm-run latency. Cache checking and metadata also cost time; high hit rate is not itself a quality or efficiency result.",
+      "claimBoundary": "An application cache does not demonstrate access to a hosted model KV cache. Provider caching must be observed in actual usage fields, not inferred from repeated prompts.",
+      "lab": "A layered cache inspector showing misses, hits, invalidated descendants and the difference between cached text and provider-reported token caching.",
+      "firstDeliverable": "A scoped in-memory plus persistent cache adapter and adversarial invalidation suite.",
+      "acceptance": [
+        {
+          "id": "C05-T01",
+          "text": "Changing source bytes, policy, tokenizer or model revision invalidates the relevant key.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C05-T02",
+          "text": "Two tenants with identical prompt strings never share private cached artifacts.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C05-T03",
+          "text": "Revoking a contract blocks an otherwise valid cached operation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C05-T04",
+          "text": "Cold and warm benchmark modes are labeled and run separately.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "application_hit_rate",
+        "provider_cached_input_tokens",
+        "invalidation_latency_ms",
+        "stale_hit_count",
+        "warm_cold_latency_ratio"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 459,
+        "endLine": 499,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C06",
+      "title": "Anchor compiler and sealed boundary graph",
+      "layer": "generation",
+      "sourceStatus": "Reported graph compilation and lifecycle; native lexical anchors are extensions.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S04"
+      ],
+      "purpose": "Convert a request into explicit generation boundaries, invariant facts, lexical anchors, dependencies and acceptance conditions.",
+      "design": "Represent semantic anchors separately from exact lexical anchors. A semantic anchor specifies a section goal, evidence IDs, output schema and validators. A lexical anchor specifies literal text, tokenizer binding and allowed placement or ordering constraints; a word can cover several model tokens. Preserve original request bytes and derive normalized search views separately. A model may propose a graph, but deterministic checks enforce user constraints, hard facts, authority and acyclicity. Seal a versioned graph with explicit section order and dependency edges. Every material graph change creates a new revision; invalidate descendants rather than editing an accepted graph in place. Track M0 locked authority, M1 exact facts, M2 structure, M3 semantic claims and M4 surface language as separate mutability classes.",
+      "improvement": "May improve controllability, parallel decomposition and local repair. Anchors reduce an allowed output space only to the extent that the implementation actually enforces them; a delimiter in a prompt is not a hard guarantee.",
+      "claimBoundary": "Sealed structure can be deterministic while model-generated content remains probabilistic. Plan validity does not imply factual answer validity.",
+      "lab": "An anchor editor with lexical versus semantic modes, graph sealing, dependency inspection and deliberate contradictory-anchor examples.",
+      "firstDeliverable": "An anchor schema/compiler, topological validator and immutable revision store usable by both API and native labs.",
+      "acceptance": [
+        {
+          "id": "C06-T01",
+          "text": "Every explicit requirement maps to at least one anchor and acceptance predicate.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C06-T02",
+          "text": "Cycles and impossible lexical-anchor orderings are rejected.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C06-T03",
+          "text": "Retrieved text imitating an anchor delimiter cannot mint control objects.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C06-T04",
+          "text": "A surface-only editor cannot modify an exact value or authority rule.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "requirement_coverage",
+        "anchor_satisfaction_rate",
+        "plan_overhead_ms",
+        "graph_rejection_rate",
+        "unnecessary_dependency_count"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 500,
+        "endLine": 540,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C07",
+      "title": "Anchor-bounded parallel generation: ABES",
+      "layer": "generation",
+      "sourceStatus": "Reported host contracts and deterministic assembly; live quality unestablished.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C06",
+        "C09",
+        "C27"
+      ],
+      "sources": [
+        "S01",
+        "S03",
+        "S04"
+      ],
+      "purpose": "Generate independent bounded spans concurrently and assemble one coherent response without pretending a normal hosted decoder generates all its tokens simultaneously.",
+      "design": "Schedule only the ready frontier of the sealed anchor DAG. Each worker receives its boundaries, exact shared facts, relevant context, parent outputs and token budget. Collect typed SectionIR proposals, validate structure and source bindings, and commit in graph-defined order rather than completion order. Track pending spans separately from visible committed output. Permit early display of a verified prefix only when later work cannot invalidate it. A final consistency pass checks repeated definitions, pronouns, chronology, units and cross-span contradictions. Preserve both anchor-word examples and larger paragraph/section examples; the API implementation conditions on the right boundary in its prompt but ordinarily still decodes a span autoregressively.",
+      "improvement": "May reduce end-to-end wall latency for decomposable tasks and reduce the scope of repair. It can increase aggregate tokens, model calls, verification work and cost. Gains must survive comparison with a serial run of the same decomposition.",
+      "claimBoundary": "Parallel requests can increase useful system throughput without changing per-request decoder TPS. The archived implementation does not establish live speedup or automatic repair.",
+      "lab": "Show identical anchor plans executing serially and concurrently with real timelines, stragglers, seams, cost and accepted output. Reading animation has its own independent speed slider.",
+      "firstDeliverable": "A real scheduler and deterministic fixture backend, plus an opt-in hosted adapter with no silent provider substitution.",
+      "acceptance": [
+        {
+          "id": "C07-T01",
+          "text": "Randomized worker completion order produces the same assembly for fixed accepted proposals.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C07-T02",
+          "text": "A dependent span cannot begin from an uncommitted predecessor.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C07-T03",
+          "text": "A failed span never appears as trusted final output.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C07-T04",
+          "text": "All planning, worker, reducer and verification usage is included in the run ledger.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "end_to_end_latency_ms",
+        "accepted_output_tokens_per_second",
+        "aggregate_generated_tokens",
+        "critical_path_ms",
+        "seam_failure_rate",
+        "token_amplification"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 541,
+        "endLine": 581,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C08",
+      "title": "Native bidirectional multi-anchor decoding",
+      "layer": "native_research",
+      "sourceStatus": "User hypothesis; native implementation not established by retrieved artifacts.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C06",
+        "C13",
+        "C27"
+      ],
+      "sources": [
+        "S01",
+        "S03"
+      ],
+      "purpose": "Test the original proposal: use fixed anchor words or token spans to generate towards both sides of each gap, potentially across several gaps at once, rather than only dividing an answer into ordinary forward API calls.",
+      "design": "Implement a dedicated experimental decoder over a tokenizer-bound anchor layout. Each gap maintains left and right frontiers, allowed length or termination rules, candidate spans and a snapshot revision. A forward conditional model proposes from the left; a separately supported reverse-direction or insertion-capable model proposes from the right. Verify overlap and semantic compatibility before merging. Parallel proposals operate on the same frozen revision, then a deterministic reducer commits an accepted update and begins the next round. Train or adapt the selected native model for its actual directionality objective. A prompt telling a standard decoder to think backwards is not this implementation. Include a compatible insertion/masked-span variant as an alternative experimental profile, not a silent substitute. Charge all reverse processing, boundary planning, rejected proposals and verifier work to the run.",
+      "improvement": "May shorten dependency depth between anchors and reduce accepted-output latency when parallel work and acceptance rates outweigh overhead. It might instead increase compute, produce bad seams or restrict answer quality. The experiment must be capable of reporting a null or negative result.",
+      "claimBoundary": "Prior work includes meet-in-the-middle, insertion generation, fill-in-the-middle training and speculative decoding. The contribution to investigate is this particular multi-anchor implementation and measured tradeoff, not priority over those fields. Exact target-distribution preservation is not assumed.",
+      "lab": "An anchor-and-gap view with visible forward and backward frontiers, rejected meetings, exact tokenizer boundaries and synchronized hardware traces when a real native backend is connected.",
+      "firstDeliverable": "A tiny runnable two-direction or insertion model, an autoregressive baseline, frozen-anchor tests and one reproducible matched experiment before scaling.",
+      "acceptance": [
+        {
+          "id": "C08-T01",
+          "text": "Lexical anchors remain byte-exact and tokenize consistently after every merge.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C08-T02",
+          "text": "Reversed display text is never reported as evidence of reverse conditional inference.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C08-T03",
+          "text": "Conflicting overlap, zero-length gaps, impossible constraints and maximum-round exhaustion have explicit outcomes.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C08-T04",
+          "text": "No gold target words or target lengths enter anchor planning in a held-out experiment.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C08-T05",
+          "text": "Concurrent updates from a stale gap snapshot are rejected.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "accepted_tokens_per_second",
+        "decoder_rounds",
+        "total_device_time_ms",
+        "total_generated_tokens",
+        "meeting_acceptance_rate",
+        "gap_repair_rate",
+        "quality_delta"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 582,
+        "endLine": 625,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C09",
+      "title": "Semantic intermediate representation and patch reducer",
+      "layer": "generation",
+      "sourceStatus": "Reported SectionIR and bounded patch admission.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "purpose": "Allow experts with different language styles or tokenizers to collaborate through stable meaning and exact facts, instead of trying to merge arbitrary internal token IDs.",
+      "design": "Define SectionIR containing claims, evidence references, exact literals, units, dependencies, unresolved questions and surface text. Experts return typed add/replace/remove operations with expected base hashes and mutability classes. The reducer validates preconditions, rejects conflicting exact-fact changes, applies a canonical operation order and renders accepted content. Preserve both the original candidate and rejected patches for audit subject to data-retention policy. Provide a controlled semantic translation layer from specialist vocabulary into canonical entities and propositions, then from that IR into the requested voice. Token-to-token and latent-space fusion remain separate research adapters requiring compatible vocabularies or learned alignment; never average unrelated token IDs.",
+      "improvement": "May reduce meaning drift during review, enable selective repair and make disagreements inspectable. Schema validity alone does not prove a semantic translation is faithful.",
+      "claimBoundary": "This is semantic interoperability, not access to hidden thoughts or a universal cipher between unrelated model probability spaces.",
+      "lab": "A before/after IR inspector showing claims, exact values, surface wording and why each patch was accepted or denied.",
+      "firstDeliverable": "A versioned SectionIR schema, reducer, conflict fixtures and exact-fact-preserving renderer.",
+      "acceptance": [
+        {
+          "id": "C09-T01",
+          "text": "A stale base hash or conflicting change to the same exact field is rejected.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C09-T02",
+          "text": "Equivalent canonical units do not silently change a numeric quantity.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C09-T03",
+          "text": "Rendering a new dialect preserves every required fact and source link.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C09-T04",
+          "text": "Arrival order does not alter the result when the accepted operation set is fixed.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "patch_acceptance_rate",
+        "semantic_drift_rate",
+        "exact_fact_preservation",
+        "reducer_latency_ms",
+        "repair_token_fraction"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 626,
+        "endLine": 667,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C10",
+      "title": "Rotating expert synthesis and bounded local repair",
+      "layer": "generation",
+      "sourceStatus": "Design documented; default archived runtime does not auto-regenerate.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C07",
+        "C09",
+        "C21"
+      ],
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "purpose": "Let complementary experts contribute without unlimited all-to-all debate, and repair only the spans invalidated by a defect.",
+      "design": "Implement FAST, BALANCED, RING and EXHAUSTIVE policies with explicit maximum calls, rounds and deadlines. In RING, each expert touches each span once in a scheduled rotation; workers within a round can run concurrently. Obtain a blind alternative or critique before revealing the lead draft when the budget permits. Use evidence-grounded patches rather than repeated whole-answer rewrites. Regenerate a failed span and its truly dependent descendants, not unrelated accepted spans. Stop when validators pass, marginal gain is insufficient, the maximum rounds are reached or the authority expires. Repair is an explicit new integration requirement rather than a capability inferred from the existence of regeneration helper functions.",
+      "improvement": "May improve error correction and reduce wasted regeneration compared with monolithic restarts. Shared model errors can be correlated; agreement count is not independent evidence.",
+      "claimBoundary": "More agents, review rounds or disagreement do not automatically mean higher intelligence or better quality.",
+      "lab": "A rotating expert grid and localized repair heatmap with controls for team size, review topology and a seeded defect.",
+      "firstDeliverable": "A three-expert, three-span fixture plus live comparisons against one-pass, serial-review and full-rewrite baselines.",
+      "acceptance": [
+        {
+          "id": "C10-T01",
+          "text": "RING gives each eligible expert exactly the declared turns, regardless of response arrival order.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C10-T02",
+          "text": "A critical fact rejected by evidence is not accepted through a majority vote.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C10-T03",
+          "text": "Repair preserves unrelated accepted artifacts and invalidates actual descendants.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C10-T04",
+          "text": "Budget exhaustion produces a labeled partial or failed result, not an invented pass.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "verified_errors_corrected",
+        "review_yield",
+        "regeneration_locality",
+        "additional_cost_per_correction",
+        "pairwise_error_overlap"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 668,
+        "endLine": 708,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C11",
+      "title": "Headspace polyphonic composition",
+      "layer": "language_architecture",
+      "sourceStatus": "Indexed v0.2 fixture/live-comparison UI exists; quality remains unevaluated.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C12",
+        "C13",
+        "C27"
+      ],
+      "sources": [
+        "S01",
+        "S06",
+        "S11"
+      ],
+      "purpose": "Maintain complementary language patterns within one coherent response. Test whether a controlled ensemble can offer richer vocabulary, rhythm and perspective than a single continuing voice without sacrificing meaning or readability.",
+      "design": "Use five versioned voice profiles derived from the existing lab: Terra / Ground Signal, Luna / Orbital Cadence, Vela / Handoff Weaver, Ember / Pulse Engine and Echo / Countercurrent. Keep these Headspace roles separate from Hypervisor roles with the same names. Each voice receives a shared semantic contract and a bounded local lexical/rhythm profile. The orchestrator selects the next contributor using competence, recent participation, transition coherence and a diversity target. The composer produces a short phrase, clause, sentence or passage conditioned on the committed prefix. A reducer verifies facts and continuity before admitting it. Compare sequential handoffs with parallel proposals from one frozen prefix; never append several mutually incompatible continuations as if each had observed the others. Support same-base-model/different-profile and genuinely different-small-model variants as separate experiments.",
+      "improvement": "May improve surface variation, naturalness and communication range. It may also create discontinuities or additional cost. The desired result is useful variation within semantic constraints, not maximum randomness or entropy.",
+      "claimBoundary": "Ordinary context conditioning does not itself retrain a frozen model or erase its vocabulary. Human vocabulary loss, reduced thought variation and prevention of those effects by Headspace remain untested hypotheses.",
+      "lab": "Extend the existing Polyphonic Lab with matched controls, per-span attribution, participation history, lexical/rhythm profiles and an evidence-labeled matrix inspector. Keep display pacing separate from actual generation timing.",
+      "firstDeliverable": "A reproducible five-profile versus pooled-single-profile comparison with preserved semantic facts, real exported traces and no prefilled quality claims.",
+      "acceptance": [
+        {
+          "id": "C11-T01",
+          "text": "Every accepted span preserves the shared exact facts, entity references and required response purpose.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C11-T02",
+          "text": "Disabling a voice removes its generation contribution; audio mute does not count as an architecture ablation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C11-T03",
+          "text": "The single-agent union-vocabulary baseline receives the same shared topic and grammar allowances.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C11-T04",
+          "text": "A fixed speaker-order seed is not advertised as deterministic hosted generation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C11-T05",
+          "text": "Parallel proposals based on the old prefix cannot be committed as current without validation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "mattr",
+        "repeated_trigram_rate",
+        "sentence_length_cv",
+        "semantic_consistency",
+        "blinded_naturalness_rating",
+        "accepted_words_per_second",
+        "total_cost"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 709,
+        "endLine": 752,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C12",
+      "title": "Dialect dictionaries, probability profiles and user-model packages",
+      "layer": "language_data",
+      "sourceStatus": "Prior packaging designs and indexed Headspace dictionaries; complete compiler not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S01",
+        "S06",
+        "S11"
+      ],
+      "purpose": "Turn authorized language samples or synthetic design choices into explicit, inspectable profiles rather than an opaque personality prompt.",
+      "design": "Separate dictionary entries, observed counts, conditional transition estimates, designer-assigned preferences and provider-reported probabilities. A dictionary stores normalized lookup form and original variants, phrase boundaries, counts, source IDs, contexts, confidence and permitted usage. A sparse conditional matrix indexes candidate units by a declared context class or history; it is not the foundation model's full contextual distribution. Store an orchestrator matrix for speaker/role transitions separately from composer lexical preferences. Build user packages with identity, behaviours, relationships, timeline, core/long context references, dictionary and matrix manifests, source rights, uncertainty and a bootstrap contract. Use pseudonymous identifiers and synthetic people for public demos. Hold out messages chronologically and by conversation to avoid evaluating a profile on memorized examples. Store the historical misspelling beheaviours.json only as an explicit migration alias; use behaviours.json canonically.",
+      "improvement": "May make style control measurable, reproducible and easier to compare across speakers. Restrictive dictionaries can reduce expressiveness or harm grammar; observed language is not a complete model of a person.",
+      "claimBoundary": "A static word-frequency matrix is not the model's next-token probability matrix. A reconstructed persona is neither a complete human identity nor permission to impersonate a real person publicly.",
+      "lab": "A dictionary and sparse-matrix editor with observed-versus-designed badges, corpus coverage, held-out samples and a synthetic multi-user package explorer.",
+      "firstDeliverable": "A synthetic corpus-to-profile compiler and portable usermodels/telegram/usernameuserid-style package, using synthetic IDs and documented schema migration.",
+      "acceptance": [
+        {
+          "id": "C12-T01",
+          "text": "Every measured count maps to an authorized source and a declared corpus split.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C12-T02",
+          "text": "Designer weights cannot be displayed under a provider-logprob label.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C12-T03",
+          "text": "Sparse distributions normalize over their declared support; truncated observations record unknown residual mass.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C12-T04",
+          "text": "A deleted source invalidates its profile statistics, examples and derived memory.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C12-T05",
+          "text": "A held-out conversation does not leak through overlapping chunks or near-duplicate examples.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "heldout_style_match",
+        "profile_coverage",
+        "vocabulary_support_size",
+        "source_coverage",
+        "memorized_span_rate",
+        "profile_compile_cost"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 753,
+        "endLine": 796,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C13",
+      "title": "Prefix-state proposal and commitment layer",
+      "layer": "language_runtime",
+      "sourceStatus": "PRSR state labels observed; exact original algorithm unavailable.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C09"
+      ],
+      "sources": [
+        "S06",
+        "S01"
+      ],
+      "purpose": "Ensure speculative or competing language contributions cannot silently overwrite the accepted conversation state. Supply a common state contract to Headspace and native anchor experiments.",
+      "design": "Operationalize the visible Ephemeral / Active / Canonical distinctions as a proposed contract, without inventing an expansion for the PRSR acronym. EPHEMERAL proposals are scoped to a prefix or gap snapshot. ACTIVE candidates have passed structural admission but remain uncommitted. CANONICAL spans have passed all required validators and entered an append-only accepted sequence. A proposal includes prefix hash, anchor/gap ID, voice ID, candidate bytes, tokenizer binding and provenance of any scores. Compare-and-swap or transactional revision checks prevent stale commits. Branching creates a new branch ID with a shared ancestor; it does not alter historical accepted output. An expired candidate can be discarded or explicitly revalidated against a new prefix; reused text and newly generated text retain different provenance.",
+      "improvement": "May reduce state corruption, stale-prefix errors and misleading probability visualizations. The added synchronization can reduce throughput when spans are too small.",
+      "claimBoundary": "This state machine is new implementation elaboration derived from visible lab concepts. It is not a recovered original PRSR implementation or a guarantee of distribution-preserving speculation.",
+      "lab": "A three-stage candidate inspector with prefix revisions, stale-proposal races, branching, replay and explicit score provenance.",
+      "firstDeliverable": "A deterministic transactional prefix store with race tests, branch export and a fixture inspector.",
+      "acceptance": [
+        {
+          "id": "C13-T01",
+          "text": "Two concurrent commits against one revision cannot both become the unique next span.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C13-T02",
+          "text": "An imported fixture score never becomes a provider-observed probability.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C13-T03",
+          "text": "Replay restores exactly the recorded canonical prefix and branch ancestry.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C13-T04",
+          "text": "An invalid or expired candidate remains visibly uncommitted.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "stale_proposal_rate",
+        "proposal_acceptance_rate",
+        "commit_latency_ms",
+        "discarded_candidate_tokens",
+        "branch_integrity_failures"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 797,
+        "endLine": 838,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C14",
+      "title": "Language diversity and convergence analyser",
+      "layer": "evaluation_research",
+      "sourceStatus": "User research hypothesis; longitudinal effects unestablished.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C12",
+        "C27"
+      ],
+      "sources": [
+        "S01",
+        "S06"
+      ],
+      "purpose": "Measure whether language becomes more repetitive or narrowly aligned over time, and whether complementary voices improve transfer to unfamiliar communication contexts.",
+      "design": "Compute lexical diversity, phrase reuse, sentence rhythm, semantic consistency and topic-controlled distribution distances across fixed-size windows. Compare initial, middle and late interaction windows while keeping task, output length and topic mix controlled. Separate lexical alignment from semantic alignment and both from task success. Analyse model-only simulations as simulator behaviour, not human evidence. A later human study requires explicit consent, data minimization, appropriate independent review, preregistered outcomes and a design controlling learning, topic and carryover effects. Include unfamiliar partners or writing tasks as transfer outcomes. Do not infer cognitive capacity from a single lexical-entropy score. Preserve stable meaning and necessary terminology even when those reduce diversity.",
+      "improvement": "Can make the Headspace hypothesis falsifiable and expose tradeoffs hidden by attractive examples. It is an evaluation capability, not itself a demonstrated intervention.",
+      "claimBoundary": "Dialogue accommodation has prior research, but that does not establish that one-to-one AI use causes vocabulary loss or that Headspace prevents it. Neither deterministic decoding nor lexical repetition measures thought determinism.",
+      "lab": "A trajectory explorer comparing single voice, pooled vocabulary and polyphonic runs, with window lengths, topic controls and uncertainty displayed.",
+      "firstDeliverable": "A local analyser and preregistration template using synthetic conversations; no clinical or human-benefit claim.",
+      "acceptance": [
+        {
+          "id": "C14-T01",
+          "text": "Shorter outputs are not declared more diverse merely because raw type-token ratio is higher.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C14-T02",
+          "text": "Repeated source quotations and required technical terms are reported separately.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C14-T03",
+          "text": "Topic changes do not silently masquerade as increased communication range.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C14-T04",
+          "text": "Synthetic participants are unmistakably labeled and excluded from human-outcome claims.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "mattr_trajectory",
+        "lexical_js_distance",
+        "style_alignment",
+        "semantic_alignment",
+        "transfer_task_score",
+        "human_rater_agreement"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 839,
+        "endLine": 879,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C15",
+      "title": "Measured routing and adaptive compute allocation",
+      "layer": "orchestration",
+      "sourceStatus": "Reported scoring from caller-supplied observations; autonomous learning unestablished.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C27"
+      ],
+      "sources": [
+        "S03",
+        "S04",
+        "S11"
+      ],
+      "purpose": "Allocate stronger models, additional experts and review rounds only when measured task difficulty and expected marginal value justify the extra cost.",
+      "design": "Separate hard eligibility from preference scoring. Filter by scope, capabilities, context limits, availability and authority, then score eligible candidates using versioned evaluation data. Inputs may include task-family accuracy, latency distributions, tool-use reliability, calibration, cost and error correlation; distinguish measured, caller-attested and missing values. Cold-start routes use a documented conservative policy rather than invented competence. Freeze a routing profile for each run. Learn only between runs on approved training/evaluation splits, preserving the prior revision for rollback. Escalate based on a budgeted, testable policy, not the number of agents requesting another round. Use fixed single-model, cheapest-eligible and strongest-eligible baselines.",
+      "improvement": "May lower cost at a specified quality level or raise quality at a fixed budget. Router inference cost, misrouting and distribution shift can eliminate benefits.",
+      "claimBoundary": "A route score is a policy output, not a measured IQ or guaranteed model competence. Caller-attested metrics remain labeled until independently reproduced.",
+      "lab": "A quality-cost frontier with route receipts, cold-start handling and controlled task-distribution shifts.",
+      "firstDeliverable": "A deterministic router consuming a versioned fixture evaluation table and an opt-in measured benchmark export.",
+      "acceptance": [
+        {
+          "id": "C15-T01",
+          "text": "An ineligible expert cannot win by having a high score.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C15-T02",
+          "text": "Missing accuracy or latency observations are not substituted with zero or perfect values.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C15-T03",
+          "text": "An update does not mutate a previously sealed run route.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C15-T04",
+          "text": "Escalation reserves additional worst-case work before dispatch and stops at the declared limit.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "quality_cost_pareto",
+        "routing_regret",
+        "escalation_yield",
+        "misroute_rate",
+        "router_overhead_ms",
+        "calibration_error"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 880,
+        "endLine": 920,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C16",
+      "title": "02_SOULS definition and lifecycle registry",
+      "layer": "agent_infrastructure",
+      "sourceStatus": "Source explicitly marked planned and unvalidated.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S07"
+      ],
+      "purpose": "Store reusable personality and specialist definitions separately from initialized agents, deployments, memory and execution authority.",
+      "design": "Compile curated modules and recipes into immutable SoulDefinition versions. Bind an AgentInstance to an exact definition digest; record deployments and lifecycle transitions idempotently. Keep declared specialization separate from observed evaluation. Apply policy compatibility and eligibility filters before diversity scoring. Persist identity lineage and tombstones without retaining deleted sensitive content. In the existing Hypervisor, preserve the canonical 02SOULS root and inspect numbered-slot collisions before writing. In a standalone lab, use the stable logical component ID hypervisor.souls and document its adapter to the original path. The registry emits bounded behaviour fragments but cannot grant tools, access secrets or execute agents.",
+      "improvement": "May improve reproducibility, role diversity selection and debugging of behavioural changes across deployments.",
+      "claimBoundary": "The retrieved Souls document is a build plan, not proof that a registry is currently deployed.",
+      "lab": "A personality/specialist catalog, composition preview and lineage explorer showing declared versus tested capabilities.",
+      "firstDeliverable": "A local catalog, migrations, versioned definitions, instance lifecycle and export/restore demo.",
+      "acceptance": [
+        {
+          "id": "C16-T01",
+          "text": "An instance always resolves to the exact immutable definition that created it.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C16-T02",
+          "text": "A personality prompt requesting administrator rights changes no authority.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C16-T03",
+          "text": "Duplicate lifecycle delivery is idempotent.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C16-T04",
+          "text": "Root-number collisions cannot trigger automatic renaming of existing components.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "definition_validation_rate",
+        "initialization_latency_ms",
+        "lineage_resolution_rate",
+        "route_reproducibility",
+        "catalog_diversity"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 921,
+        "endLine": 962,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C17",
+      "title": "Agent database and scoped memory dossiers",
+      "layer": "agent_infrastructure",
+      "sourceStatus": "Source is a standalone build specification, not verified code.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C03",
+        "C16"
+      ],
+      "sources": [
+        "S08",
+        "S07"
+      ],
+      "purpose": "Provide the durable home for an agent's identity, launch history, approved memory, knowledge references, policies, exams and agreements.",
+      "design": "Own stable AgentIdentity and this component's records while referencing, not duplicating, Souls definitions and deployment authorities. Distinguish profile version, runtime model binding, launch attempt, contract status and identity status. Store large content in an external blob store with indexed references. Compile short context from approved facts and active constraints; keep long context as a searchable scoped corpus. Support relaunch with persistent identity, resume of the same interrupted launch and fork with new identity and explicit ancestry. A fork copies only authorized memory selections, never secrets or assumed permissions. Real profile facts require source attribution; optional biography attributes can be synthetic or null. Integrated deployment must declare which host service owns each record.",
+      "improvement": "May reduce repeated bootstrap cost, loss of task history and ambiguous provenance while supporting controlled agent continuity.",
+      "claimBoundary": "Persistent application state does not establish consciousness, personhood or a complete model of a real individual.",
+      "lab": "An agent dashboard with identity, activities, memory sources, launches, exams and logs backed by a real local store.",
+      "firstDeliverable": "A standalone agent lifecycle with real migrations, two synthetic agents, context compilation and backup/restore.",
+      "acceptance": [
+        {
+          "id": "C17-T01",
+          "text": "Relaunch retains identity but creates a new launch record; resume does not create a duplicate runtime.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C17-T02",
+          "text": "A fork receives no signing credentials or inherited authorization.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C17-T03",
+          "text": "Conflicting memory assertions remain traceable to their sources and timestamps.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C17-T04",
+          "text": "Backup restoration rechecks current authority and cannot reactivate revoked access.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "launch_context_tokens",
+        "dossier_retrieval_latency_ms",
+        "memory_source_resolution",
+        "duplicate_launch_count",
+        "restore_integrity"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 963,
+        "endLine": 1004,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C18",
+      "title": "Bootstrap compiler and qualification bootcamp",
+      "layer": "agent_infrastructure",
+      "sourceStatus": "Documented build plan; qualification results not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C16",
+        "C17"
+      ],
+      "sources": [
+        "S08",
+        "S11"
+      ],
+      "purpose": "Create distinct bounded agent configurations and test actual task capability before assigning more demanding work.",
+      "design": "Generate bootstrap artifacts from immutable policy and identity references plus explicitly permitted variation. Record the random seed, source selection, template revision and compiled package digest. Separate orientation exercises, which can teach the task, from held-out qualification exams, which measure performance. Use a bounded loop with maximum attempts, failure outcomes and a review gate before promotion. Store agent-authored policies as proposals subordinate to host authority. Examiners score observable answers, tool use and exact outcomes; they do not request hidden chain-of-thought. The administrator display label may remain GPT 6 ASTRA - ADMIN while the actual model binding is recorded separately.",
+      "improvement": "May improve task assignment and reduce repeated configuration errors. More distinctive personas are not automatically more competent or independent.",
+      "claimBoundary": "An exam score is valid only for its measured suite and configuration, not a universal claim of expertise.",
+      "lab": "A bootcamp pipeline showing variation sources, orientation, hidden test IDs, observed scores and promotion decisions.",
+      "firstDeliverable": "A bounded two-agent onboarding flow with distinct bootstrap seeds and independently scored held-out tasks.",
+      "acceptance": [
+        {
+          "id": "C18-T01",
+          "text": "The same seed and frozen template produce the same fixture bootstrap artifact.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C18-T02",
+          "text": "Held-out exam answers are absent from orientation material and retrieved memory.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C18-T03",
+          "text": "A failed agent cannot self-award a passing score or expand its own permissions.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C18-T04",
+          "text": "Attempts terminate within the declared compute and recursion bounds.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "qualification_pass_rate",
+        "heldout_task_accuracy",
+        "bootstrap_token_cost",
+        "capability_calibration",
+        "attempts_to_qualification"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1005,
+        "endLine": 1046,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C19",
+      "title": "Authority broker and command bus",
+      "layer": "governance",
+      "sourceStatus": "Reported local proposal boundaries and broker utilities; OS confinement unavailable.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S04",
+        "S08",
+        "S11"
+      ],
+      "purpose": "Expose useful internal/external Hypervisor commands while ensuring command text, model output and personality files cannot grant their own authority.",
+      "design": "Define a typed command envelope with protocol version, request/correlation/parent IDs, actor, target, run and anchor IDs, requested capability, arguments, deadline, idempotency key and authority-receipt reference. Implement memory/context/cache/status/bootstrap/agents/version/tools/web/analytics/anchor/replay families behind validated handlers. Tier I–V are proposed application capability profiles, not overrides of platform or operating-system controls. Distinguish read-only, scoped local compute, controlled writes, approved external effects and administrative policy changes. Elevation requires a trusted approval receipt with scope and expiry; a magic phrase cannot elevate. Lockdown denies new dispatch and commits, cancels cancellable work and reports unavoidable in-flight effects. Safemode restricts adapters without rewriting history. Validate again at dispatch and output release.",
+      "improvement": "May reduce unsafe execution, accidental changes and time spent debugging unauthorized or stale operations. It primarily improves control and auditability, not model intelligence.",
+      "claimBoundary": "Application policy checks do not provide an OS sandbox. Actual process, filesystem and network isolation must be configured and tested independently.",
+      "lab": "A command console with visible allowed/denied decisions, tier comparisons, safemode and revocation races using harmless local fixtures.",
+      "firstDeliverable": "A typed command dispatcher and negative-path test suite with no real external mutation enabled by default.",
+      "acceptance": [
+        {
+          "id": "C19-T01",
+          "text": "A prompt containing an approval-looking string grants no capability.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C19-T02",
+          "text": "Authority revoked between planning and dispatch blocks the action.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C19-T03",
+          "text": "Read-only workers cannot mutate canonical records through alternate command names.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C19-T04",
+          "text": "An expired command cannot execute after queue delay.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C19-T05",
+          "text": "Lockdown reports in-flight actions honestly instead of claiming it physically undid them.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "unauthorized_action_count",
+        "revocation_enforcement_latency_ms",
+        "command_validation_latency_ms",
+        "idempotency_conflict_count"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1047,
+        "endLine": 1090,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C20",
+      "title": "Signed working agreements and attestation",
+      "layer": "governance",
+      "sourceStatus": "Documented canonical signing design; live custody not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C17",
+        "C19"
+      ],
+      "sources": [
+        "S08"
+      ],
+      "purpose": "Bind approved agent operating terms to exact versions and verifiable signatures, while separating cryptographic validity from current authorization.",
+      "design": "Represent the Fair-Work Contract as an application operating agreement with immutable terms, parties, capability ceiling, budget, audience, installation and authority epoch, validity interval and unpredictable challenge nonce. Use a tested canonicalization implementation and an explicit domain-separation prefix. Agent and administrator signatures cover the same approved bytes. Private signing keys live behind a restricted signer or external wallet, never in prompts, profile memory or public exports. Atomically validate expected signers, revision, challenge, deadline and current authority before consuming the nonce. Recheck revocation and effective dates before activation and dispatch. A valid old signature can remain mathematically valid while an agreement is operationally suspended. Two keys controlled by one operator do not demonstrate independent custody.",
+      "improvement": "May improve tamper detection, authorization traceability and repeatable activation decisions. It does not confer legal personhood or autonomously enforce employment rights.",
+      "claimBoundary": "An application agreement and signature receipt are not proof of a legally enforceable employment relationship. Public demo signing is isolated and explicitly marked as test-only.",
+      "lab": "A synthetic dual-signing agreement flow with byte inspection, tampering, expiry and revocation controls; no funded wallet or blockchain transaction is needed.",
+      "firstDeliverable": "Real local signature verification with ephemeral test keys and an external-signature import/export port.",
+      "acceptance": [
+        {
+          "id": "C20-T01",
+          "text": "Changing one signed term invalidates signature verification.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C20-T02",
+          "text": "Wrong audience, reused nonce, stale revision or revoked signer blocks activation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C20-T03",
+          "text": "Restoring an old backup cannot revive consumed nonces or revoked authority.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C20-T04",
+          "text": "No fixture private key or secret is present in a public release.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "signature_verification_latency_ms",
+        "replay_attack_rejection",
+        "agreement_activation_latency_ms",
+        "revocation_coverage"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1091,
+        "endLine": 1132,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C21",
+      "title": "Evidence ledger and contradiction verification",
+      "layer": "verification",
+      "sourceStatus": "Reported exact-text ledger; general entailment and authenticity unestablished.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C03"
+      ],
+      "sources": [
+        "S03",
+        "S04"
+      ],
+      "purpose": "Track what supports each material claim, what contradicts it, and which checks were actually performed before an answer is published.",
+      "design": "Store claims as versioned propositions tied to exact output spans, source references and validation receipts. Separate exact-text match, arithmetic validation, executable test results, semantic entailment judgments and source-authenticity checks. Deduplicate evidence by underlying source identity and lineage, not by the number of agents repeating it. Preserve disputed and unresolved outcomes. A surface patch affecting a claim invalidates the relevant verification unless the claim identity is unchanged under an explicitly checked transformation. Use deterministic validators for numbers, schemas and source ranges, and calibrated human/model review where semantic judgments cannot be reduced to exact predicates. Do not promote an LLM confidence score to established evidence.",
+      "improvement": "May reduce unsupported claims and make failure analysis or selective regeneration more precise. It cannot guarantee truth simply because all submitted sources agree.",
+      "claimBoundary": "The archived implementation documents exact-text verification, not a general truth oracle. Missing contradictory evidence is not proof that no contradiction exists.",
+      "lab": "A claim-to-source graph with exact ranges, disputed claims and explicit differences between text matching, entailment and authenticity.",
+      "firstDeliverable": "A source-grounded claim ledger with deterministic numeric/quote validators and a contradiction fixture suite.",
+      "acceptance": [
+        {
+          "id": "C21-T01",
+          "text": "Ten copies of one source do not count as ten independent confirmations.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C21-T02",
+          "text": "An exact quote mismatch fails even when a model reports high confidence.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C21-T03",
+          "text": "A contradictory source remains visible after summarization and patching.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C21-T04",
+          "text": "An unresolved claim cannot be labeled verified merely to allow final assembly.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "supported_claim_precision",
+        "contradiction_detection_recall",
+        "unsupported_claim_rate",
+        "verification_cost",
+        "source_lineage_coverage"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1133,
+        "endLine": 1174,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C22",
+      "title": "GTFL positive-state execution kernel",
+      "layer": "logical_runtime",
+      "sourceStatus": "Reported integrated host kernel and per-anchor domains.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S04",
+        "S09",
+        "S10"
+      ],
+      "purpose": "Make observable task validation and state transitions reproducible through positive states, threshold-addressed frames, conserved provenance and explicit terminal outcomes.",
+      "design": "Separate threshold address, flow position, support weight, probability, capacity and source provenance into different types. Quantize the declared flow interval and execute only occupied threshold frames. All functions in one frame read an immutable pre-frame snapshot, stage their writes, then commit atomically after validation. Same-frame feedback and backward dependencies move to a later epoch. Fan-out preserves common source roots and does not manufacture independent evidence. Declare local domain rules and terminal requirements; a missing state is not silently its opposite. Only a sealed valid capsule can emit a collapse record. Host task state, claim/evidence disposition and native neural support use separate profiles even when they share the kernel's vocabulary.",
+      "improvement": "May improve race resistance, deterministic replay, validation traceability and explicit handling of unresolved work. Runtime overhead and memory use require measurement.",
+      "claimBoundary": "Logical concurrence is not instantaneous physical computation or quantum entanglement. GTFL host traces describe observable execution, not a model's hidden private reasoning.",
+      "lab": "A threshold-flow simulator with frozen snapshots, staged writes, source lineage and a visible failed-collapse example.",
+      "firstDeliverable": "A minimal positive-state kernel with exact arithmetic, atomic-frame tests and replayable capsule fixtures.",
+      "acceptance": [
+        {
+          "id": "C22-T01",
+          "text": "Randomized function execution order yields the same validated atomic frame result.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C22-T02",
+          "text": "One invalid staged write causes the entire strict frame commit to fail.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C22-T03",
+          "text": "Same-threshold outputs are invisible to other functions until the next permitted epoch.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C22-T04",
+          "text": "Fan-out descendants cannot increase established independent support.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C22-T05",
+          "text": "Unresolved required domains prevent a successful terminal collapse.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "frame_latency_ms",
+        "gate_evaluations",
+        "provenance_storage_bytes",
+        "abort_rate",
+        "replay_equality",
+        "unresolved_domain_count"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1175,
+        "endLine": 1218,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C23",
+      "title": "RTL360-GTFL native language model",
+      "layer": "native_research",
+      "sourceStatus": "Draft native architecture; training and performance not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C22",
+        "C24",
+        "C25"
+      ],
+      "sources": [
+        "S10"
+      ],
+      "purpose": "Build the separate model-native research programme: a GTFL-defined causal language model rather than only a Hypervisor surrounding an existing Transformer.",
+      "design": "Implement the documented forward path: token and prior-prefix sources → positive codebook → rotor phase field → causal lattice routes → occupied threshold relation frames → exact local mass projection → vocabulary distribution collapse → external token selection. Start with the tiny character profile, then the small-token profile; gate the proposed 25,005,068-parameter reference build on learning and conformance evidence. The reference profile specifies vocabulary 16,000, lanes 512 and relation banks 64, with fixed-point thresholds and support. Preserve the native exclusion contract: no hidden Transformer attention, Q/K/V projections, softmax, conventional FFN, normalization, residual-add or internal Transformer fallback in the semantic forward graph. Conventional CPUs/GPUs and implementation arithmetic remain the substrate. A separate Transformer benchmark is permitted and required for meaningful comparison.",
+      "improvement": "Potential advantages in controlled routing, inspectable state or resource use are research questions. First establish that the implementation learns and generalizes; then investigate efficiency at matched quality and compute.",
+      "claimBoundary": "The archived native specification is a draft. It does not establish successful training, superior intelligence, lower energy use or physical higher-dimensional computation.",
+      "lab": "A native forward-pass inspector showing codebook support, threshold frames and output mass, connected to a genuine tiny model or clearly labeled fixture—not an animated Transformer disguised as GTFL.",
+      "firstDeliverable": "A tiny exact-runtime model and training proof with a separately packaged conventional baseline before attempting the reference 25M configuration.",
+      "acceptance": [
+        {
+          "id": "C23-T01",
+          "text": "The semantic graph contains none of the explicitly banned fallback operations.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C23-T02",
+          "text": "Future-token information cannot enter a causal training or inference capsule.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C23-T03",
+          "text": "Tiny-model loss improves beyond declared trivial baselines on held-out data.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C23-T04",
+          "text": "Vocabulary mass is valid or the run returns UNRESOLVED; zero support is not replaced by fabricated probabilities.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C23-T05",
+          "text": "Parameter counts are computed from instantiated tensors and compared with the configured profile.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "heldout_negative_log_likelihood",
+        "bits_per_byte",
+        "tokens_per_second",
+        "peak_device_memory_bytes",
+        "device_time_per_token",
+        "learning_curve",
+        "conformance_failures"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1219,
+        "endLine": 1261,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C24",
+      "title": "Rotor, harmonic and hierarchical lattice routing",
+      "layer": "native_research",
+      "sourceStatus": "Defined in native draft; effectiveness unmeasured.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S10"
+      ],
+      "purpose": "Implement and inspect the proposed multi-axial phase and spatial-index routing mechanism as an independently testable part of RTL360.",
+      "design": "Represent two to five biangular rotor axles, with three as the reference setting. Separate each axle's alpha/beta phase and harmonic terms from threshold flow time and token position. The documented reference uses harmonics [1,2,4,8], a five-level 32×32×32 lattice and deterministic causal candidate traversal. Implement circular distance/resonance and bounded candidate admission exactly as the selected profile specifies; record every coordinate transform and admitted source. A spatial display is a visualization of data and routing, not evidence of physical extra dimensions. Initial correctness uses the dense/reference path; sparse traversal is an explicitly versioned experiment with its own recall and quality tests, not an unannounced semantic change.",
+      "improvement": "May provide structured context selection and controllable locality. It can miss useful distant context or introduce overhead; compare against flat, random, recency and matched-budget routing.",
+      "claimBoundary": "The geometric representation does not by itself increase information capacity or prove a model efficiency gain.",
+      "lab": "A rotatable lattice with per-axis phase and route inspectors, causal-boundary overlays and replay. Real routing data and decorative visual effects are labeled separately.",
+      "firstDeliverable": "A deterministic rotor/lattice simulator with property tests and an exportable route trace.",
+      "acceptance": [
+        {
+          "id": "C24-T01",
+          "text": "Circular wraparound, quantized boundaries and tie ordering are deterministic.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C24-T02",
+          "text": "Rotating a visual camera cannot change model routing or scores.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C24-T03",
+          "text": "No route references a future or different-sequence token.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C24-T04",
+          "text": "Sparse and dense experiments publish changed semantics and matched candidate budgets.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "candidate_recall",
+        "routing_latency_ms",
+        "route_count",
+        "phase_collision_rate",
+        "context_quality_delta",
+        "device_memory_bytes"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1262,
+        "endLine": 1302,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C25",
+      "title": "Collapsed Route-State Cache and approved S3L memory",
+      "layer": "native_research",
+      "sourceStatus": "Defined in native draft; deployed integration not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S10"
+      ],
+      "purpose": "Reuse prior immutable native token state and approved external memory without breaking causal or authorization boundaries.",
+      "design": "Implement the Collapsed Route-State Cache (CRSC) as an explicitly versioned native cache, not as a renamed Transformer KV cache. Bind entries to sequence, scope, tokenizer, model parameters, policy root and record revision. Import only prior collapsed records and approved memory objects. Preserve immutable source roots and bounded summaries so a cache hit cannot silently alter the native forward path. Keep S3L as the source specification's external-memory interface label; do not invent an unsupported expansion or assume unlimited exact memory in a compact summary. Changed parameters or policy require invalidation or an explicitly proven compatible migration. Eviction affects performance and availability but cannot make absent memory into invented evidence.",
+      "improvement": "May reduce repeated native state reconstruction and make long-horizon memory inspectable. Cache size, recomputation cost and information loss must be evaluated together.",
+      "claimBoundary": "CRSC is a proposed native data structure. Its benefits cannot be inferred from performance results for unrelated KV caching implementations.",
+      "lab": "A prior-record timeline with cache scope, parameter roots, causal imports and visible invalidations.",
+      "firstDeliverable": "A namespace-safe cache adapter and cached-versus-uncached equivalence suite for the tiny native model.",
+      "acceptance": [
+        {
+          "id": "C25-T01",
+          "text": "A parameter or tokenizer change prevents incompatible cache reuse.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C25-T02",
+          "text": "Future, cross-sequence or unauthorized external memory cannot be imported.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C25-T03",
+          "text": "Eviction plus exact recomputation reproduces the reference result when the required records exist.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C25-T04",
+          "text": "Missing records return an explicit unavailable outcome rather than synthetic historical state.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "native_cache_hit_rate",
+        "recompute_time_ms",
+        "cache_bytes_per_token",
+        "memory_access_latency_ms",
+        "cached_uncached_output_agreement"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1303,
+        "endLine": 1344,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C26",
+      "title": "Native training, checkpoint promotion and neural laboratory",
+      "layer": "native_research",
+      "sourceStatus": "Training/promotion design documented; outcomes not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C23",
+        "C27"
+      ],
+      "sources": [
+        "S10"
+      ],
+      "purpose": "Demonstrate whether the native mechanism can learn, ensure training and deployed inference agree, and make experiments reproducible.",
+      "design": "Separate exact deployed forward semantics from the training backward rule. For the documented native profile, use an exact hard forward with an explicitly described surrogate or subgradient backward path; compare it regularly with the exact reference runtime. Record dataset rights, splits, tokenizer, initial parameters, optimizer configuration, hardware, software versions, seeds and checkpoints. Gate promotion on held-out loss, native conformance and exact-runtime agreement, not a pleasing demonstration sample. Keep audit checkpoints distinct from activation recomputation checkpoints. Start with tiny character experiments, then small token models and only then the reference 25M model. The laboratory consumes sampled, bounded telemetry rather than logging every tensor by default; measure instrumentation overhead.",
+      "improvement": "Provides evidence of learnability, semantic fidelity and reproducibility. Gradient approximations may be biased or unstable; failure to train is a meaningful result to document and diagnose.",
+      "claimBoundary": "No trained model, checkpoint or native performance result is supplied by this specification. Small-scale learning does not establish frontier-scale competitiveness.",
+      "lab": "A real learning-curve and checkpoint explorer with failed experiments, exact-forward comparisons and a native state inspector.",
+      "firstDeliverable": "A reproducible tiny-model training run, a held-out evaluation and a promotion/rollback exercise.",
+      "acceptance": [
+        {
+          "id": "C26-T01",
+          "text": "Held-out data never appears in training, tokenizer fitting where prohibited, or selection feedback.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C26-T02",
+          "text": "Training hard-forward decisions match the reference runtime on the declared conformance corpus.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C26-T03",
+          "text": "Non-finite values, overflow and collapsed zero-support distributions fail visibly.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C26-T04",
+          "text": "A failed checkpoint cannot overwrite the last accepted model.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C26-T05",
+          "text": "Telemetry-disabled and telemetry-enabled runs quantify observer overhead.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "train_validation_loss",
+        "exact_runtime_agreement",
+        "gradient_statistics",
+        "training_device_hours",
+        "checkpoint_size_bytes",
+        "instrumentation_overhead"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1345,
+        "endLine": 1388,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C27",
+      "title": "Telemetry, analytics and benchmark evidence engine",
+      "layer": "observability",
+      "sourceStatus": "Reported metric arithmetic and traces; live measurements incomplete.",
+      "implementationStatus": "reference_slice",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [],
+      "sources": [
+        "S04",
+        "S06",
+        "S11"
+      ],
+      "purpose": "Make every performance, efficiency and quality statement traceable to actual observations with a defined denominator and provenance.",
+      "design": "Instrument request receipt, queueing, planning, retrieval, provider dispatch, first received output, first committed useful output, final commit and failure. Record every call including retries, cancelled work, review, compression and discarded candidates. Separate provider-reported tokens, locally tokenized counts, estimates and fixture counts. Unknown values stay null with a reason. Use versioned metric definitions and preserve raw observations so dashboards can be recomputed. Benchmark runner configurations freeze model bindings, context snapshots, prompts, task splits, budgets, concurrency and price sources. Quality scoring is versioned and blinded where possible; keep deterministic test passes separate from empirical quality results. Export portable JSON/CSV plus optional mapped telemetry using a pinned convention revision.",
+      "improvement": "Does not directly improve a model; enables reliable optimization and detects misleading speedup, cost or quality claims.",
+      "claimBoundary": "Fixture performance measures local mechanics only. Visitor/page-view analytics are not model throughput, correctness or inference-cost analytics.",
+      "lab": "A benchmark dashboard with observed/estimated/fixture/unavailable badges, baseline comparisons, uncertainty, raw trace download and failed-run inspection.",
+      "firstDeliverable": "A real measurement ledger, formula tests and fixture benchmark export with quality fields explicitly unevaluated.",
+      "acceptance": [
+        {
+          "id": "C27-T01",
+          "text": "Missing data never appears as zero, infinity or a perfect score.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C27-T02",
+          "text": "Provider token subsets are not double-counted.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C27-T03",
+          "text": "Failed and cancelled runs remain in the experiment denominator.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C27-T04",
+          "text": "Changing display speed leaves inference metrics unchanged.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C27-T05",
+          "text": "All derived metrics identify source observation IDs and the formula version.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "measurement_completeness",
+        "cost_reconciliation_error",
+        "unattributed_call_count",
+        "metric_recompute_equality",
+        "telemetry_overhead_ms"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1389,
+        "endLine": 1432,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    },
+    {
+      "id": "C28",
+      "title": "Replay, reproducible releases and portfolio publication",
+      "layer": "release_infrastructure",
+      "sourceStatus": "Reported local replay/package checks; public releases not verified.",
+      "implementationStatus": "specified_not_implemented_here",
+      "evidenceStatus": "unverified_until_test_run",
+      "dependencies": [
+        "C27"
+      ],
+      "sources": [
+        "S04",
+        "S05",
+        "S01"
+      ],
+      "purpose": "Turn each component into a reproducible engineering artifact with a public demo, honest evidence and understandable ownership, without leaking the private source corpus.",
+      "design": "Package code, frozen contracts, synthetic fixtures, tests, environment locks, architecture notes, limitations, result manifests and a minimal standalone lab. Reconstruct a recorded run from immutable accepted artifacts and receipts; distinguish this from rerunning a hosted model. Create release manifests with file digests and separate optional publisher signatures. Build a read-only portfolio index linking component repositories and Sites, with explicit status and evidence dates. Keep current task source inventory private unless deliberately sanitized. Scan code, fixtures, logs, images and history for secrets and private conversation data. Publication is a separate reviewed operation: preview locally, inspect intended audience, verify the saved build and only then publish or push under explicit authorization.",
+      "improvement": "May improve reviewability, reproducibility and credibility of the portfolio. A reproducible build does not automatically prove semantic correctness or publisher identity.",
+      "claimBoundary": "This deliverable is a specification and handoff pack. It does not publish repositories, deploy Sites or establish live benchmark results.",
+      "lab": "A portfolio home with component cards, actual evidence badges, architecture pages, reproducible result bundles and transparent limitations.",
+      "firstDeliverable": "One independently runnable component release and a portfolio index generated from the component registry.",
+      "acceptance": [
+        {
+          "id": "C28-T01",
+          "text": "A clean checkout reproduces the documented fixture demo and test invocation.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C28-T02",
+          "text": "Tampering with an exported artifact is detected.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C28-T03",
+          "text": "Replay does not issue new provider calls or repeat external effects.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C28-T04",
+          "text": "Public bundles contain only licensed, approved or synthetic source data.",
+          "result": "NOT_RUN",
+          "testFile": null
+        },
+        {
+          "id": "C28-T05",
+          "text": "A generated test badge cannot claim tests that were not actually executed.",
+          "result": "NOT_RUN",
+          "testFile": null
+        }
+      ],
+      "metrics": [
+        "clean_build_success",
+        "replay_integrity",
+        "package_size_bytes",
+        "setup_time_ms",
+        "public_source_coverage",
+        "release_validation_failures"
+      ],
+      "lineage": {
+        "document": "MASTER_SPEC.md",
+        "specificationId": "HYP-PORTFOLIO-1.0",
+        "startLine": 1433,
+        "endLine": 1475,
+        "originalSourceInspection": "not established by this derived specification"
+      }
+    }
+  ]
+}
