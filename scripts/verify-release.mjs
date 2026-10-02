@@ -3,6 +3,8 @@ import { readFile, readdir, lstat, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
+import { stableJSON } from '../packages/lab/core.mjs';
+import { pairedBootstrap } from '../packages/lab/analytics.mjs';
 const root=path.resolve(import.meta.dirname,'..'), hash=data=>createHash('sha256').update(data).digest('hex');
 const json=async file=>JSON.parse(await readFile(path.join(root,file),'utf8'));
 async function tree(directory) {
@@ -51,13 +53,13 @@ for(const match of text.matchAll(/```\n([\s\S]*?)\n```/g)) {
 }
 assert.equal(nativeSourceMatches.length,6); assert.equal(hostSourceChanges.length,2);
 const runtimeReceipt=await json('experiments/runtime/test-receipt.json');
-assert.equal(runtimeReceipt.status,'PASSED'); assert.equal(runtimeReceipt.passed,23); assert.equal(runtimeReceipt.failed,0); assert.equal(runtimeReceipt.skipped,0); assert.equal(runtimeReceipt.tests.length,runtimeReceipt.total);
+assert.equal(runtimeReceipt.status,'PASSED'); assert.equal(runtimeReceipt.passed,45); assert.equal(runtimeReceipt.failed,0); assert.equal(runtimeReceipt.skipped,0); assert.equal(runtimeReceipt.tests.length,runtimeReceipt.total);
 assert.equal(runtimeReceipt.dependency.version,'2.1.0'); assert.equal(runtimeReceipt.dependency.verifiedFiles,85); assert.equal(runtimeReceipt.provenance.providerCalls,0);
 assert.equal(runtimeReceipt.dependency.manifestHash,'sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c');
 assert.equal(runtimeReceipt.dependency.contentRoot,'sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1');
 for(const [file,digest] of Object.entries(runtimeReceipt.sourceHashes)) assert.equal('sha256:'+hash(await readFile(path.join(root,file))),digest,'Stale supplied-runtime receipt: '+file);
 const runtimeCoverage=await json('experiments/runtime/coverage.json');
-assert.equal(runtimeCoverage.components.length,7);
+assert.equal(runtimeCoverage.components.length,12);
 for(const item of runtimeCoverage.components) {
   const component=catalog.components.find(c=>c.id===item.componentId); assert.ok(component);
   assert.ok(item.acceptanceIds.every(id=>component.acceptance.some(a=>a.id===id)));
@@ -75,6 +77,41 @@ for(const match of runtimeText.matchAll(/```\n([\s\S]*?)\n```/g)) {
 assert.equal(runtimeSourceMatches,2);
 assert.equal((await json('experiments/runtime/native/manifest.json')).final_artifact_hash,runtimeNative.artifactHash);
 assert.equal((await json('experiments/runtime/native/performance.json')).gtfl.collapse_validity,'VALID');
+const historical=await json('experiments/runtime/history/23-probe-release/test-receipt.json');
+assert.equal(historical.passed,23);
+for(const [file,digest] of Object.entries(historical.sourceHashes)) {
+  const retained=file==='scripts/test-supplied-runtime.mjs'?'experiments/runtime/history/23-probe-release/runner-source.txt':file;
+  assert.equal('sha256:'+hash(await readFile(path.join(root,retained))),digest,'Historical probe bytes changed');
+}
+const schedulerNative=await json('experiments/runtime/native-scheduler/receipt.json'), schedulerText=await readFile(path.join(root,'experiments/runtime/native-scheduler/validated-source.txt'),'utf8');
+assert.equal(hash(JSON.stringify(schedulerText.slice(0,schedulerNative.sourceCharacters))),schedulerNative.sourceTextHash.replace('sha256:',''));
+assert.equal(schedulerNative.completionState,'REPORTED'); assert.equal(schedulerNative.persisted,false);
+let schedulerSourceMatches=0;
+for(const match of schedulerText.matchAll(/```\n([\s\S]*?)\n```/g)) { const node=JSON.parse(match[1]); assert.equal(await readFile(path.join(root,node.path),'utf8'),node.content); schedulerSourceMatches++; }
+assert.equal(schedulerSourceMatches,3);
+assert.equal((await json('experiments/runtime/native-scheduler/manifest.json')).final_artifact_hash,schedulerNative.artifactHash);
+const scheduler=await json('experiments/runtime/scheduler-results.json'), protocol=await json('experiments/runtime/scheduler-protocol.json');
+assert.deepEqual(scheduler.protocol.parsed,protocol); assert.equal('sha256:'+hash(await readFile(path.join(root,scheduler.protocol.path))),scheduler.protocol.byteHashBefore); assert.equal(scheduler.protocol.byteHashBefore,scheduler.protocol.byteHashAfter);
+assert.equal('sha256:'+hash(await readFile(path.join(root,scheduler.runner.path))),scheduler.runner.byteHash);
+assert.equal(scheduler.denominator.recordedAttempts,16); assert.equal(scheduler.attempts.length,16); assert.equal(scheduler.pairs.length,8);
+assert.equal(scheduler.denominator.failedAttempts,scheduler.attempts.filter(a=>a.status==='failed').length);
+for(const attempt of scheduler.attempts) {
+  assert.equal(attempt.providerCalls,0); for(const field of ['modelCost','modelTokens','providerLatencyMs','modelQuality']) assert.equal(attempt[field],null);
+  assert.equal(attempt.concurrency,attempt.arm==='baseline'?1:3);
+  assert.equal(attempt.orderInPair,attempt.pairIndex%2===0?(attempt.arm==='baseline'?0:1):(attempt.arm==='candidate'?0:1));
+  if(attempt.status==='fulfilled') {
+    assert.equal(attempt.schedulerSummary.calls,4); assert.equal(attempt.callbackIntervalsMs.length,4); assert.equal(attempt.schedulerSummary.usageTokens,null);
+    assert.ok(attempt.schedulerSummary.maxSimultaneous<=attempt.concurrency);
+    const intervals=new Map(attempt.callbackIntervalsMs.map(i=>[i.id,i])), memo=new Map();
+    function critical(id) { if(memo.has(id)) return memo.get(id); const task=protocol.tasks.find(t=>t.id===id), interval=intervals.get(id); assert.ok(interval.end_ms>=interval.start_ms); for(const dep of task.dependencies) assert.ok(interval.start_ms>=intervals.get(dep).end_ms); const value=interval.end_ms-interval.start_ms+(task.dependencies.length?Math.max(...task.dependencies.map(critical)):0); memo.set(id,value); return value; }
+    assert.ok(Math.abs(Math.max(...protocol.tasks.map(t=>critical(t.id)))-attempt.criticalPathMs)<1e-9,'Critical path arithmetic differs beyond floating-point rounding');
+    const expected=Object.fromEntries(protocol.tasks.map(t=>[t.id,{id:t.id,sum:6+t.id.length}])); assert.equal('sha256:'+hash(stableJSON(expected)),attempt.outputHash);
+  }
+}
+const eligible=scheduler.pairs.filter(p=>p.eligible); assert.equal(scheduler.denominator.eligiblePairs,eligible.length); assert.equal(scheduler.denominator.excludedPairs,8-eligible.length);
+for(const pair of scheduler.pairs) { const baseline=scheduler.attempts.find(a=>a.pairIndex===pair.pairIndex&&a.arm==='baseline'), candidate=scheduler.attempts.find(a=>a.pairIndex===pair.pairIndex&&a.arm==='candidate'); assert.equal(pair.baselineWallMs,baseline.actualSchedulerWallMs); assert.equal(pair.candidateWallMs,candidate.actualSchedulerWallMs); if(pair.eligible) { assert.equal(baseline.outputHash,candidate.outputHash); assert.equal(pair.candidateMinusBaselineMs,pair.candidateWallMs-pair.baselineWallMs); } }
+assert.deepEqual(scheduler.pairedStatistic.bootstrap,pairedBootstrap({baseline:eligible.map(p=>p.baselineWallMs),candidate:eligible.map(p=>p.candidateWallMs),iterations:4000,confidence:.95,seed:1729}));
+assert.deepEqual(await json('dist/data/scheduler-results.json'),scheduler);
 const readmeReceipt=await json('experiments/native/readme-receipt.json');
 const readmeArtifact=await readFile(path.join(root,'experiments/native/readme-validated-source.txt'),'utf8');
 assert.equal(hash(JSON.stringify(readmeArtifact.slice(0,readmeReceipt.sourceCharacters))),readmeReceipt.sourceTextHash.replace('sha256:',''));
@@ -93,6 +130,6 @@ const credentialPattern=/(?:sk-proj-[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9]{20,
 for(const file of publicFiles) { assert.ok(!forbiddenNames.test(file),file); assert.ok(!credentialPattern.test(await readFile(path.join(root,file),'utf8')),'Credential pattern found: '+file); }
 const manifest=async()=>Object.fromEntries(await Promise.all((await tree('dist')).map(async f=>[f,hash(await readFile(path.join(root,f)))])));
 const before=await manifest(); const build=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'}); assert.equal(build.status,0,build.stdout+build.stderr); const after=await manifest(); assert.deepEqual(after,before,'Static rebuild differs');
-const report={schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
+const report={schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
 await writeFile(path.join(root,'experiments/release-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({...report,publicFileHashes:undefined}));

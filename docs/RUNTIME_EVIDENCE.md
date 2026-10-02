@@ -1,9 +1,14 @@
 # Evidence from the supplied Hypervisor 2.1.0 implementation
 
-The dossier now includes 23 independently authored behavioral probes executed against the supplied Hypervisor implementation. All passed, with no failures or skipped tests, on Node v26.3.1 and Windows. These complement the 24 public reference tests; the two suites have different owners and dependencies.
+The dossier now includes 45 AI-assisted behavioral probes executed against the supplied Hypervisor implementation. All passed, with no failures or skipped tests, on Node v26.3.1 and Windows. These complement the 24 public reference tests; the two suites have different owners and dependencies.
 
 | Component | Actual owning module | Tested behavior |
 | --- | --- | --- |
+| C01 | `01_ASTRA_CONTROL_PLANE/routing.mjs`, `runtime.mjs` | Bounds, cancellation, dependency scheduling and fail-closed ephemeral fixture execution |
+| C07 | `01_ASTRA_CONTROL_PLANE/routing.mjs`, `runtime.mjs` | Proposal authority, dependent candidates, supported fixture output and unsupported prose rejection |
+| C15 | `01_ASTRA_CONTROL_PLANE/routing.mjs` | Complete measured observations, eligible selection, deterministic ties, marginal gain and future-only feedback |
+| C22 | `04_GTFL_REASONING_PLANE/kernel.mjs` | Frozen frame reads, atomic overflow, deduplicated support, terminal collapse and unresolved-domain rejection |
+| C28 | `04_GTFL_REASONING_PLANE/kernel.mjs`, `shared/run-proof.mjs` | Exact local replay and run-bundle tamper rejection |
 | C02 | `02_CONTEXT_PLANE/context.mjs` | Exact approvals and contradictions in headers, deterministic retrieval, pinned overflow, synthetic bridge limits and pressure thresholds |
 | C03 | `02_CONTEXT_PLANE/context.mjs` | Exact Unicode source text, content-addressed IDs, duplicate and missing-source rejection, immutable hashes |
 | C06 | `03_GENERATION_PLANE/generation.mjs` | Requirement representation, cycles, authority ceilings, dependency gates and immutable revision ancestry |
@@ -30,3 +35,5 @@ Receipts and commands:
 - [Native source receipt](../experiments/runtime/native/receipt.json)
 - [Native performance record](../experiments/runtime/native/performance.json)
 - [Browser evidence bundle](../dist/data/runtime-evidence.json)
+
+The separate matched scheduler experiment retains all 16 actual serial/concurrent attempts. Its timer callbacks are controlled asynchronous wait fixtures. The recorded 2.02× ratio of paired means is local scheduler evidence, with hosted model comparisons unavailable. Wall timings vary; seeded bootstrap is deterministic conditional on the frozen observed vector. See [protocol](../experiments/runtime/scheduler-protocol.json), [full attempt log](../experiments/runtime/scheduler-results.json) and [native source receipt](../experiments/runtime/native-scheduler/receipt.json). Reproduce with `npm run benchmark:scheduler`; static builds do not rerun timing experiments.

@@ -2,16 +2,19 @@
   "schemaVersion": 1,
   "status": "PASSED",
   "tests": 24,
-  "suppliedRuntimeTests": 23,
-  "suppliedRuntimeComponents": 7,
+  "suppliedRuntimeTests": 45,
+  "suppliedRuntimeComponents": 12,
   "runtimeSourceMatches": 2,
+  "schedulerSourceMatches": 3,
+  "schedulerAttempts": 16,
+  "schedulerPairs": 8,
   "components": 28,
   "acceptanceRequirements": 122,
   "metricEndpoints": 154,
   "fixtureConfigurations": 17,
   "providerCalls": 0,
-  "syntaxChecked": 18,
-  "publicFiles": 10,
+  "syntaxChecked": 21,
+  "publicFiles": 11,
   "nativeSourceMatches": [
     "packages/lab/core.mjs",
     "packages/lab/analytics.mjs",
@@ -23,7 +26,7 @@
   "hostSourceChanges": [
     {
       "path": "dist/app.mjs",
-      "reason": "Supplied-runtime evidence fetch, per-component partial evidence and source receipt display integrated and checked by host; outside prior native source artifact."
+      "reason": "Host-integrated partial runtime coverage and frozen measured local scheduler panel, with separate model measurement boundaries."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -33,11 +36,12 @@
   "deterministicStaticRebuild": true,
   "publicFileHashes": {
     "dist/LICENSE.txt": "3c21321c5e4a7183b62a138f581a78202bfad89f1b7b4f54aa64976bd7ca95a8",
-    "dist/app.mjs": "ed1583955353f7d6d0ad4f842acb8afb71e38ad1fb3af6534eba9597612998b0",
+    "dist/app.mjs": "4eaf03f7f6280bca62bc4ff427264541e8ede43a3b1e90bfb5e0ba8190d506a7",
     "dist/data/catalog.json": "f6091548179bee0789f67307d4bf090857d3def4c12adca2750b7d807bd3491d",
     "dist/data/publication.json": "cacb22d5a424f344bfad19ce2724dae6dc9314cf6f90d4df240584f3a3c9ade0",
     "dist/data/results.json": "2eaa47e11ca25a546097c5afe599e5b1792380bb24fcfc81002c75fa14bbc680",
-    "dist/data/runtime-evidence.json": "ea4158e063c3e37a0758e3d7b06ec7147630bf16c9c597739d0078cd4796a767",
+    "dist/data/runtime-evidence.json": "785938610be216d450c260050031b8d65ba853d654ba4584a7d74ce18d87b084",
+    "dist/data/scheduler-results.json": "56fbc0b40755b82a8a7f19e2a1b4542535a6a3dd50d5327533a1b4a83a4120b1",
     "dist/index.html": "c574fe2b28f93c12822cab18cb613a39365200f215147ce78d3a972f0553cfcd",
     "dist/lib/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9",
     "dist/lib/core.mjs": "84e188b48b45d2a67a84f1117442c1dae9af7a44fcc22340ad1c9d70bc32157d",

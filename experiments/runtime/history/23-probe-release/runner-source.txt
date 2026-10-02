@@ -6,7 +6,7 @@ import { verifyRuntime } from '../experiments/runtime/tests/runtime-helper.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const verified = await verifyRuntime();
-const files = ['experiments/runtime/tests/context-generation.test.mjs', 'experiments/runtime/tests/evidence-performance.test.mjs', 'experiments/runtime/tests/routing-scheduler.test.mjs', 'experiments/runtime/tests/gtfl-runtime.test.mjs'];
+const files = ['experiments/runtime/tests/context-generation.test.mjs', 'experiments/runtime/tests/evidence-performance.test.mjs'];
 const result = spawnSync(process.execPath, ['--test', '--test-reporter=tap', ...files], {
   cwd: root, encoding: 'utf8', timeout: 120000,
   env: { ...process.env, DOSSIER_RUNTIME_PATH: verified.root }
@@ -26,7 +26,7 @@ const receipt = {
   passed: count('pass'), failed: count('fail'), skipped: count('skipped'), total: count('tests'), tests,
   dependency: { version: verified.version, manifestHash: verified.manifestHash, contentRoot: verified.contentRoot, verifiedFiles: verified.verifiedFiles },
   sourceHashes,
-  inspectedRuntimeSources: Object.fromEntries(Object.entries(verified.sourceHashes).filter(([file]) => /\/(?:context|generation|evidence|broker|performance|core|routing|runtime|kernel|domain-audit|run-proof)\.mjs$/.test(file))),
+  inspectedRuntimeSources: Object.fromEntries(Object.entries(verified.sourceHashes).filter(([file]) => /\/(?:context|generation|evidence|broker|performance|core)\.mjs$/.test(file))),
   provenance: { measurements: 'locally executed behavioral probes with public synthetic inputs', providerCalls: 0, hostedTokens: null, billedCost: null, hostedLatencyMs: null, modelQuality: null, hostedDeterminism: 'not established', sourceRedistributed: false },
   acceptanceScope: 'Partial component mechanism evidence; not completion of all acceptance requirements or a standalone-model comparison.'
 };

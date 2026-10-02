@@ -2,15 +2,125 @@
   "schemaVersion": 1,
   "status": "PARTIAL_SUPPLIED_RUNTIME_EVIDENCE",
   "components": [
-    {"componentId":"C02","module":"02_CONTEXT_PLANE/context.mjs","acceptanceIds":["C02-T01","C02-T03","C02-T05"],"boundary":"Header reconstruction, mandatory-source preservation, lexical retrieval, bridge limits and overflow; not model-driven compaction or all repeated-cycle scenarios."},
-    {"componentId":"C03","module":"02_CONTEXT_PLANE/context.mjs","acceptanceIds":["C03-T02","C03-T03"],"boundary":"Exact immutable source text and stable source selection; no ownership, byte-range editing or projection deletion API in this supplied module."},
-    {"componentId":"C06","module":"03_GENERATION_PLANE/generation.mjs","acceptanceIds":["C06-T01","C06-T02"],"boundary":"Requirement coverage, DAG cycles, authority ceilings and lifecycle gates; lexical anchor ordering and adversarial delimiter parsing are not tested."},
-    {"componentId":"C09","module":"03_GENERATION_PLANE/generation.mjs","acceptanceIds":["C09-T01"],"boundary":"Section binding, exact/locked protection, stale revisions and independent reviewer identity checks; no general semantic validator or native dialect equivalence proof."},
-    {"componentId":"C19","module":"05_TOOL_AND_AUTHORITY_PLANE/broker.mjs","acceptanceIds":["C19-T03"],"boundary":"Capability denial, envelope attenuation, disabled effects and cancellation; no operating-system confinement, human authentication, live mutation or network execution."},
-    {"componentId":"C21","module":"06_EVIDENCE_PLANE/evidence.mjs","acceptanceIds":["C21-T01","C21-T02","C21-T04"],"boundary":"Exact source receipts, duplicated content, disputed and unresolved states; exact-text matching does not establish factual truth or general semantic entailment."},
-    {"componentId":"C27","module":"07_PERFORMANCE_PLANE/performance.mjs","acceptanceIds":["C27-T01","C27-T02","C27-T03"],"boundary":"Complete fixture usage arithmetic, unknown values and dependency-consistent interval calculations; no actual serial-model baseline, provider billing or inference latency measurement."}
+    {
+      "componentId": "C01",
+      "module": "01_ASTRA_CONTROL_PLANE/routing.mjs and runtime.mjs",
+      "acceptanceIds": [
+        "C01-T03",
+        "C01-T04"
+      ],
+      "boundary": "Bounded scheduling, cancellation, authority ceilings and ephemeral fixture execution; partial evidence only, without crash recovery, idempotency or real external effects."
+    },
+    {
+      "componentId": "C02",
+      "module": "02_CONTEXT_PLANE/context.mjs",
+      "acceptanceIds": [
+        "C02-T01",
+        "C02-T03",
+        "C02-T05"
+      ],
+      "boundary": "Header reconstruction, mandatory-source preservation, lexical retrieval, bridge limits and overflow; not model-driven compaction or all repeated-cycle scenarios."
+    },
+    {
+      "componentId": "C03",
+      "module": "02_CONTEXT_PLANE/context.mjs",
+      "acceptanceIds": [
+        "C03-T02",
+        "C03-T03"
+      ],
+      "boundary": "Exact immutable source text and stable source selection; no ownership, byte-range editing or projection deletion API in this supplied module."
+    },
+    {
+      "componentId": "C06",
+      "module": "03_GENERATION_PLANE/generation.mjs",
+      "acceptanceIds": [
+        "C06-T01",
+        "C06-T02"
+      ],
+      "boundary": "Requirement coverage, DAG cycles, authority ceilings and lifecycle gates; lexical anchor ordering and adversarial delimiter parsing are not tested."
+    },
+    {
+      "componentId": "C07",
+      "module": "01_ASTRA_CONTROL_PLANE/routing.mjs and runtime.mjs",
+      "acceptanceIds": [
+        "C07-T02",
+        "C07-T03"
+      ],
+      "boundary": "Dependency-gated proposals, exact supported fixture output and unsupported-output failure; no randomized hosted generation or complete billed-call accounting."
+    },
+    {
+      "componentId": "C09",
+      "module": "03_GENERATION_PLANE/generation.mjs",
+      "acceptanceIds": [
+        "C09-T01"
+      ],
+      "boundary": "Section binding, exact/locked protection, stale revisions and independent reviewer identity checks; no general semantic validator or native dialect equivalence proof."
+    },
+    {
+      "componentId": "C15",
+      "module": "01_ASTRA_CONTROL_PLANE/routing.mjs",
+      "acceptanceIds": [
+        "C15-T01",
+        "C15-T02",
+        "C15-T03"
+      ],
+      "boundary": "Caller-attested measurement validation, eligible selection, missing metrics, deterministic ties, marginal gain and future-only feedback. These vectors do not establish actual expert quality or a calibrated adaptive policy."
+    },
+    {
+      "componentId": "C19",
+      "module": "05_TOOL_AND_AUTHORITY_PLANE/broker.mjs",
+      "acceptanceIds": [
+        "C19-T03"
+      ],
+      "boundary": "Capability denial, envelope attenuation, disabled effects and cancellation; no operating-system confinement, human authentication, live mutation or network execution."
+    },
+    {
+      "componentId": "C21",
+      "module": "06_EVIDENCE_PLANE/evidence.mjs",
+      "acceptanceIds": [
+        "C21-T01",
+        "C21-T02",
+        "C21-T04"
+      ],
+      "boundary": "Exact source receipts, duplicated content, disputed and unresolved states; exact-text matching does not establish factual truth or general semantic entailment."
+    },
+    {
+      "componentId": "C22",
+      "module": "04_GTFL_REASONING_PLANE/kernel.mjs",
+      "acceptanceIds": [
+        "C22-T02",
+        "C22-T03",
+        "C22-T04",
+        "C22-T05"
+      ],
+      "boundary": "Atomic overflow, frozen same-frame reads, support deduplication and unresolved collapse gates; synthetic state-machine evidence, without native neural execution or publisher authentication."
+    },
+    {
+      "componentId": "C27",
+      "module": "07_PERFORMANCE_PLANE/performance.mjs",
+      "acceptanceIds": [
+        "C27-T01",
+        "C27-T02",
+        "C27-T03"
+      ],
+      "boundary": "Complete fixture usage arithmetic, unknown values and dependency-consistent interval calculations; no actual serial-model baseline, provider billing or inference latency measurement."
+    },
+    {
+      "componentId": "C28",
+      "module": "04_GTFL_REASONING_PLANE/kernel.mjs and shared/run-proof.mjs",
+      "acceptanceIds": [
+        "C28-T02",
+        "C28-T03"
+      ],
+      "boundary": "Local capsule replay and fixture run-bundle tamper rejection; no durable committed-run replay, hosted regeneration or external side effects."
+    }
   ],
-  "testFiles": ["experiments/runtime/tests/context-generation.test.mjs","experiments/runtime/tests/evidence-performance.test.mjs"],
+  "testFiles": [
+    "experiments/runtime/tests/context-generation.test.mjs",
+    "experiments/runtime/tests/evidence-performance.test.mjs",
+    "experiments/runtime/tests/routing-scheduler.test.mjs",
+    "experiments/runtime/tests/gtfl-runtime.test.mjs"
+  ],
   "command": "npm run test:runtime",
   "receipt": "experiments/runtime/test-receipt.json"
 }

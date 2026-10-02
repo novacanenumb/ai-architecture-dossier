@@ -7,10 +7,10 @@
   "platform": "win32",
   "exitCode": 0,
   "error": null,
-  "passed": 23,
+  "passed": 45,
   "failed": 0,
   "skipped": 0,
-  "total": 23,
+  "total": 45,
   "tests": [
     {
       "name": "C03 exact source IDs, duplicate rejection, immutable hashes and missing-source failure",
@@ -172,6 +172,164 @@
       "componentIds": [
         "C27"
       ]
+    },
+    {
+      "name": "C22 quantization is deterministic and bounded",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 strict collapse requires an empty queue",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 only validated authoritative evidence can add positive support",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 duplicate source hashes do not accumulate support",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 same-epoch gates use a frozen pre-frame state",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 onehot overflow aborts atomically",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 valid collapse binds output to full leaf support",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C22 unresolved required domains cannot produce valid collapse",
+      "status": "PASSED",
+      "componentIds": [
+        "C22"
+      ]
+    },
+    {
+      "name": "C28 export restores exact state and rejects tampered collapse output",
+      "status": "PASSED",
+      "componentIds": [
+        "C28"
+      ]
+    },
+    {
+      "name": "C01 C07 C22 C28 fixture execution yields a verifiable ephemeral bundle",
+      "status": "PASSED",
+      "componentIds": [
+        "C01",
+        "C07",
+        "C22",
+        "C28"
+      ]
+    },
+    {
+      "name": "C01 C07 unsupported prose fails closed and source-free AUDIT waits",
+      "status": "PASSED",
+      "componentIds": [
+        "C01",
+        "C07"
+      ]
+    },
+    {
+      "name": "C01 validates scheduler integer bounds",
+      "status": "PASSED",
+      "componentIds": [
+        "C01"
+      ]
+    },
+    {
+      "name": "C01 stable launch ordering respects concurrency",
+      "status": "PASSED",
+      "componentIds": [
+        "C01"
+      ]
+    },
+    {
+      "name": "C01 dependencies wait and failed parents block descendants",
+      "status": "PASSED",
+      "componentIds": [
+        "C01"
+      ]
+    },
+    {
+      "name": "C01 malformed DAGs fail before dispatch",
+      "status": "PASSED",
+      "componentIds": [
+        "C01"
+      ]
+    },
+    {
+      "name": "C01 unknown usage stays null and token overruns stop work",
+      "status": "PASSED",
+      "componentIds": [
+        "C01"
+      ]
+    },
+    {
+      "name": "C01 call round token timeout and cancellation limits prevent acceptance",
+      "status": "PASSED",
+      "componentIds": [
+        "C01"
+      ]
+    },
+    {
+      "name": "C15 measured routing requires complete observations and provenance",
+      "status": "PASSED",
+      "componentIds": [
+        "C15"
+      ]
+    },
+    {
+      "name": "C15 eligible expert filtering and ties are deterministic",
+      "status": "PASSED",
+      "componentIds": [
+        "C15"
+      ]
+    },
+    {
+      "name": "C15 escalation needs positive measured net gain",
+      "status": "PASSED",
+      "componentIds": [
+        "C15"
+      ]
+    },
+    {
+      "name": "C15 feedback creates an immutable future-only revision",
+      "status": "PASSED",
+      "componentIds": [
+        "C15"
+      ]
+    },
+    {
+      "name": "C07 FAST plan retains dependency and proposal authority boundaries",
+      "status": "PASSED",
+      "componentIds": [
+        "C07"
+      ]
     }
   ],
   "dependency": {
@@ -183,16 +341,23 @@
   "sourceHashes": {
     "experiments/runtime/tests/context-generation.test.mjs": "sha256:c88f9c0bc953c6fbee443092ac5645eec22308aebe5a65decca9c938a746e1cc",
     "experiments/runtime/tests/evidence-performance.test.mjs": "sha256:38aabcfc633a3ff5a8b3d025719f3d72684e05810bd243863946526b443df659",
+    "experiments/runtime/tests/routing-scheduler.test.mjs": "sha256:e20864a111602af75495d54f2f102aae9e0e4a71a2c2c07c46765ec70ccb22bf",
+    "experiments/runtime/tests/gtfl-runtime.test.mjs": "sha256:f40797ac4e1a6666743f4278c553208f53af7682e462acb0b6b734f8ea79bc45",
     "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df",
-    "scripts/test-supplied-runtime.mjs": "sha256:f1a5f1dd9aa74dceba8b4a4aaa8743fe37d37a692c1c015f35f5f5c09a9ec3f0"
+    "scripts/test-supplied-runtime.mjs": "sha256:39e84d48172e067224d2f0a05840f2891ee3bcae8f9a2a7611f97880bcf19d96"
   },
   "inspectedRuntimeSources": {
+    "plugins/hypervisor-standalone/runtime/01_ASTRA_CONTROL_PLANE/routing.mjs": "sha256:43285de88fcf083e26bb86d96d19bcabbe162d6bdbcdbffbcfe6afe43e8ccc85",
+    "plugins/hypervisor-standalone/runtime/01_ASTRA_CONTROL_PLANE/runtime.mjs": "sha256:0308ab6010e6462c821a60fd43d798f14a2c6ff1deb56743a8de0ca4d4a9d661",
     "plugins/hypervisor-standalone/runtime/02_CONTEXT_PLANE/context.mjs": "sha256:c9fdea2990e993b86e22731bc027bb7481054c9741fef3b17d00e6360b93f0fe",
     "plugins/hypervisor-standalone/runtime/03_GENERATION_PLANE/generation.mjs": "sha256:5129843112715230ee31ed71224ff522a3eea3bec71456bd89900702403e2081",
+    "plugins/hypervisor-standalone/runtime/04_GTFL_REASONING_PLANE/domain-audit.mjs": "sha256:d982d828191609fa94dd01ea384d1bd105b55788fc3448404fb920ebd794c742",
+    "plugins/hypervisor-standalone/runtime/04_GTFL_REASONING_PLANE/kernel.mjs": "sha256:d1a1d2d854b663f100671cf0dd28484de39167f214fcde9a278dea53e51ad30f",
     "plugins/hypervisor-standalone/runtime/05_TOOL_AND_AUTHORITY_PLANE/broker.mjs": "sha256:3e1fecc37a452069a3225db0a1db556c719a1a5bcd7b45f318c4360acf28acc2",
     "plugins/hypervisor-standalone/runtime/06_EVIDENCE_PLANE/evidence.mjs": "sha256:4d7a0e5ab1908524939ff769ab81e2c30e2ebd0d06a74b4ca1ba00519befe42b",
     "plugins/hypervisor-standalone/runtime/07_PERFORMANCE_PLANE/performance.mjs": "sha256:766e19a2e940069717bbe2f3627861dfa81a199bf266beb5d5f3ada283436157",
-    "plugins/hypervisor-standalone/runtime/shared/core.mjs": "sha256:51461380ad25350db8a1db1c75c104d480c4912936749ff4011d2958afe00f0d"
+    "plugins/hypervisor-standalone/runtime/shared/core.mjs": "sha256:51461380ad25350db8a1db1c75c104d480c4912936749ff4011d2958afe00f0d",
+    "plugins/hypervisor-standalone/runtime/shared/run-proof.mjs": "sha256:b1a2a984570bc38edff43dd25bc69470d8f23c5540b9c8c3562ba3dfc5a35870"
   },
   "provenance": {
     "measurements": "locally executed behavioral probes with public synthetic inputs",
@@ -209,6 +374,15 @@
     "schemaVersion": 1,
     "status": "PARTIAL_SUPPLIED_RUNTIME_EVIDENCE",
     "components": [
+      {
+        "componentId": "C01",
+        "module": "01_ASTRA_CONTROL_PLANE/routing.mjs and runtime.mjs",
+        "acceptanceIds": [
+          "C01-T03",
+          "C01-T04"
+        ],
+        "boundary": "Bounded scheduling, cancellation, authority ceilings and ephemeral fixture execution; partial evidence only, without crash recovery, idempotency or real external effects."
+      },
       {
         "componentId": "C02",
         "module": "02_CONTEXT_PLANE/context.mjs",
@@ -238,12 +412,31 @@
         "boundary": "Requirement coverage, DAG cycles, authority ceilings and lifecycle gates; lexical anchor ordering and adversarial delimiter parsing are not tested."
       },
       {
+        "componentId": "C07",
+        "module": "01_ASTRA_CONTROL_PLANE/routing.mjs and runtime.mjs",
+        "acceptanceIds": [
+          "C07-T02",
+          "C07-T03"
+        ],
+        "boundary": "Dependency-gated proposals, exact supported fixture output and unsupported-output failure; no randomized hosted generation or complete billed-call accounting."
+      },
+      {
         "componentId": "C09",
         "module": "03_GENERATION_PLANE/generation.mjs",
         "acceptanceIds": [
           "C09-T01"
         ],
         "boundary": "Section binding, exact/locked protection, stale revisions and independent reviewer identity checks; no general semantic validator or native dialect equivalence proof."
+      },
+      {
+        "componentId": "C15",
+        "module": "01_ASTRA_CONTROL_PLANE/routing.mjs",
+        "acceptanceIds": [
+          "C15-T01",
+          "C15-T02",
+          "C15-T03"
+        ],
+        "boundary": "Caller-attested measurement validation, eligible selection, missing metrics, deterministic ties, marginal gain and future-only feedback. These vectors do not establish actual expert quality or a calibrated adaptive policy."
       },
       {
         "componentId": "C19",
@@ -264,6 +457,17 @@
         "boundary": "Exact source receipts, duplicated content, disputed and unresolved states; exact-text matching does not establish factual truth or general semantic entailment."
       },
       {
+        "componentId": "C22",
+        "module": "04_GTFL_REASONING_PLANE/kernel.mjs",
+        "acceptanceIds": [
+          "C22-T02",
+          "C22-T03",
+          "C22-T04",
+          "C22-T05"
+        ],
+        "boundary": "Atomic overflow, frozen same-frame reads, support deduplication and unresolved collapse gates; synthetic state-machine evidence, without native neural execution or publisher authentication."
+      },
+      {
         "componentId": "C27",
         "module": "07_PERFORMANCE_PLANE/performance.mjs",
         "acceptanceIds": [
@@ -272,11 +476,22 @@
           "C27-T03"
         ],
         "boundary": "Complete fixture usage arithmetic, unknown values and dependency-consistent interval calculations; no actual serial-model baseline, provider billing or inference latency measurement."
+      },
+      {
+        "componentId": "C28",
+        "module": "04_GTFL_REASONING_PLANE/kernel.mjs and shared/run-proof.mjs",
+        "acceptanceIds": [
+          "C28-T02",
+          "C28-T03"
+        ],
+        "boundary": "Local capsule replay and fixture run-bundle tamper rejection; no durable committed-run replay, hosted regeneration or external side effects."
       }
     ],
     "testFiles": [
       "experiments/runtime/tests/context-generation.test.mjs",
-      "experiments/runtime/tests/evidence-performance.test.mjs"
+      "experiments/runtime/tests/evidence-performance.test.mjs",
+      "experiments/runtime/tests/routing-scheduler.test.mjs",
+      "experiments/runtime/tests/gtfl-runtime.test.mjs"
     ],
     "command": "npm run test:runtime",
     "receipt": "experiments/runtime/test-receipt.json"

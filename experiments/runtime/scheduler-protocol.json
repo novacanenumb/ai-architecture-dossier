@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "supplied-scheduler/1",
+  "pairs": 8,
+  "seed": 1729,
+  "taskDelaysMs": {"a":12,"b":18,"c":24,"join":6},
+  "tasks": [
+    {"id":"a","dependencies":[],"reservedTokens":256,"round":1},
+    {"id":"b","dependencies":[],"reservedTokens":256,"round":1},
+    {"id":"c","dependencies":[],"reservedTokens":256,"round":1},
+    {"id":"join","dependencies":["a","b","c"],"reservedTokens":256,"round":1}
+  ],
+  "limits": {"maxCalls":4,"maxRounds":1,"maxTokens":4096,"timeoutMs":1000,"totalTimeoutMs":10000},
+  "baselineConcurrency": 1,
+  "candidateConcurrency": 3,
+  "order": "alternating serial-first and parallel-first",
+  "callback": "Abort-aware timer wait followed by a fixed public synthetic integer reduction; deterministic returned values; usageTokens null",
+  "analysis": "Candidate-minus-baseline wall milliseconds; seeded paired percentile bootstrap with 4000 iterations and 95 percent confidence; all attempted runs retained, failed pairs excluded only from paired numeric inference and reported",
+  "measurementBoundary": "Actual local asynchronous scheduler fixture latency, not hosted model latency, neural compute, throughput, quality or billed cost"
+}

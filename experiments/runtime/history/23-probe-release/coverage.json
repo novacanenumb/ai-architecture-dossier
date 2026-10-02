@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "PARTIAL_SUPPLIED_RUNTIME_EVIDENCE",
+  "components": [
+    {"componentId":"C02","module":"02_CONTEXT_PLANE/context.mjs","acceptanceIds":["C02-T01","C02-T03","C02-T05"],"boundary":"Header reconstruction, mandatory-source preservation, lexical retrieval, bridge limits and overflow; not model-driven compaction or all repeated-cycle scenarios."},
+    {"componentId":"C03","module":"02_CONTEXT_PLANE/context.mjs","acceptanceIds":["C03-T02","C03-T03"],"boundary":"Exact immutable source text and stable source selection; no ownership, byte-range editing or projection deletion API in this supplied module."},
+    {"componentId":"C06","module":"03_GENERATION_PLANE/generation.mjs","acceptanceIds":["C06-T01","C06-T02"],"boundary":"Requirement coverage, DAG cycles, authority ceilings and lifecycle gates; lexical anchor ordering and adversarial delimiter parsing are not tested."},
+    {"componentId":"C09","module":"03_GENERATION_PLANE/generation.mjs","acceptanceIds":["C09-T01"],"boundary":"Section binding, exact/locked protection, stale revisions and independent reviewer identity checks; no general semantic validator or native dialect equivalence proof."},
+    {"componentId":"C19","module":"05_TOOL_AND_AUTHORITY_PLANE/broker.mjs","acceptanceIds":["C19-T03"],"boundary":"Capability denial, envelope attenuation, disabled effects and cancellation; no operating-system confinement, human authentication, live mutation or network execution."},
+    {"componentId":"C21","module":"06_EVIDENCE_PLANE/evidence.mjs","acceptanceIds":["C21-T01","C21-T02","C21-T04"],"boundary":"Exact source receipts, duplicated content, disputed and unresolved states; exact-text matching does not establish factual truth or general semantic entailment."},
+    {"componentId":"C27","module":"07_PERFORMANCE_PLANE/performance.mjs","acceptanceIds":["C27-T01","C27-T02","C27-T03"],"boundary":"Complete fixture usage arithmetic, unknown values and dependency-consistent interval calculations; no actual serial-model baseline, provider billing or inference latency measurement."}
+  ],
+  "testFiles": ["experiments/runtime/tests/context-generation.test.mjs","experiments/runtime/tests/evidence-performance.test.mjs"],
+  "command": "npm run test:runtime",
+  "receipt": "experiments/runtime/test-receipt.json"
+}

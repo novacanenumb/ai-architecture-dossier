@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "b55a112e-8046-48b6-8a9f-2d796cb7a453",
+  "runId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "artifactHash": "sha256:110d929c41c7ebae04c23834a55db5521fbe3184d46d40829fb4662e6ef41bb3",
+  "manifestHash": "sha256:36c987a1f28106e84455122bab730990178a83a940250e67b4a60e7551c7cbfe",
+  "sourceTextHash": "sha256:05888f4ecdb06fe99d703c725d279bb7abebe867dc5262a6c0fcb4bfb3e634ab",
+  "sourceCharacters": 24428,
+  "validationScope": "Sol-role source proposals consolidated and corrected by parent against observed runtime APIs. Native nonempty/schema/anchor/GTFL validation; separate host checks passed 22 added probes and 16 local scheduler attempts. General semantic validation unavailable.",
+  "hostTestsAdded": 22,
+  "hostFailed": 0,
+  "hostSkipped": 0,
+  "usage": null,
+  "cost": null,
+  "hostProposalTurns": 4,
+  "nativeCandidateContracts": 2,
+  "hostTurnAccounting": "Two initial proposal turns and two interface-correction follow-ups. Native ledger counts two candidate contracts; unavailable host turn tokens/cost are not reconstructed."
+}

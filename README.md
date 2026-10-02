@@ -174,13 +174,31 @@ Finite secret-pattern checks are not a comprehensive security audit. The task-sc
 
 ## Supplied Hypervisor runtime probes
 
-The supplied **Hypervisor 2.1.0 implementation** now has a separate suite of **23 executed behavioral probes**, all passing with zero failures or skips. These establish partial local mechanism evidence for C02, C03, C06, C09, C19, C21 and C27. They complement the 24 public reference tests and do not replace the full component acceptance contracts.
+The supplied **Hypervisor 2.1.0 implementation** now has a separate suite of **45 executed behavioral probes**, all passing with zero failures or skips. These establish partial local mechanism evidence across 12 components: C01, C02, C03, C06, C07, C09, C15, C19, C21, C22, C27 and C28. They complement the 24 public reference tests and do not replace the full component acceptance contracts.
 
-The probes exercise exact archive hashes, header reconstruction, pinned overflow, deterministic retrieval, anchor dependency gates, protected section revisions, authority attenuation, evidence contradictions and complete usage arithmetic. Their runner checks the approved dependency manifest, content root, complete file set and all 85 member hashes before importing runtime code. The separately licensed runtime remains outside this repository and the deployment.
+The probes exercise bounded scheduling, measured-routing provenance, immutable future routing revisions, atomic GTFL frames, deduplicated support, capsule replay, complete ephemeral fixture run bundles, exact archive hashes, header reconstruction, pinned overflow, deterministic retrieval, anchor dependency gates, protected section revisions, authority attenuation, evidence contradictions and complete usage arithmetic. Their runner checks the approved dependency manifest, content root, complete file set and all 85 member hashes before importing runtime code. The separately licensed runtime remains outside this repository and the deployment.
 
 Run `npm run test:runtime` with Node 26 or later and the approved dependency at `../HYPERVISOR-2.1-STABLE`; set `DOSSIER_RUNTIME_PATH` when it is elsewhere. This command fails explicitly if the package is absent or differs from the approved source. The regular reference tests and public site still work without it.
 
 Read the [runtime evidence guide](docs/RUNTIME_EVIDENCE.md), [executed probe receipt](experiments/runtime/test-receipt.json), [partial acceptance map](experiments/runtime/coverage.json), and [native source receipt](experiments/runtime/native/receipt.json). These tests establish implemented local behavior using synthetic inputs; hosted model quality, token consumption, billing and inference latency remain unmeasured.
+
+## Measured serial versus concurrent scheduling
+
+The supplied scheduler also ran a frozen four-task dependency graph under concurrency 1 and concurrency 3. Three independent tasks use abort-aware timer waits of 12, 18 and 24 milliseconds; the join waits 6 milliseconds after its parents finish. Every callback returns the same deterministic integer result in both arms. Eight pairs alternate which arm runs first. All 16 attempts are retained, with zero failed attempts, eight eligible pairs, zero exclusions and equal output hashes.
+
+| Locally observed measure | Result |
+| --- | ---: |
+| Executed serial mean scheduler wall time | 93.81 ms |
+| Executed concurrent mean scheduler wall time | 46.41 ms |
+| Ratio of paired means | 2.02× |
+| Paired mean difference, concurrent minus serial | −47.40 ms |
+| 95% seeded percentile bootstrap interval | −49.41 to −46.26 ms |
+
+This ratio measures overlap of controlled asynchronous waits on the recorded machine. Timer resolution, host load and orchestration affect the observed durations. It does not establish neural compute speed, provider latency, streamed throughput, model quality or billing. The confidence interval describes the recorded paired fixture observations; it does not establish a population result or model noninferiority. Summed callback duration remains a separately labelled serial estimate; the reported comparison uses an actually executed serial baseline.
+
+Run `npm run benchmark:scheduler` separately with the verified runtime and Node 26 or later. The [frozen protocol](experiments/runtime/scheduler-protocol.json) records the DAG, limits, pairing order and statistic before execution. The [full attempt log](experiments/runtime/scheduler-results.json) retains callback intervals, scheduler bounds, validated DAG critical paths, source hashes and unknown model measurements. The bootstrap uses 4,000 iterations, 95% confidence and seed 1729; it reproduces exactly for the recorded vector. Wall-clock times themselves are not deterministic. Static builds copy this frozen report and do not rerun timing experiments.
+
+The added test sources and benchmark runner have a separate [native source receipt](experiments/runtime/native-scheduler/receipt.json). Native source validation and parent behavioral verification have different scopes. The earlier [23-probe receipt](experiments/runtime/history/23-probe-release/test-receipt.json), runner bytes and native artifact remain intact, so publication history is inspectable.
 
 ## Next experiments and contributions
 
