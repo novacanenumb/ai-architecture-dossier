@@ -7,7 +7,7 @@
   "metricEndpoints": 154,
   "fixtureConfigurations": 17,
   "providerCalls": 0,
-  "syntaxChecked": 13,
+  "syntaxChecked": 14,
   "publicFiles": 9,
   "nativeSourceMatches": [
     "packages/lab/core.mjs",

@@ -42,6 +42,13 @@ for(const match of text.matchAll(/```\n([\s\S]*?)\n```/g)) {
   else { assert.equal(node.path,'scripts/build-catalog.mjs','Unexpected post-validation source change'); hostSourceChanges.push({path:node.path,reason:'Public-registry rebuild fallback added and independently checked by host.'}); }
 }
 assert.equal(nativeSourceMatches.length,7); assert.equal(hostSourceChanges.length,1);
+const readmeReceipt=await json('experiments/native/readme-receipt.json');
+const readmeArtifact=await readFile(path.join(root,'experiments/native/readme-validated-source.txt'),'utf8');
+assert.equal(hash(JSON.stringify(readmeArtifact.slice(0,readmeReceipt.sourceCharacters))),readmeReceipt.sourceTextHash.replace('sha256:',''));
+const readmeNode=JSON.parse(readmeArtifact.match(/^```\n([\s\S]*?)\n```/)?.[1] ?? 'null');
+assert.equal(readmeNode.path,'README.md');
+assert.equal(await readFile(path.join(root,'README.md'),'utf8'),readmeNode.content,'README differs from retained proposal');
+for(const match of readmeNode.content.matchAll(/\]\(([^)]+)\)/g)) if(!match[1].startsWith('http')&&!match[1].startsWith('#')) await lstat(path.join(root,match[1]));
 const codeFiles=[...(await tree('packages')), ...(await tree('scripts')), ...(await tree('tests')), ...(await tree('dist'))].filter(f=>f.endsWith('.mjs'));
 for(const file of codeFiles) { const result=spawnSync(process.execPath,['--check',file],{cwd:root,encoding:'utf8'}); assert.equal(result.status,0,file+' '+result.stderr); }
 const publicFiles=await tree('dist');

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "167e1899-9cbf-4d48-96b6-f958383ef7e9",
+  "runId": "run-82b6363a-f4ac-4f7b-a48d-4b8214c79df4",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "priorSourceRunId": "run-9d765ae5-bce9-4abf-a399-121b43854a4d",
+  "failedReadmeRunId": "run-88f55982-096f-443d-8a2d-e486330ea156",
+  "sourceTextHash": "sha256:b8868bd21cd392da23b2bcfb7e2f359a0cc593015c4d44429ad8a40aa2abdce2",
+  "sourceCharacters": 14040,
+  "manifestHash": "sha256:a56373efed83a48c832063b59034ffa4483ea7836fb577278c05d5116cfc09e5",
+  "artifactHash": "sha256:e89f0a030d070d398ab043230c52d294efd3107f335b7212abaecab0407fb92f",
+  "validationScope": "Reused cached actual Sol draft with independently corrected host examples and links; nonempty/schema/anchor/GTFL source validation. No fresh generation or general semantic validator claimed.",
+  "hostChecks": {
+    "apiExamplesExecuted": 3,
+    "localLinksChecked": true
+  },
+  "tokens": null,
+  "cost": null
+}

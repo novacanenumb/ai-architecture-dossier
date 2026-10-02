@@ -1,0 +1,225 @@
+{
+  "sessionId": "f0645753-7bfe-4324-8df8-2d0fa295e3b4",
+  "runId": "run-88f55982-096f-443d-8a2d-e486330ea156",
+  "state": "FAILED",
+  "code": "TASK_TIMEOUT",
+  "trustedOutput": false,
+  "performance": {
+    "anchors": [],
+    "contentHash": "sha256:92f68bfc8af827bc03e06681df1b86ad412b331d6ee3bdc3ba04cae5c8bc7dd2",
+    "cost": {
+      "provenance": "unavailable",
+      "reason": "missing_measurement",
+      "value": null
+    },
+    "gpu_seconds": {
+      "provenance": "unavailable",
+      "reason": "no_gpu_counter",
+      "value": null
+    },
+    "gtfl": {
+      "capsules_aborted": 0,
+      "capsules_collapsed": 0,
+      "capsules_created": 1,
+      "checkpoint_count": 12,
+      "collapse_validity": "PENDING",
+      "domain_overflow_count": 0,
+      "gates_activated": 12,
+      "gates_evaluated": 12,
+      "parallel_frames": 0,
+      "provenance_edges": 35,
+      "provenance_nodes": 36,
+      "replay_hash": "sha256:aaa3e1f3a1fd411e075e7bd48fed63edebc161f8d95de6e37526d0efb0b53fe8",
+      "threshold_frames_executed": 12,
+      "unresolved_domain_count": 1
+    },
+    "kind": "performance-report",
+    "metrics": {
+      "AFPR": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "CS": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_dense_baseline",
+        "value": null
+      },
+      "ECF": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "HE": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "MR": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RL": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RP": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RY": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "TAF": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "UEC": {
+        "astra": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "luna": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "sol": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "terra": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        }
+      },
+      "barrier_idle_time": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "critical_path_duration": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "latency_percentiles": {
+        "p50": {
+          "provenance": "locally_measured",
+          "sources": [
+            "locally_measured"
+          ],
+          "value": 600004
+        },
+        "p95": {
+          "provenance": "locally_measured",
+          "sources": [
+            "locally_measured"
+          ],
+          "value": 600004
+        },
+        "p99": {
+          "provenance": "locally_measured",
+          "sources": [
+            "locally_measured"
+          ],
+          "value": 600004
+        }
+      },
+      "maximum_simultaneous_workers": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 1
+      },
+      "observed_wall_time": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 600004.2622000002
+      },
+      "routing_overhead": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "serial_execution_estimate": {
+        "provenance": "estimated",
+        "sources": [
+          "estimated"
+        ],
+        "value": 600004.2622000002
+      },
+      "speedup": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 1
+      },
+      "straggler_delay": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "total_worker_execution_time": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 600004.2622000002
+      },
+      "ttft_percentiles": {
+        "p50": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p95": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p99": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        }
+      }
+    },
+    "profile": "FAST",
+    "provenance": {
+      "context_savings": "estimated",
+      "generated": "deterministic_telemetry_derivation"
+    },
+    "roles": {
+      "astra": 0,
+      "luna": 0,
+      "sol": 1,
+      "terra": 0
+    },
+    "run_id": "run-88f55982-096f-443d-8a2d-e486330ea156",
+    "schemaVersion": 2,
+    "usage": {
+      "cache_write": null,
+      "cached_input": null,
+      "input": null,
+      "output": null,
+      "retrieval": null,
+      "synthetic_context": null
+    },
+    "usage_provenance": "unavailable"
+  },
+  "reason": "Candidate proposal and parent review exceeded the 600000 ms worker deadline; late submission rejected. Prior source receipt preserved."
+}
