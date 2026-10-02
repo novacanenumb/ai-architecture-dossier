@@ -5,7 +5,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const run = file => { const child = spawnSync(process.execPath, [path.join(root, file)], { cwd: root, stdio: 'inherit' }); if (child.status !== 0) throw new Error(`${file} failed`); };
 run('scripts/build-catalog.mjs');
 await mkdir(path.join(root, 'dist/lib'), { recursive: true });
-for (const file of ['core.mjs','analytics.mjs']) await copyFile(path.join(root, 'packages/lab', file), path.join(root, 'dist/lib', file));
+for (const file of ['core.mjs','analytics.mjs','language-analysis.mjs','language-fixture.mjs']) await copyFile(path.join(root, 'packages/lab', file), path.join(root, 'dist/lib', file));
 await copyFile(path.join(root, 'LICENSE'), path.join(root, 'dist/LICENSE.txt'));
 const runtimeReceipt = JSON.parse(await readFile(path.join(root, 'experiments/runtime/test-receipt.json'), 'utf8'));
 const runtimeCoverage = JSON.parse(await readFile(path.join(root, 'experiments/runtime/coverage.json'), 'utf8'));
@@ -16,6 +16,9 @@ await copyFile(path.join(root, 'experiments/runtime/scheduler-results.json'), pa
 await copyFile(path.join(root, 'experiments/headspace/test-receipt.json'), path.join(root, 'dist/data/headspace-evidence.json'));
 await copyFile(path.join(root, 'experiments/headspace/public-trace.json'), path.join(root, 'dist/data/headspace-trace.json'));
 const agentdbReceipt=JSON.parse(await readFile(path.join(root,'experiments/agentdb/test-receipt.json'),'utf8'));
+const languageResults=JSON.parse(await readFile(path.join(root,'experiments/language/results.json'),'utf8'));
+const languageCoverage=JSON.parse(await readFile(path.join(root,'experiments/language/coverage.json'),'utf8'));
+await writeFile(path.join(root,'dist/data/language-results.json'),JSON.stringify({...languageResults,coverage:languageCoverage},null,2)+'\n');
 const agentdbCoverage=JSON.parse(await readFile(path.join(root,'experiments/agentdb/coverage.json'),'utf8'));
 await writeFile(path.join(root,'dist/data/agentdb-evidence.json'),JSON.stringify({...agentdbReceipt,coverage:agentdbCoverage},null,2)+'\n');
 try { await readFile(path.join(root, 'dist/data/publication.json')); }

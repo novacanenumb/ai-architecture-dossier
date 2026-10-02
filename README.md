@@ -58,6 +58,7 @@ ai-architecture-dossier/
   experiments/runtime/              Supplied-runtime probes and scheduler results
   experiments/headspace/            Original-source checks and commit diagnostic
   experiments/agentdb/              Original offline tests and paired cache experiment
+  experiments/language/             Fixed-window C14 analyser and eligibility checks
   dist/                             Static site and downloadable derived evidence
   .openai/hosting.json               Existing Sites project and output declaration
   LICENSE                           Custom licence for this repository's additions
@@ -226,7 +227,7 @@ Known-vector tests establish the arithmetic. Missing observations stay null; cac
 
 ## Validation, provenance and contribution history
 
-The 24 behavioral and statistical tests cover Unicode bytes and boundaries, scope isolation, correction history, race preconditions, deletion, deterministic ranking, pinned overflow, source-span recall, complete transport accounting and statistical vectors. All 17 fixture configurations reproduced exactly on a second execution. See the [evidence guide](docs/EVIDENCE.md), [test receipt](experiments/test-receipt.json), [release report](experiments/release-verification.json) and [public-checkout report](experiments/public-checkout-verification.json).
+The original 24 behavioral and statistical tests cover Unicode bytes and boundaries, scope isolation, correction history, race preconditions, deletion, deterministic ranking, pinned overflow, source-span recall, complete transport accounting and statistical vectors. The expanded suite has 40 passing tests, including 16 C14 analyser checks described below. All 17 context fixture configurations reproduced exactly on a second execution. See the [evidence guide](docs/EVIDENCE.md), [test receipt](experiments/test-receipt.json), [release report](experiments/release-verification.json) and [public-checkout report](experiments/public-checkout-verification.json).
 
 `npm run verify:public` reconstructs a source copy without the original master specification or supplied runtime, then runs its tests, build and release checks. Public builds use the committed sanitized registry. The preview binds to `127.0.0.1`, prints its actual URL, and serves `/api/health`; set `DOSSIER_PORT` to choose another local port.
 
@@ -339,6 +340,29 @@ npm run test:agentdb
 Set `AGENTDB_SOURCE_PATH` for source location, `DOSSIER_PYTHON_PATH` for the interpreter and `DOSSIER_RUNTIME_PATH` for the dependency. The recorded library versions are pytest 9.1.1, pydantic 2.13.5, cryptography 50.0.1 and rfc8785 0.1.4. Source or dependency mismatch fails explicitly. The runner disables plugin autoload and bytecode writes, uses an allowlisted child environment, and applies a best-effort audit hook to reject network, subprocess and writes outside its temporary copy. Operating-system confinement remains unavailable. Static builds copy the frozen report and do not invoke Python or rerun the experiment.
 
 The source-proposal receipt records two native candidate contracts and three actual host proposal turns, including a clarification follow-up. The native ledger does not account for that extra host turn or prove enforcement of a host call limit. Token usage and cost remain unknown. Native schema/anchor validation and the separately executed Python tests have different scopes.
+
+## C14: controlled language analysis
+
+The dossier now includes a real local [output-level language analyser](packages/lab/language-analysis.mjs), supported by the existing statistical functions. This is a new reference implementation of C14's specified first deliverable. Original C14 source was not recovered, and the longitudinal research hypothesis remains untested.
+
+Inputs declare participant kind, topic, task and segments labelled as authored text, quotation or required technical terms. Each category has separate counts. A fixed authored-word sample prevents a shorter, all-unique output from receiving an apparent benefit merely through raw type-token ratio. Insufficient windows retain null metrics. Quotation and required-term annotations are supplied by the caller; they are not automatically inferred or independently verified.
+
+MATTR uses the same authored sample size and declared window across arms. Repeated trigrams preserve segment boundaries, so excluding quoted text cannot manufacture a phrase joining two separate authored spans. Sentence-length variation includes only complete retained sentences and discloses its simple punctuation convention. Lexical Jensen–Shannon divergence aligns the sorted union of observed word frequencies; those frequencies are not model probabilities.
+
+Comparison requires matching topic, task, participant kind, sample size and MATTR configuration. Topic changes and short samples are explicitly ineligible, with derived values null. Caller topic labels are a measurement control, not a semantic topic verifier. Human descriptors do not produce human-outcome or cognitive claims.
+
+The [frozen fixture](experiments/language/results.json) retains four configurations and 12 comparison attempts: six eligible and six deliberately rejected. Its initial, middle and late windows use labelled authored synthetic patterns, not model generations. All runs reproduced exactly. The public suite now has **40 passing tests**, including **16 focused analyser checks**. The [coverage map](experiments/language/coverage.json) links C14-T01 through C14-T04 to tests and precise exclusions. Earlier 24-test evidence and the initial numerical-assertion failure remain in history.
+
+Open [C14's component page](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/component/C14) and select Lab to change authored sample size, MATTR window and candidate pattern. Buttons inject topic mismatch or require more words than the fixture contains. The export preserves synthetic inputs, excluded quotation/term counts, truncation and every comparison outcome.
+
+```text
+npm test
+npm run measure:language
+npm run build
+npm run preview
+```
+
+See the [analyser guide](docs/LANGUAGE_ANALYSIS.md) and [native source receipt](experiments/language/native/receipt.json). These checks establish local measurement and eligibility behavior. Semantic consistency, unfamiliar-partner transfer, blinded human ratings, cognitive effects and matched model-generation benefits remain unavailable.
 
 ## Reading an efficiency claim
 

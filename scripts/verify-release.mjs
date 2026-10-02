@@ -6,6 +6,7 @@ import path from 'node:path';
 import { stableJSON } from '../packages/lab/core.mjs';
 import { pairedBootstrap } from '../packages/lab/analytics.mjs';
 import { verifyAgentdbEvidence } from './verify-agentdb-evidence.mjs';
+import { verifyLanguageEvidence } from './verify-language-evidence.mjs';
 const root=path.resolve(import.meta.dirname,'..'), hash=data=>createHash('sha256').update(data).digest('hex');
 const json=async file=>JSON.parse(await readFile(path.join(root,file),'utf8'));
 async function tree(directory) {
@@ -164,6 +165,7 @@ for(const match of headspaceText.matchAll(/```\n([\s\S]*?)\n```/g)) {const node=
 assert.equal(headspaceSourceMatches,3); assert.equal((await json('experiments/headspace/native/manifest.json')).final_artifact_hash,headspaceNative.artifactHash); assert.equal((await json('experiments/headspace/native/performance.json')).gtfl.collapse_validity,'VALID');
 const readmeReceipt=await json('experiments/native/readme-receipt.json');
 const agentdbChecks=await verifyAgentdbEvidence(root,catalog,runtimeReceipt);
+const languageChecks=await verifyLanguageEvidence(root,catalog,receipt);
 const readmeArtifact=await readFile(path.join(root,'experiments/native/readme-validated-source.txt'),'utf8');
 assert.equal(hash(JSON.stringify(readmeArtifact.slice(0,readmeReceipt.sourceCharacters))),readmeReceipt.sourceTextHash.replace('sha256:',''));
 const readmeNode=JSON.parse(readmeArtifact.match(/^```\n([\s\S]*?)\n```/)?.[1] ?? 'null');
@@ -183,6 +185,6 @@ const credentialPattern=/(?:sk-proj-[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9]{20,
 for(const file of publicFiles) { assert.ok(!forbiddenNames.test(file),file); assert.ok(!credentialPattern.test(await readFile(path.join(root,file),'utf8')),'Credential pattern found: '+file); }
 const manifest=async()=>Object.fromEntries(await Promise.all((await tree('dist')).map(async f=>[f,hash(await readFile(path.join(root,f)))])));
 const before=await manifest(); const build=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'}); assert.equal(build.status,0,build.stdout+build.stderr); const after=await manifest(); assert.deepEqual(after,before,'Static rebuild differs');
-const report={...agentdbChecks,schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,headspaceOriginalFixtureChecks:16,headspaceMockComparisonChecks:17,headspaceOriginalConcurrentFailures:12,headspaceAdaptedConcurrentFailures:0,headspaceDiagnosticPairs:12,headspaceSourceMatches,headspacePortableTraceHashVerification:true,readmeWords:currentReadme.trim().split(/\s+/).length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
+const report={...languageChecks,...agentdbChecks,schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,headspaceOriginalFixtureChecks:16,headspaceMockComparisonChecks:17,headspaceOriginalConcurrentFailures:12,headspaceAdaptedConcurrentFailures:0,headspaceDiagnosticPairs:12,headspaceSourceMatches,headspacePortableTraceHashVerification:true,readmeWords:currentReadme.trim().split(/\s+/).length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
 await writeFile(path.join(root,'experiments/release-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({...report,publicFileHashes:undefined}));

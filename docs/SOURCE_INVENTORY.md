@@ -23,3 +23,5 @@ The active Agent Database was located at `N:/Development/Production/Hypervisor S
 The three source evidence families now touch 19 distinct components: 12 supplied-runtime components, three Headspace components and four Agent Database components. Their partial acceptance maps do not establish full implementation of those components. All 154 default-model comparison endpoints remain unavailable.
 
 No private conversation archives, credentials or profile datasets are included. Public demonstrations use generated synthetic histories. Original source documents remain outside the publication checkout.
+
+C14 now has a new dossier reference analyser, not recovered historical source. It reuses the existing analytics owner, measures fixed authored samples with separate quotation/technical-term annotations, and rejects unmatched topic/task/participant/configuration pairs. Sixteen focused checks pass in the expanded 40-test suite. Four synthetic configurations retain six eligible and six ineligible comparisons. Original-source component coverage remains 19; C14 adds a separate new reference mechanism. See [language analysis](LANGUAGE_ANALYSIS.md).

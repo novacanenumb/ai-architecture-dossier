@@ -11,7 +11,7 @@ process.stdout.write(processResult.stdout ?? ''); process.stderr.write(processRe
 const output = processResult.stdout ?? '';
 const summary = key => { const match = output.match(new RegExp(`^# ${key} (\\d+)$`, 'm')); return match ? Number(match[1]) : null; };
 const hashes = {};
-for (const file of [...files, 'packages/lab/core.mjs', 'packages/lab/analytics.mjs']) hashes[file] = createHash('sha256').update(await readFile(path.join(root, file))).digest('hex');
+for (const file of [...files, 'packages/lab/core.mjs', 'packages/lab/analytics.mjs', 'packages/lab/language-analysis.mjs', 'packages/lab/language-fixture.mjs']) hashes[file] = createHash('sha256').update(await readFile(path.join(root, file))).digest('hex');
 const receipt = { schemaVersion:1, command:'node --test --test-reporter=tap tests/*.test.mjs', nodeVersion:process.version, platform:process.platform, exitCode:processResult.status, total:summary('tests'), passed:summary('pass'), failed:summary('fail'), skipped:summary('skipped'), sourceHashes:hashes, claim:'Host-executed behavioral checks; native proposal validation is a separate record.' };
 await mkdir(path.join(root, 'experiments'), { recursive:true });
 await writeFile(path.join(root, 'experiments/test-receipt.json'), JSON.stringify(receipt, null, 2) + '\n');

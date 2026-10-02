@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "c7a3fbdc-abcf-4c42-ab44-18b8fa4ce338",
+  "runId": "run-5e837bbe-1908-4cc7-84af-3c3a78e65140",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "artifactHash": "sha256:f88484d7bbeab19498a658d8a4b77f5bd387b70069b27860460ff17b6ee63ae8",
+  "manifestHash": "sha256:773cc08c22194157e1c551fb2cc14e38bc43327724af82ec3cb891a118add8fb",
+  "sourceTextHash": "sha256:37c0d43c9651a746404e2d2d2a129e88eb4c7b3d90669db4648e0bc551f2137b",
+  "sourceCharacters": 15416,
+  "nativeCandidateContracts": 2,
+  "hostProposalTurns": 2,
+  "modelId": "gpt-5.6-sol",
+  "provider": "native_codex_host",
+  "validationScope": "Two Sol proposal turns, parent interface/count normalization, complete behavioral validation and tested-byte submission. Native nonempty/schema/anchor/GTFL checks; general independent semantic validator unavailable.",
+  "referenceTests": 40,
+  "languageTests": 16,
+  "fixtureConfigurations": 4,
+  "eligibleComparisons": 6,
+  "ineligibleComparisons": 6,
+  "usage": null,
+  "cost": null
+}

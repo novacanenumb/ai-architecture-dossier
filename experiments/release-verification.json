@@ -1,4 +1,12 @@
 {
+  "languageTests": 16,
+  "languageFixtureConfigurations": 4,
+  "languageComparisonAttempts": 12,
+  "languageEligibleComparisons": 6,
+  "languageIneligibleComparisons": 6,
+  "languageSourceMatches": 2,
+  "languageHistoricalAssertionFailures": 1,
+  "languageDeterministicReplay": true,
   "agentdbOriginalTests": 39,
   "agentdbAdditionalProbes": 10,
   "agentdbComponents": 4,
@@ -12,7 +20,7 @@
   "agentdbNativeContracts": 2,
   "schemaVersion": 1,
   "status": "PASSED",
-  "tests": 24,
+  "tests": 40,
   "suppliedRuntimeTests": 45,
   "suppliedRuntimeComponents": 12,
   "runtimeSourceMatches": 2,
@@ -26,14 +34,14 @@
   "headspaceDiagnosticPairs": 12,
   "headspaceSourceMatches": 3,
   "headspacePortableTraceHashVerification": true,
-  "readmeWords": 5235,
+  "readmeWords": 5627,
   "components": 28,
   "acceptanceRequirements": 122,
   "metricEndpoints": 154,
   "fixtureConfigurations": 17,
   "providerCalls": 0,
-  "syntaxChecked": 27,
-  "publicFiles": 14,
+  "syntaxChecked": 34,
+  "publicFiles": 17,
   "nativeSourceMatches": [
     "packages/lab/core.mjs",
     "packages/lab/analytics.mjs",
@@ -45,7 +53,7 @@
   "hostSourceChanges": [
     {
       "path": "dist/app.mjs",
-      "reason": "Host-integrated partial supplied runtime, Headspace and Agent Database evidence panels with complete local cache denominators and unavailable model endpoints; separate from retained prior native source."
+      "reason": "Host-integrated C14 language controls and evidence, preserving supplied runtime, Headspace and Agent Database panels; separate from retained native source."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -55,18 +63,21 @@
   "deterministicStaticRebuild": true,
   "publicFileHashes": {
     "dist/LICENSE.txt": "3c21321c5e4a7183b62a138f581a78202bfad89f1b7b4f54aa64976bd7ca95a8",
-    "dist/app.mjs": "d8b914b3ddd500d9925d1a0c55df620b9a50753697146ecd03ae6fa747fa8a8d",
+    "dist/app.mjs": "ba584e925dc18bbb13c51f00d9b9a3162534e4ac61f6be5688406c61c5ce87ba",
     "dist/data/agentdb-evidence.json": "bf179fa952cd3faead7f8385a472ff37c8e65ed1a6108dc67b5381151e0a2789",
     "dist/data/catalog.json": "f6091548179bee0789f67307d4bf090857d3def4c12adca2750b7d807bd3491d",
     "dist/data/headspace-evidence.json": "71e95d1f59b46934e089a47d830c0213fc061c80518de007afdfcd2506059ee4",
     "dist/data/headspace-trace.json": "e631791770d89ddb2aedaf31802d44eaa2ea4918821a9f42766e66c17ec12aa3",
+    "dist/data/language-results.json": "9fe1e9dd3e1de9f3b431025a5f50b150fee92c749304812156e2c2fb942db96b",
     "dist/data/publication.json": "cacb22d5a424f344bfad19ce2724dae6dc9314cf6f90d4df240584f3a3c9ade0",
-    "dist/data/results.json": "2eaa47e11ca25a546097c5afe599e5b1792380bb24fcfc81002c75fa14bbc680",
+    "dist/data/results.json": "c5dfe3017b633d48c44f909b2265be72f421d167bc998e6bcc6a254566d47307",
     "dist/data/runtime-evidence.json": "785938610be216d450c260050031b8d65ba853d654ba4584a7d74ce18d87b084",
     "dist/data/scheduler-results.json": "56fbc0b40755b82a8a7f19e2a1b4542535a6a3dd50d5327533a1b4a83a4120b1",
     "dist/index.html": "c574fe2b28f93c12822cab18cb613a39365200f215147ce78d3a972f0553cfcd",
     "dist/lib/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9",
     "dist/lib/core.mjs": "84e188b48b45d2a67a84f1117442c1dae9af7a44fcc22340ad1c9d70bc32157d",
+    "dist/lib/language-analysis.mjs": "6074f74e076d6af74db2ee41b26682cdaf12e971d300d07852627e37184467ef",
+    "dist/lib/language-fixture.mjs": "4c0be06876f82e33f1d81597f4a20a813eaf51c8b37254c1f0ee90673e958bbf",
     "dist/styles.css": "737c2e7389fe907972596b1789e8059ff4efcba449937717384acb7e47d38d3b"
   },
   "securityCheck": "Finite filename and credential pattern checks, not a comprehensive security audit."

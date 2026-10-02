@@ -3,19 +3,17 @@
   "command": "node --test --test-reporter=tap tests/*.test.mjs",
   "nodeVersion": "v26.3.1",
   "platform": "win32",
-  "exitCode": 0,
+  "exitCode": 1,
   "total": 40,
-  "passed": 40,
-  "failed": 0,
+  "passed": 39,
+  "failed": 1,
   "skipped": 0,
   "sourceHashes": {
     "tests/analytics.test.mjs": "392f010622b95a5c0d3a0ff11b32c4e7ccc2cbbab2fb2c1a876710b88e544a02",
     "tests/core.test.mjs": "216cc9073061989bda1f59e944e36e5ff131e154f4cef81f74a981b4f0e80179",
-    "tests/language-analysis.test.mjs": "c181a374c6ba33c9b577802c760e67a29a28f8bea02bb615938b3a7e4eaa0341",
+    "tests/language-analysis.test.mjs": "81d1f07be5e5f1d58d5e55bb07a9a458875c4da2c00d308652e8744f366231d5",
     "packages/lab/core.mjs": "84e188b48b45d2a67a84f1117442c1dae9af7a44fcc22340ad1c9d70bc32157d",
-    "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9",
-    "packages/lab/language-analysis.mjs": "6074f74e076d6af74db2ee41b26682cdaf12e971d300d07852627e37184467ef",
-    "packages/lab/language-fixture.mjs": "4c0be06876f82e33f1d81597f4a20a813eaf51c8b37254c1f0ee90673e958bbf"
+    "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9"
   },
   "claim": "Host-executed behavioral checks; native proposal validation is a separate record."
 }

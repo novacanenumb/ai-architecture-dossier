@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "FAILED",
+  "command": "node --test --test-reporter=tap tests/language-analysis.test.mjs",
+  "total": 16,
+  "passed": 15,
+  "failed": 1,
+  "skipped": 0,
+  "sourceHash": "sha256:81d1f07be5e5f1d58d5e55bb07a9a458875c4da2c00d308652e8744f366231d5",
+  "failure": "Known MATTR vector used strict floating-point equality: 0.8333333333333333 versus 5/6 rounded to 0.8333333333333334. Correct mathematical comparison requires a numerical tolerance.",
+  "semanticMechanismFailure": false
+}

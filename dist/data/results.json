@@ -8,15 +8,18 @@
     "nodeVersion": "v26.3.1",
     "platform": "win32",
     "exitCode": 0,
-    "total": 24,
-    "passed": 24,
+    "total": 40,
+    "passed": 40,
     "failed": 0,
     "skipped": 0,
     "sourceHashes": {
       "tests/analytics.test.mjs": "392f010622b95a5c0d3a0ff11b32c4e7ccc2cbbab2fb2c1a876710b88e544a02",
       "tests/core.test.mjs": "216cc9073061989bda1f59e944e36e5ff131e154f4cef81f74a981b4f0e80179",
+      "tests/language-analysis.test.mjs": "c181a374c6ba33c9b577802c760e67a29a28f8bea02bb615938b3a7e4eaa0341",
       "packages/lab/core.mjs": "84e188b48b45d2a67a84f1117442c1dae9af7a44fcc22340ad1c9d70bc32157d",
-      "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9"
+      "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9",
+      "packages/lab/language-analysis.mjs": "6074f74e076d6af74db2ee41b26682cdaf12e971d300d07852627e37184467ef",
+      "packages/lab/language-fixture.mjs": "4c0be06876f82e33f1d81597f4a20a813eaf51c8b37254c1f0ee90673e958bbf"
     },
     "claim": "Host-executed behavioral checks; native proposal validation is a separate record."
   },
@@ -6238,8 +6241,11 @@
     "sourceHashes": {
       "tests/analytics.test.mjs": "392f010622b95a5c0d3a0ff11b32c4e7ccc2cbbab2fb2c1a876710b88e544a02",
       "tests/core.test.mjs": "216cc9073061989bda1f59e944e36e5ff131e154f4cef81f74a981b4f0e80179",
+      "tests/language-analysis.test.mjs": "c181a374c6ba33c9b577802c760e67a29a28f8bea02bb615938b3a7e4eaa0341",
       "packages/lab/core.mjs": "84e188b48b45d2a67a84f1117442c1dae9af7a44fcc22340ad1c9d70bc32157d",
-      "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9"
+      "packages/lab/analytics.mjs": "262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9",
+      "packages/lab/language-analysis.mjs": "6074f74e076d6af74db2ee41b26682cdaf12e971d300d07852627e37184467ef",
+      "packages/lab/language-fixture.mjs": "4c0be06876f82e33f1d81597f4a20a813eaf51c8b37254c1f0ee90673e958bbf"
     },
     "configHash": "51c2ef934256bb10327e6ac2189f198cbbcd6768b849e2d047e10fb434710054",
     "datasetHash": "c1769f5b802c9da7d717dd22eac05c5d29681b4bebf34eee5469499165c77c67",

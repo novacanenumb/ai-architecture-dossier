@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "componentId": "C14",
+  "status": "PARTIAL_NEW_REFERENCE_EVIDENCE",
+  "classification": "New dossier reference implementation; original C14 implementation not recovered",
+  "fullComponentAcceptance": false,
+  "acceptance": [
+    {"id":"C14-T01","testFile":"tests/language-analysis.test.mjs","command":"npm test","boundary":"Fixed authored sample and insufficient-window gate; raw type-token ratio never used for benefit inference"},
+    {"id":"C14-T02","testFile":"tests/language-analysis.test.mjs","command":"npm test","boundary":"Caller-annotated quotation and required-term segments counted separately; external source attribution and automatic annotation not verified"},
+    {"id":"C14-T03","testFile":"tests/language-analysis.test.mjs","command":"npm test","boundary":"Explicit topic/task mismatch rejects comparison; caller labels are not semantic topic detection"},
+    {"id":"C14-T04","testFile":"tests/language-analysis.test.mjs","command":"npm test","boundary":"Synthetic participant labels preserved; human/model/synthetic kinds separated; human outcomes remain null"}
+  ],
+  "excluded": ["semantic consistency evaluation","longitudinal cognitive outcomes","transfer-task experiment","blinded human ratings","matched provider generations","general topic verification"],
+  "providerCalls": 0
+}

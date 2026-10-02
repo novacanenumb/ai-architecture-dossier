@@ -13,6 +13,7 @@
     "test:agentdb": "node scripts/test-agentdb-source.mjs",
     "benchmark": "node scripts/benchmark.mjs",
     "benchmark:scheduler": "node scripts/benchmark-supplied-scheduler.mjs",
+    "measure:language": "node scripts/measure-language-fixture.mjs",
     "verify": "node scripts/verify-release.mjs",
     "verify:public": "node scripts/verify-public-checkout.mjs",
     "preview": "node scripts/serve.mjs"

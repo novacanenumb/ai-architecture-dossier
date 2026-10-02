@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "componentId": "C14",
+  "protocolId": "synthetic-output-language-analysis/1",
+  "classification": "new_dossier_reference_implementation",
+  "sampleTokens": 32,
+  "mattrWindow": 8,
+  "trajectoryPositions": ["initial", "middle", "late"],
+  "arms": ["single_voice_fixture", "pooled_vocabulary_fixture", "polyphonic_fixture"],
+  "participantKind": "synthetic",
+  "topicId": "synthetic-agent-design",
+  "taskId": "synthetic-explain-evidence",
+  "annotations": "Manually authored segment kinds; quotation source IDs are annotations and are not externally verified.",
+  "sampling": "Fixed first 32 authored Unicode-word tokens; shorter windows ineligible. MATTR pools fixed authored tokens; phrase trigrams preserve authored segment boundaries.",
+  "comparisonGate": "Ready windows, distinct record IDs, same topic, task, sample size, MATTR window and participant kind.",
+  "statistics": "Descriptive paired lexical differences on authored synthetic windows. No population confidence interval or provider-output claim.",
+  "measurements": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "semanticAlignment": null,
+    "transferTaskScore": null,
+    "humanOutcome": null
+  }
+}
