@@ -4,6 +4,18 @@ An architectural design portfolio by **novacanenumb**: 28 component contracts co
 
 This release documents the whole design programme and implements a dependency-free sparse context, exact archive and statistical analytics reference slice. Its browser lab executes the same modules as the Node tests. Historical source reports retain their provenance; missing historical code is not reconstructed as an existing contribution.
 
+**Explore the [public architectural dossier](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site), [context lab](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/lab), and [evidence view](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/evidence).** The existing [Headspace PRSR laboratory](https://headspace-prsr-lab.novacanenumb.chatgpt.site) is a separate experimental project whose original fixture source has now been inspected and tested.
+
+## What this work contributes
+
+The central design question is how an agent workflow can carry less redundant input, preserve exact requirements, coordinate bounded work, and make its eventual output easier to verify. Those goals interact. A small context packet is useful only if it still contains the facts the task needs. Parallel workers are useful only if their outputs can be reconciled within a shared boundary. A convincing performance result needs the cost of retries, reviews, duplicated context and failed attempts as well as the successful final response.
+
+The architecture therefore makes intermediate state explicit. History has versioned source addresses. Context packets declare protected records and byte budgets. Generation work has anchors, dependencies and stopping rules. Candidate outputs remain proposals until the appropriate checks pass. Evidence records preserve disagreement and missing support. Performance records carry measurement provenance and defined denominators. The public dossier makes these interfaces inspectable so a reader can examine the mechanism behind a claimed improvement.
+
+For developers, this repository supplies runnable reference modules, source-bound probes and experiment records. For reviewers, it supplies component contracts, acceptance IDs, failure cases and limitations. For collaborators, it identifies which parts can be extended locally and which need a separate provider experiment or native implementation. The catalogue preserves the broader research programme while the evidence sections identify the behavior actually executed in this release.
+
+Authorship is deliberately traceable: the architectural programme is credited to **novacanenumb**; the portfolio, reference modules and additional probes are AI-assisted work with parent integration. Existing Hypervisor and Headspace implementations retain their own source identity and licensing boundaries. Finding a missing implementation, a failed diagnostic or an unavailable measurement remains part of the contribution record.
+
 ## Reproduce
 
 Use Node.js 22 or later. No packages, API keys or model calls are required.
@@ -18,6 +30,39 @@ npm run preview
 ```
 
 The preview prints its local URL; `dist` is the static publication directory. Explore the [limitations](docs/LIMITATIONS.md), [contribution map](docs/CONTRIBUTION_MAP.md), [protocol](experiments/protocol.json), and [results](dist/data/results.json).
+
+For a fresh public checkout:
+
+```sh
+git clone https://github.com/novacanenumb/ai-architecture-dossier.git
+cd ai-architecture-dossier
+npm test
+npm run build
+npm run verify
+npm run preview
+```
+
+The default workflow has no dependency installation step. `npm test` writes a source-bound test receipt; `npm run benchmark` generates the deterministic context comparison bundle; `npm run build` derives the catalogue and copies the public modules and frozen evidence; `npm run verify` checks the resulting release. `npm run verify:public` repeats the public source workflow in a temporary isolated copy without the private master specification or supplied runtime. Optional source probes are described separately below and require their corresponding original dependency.
+
+## Repository navigation
+
+```text
+ai-architecture-dossier/
+  README.md                         Public entry point and reproduction guide
+  component-registry.json           Sanitized 28-component source registry
+  packages/lab/                     Executable archive, context and analytics APIs
+  tests/                            Public reference behavior and known vectors
+  scripts/                          Builds, probes, benchmarks and release checks
+  docs/                             Provenance, boundaries and contribution maps
+  experiments/native/               Retained native source-validation records
+  experiments/runtime/              Supplied-runtime probes and scheduler results
+  experiments/headspace/            Original-source checks and commit diagnostic
+  dist/                             Static site and downloadable derived evidence
+  .openai/hosting.json               Existing Sites project and output declaration
+  LICENSE                           Custom licence for this repository's additions
+```
+
+Start with the [source inventory](docs/SOURCE_INVENTORY.md) to understand which implementations were inspected, then use the [evidence guide](docs/EVIDENCE.md) to find the reference results. The [runtime guide](docs/RUNTIME_EVIDENCE.md) explains optional Hypervisor checks; the [Headspace guide](docs/HEADSPACE_EVIDENCE.md) explains original fixture checks and the new concurrency diagnostic. The [reuse plan](docs/REUSE_PLAN.md) records ownership boundaries for further implementation.
 
 ## Architecture and design intent
 
@@ -79,6 +124,24 @@ The [component registry](component-registry.json) preserves historical source st
 | C28 | Replay, reproducible releases and portfolio publication | Design and current publication tooling |
 
 The catalogue includes **122 acceptance requirements** and **154 specified metric endpoints**. Full component acceptance is not claimed: the evidence matrix uses `PARTIAL_REFERENCE_EVIDENCE` and `NOT_RUN`. A passing local fixture cannot complete a native decoder, a hosted provider evaluation or a production authority service.
+
+The table records the public reference implementation scope. Current source inspection adds partial evidence from the supplied Hypervisor across 12 components and from the original Headspace fixture for C11–C13; the detailed sections below describe that evidence without promoting the entire component contract to complete.
+
+## How the component families fit together
+
+**Context and memory — C02–C05.** The exact archive supplies stable revision and span addresses; the sparse compiler selects the protected and task-relevant material that a worker receives. Context routing allocates evidence across workers and accounts for shared input. Cache hierarchy and invalidation are a separate design concern because a reused answer or index must still match its source revision, scope and task conditions. The reference comparison makes the transport trade-off observable, including cases where routing overhead exceeds the savings from a single sparse packet.
+
+**Generation and revision — C06–C10.** A sealed anchor describes what a section must preserve, which sources it depends on and where it may change. ABES schedules bounded candidates against those anchors. Semantic IR provides a structured revision surface; rotating synthesis and local repair describe how disagreement could be reduced without reopening every accepted section. C08's bidirectional multi-anchor decoder requires model-native support and retains a research status. Executing application-level anchors does not demonstrate that decoder capability.
+
+**Language composition — C11–C14.** Headspace explores complementary logical language profiles, dictionaries and prefix commitments. Its original PRSR browser fixture makes proposals, authored matrix weights, fresh prefix frames and contributor order observable. The diversity analyser supplies hypotheses and metric definitions for comparing language behavior. A deterministic fixture can establish trace invariants and arithmetic, while semantic quality, vocabulary generalization and human outcomes need their own experimental evidence. Five logical profiles do not by themselves establish five distinct hosted models.
+
+**Agent organization — C15–C18.** Measured routing uses observed evidence to choose future bounded work. Lifecycle definitions, agent dossiers and scoped memory distinguish persistent identity and knowledge ownership from an individual task's prompt. Bootstrap compilation and qualification describe how those definitions could be checked before use. The catalogue preserves the historical C16 label while current integration avoids creating a second registry beside the existing Agent Database owner.
+
+**Authority and evidence — C19–C22.** Tool permissions, signed agreements, source-backed claims and positive-state completion have separate contracts. A worker's proposed command is not authority to execute it. A hash establishes content binding, while publisher or human identity needs an additional trusted mechanism. The supplied runtime probes establish selected local attenuation, contradiction, deduplication and GTFL behaviors. They do not establish operating-system confinement, authenticated human approval or every production integration.
+
+**Native research — C23–C26.** RTL360-GTFL, rotor and lattice routing, route-state caching, training and checkpoint promotion describe work below the ordinary API orchestration layer. Their acceptance requirements remain useful as research targets. This public release supplies no trained checkpoint, decoder mask, measured neural compute advantage or successful promotion experiment for those components.
+
+**Measurement and publication — C27–C28.** Complete accounting binds conclusions to the calls, source versions and exclusions that produced them. Replay checks stored artifacts and hashes; it does not regenerate a hosted model deterministically. Reproducible releases preserve the public implementation, evidence bundles and native receipts so a later experiment can be compared with an earlier recorded state.
 
 ## Exact archive API
 
@@ -200,10 +263,49 @@ Run `npm run benchmark:scheduler` separately with the verified runtime and Node 
 
 The added test sources and benchmark runner have a separate [native source receipt](experiments/runtime/native-scheduler/receipt.json). Native source validation and parent behavioral verification have different scopes. The earlier [23-probe receipt](experiments/runtime/history/23-probe-release/test-receipt.json), runner bytes and native artifact remain intact, so publication history is inspectable.
 
+## Original Headspace source and concurrent-commit evidence
+
+The existing `prsr-sites` 1.0.0 prototype was located at `N:/Development/Architecture/Headspace/prsr-sites`. Its original browser fixture, generated validators, comparison adapter, test schemas and examples were inspected before execution. The dossier pins 13 source files in a [source manifest](experiments/headspace/source-manifest.json), copies only those inspected files to an owned temporary directory, runs the original tests there, and verifies every original hash again afterward. The original project remains unchanged and its source is excluded from this repository.
+
+The original suite passed **16 fixture checks** covering contributors, exact prefixes, normalized authored frames, rejection of stale proposals, protected text, stop behavior, replay, checkpoint restoration, branching, shuffle diagnostics and configuration tampering. Its mocked comparison suite passed **17 checks** using injected streaming responses. Those checks exercise the comparison adapter and bounded dispatch; they do not verify paid-provider behavior or language quality. No live model call was made.
+
+A new diagnostic calls `.commit(proposal)` twice concurrently against the same prefix revision for each of 12 fixed seeds. The original API accepted both calls in all 12 cases, producing duplicate transitions and an invalid event chain. This is a direct API concurrency trigger; it does not establish that ordinary sequential use of the existing browser interface has the same behavior. The existing passing tests had not covered this trigger.
+
+The dossier adds a small [serialization adapter](packages/lab/serialized-commit.mjs) that queues commit attempts within one simulator instance. With the same inputs, every adapted pair accepted exactly one commit, rejected the stale second attempt, retained one fragment and verified its trace. The adapter also preserves thrown errors and allows the queue to continue afterward.
+
+| C13-T01 diagnostic arm | Failed requirements | Denominator | Observation |
+| --- | ---: | ---: | --- |
+| Original direct concurrent API | 12 | 12 | Two accepted commits; invalid event lineage |
+| Original API with new per-instance adapter | 0 | 12 | One accepted commit; valid event lineage |
+
+This is a bounded in-process correction, with no claimed rollback, durable transaction or cross-process exclusion. The adapter has not been installed in the original Headspace project or its existing public deployment. The [receipt](experiments/headspace/test-receipt.json) retains every baseline failure and adapted result, and the [native source receipt](experiments/headspace/native/receipt.json) binds the three newly proposed source files.
+
+A [public synthetic trace](experiments/headspace/public-trace.json) records one sentence, five fragments and 90 hash-linked events generated with an empty source inventory. Its events and transcript reproduced exactly for seed 4096; timing telemetry remains variable. The authored probability-like weights are fixture computations, with backend scores null. They are not measured model probabilities, trained embeddings or independent semantic validation.
+
+Reproduce with Node 26 or later, the approved Hypervisor dependency and the exact original source files:
+
+```text
+npm run test:headspace
+```
+
+Set `HEADSPACE_SOURCE_PATH` when the original source is elsewhere and `DOSSIER_RUNTIME_PATH` for the approved dependency. Missing or changed source fails explicitly. The default fetch guard and allowlisted child environment are best-effort local controls; operating-system network confinement is unavailable. Builds copy the recorded evidence and never invoke the original tests or a model.
+
+## Reading an efficiency claim
+
+Every result should identify the work unit, baseline, measurement and acceptance gate. In the context fixture, the work unit is serialized UTF-8 input and the acceptance gate is required exact-span coverage. In the scheduler fixture, it is an actual bounded DAG execution with equal deterministic callback outputs. In the Headspace diagnostic, it is two competing commits against one revision with a verified unique next span. Those are distinct claims with distinct denominators.
+
+A smaller byte count does not establish fewer billed tokens unless provider usage is observed. A faster asynchronous fixture does not establish faster neural inference. Deterministic event replay does not establish semantic noninferiority. The records keep these quantities separate so future provider-backed work can add measurements without rewriting the meaning of the existing results.
+
+For a matched model comparison, freeze the task corpus, protected requirements, model and backend revisions, arm configuration, quality rubric, tolerance, call limit and budget before dispatch. Retain all successful, failed, cancelled, retry and review calls. Define cache inclusion and token subsets explicitly. Compute ratios only with known nonzero denominators, and report missing observations as null. A combined Hypervisor comparison must include its orchestration and review overhead as well as the final answer.
+
 ## Next experiments and contributions
 
 Further evidence requires the relevant actual implementation, a frozen corpus, declared model/backend revisions, complete call accounting, a quality rubric and matched baseline/candidate runs. Native decoder, training and language-profile experiments require their own implementations and validators. Improvements should be reported only after the corresponding experiment runs, with failed attempts and unknown measurements preserved.
 
 Contributions should identify the owning component, baseline, failure cases and evidence limits. Use [SECURITY.md](SECURITY.md) for security reports.
+
+A useful contribution can be a small mechanism, a sharper acceptance scenario, a reproducible adverse case, or a source-backed evaluation. Reference code belongs in the existing `packages/lab` owner; source probes belong under `experiments` with their source pins and explicit dependency boundary. Include enough public synthetic input to reproduce the result without publishing private conversation archives, credentials or user-profile material.
+
+When proposing a change, state which component and acceptance IDs it addresses, what previously happened, what now happens, and which command verifies that behavior. Keep unrelated source unchanged. If a check only validates schema, a hash or fixture arithmetic, retain that scope in the claim. A contribution that records a failure precisely can be more useful than a broader success claim without a reproducible trigger.
 
 The custom **Novacanenumb Open Design License 1.0** permits commercial and noncommercial use, modification and redistribution with attribution, retained notices and identification of material changes. It includes a limited contributor patent grant and warranty terms. No OSI approval is claimed. Read the complete [licence](LICENSE) and use [CITATION.cff](CITATION.cff) when crediting the work.

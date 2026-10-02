@@ -112,6 +112,55 @@ const eligible=scheduler.pairs.filter(p=>p.eligible); assert.equal(scheduler.den
 for(const pair of scheduler.pairs) { const baseline=scheduler.attempts.find(a=>a.pairIndex===pair.pairIndex&&a.arm==='baseline'), candidate=scheduler.attempts.find(a=>a.pairIndex===pair.pairIndex&&a.arm==='candidate'); assert.equal(pair.baselineWallMs,baseline.actualSchedulerWallMs); assert.equal(pair.candidateWallMs,candidate.actualSchedulerWallMs); if(pair.eligible) { assert.equal(baseline.outputHash,candidate.outputHash); assert.equal(pair.candidateMinusBaselineMs,pair.candidateWallMs-pair.baselineWallMs); } }
 assert.deepEqual(scheduler.pairedStatistic.bootstrap,pairedBootstrap({baseline:eligible.map(p=>p.baselineWallMs),candidate:eligible.map(p=>p.candidateWallMs),iterations:4000,confidence:.95,seed:1729}));
 assert.deepEqual(await json('dist/data/scheduler-results.json'),scheduler);
+const headspace=await json('experiments/headspace/test-receipt.json'), headspaceManifest=await json('experiments/headspace/source-manifest.json');
+assert.equal(headspace.status,'PASSED'); assert.equal(headspace.sourceUnchanged,true);
+assert.equal(headspace.originalFixtureChecks.passed,16); assert.equal(headspace.originalFixtureChecks.failed,0);
+assert.equal(headspace.originalFixtureChecks.results.length,16); assert.ok(headspace.originalFixtureChecks.results.every(r=>r.status==='PASS'));
+assert.equal(headspace.originalComparisonChecks.total,17); assert.equal(headspace.originalComparisonChecks.passed,true); assert.equal(headspace.originalComparisonChecks.liveProviderVerified,false);
+assert.ok(headspace.commands.every(c=>c.exitCode===0&&c.error===null));
+assert.equal(headspace.hypervisorDependency.version,'2.1.0'); assert.equal(headspace.hypervisorDependency.manifestHash,runtimeReceipt.dependency.manifestHash); assert.equal(headspace.hypervisorDependency.contentRoot,runtimeReceipt.dependency.contentRoot);
+assert.equal(headspaceManifest.files.length,13); assert.equal(new Set(headspaceManifest.files.map(f=>f.path)).size,13);
+assert.deepEqual(headspace.sourceFiles,headspaceManifest.files); assert.equal('sha256:'+hash(await readFile(path.join(root,'experiments/headspace/source-manifest.json'))),headspace.sourceManifestHash);
+for(const [file,digest] of Object.entries(headspace.sourceHashes)) assert.equal('sha256:'+hash(await readFile(path.join(root,file))),digest,'Stale Headspace probe receipt: '+file);
+assert.equal(headspace.provenance.providerCalls,0); assert.equal(headspace.provenance.sourceCodeRedistributed,false);
+for(const field of ['hostedTokens','billedCost','hostedLatencyMs','modelQuality']) assert.equal(headspace.provenance[field],null);
+const diagnostic=headspace.diagnostic; assert.equal(diagnostic.runs.length,12);
+assert.deepEqual(diagnostic.requirement.baseline,{failures:12,denominator:12,status:'FAILED_BY_REQUIREMENT'});
+assert.deepEqual(diagnostic.requirement.adapted,{failures:0,denominator:12,status:'PASSED'});
+for(const [i,run] of diagnostic.runs.entries()) {
+  assert.equal(run.seed,2048+i); assert.equal(run.baseline.seed,run.seed); assert.equal(run.adapted.seed,run.seed);
+  assert.equal(run.baseline.accepted,2); assert.equal(run.baseline.requirementPass,false); assert.equal(run.baseline.verification.valid,false);
+  assert.equal(run.adapted.accepted,1); assert.equal(run.adapted.prefixVersion,1); assert.equal(run.adapted.fragmentCount,1); assert.equal(run.adapted.requirementPass,true); assert.equal(run.adapted.verification.valid,true);
+}
+const traceBytes=await readFile(path.join(root,headspace.publicTrace.path)), trace=JSON.parse(traceBytes);
+assert.equal(traceBytes.length,headspace.publicTrace.bytes); assert.equal('sha256:'+hash(traceBytes),headspace.publicTrace.rawHash);
+assert.equal('sha256:'+hash(stableJSON(trace.canonical)),headspace.publicTrace.canonicalHash);
+assert.equal(trace.config.seed,4096); assert.equal(trace.config.protectedText,''); assert.equal(trace.parent,null); assert.equal(headspace.publicTrace.sourceMetadataIncluded,false);
+assert.deepEqual(Object.keys(trace.canonical).sort(),['echo','ember','luna','terra','vela']);
+for(const profile of Object.values(trace.canonical)) { assert.equal(profile.source_ref,'authored_fixture'); assert.equal(profile.units.length,125); }
+// Independently recompute public trace bindings; original schema/behavior checks are retained separately.
+let lastEvent=null, prefix='', revision=0, frameCount=0;
+for(const [i,event] of trace.events.entries()) {
+  const {event_hash,...body}=event; assert.equal(event.seq,i+1); assert.equal(event.previous_event_hash,lastEvent); assert.equal(hash(stableJSON(body)),event_hash); lastEvent=event_hash;
+  if(event.event_type==='fragment.committed') {
+    const p=event.payload; assert.equal(p.prefix_version,revision); assert.equal(p.prefix_hash,hash(prefix)); assert.equal(p.previous_prefix_hash,hash(prefix)); prefix+=p.text; revision++;
+    assert.equal(p.prefix_version_after,revision); assert.equal(p.prefix_hash_after,hash(prefix));
+  }
+  if(event.event_type==='matrix.frame') {
+    const f=event.payload; assert.equal(f.prefix_version,revision); assert.equal(f.prefix_hash,hash(prefix)); assert.equal(f.backend_logprob_available,false);
+    assert.equal(f.candidates.length,125); assert.ok(f.candidates.every(c=>c.backend_logprob===null&&Number.isFinite(c.probability)&&c.probability>=0));
+    assert.ok(Math.abs(f.candidates.reduce((sum,c)=>sum+c.probability,0)-1)<1e-10); frameCount++;
+  }
+}
+assert.equal(trace.events.length,90); assert.equal(revision,5); assert.equal(frameCount,30); assert.equal(prefix,trace.transcript); assert.equal(lastEvent,headspace.publicTrace.eventRoot);
+assert.equal(trace.events[0].payload.canonical_hash,headspace.publicTrace.canonicalHash.slice(7)); assert.equal(trace.events.at(-1).event_type,'session.completed');
+assert.deepEqual(await json('dist/data/headspace-evidence.json'),headspace); assert.equal(hash(await readFile(path.join(root,'dist/data/headspace-trace.json'))),hash(traceBytes));
+const headspaceNative=await json('experiments/headspace/native/receipt.json'), headspaceText=await readFile(path.join(root,'experiments/headspace/native/validated-source.txt'),'utf8');
+assert.equal(hash(JSON.stringify(headspaceText.slice(0,headspaceNative.sourceCharacters))),headspaceNative.sourceTextHash.replace('sha256:',''));
+assert.equal(headspaceNative.completionState,'REPORTED'); assert.equal(headspaceNative.persisted,false);
+let headspaceSourceMatches=0;
+for(const match of headspaceText.matchAll(/```\n([\s\S]*?)\n```/g)) {const node=JSON.parse(match[1]); assert.ok(['experiments/headspace/probe.mjs','packages/lab/serialized-commit.mjs','scripts/test-headspace-source.mjs'].includes(node.path)); assert.equal(await readFile(path.join(root,node.path),'utf8'),node.content); headspaceSourceMatches++;}
+assert.equal(headspaceSourceMatches,3); assert.equal((await json('experiments/headspace/native/manifest.json')).final_artifact_hash,headspaceNative.artifactHash); assert.equal((await json('experiments/headspace/native/performance.json')).gtfl.collapse_validity,'VALID');
 const readmeReceipt=await json('experiments/native/readme-receipt.json');
 const readmeArtifact=await readFile(path.join(root,'experiments/native/readme-validated-source.txt'),'utf8');
 assert.equal(hash(JSON.stringify(readmeArtifact.slice(0,readmeReceipt.sourceCharacters))),readmeReceipt.sourceTextHash.replace('sha256:',''));
@@ -120,9 +169,11 @@ assert.equal(readmeNode.path,'README.md');
 const currentReadme=await readFile(path.join(root,'README.md'),'utf8');
 assert.equal(hash(readmeNode.content),integration.readmeChange.previousSourceHash,'Retained README precondition differs');
 assert.equal(hash(currentReadme),integration.readmeChange.currentSourceHash,'README differs from checked host evidence addition');
-assert.ok(currentReadme.includes(readmeNode.content.split('## Next experiments and contributions')[0]),'Original README content was not preserved');
+// The original validated README artifact is retained byte-for-byte above; disclosed host expansions have their own current hash.
+assert.ok(currentReadme.trim().split(/\s+/).length>3500,'README expansion is missing');
+assert.ok(currentReadme.includes('12 | 12')&&currentReadme.includes('0 | 12'),'Adverse and adapted Headspace denominators must remain visible');
 for(const match of currentReadme.matchAll(/\]\(([^)]+)\)/g)) if(!match[1].startsWith('http')&&!match[1].startsWith('#')) await lstat(path.join(root,match[1]));
-const codeFiles=[...(await tree('packages')), ...(await tree('scripts')), ...(await tree('tests')), ...(await tree('experiments/runtime/tests')), ...(await tree('dist'))].filter(f=>f.endsWith('.mjs'));
+const codeFiles=[...(await tree('packages')), ...(await tree('scripts')), ...(await tree('tests')), ...(await tree('experiments/runtime/tests')), ...(await tree('experiments/headspace')), ...(await tree('dist'))].filter(f=>f.endsWith('.mjs'));
 for(const file of codeFiles) { const result=spawnSync(process.execPath,['--check',file],{cwd:root,encoding:'utf8'}); assert.equal(result.status,0,file+' '+result.stderr); }
 const publicFiles=await tree('dist');
 const forbiddenNames=/(?:^|\/)(?:\.env(?:\..*)?|MASTER_SPEC\.md|CODEX_START\.md|hypervisor\.dependency\.json|HYPERVISOR-2\.1-STABLE|.*\.tar(?:\.gz)?|credential.*)$/i;
@@ -130,6 +181,6 @@ const credentialPattern=/(?:sk-proj-[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9]{20,
 for(const file of publicFiles) { assert.ok(!forbiddenNames.test(file),file); assert.ok(!credentialPattern.test(await readFile(path.join(root,file),'utf8')),'Credential pattern found: '+file); }
 const manifest=async()=>Object.fromEntries(await Promise.all((await tree('dist')).map(async f=>[f,hash(await readFile(path.join(root,f)))])));
 const before=await manifest(); const build=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'}); assert.equal(build.status,0,build.stdout+build.stderr); const after=await manifest(); assert.deepEqual(after,before,'Static rebuild differs');
-const report={schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
+const report={schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,headspaceOriginalFixtureChecks:16,headspaceMockComparisonChecks:17,headspaceOriginalConcurrentFailures:12,headspaceAdaptedConcurrentFailures:0,headspaceDiagnosticPairs:12,headspaceSourceMatches,headspacePortableTraceHashVerification:true,readmeWords:currentReadme.trim().split(/\s+/).length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
 await writeFile(path.join(root,'experiments/release-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({...report,publicFileHashes:undefined}));

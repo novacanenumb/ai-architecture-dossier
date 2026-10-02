@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "57e6bd34-0f4c-474f-81c7-48e103c5ca01",
+  "runId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "artifactHash": "sha256:e7893b0716a51a36017b8f751624b73302a6496cfea0a19360d7181bfa58d672",
+  "manifestHash": "sha256:e973776e8ca238f1324b7ea7b18e580a24d2baf04db764a7a740862d6dead283",
+  "sourceTextHash": "sha256:240de9047bb10df5f0ce42bb2f4087e5540b76ab7b3da0b71fbfea45e52a5951",
+  "sourceCharacters": 12227,
+  "validationScope": "Two Sol-role code proposals corrected and consolidated by parent against inspected original source. Native nonempty, schema, anchor and GTFL validation; separate host execution of original 16 fixture and 17 mocked comparison checks plus 12 paired concurrent-commit diagnostics. General semantic validation unavailable.",
+  "nativeCandidateContracts": 2,
+  "hostProposalTurns": 2,
+  "originalFixtureChecks": 16,
+  "originalMockComparisonChecks": 17,
+  "originalConcurrentCommitFailures": 12,
+  "adaptedConcurrentCommitFailures": 0,
+  "pairedDiagnosticDenominator": 12,
+  "usage": null,
+  "cost": null
+}
+

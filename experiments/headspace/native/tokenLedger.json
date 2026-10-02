@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "agent": {
+        "instance_id": "sha256:165191107384c6693407f1cf010a11fa2004bfda60f32f40034785ebc9316d0a:candidate:1",
+        "model_id": "gpt-5.6-sol",
+        "provider": "native_codex_host",
+        "role": "sol"
+      },
+      "anchor_id": "sha256:165191107384c6693407f1cf010a11fa2004bfda60f32f40034785ebc9316d0a",
+      "cost": {
+        "currency": "USD",
+        "value": null
+      },
+      "provenance": {
+        "cost": "unavailable",
+        "latency": "locally_measured",
+        "token_counts": "unavailable"
+      },
+      "run_id": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
+      "stage_id": "sha256:165191107384c6693407f1cf010a11fa2004bfda60f32f40034785ebc9316d0a:candidate:1",
+      "timing": {
+        "first_token_ms": null,
+        "queue_ms": null,
+        "total_ms": 704882
+      },
+      "tokens": {
+        "cache_write": null,
+        "cached_input": null,
+        "input": null,
+        "output": null,
+        "retrieval": null,
+        "synthetic_context": null
+      }
+    },
+    {
+      "agent": {
+        "instance_id": "sha256:b2e8a76eae92fb997f62ef5814f7272d9b894a5fe7f29e8a24c923e6ec664e83:candidate:1",
+        "model_id": "gpt-5.6-sol",
+        "provider": "native_codex_host",
+        "role": "sol"
+      },
+      "anchor_id": "sha256:b2e8a76eae92fb997f62ef5814f7272d9b894a5fe7f29e8a24c923e6ec664e83",
+      "cost": {
+        "currency": "USD",
+        "value": null
+      },
+      "provenance": {
+        "cost": "unavailable",
+        "latency": "locally_measured",
+        "token_counts": "unavailable"
+      },
+      "run_id": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
+      "stage_id": "sha256:b2e8a76eae92fb997f62ef5814f7272d9b894a5fe7f29e8a24c923e6ec664e83:candidate:1",
+      "timing": {
+        "first_token_ms": null,
+        "queue_ms": null,
+        "total_ms": 709805
+      },
+      "tokens": {
+        "cache_write": null,
+        "cached_input": null,
+        "input": null,
+        "output": null,
+        "retrieval": null,
+        "synthetic_context": null
+      }
+    }
+  ],
+  "kind": "usage-ledger",
+  "runId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
+  "schemaVersion": 2
+}
+

@@ -12,6 +12,9 @@ const runtimeCoverage = JSON.parse(await readFile(path.join(root, 'experiments/r
 await writeFile(path.join(root, 'dist/data/runtime-evidence.json'), JSON.stringify({ ...runtimeReceipt, coverage: runtimeCoverage }, null, 2) + '\n');
 // Preserve frozen observed wall times; a deterministic static build never reruns timing experiments.
 await copyFile(path.join(root, 'experiments/runtime/scheduler-results.json'), path.join(root, 'dist/data/scheduler-results.json'));
+// Original source stays outside publication; these are frozen derived synthetic evidence.
+await copyFile(path.join(root, 'experiments/headspace/test-receipt.json'), path.join(root, 'dist/data/headspace-evidence.json'));
+await copyFile(path.join(root, 'experiments/headspace/public-trace.json'), path.join(root, 'dist/data/headspace-trace.json'));
 try { await readFile(path.join(root, 'dist/data/publication.json')); }
 catch (error) { if (error.code !== 'ENOENT') throw error; await writeFile(path.join(root, 'dist/data/publication.json'), JSON.stringify({ author: 'novacanenumb', repositoryUrl: null, siteUrl: null, profileLinkStatus: 'UNAVAILABLE' }, null, 2) + '\n'); }
 run('scripts/benchmark.mjs');

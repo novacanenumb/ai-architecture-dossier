@@ -9,6 +9,7 @@
     "build": "node scripts/build.mjs",
     "test": "node scripts/test-and-record.mjs",
     "test:runtime": "node scripts/test-supplied-runtime.mjs",
+    "test:headspace": "node scripts/test-headspace-source.mjs",
     "benchmark": "node scripts/benchmark.mjs",
     "benchmark:scheduler": "node scripts/benchmark-supplied-scheduler.mjs",
     "verify": "node scripts/verify-release.mjs",

@@ -1,0 +1,1011 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-headspace-source-evidence",
+  "status": "PASSED",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "sourcePackage": {
+    "name": "prsr-sites",
+    "version": "1.0.0",
+    "implementation": "prsr-browser-fixture-1.0",
+    "packageDeclaredLicense": "ISC",
+    "sourceRedistributed": false
+  },
+  "sourceManifestHash": "sha256:873b225c88f1e34a63ecc564b054032f097703b855923c8beab10aa2a54dba73",
+  "sourceFiles": [
+    {
+      "hash": "sha256:e42c2abf231df0ba8b28a4b0b872ba5d5d835e2de3d58c2100d283448ca73768",
+      "bytes": 23991,
+      "path": "dist/engine.mjs"
+    },
+    {
+      "hash": "sha256:4475b7b6bf8eff2c73c4f9e75237e6854db9d14d5700da4f2809fab4cecad703",
+      "bytes": 184318,
+      "path": "dist/validators.mjs"
+    },
+    {
+      "hash": "sha256:ecfde92ed27225dfa3456848e764c9dfb5afad9e2daf4cc8e2d7710592bef8ff",
+      "bytes": 8885,
+      "path": "dist/comparison-core.mjs"
+    },
+    {
+      "hash": "sha256:ffdb4beeb2d0b9a4974bbc64e973ca12ffa8285005761ccf94fb0b44b435a069",
+      "bytes": 8261,
+      "path": "server/comparison.mjs"
+    },
+    {
+      "hash": "sha256:87ed00de8f37b9781d74fd281d4b637b12827ff4a56d22f564c9dd14399e80b0",
+      "bytes": 16875,
+      "path": "dist/source-inventory.json"
+    },
+    {
+      "hash": "sha256:0a8122c2efd7fffe67a897f1640ca3a08df19e1e2fbffbee9ee5017d5f328efb",
+      "bytes": 9195,
+      "path": "tests/runtime.test.mjs"
+    },
+    {
+      "hash": "sha256:b01ac42ed5395d22a9384a46207dc9e95b21b80f4928cd93cb5d7923ba06ed3c",
+      "bytes": 7497,
+      "path": "tests/comparison.test.mjs"
+    },
+    {
+      "hash": "sha256:29c4d41e0ddc6ce3f4fecedeaa374daf5c5c041b40fbb967e8fc113268557176",
+      "bytes": 3470,
+      "path": "tests/prsr_matrix_probability_frame.schema.json"
+    },
+    {
+      "hash": "sha256:91c02465740355e1bbfdf82c6cd8a891129616654b7da303ee1d29e3d187b27e",
+      "bytes": 11623,
+      "path": "tests/prsr_five_agent_ensemble.example.json"
+    },
+    {
+      "hash": "sha256:be524ccff97dae953e94d61e20f20af7743a999c743a53d7bd144f8fcc06ff3a",
+      "bytes": 14032,
+      "path": "tests/prsr_ensemble_config.schema.json"
+    },
+    {
+      "hash": "sha256:00460603b09ba37a357501f9b9b80013488200ea33b6e7e20ef7138258eb67a4",
+      "bytes": 10642,
+      "path": "tests/prsr_agent_config.schema.json"
+    },
+    {
+      "hash": "sha256:32f9df38b27017405b37da294a17a8ff04dff4438b7f2622a967644edce5667f",
+      "bytes": 3055,
+      "path": "tests/prsr_agent_config.example.json"
+    },
+    {
+      "hash": "sha256:df4cd18d1dccbbb0b9dd870997830b023c0785693e392674c99f80dc769bdcc2",
+      "bytes": 649,
+      "path": "package.json"
+    }
+  ],
+  "sourceHashes": {
+    "scripts/test-headspace-source.mjs": "sha256:20f638fb43258c2311a08884ce6df0c714b1457ccb28f08b3e7b1f719436ec3b",
+    "experiments/headspace/probe.mjs": "sha256:8ee43aa3e000237e3bb7eead50a53b9fa91b3007e8b2c09a55b4d8d9b3787319",
+    "packages/lab/serialized-commit.mjs": "sha256:3412d5d3e805835d20fb6c37cf3cf7c1a4f49d48d35dea2f0c2e87209921b96f",
+    "experiments/headspace/no-network.mjs": "sha256:0d36e20f30e02c93ecb62ceeb4770bbf57dc3fb59e1c01187b478bc6f0c24f18",
+    "experiments/headspace/source-manifest.json": "sha256:873b225c88f1e34a63ecc564b054032f097703b855923c8beab10aa2a54dba73"
+  },
+  "sourceUnchanged": true,
+  "hypervisorDependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1"
+  },
+  "originalFixtureChecks": {
+    "passed": 16,
+    "failed": 0,
+    "total": 16,
+    "results": [
+      {
+        "name": "Supplied ensemble and legacy agent examples validate against their own schemas",
+        "status": "PASS"
+      },
+      {
+        "name": "Six full sentences; all five contributors and bounded word share",
+        "status": "PASS"
+      },
+      {
+        "name": "Exact-prefix append-only commit lineage and unique microspans",
+        "status": "PASS"
+      },
+      {
+        "name": "Five fresh schema-valid frames after every commit; normalized weights and null backend scores",
+        "status": "PASS"
+      },
+      {
+        "name": "Same seed/config reproduces all event hashes, fragments, frames and deltas",
+        "status": "PASS"
+      },
+      {
+        "name": "Different seed changes deterministic trace",
+        "status": "PASS"
+      },
+      {
+        "name": "Stale, expired, wrong-agent and invalid-surface proposals cannot commit",
+        "status": "PASS"
+      },
+      {
+        "name": "Canonical matrices remain frozen and unchanged",
+        "status": "PASS"
+      },
+      {
+        "name": "Protected text is byte-exact and committed only by Terra with an explicit exception",
+        "status": "PASS"
+      },
+      {
+        "name": "Stop prevents further commits and records an incomplete braid",
+        "status": "PASS"
+      },
+      {
+        "name": "Hash-chain replay validates; damaged event and transcript are rejected",
+        "status": "PASS"
+      },
+      {
+        "name": "Restored checkpoint resumes with identical future hashes",
+        "status": "PASS"
+      },
+      {
+        "name": "Branch preserves prior history and exact prefix; reload resumes branch deterministically",
+        "status": "PASS"
+      },
+      {
+        "name": "Seeded shuffle diagnostic over 120000 draws; no replacement or adjacent repeat",
+        "status": "PASS"
+      },
+      {
+        "name": "Invalid session settings fail before generation",
+        "status": "PASS"
+      },
+      {
+        "name": "Canonical inventory and configuration tampering is rejected",
+        "status": "PASS"
+      }
+    ]
+  },
+  "originalComparisonChecks": {
+    "total": 17,
+    "passed": true,
+    "adapter": "mock SSE; no paid model calls",
+    "liveProviderVerified": false
+  },
+  "commands": [
+    {
+      "testFile": "tests/runtime.test.mjs",
+      "exitCode": 0,
+      "error": null,
+      "reportedCheckNames": [
+        {
+          "status": "PASSED",
+          "name": "Supplied ensemble and legacy agent examples validate against their own schemas"
+        },
+        {
+          "status": "PASSED",
+          "name": "Six full sentences; all five contributors and bounded word share"
+        },
+        {
+          "status": "PASSED",
+          "name": "Exact-prefix append-only commit lineage and unique microspans"
+        },
+        {
+          "status": "PASSED",
+          "name": "Five fresh schema-valid frames after every commit; normalized weights and null backend scores"
+        },
+        {
+          "status": "PASSED",
+          "name": "Same seed/config reproduces all event hashes, fragments, frames and deltas"
+        },
+        {
+          "status": "PASSED",
+          "name": "Different seed changes deterministic trace"
+        },
+        {
+          "status": "PASSED",
+          "name": "Stale, expired, wrong-agent and invalid-surface proposals cannot commit"
+        },
+        {
+          "status": "PASSED",
+          "name": "Canonical matrices remain frozen and unchanged"
+        },
+        {
+          "status": "PASSED",
+          "name": "Protected text is byte-exact and committed only by Terra with an explicit exception"
+        },
+        {
+          "status": "PASSED",
+          "name": "Stop prevents further commits and records an incomplete braid"
+        },
+        {
+          "status": "PASSED",
+          "name": "Hash-chain replay validates; damaged event and transcript are rejected"
+        },
+        {
+          "status": "PASSED",
+          "name": "Restored checkpoint resumes with identical future hashes"
+        },
+        {
+          "status": "PASSED",
+          "name": "Branch preserves prior history and exact prefix; reload resumes branch deterministically"
+        },
+        {
+          "status": "PASSED",
+          "name": "Seeded shuffle diagnostic over 120000 draws; no replacement or adjacent repeat"
+        },
+        {
+          "status": "PASSED",
+          "name": "Invalid session settings fail before generation"
+        },
+        {
+          "status": "PASSED",
+          "name": "Canonical inventory and configuration tampering is rejected"
+        }
+      ]
+    },
+    {
+      "testFile": "tests/comparison.test.mjs",
+      "exitCode": 0,
+      "error": null,
+      "reportedCheckNames": [
+        {
+          "status": "PASSED",
+          "name": "word buffering preserves text across split words"
+        },
+        {
+          "status": "PASSED",
+          "name": "dictionary union and separate compartments"
+        },
+        {
+          "status": "PASSED",
+          "name": "metrics do not fabricate absent data"
+        },
+        {
+          "status": "PASSED",
+          "name": "consent and bounded configuration"
+        },
+        {
+          "status": "PASSED",
+          "name": "matched real adapter calls and append-only prefixes"
+        },
+        {
+          "status": "PASSED",
+          "name": "duplicate passages cannot enter the shared story"
+        },
+        {
+          "status": "PASSED",
+          "name": "paired budget preflight prevents unpaired dispatch"
+        },
+        {
+          "status": "PASSED",
+          "name": "input byte bound includes output cap"
+        }
+      ]
+    }
+  ],
+  "diagnostic": {
+    "schemaVersion": 1,
+    "probeId": "headspace-serialized-commit/c13-t01",
+    "originalVersion": "prsr-browser-fixture-1.0",
+    "classification": "actual_original_fixture_engine_with_new_in_process_adapter",
+    "fixture": {
+      "seeds": [
+        2048,
+        2049,
+        2050,
+        2051,
+        2052,
+        2053,
+        2054,
+        2055,
+        2056,
+        2057,
+        2058,
+        2059
+      ],
+      "inventory": "empty",
+      "simultaneousAttemptsPerRun": 2
+    },
+    "requirement": {
+      "id": "C13-T01",
+      "text": "Exactly one concurrent duplicate commit becomes the unique next span with valid trace lineage",
+      "baseline": {
+        "failures": 12,
+        "denominator": 12,
+        "status": "FAILED_BY_REQUIREMENT"
+      },
+      "adapted": {
+        "failures": 0,
+        "denominator": 12,
+        "status": "PASSED"
+      }
+    },
+    "runs": [
+      {
+        "seed": 2048,
+        "baseline": {
+          "seed": 2048,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "0878ddfe2b76fc5933e96c5d34390d9b268269df73e9564d19fb1c91608093d0",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2048,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "df2f28f0aaec27abc36469f29deebf7b8bed09b0ae22721a3172067b3a4668d5",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2049,
+        "baseline": {
+          "seed": 2049,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "79ae7ae87992b5e5eba5ef234b6f1079b2a7a9e0f05e427494c18b442ad5d969",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2049,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "985a221f28ceb5a2544ee44e5b49b36ea627a8b4643c9172450e054ccade1b74",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2050,
+        "baseline": {
+          "seed": 2050,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "a477e25b747d8d184c601e2b191aa044f77b140e4e4a2532dbb720cc95356914",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2050,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "6ad7a4fb36c6bd7548e0f2a498338b8643d5cd4a0f9996786baf6e6bef21b869",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2051,
+        "baseline": {
+          "seed": 2051,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "9a0d09b83d1a4e06b12dcd8332bdcbf4ed5fada1ee2c125d0f67ddec246c81b2",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2051,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "086518eaacefcf9067d068efb162bd1d76e4bf9ab16b150145e3717017324824",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2052,
+        "baseline": {
+          "seed": 2052,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "79ae7ae87992b5e5eba5ef234b6f1079b2a7a9e0f05e427494c18b442ad5d969",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2052,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "985a221f28ceb5a2544ee44e5b49b36ea627a8b4643c9172450e054ccade1b74",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2053,
+        "baseline": {
+          "seed": 2053,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "14579e7770ee468f61bb608c42d96b1113b6a21c17662a6612c5eb7d366ff9bb",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 15"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2053,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "2eaa423e4c469c0c6df888cc78a8b921bde05e953d41fff08ed6db623f1eec30",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2054,
+        "baseline": {
+          "seed": 2054,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "a477e25b747d8d184c601e2b191aa044f77b140e4e4a2532dbb720cc95356914",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2054,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "6ad7a4fb36c6bd7548e0f2a498338b8643d5cd4a0f9996786baf6e6bef21b869",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2055,
+        "baseline": {
+          "seed": 2055,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "0878ddfe2b76fc5933e96c5d34390d9b268269df73e9564d19fb1c91608093d0",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2055,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "df2f28f0aaec27abc36469f29deebf7b8bed09b0ae22721a3172067b3a4668d5",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2056,
+        "baseline": {
+          "seed": 2056,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "a28423bbdb20603f6c95fc3d13dc6e396b21e71c33704e31c934ca50ab99f426",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2056,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "b7f88db9f5e751025248df316124524fb673217a9c259b98ed47be27bf4b118e",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2057,
+        "baseline": {
+          "seed": 2057,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "79ae7ae87992b5e5eba5ef234b6f1079b2a7a9e0f05e427494c18b442ad5d969",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2057,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "985a221f28ceb5a2544ee44e5b49b36ea627a8b4643c9172450e054ccade1b74",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2058,
+        "baseline": {
+          "seed": 2058,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "c1174ab8774c1745b4a693ba193e9db96ba532be0f8343fd2363f1cd64a21549",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2058,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "25783bff941317ebf20f091db4a5d0ae1ca5462e6276bab2d9ecc0ad8f6494e9",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      },
+      {
+        "seed": 2059,
+        "baseline": {
+          "seed": 2059,
+          "serialized": false,
+          "accepted": 2,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": true
+            }
+          ],
+          "prefixVersion": 2,
+          "fragmentCount": 2,
+          "prefixHash": "c1174ab8774c1745b4a693ba193e9db96ba532be0f8343fd2363f1cd64a21549",
+          "verification": {
+            "valid": false,
+            "error": {
+              "name": "Error",
+              "code": null,
+              "message": "Event hash chain failed at 13"
+            }
+          },
+          "requirementPass": false
+        },
+        "adapted": {
+          "seed": 2059,
+          "serialized": true,
+          "accepted": 1,
+          "outcomes": [
+            {
+              "status": "fulfilled",
+              "accepted": true
+            },
+            {
+              "status": "fulfilled",
+              "accepted": false
+            }
+          ],
+          "prefixVersion": 1,
+          "fragmentCount": 1,
+          "prefixHash": "25783bff941317ebf20f091db4a5d0ae1ca5462e6276bab2d9ecc0ad8f6494e9",
+          "verification": {
+            "valid": true,
+            "error": null
+          },
+          "requirementPass": true
+        }
+      }
+    ],
+    "syntheticTrace": {
+      "seed": 4096,
+      "sentences": 1,
+      "fragments": 5,
+      "events": 90,
+      "eventChainRoot": "3bf32c87686f28195ce5f5fa0b2ab74de42b01e2d729ec6a66a8f3a392f77fde",
+      "prefixHash": null,
+      "eventsAndTranscriptDeterministic": true,
+      "timingTelemetryDeterministic": false
+    },
+    "adapterQueueFailureRecovery": "PASSED",
+    "provenance": {
+      "providerCalls": 0,
+      "hostedTokens": null,
+      "billedCost": null,
+      "hostedLatencyMs": null,
+      "modelQuality": null,
+      "originalSourceChanged": false,
+      "sourceCodeRedistributed": false
+    },
+    "interpretationLimits": {
+      "nativeModelDemonstrated": false,
+      "generalSemanticValidation": false,
+      "rollback": false,
+      "durableTransaction": false,
+      "crossProcessExclusion": false,
+      "fixtureNotModelGeneration": true
+    }
+  },
+  "publicTrace": {
+    "path": "experiments/headspace/public-trace.json",
+    "bytes": 2597098,
+    "rawHash": "sha256:e631791770d89ddb2aedaf31802d44eaa2ea4918821a9f42766e66c17ec12aa3",
+    "canonicalHash": "sha256:81cab9c871d4e2c3f2025cf84f5571545ad2715a2005a07fa7015bea1e4bf2dc",
+    "eventRoot": "3bf32c87686f28195ce5f5fa0b2ab74de42b01e2d729ec6a66a8f3a392f77fde",
+    "inventory": "empty synthetic default fixture inventory",
+    "sourceMetadataIncluded": false
+  },
+  "controls": {
+    "defaultFetchGuard": "BEST_EFFORT",
+    "operatingSystemNetworkConfinement": "UNAVAILABLE",
+    "childEnvironment": "allowlisted noncredential variables",
+    "originalWrites": false
+  },
+  "provenance": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "sourceCodeRedistributed": false
+  }
+}

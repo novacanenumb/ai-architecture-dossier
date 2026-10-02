@@ -8,13 +8,21 @@
   "schedulerSourceMatches": 3,
   "schedulerAttempts": 16,
   "schedulerPairs": 8,
+  "headspaceOriginalFixtureChecks": 16,
+  "headspaceMockComparisonChecks": 17,
+  "headspaceOriginalConcurrentFailures": 12,
+  "headspaceAdaptedConcurrentFailures": 0,
+  "headspaceDiagnosticPairs": 12,
+  "headspaceSourceMatches": 3,
+  "headspacePortableTraceHashVerification": true,
+  "readmeWords": 4277,
   "components": 28,
   "acceptanceRequirements": 122,
   "metricEndpoints": 154,
   "fixtureConfigurations": 17,
   "providerCalls": 0,
-  "syntaxChecked": 21,
-  "publicFiles": 11,
+  "syntaxChecked": 25,
+  "publicFiles": 13,
   "nativeSourceMatches": [
     "packages/lab/core.mjs",
     "packages/lab/analytics.mjs",
@@ -26,7 +34,7 @@
   "hostSourceChanges": [
     {
       "path": "dist/app.mjs",
-      "reason": "Host-integrated partial runtime coverage and frozen measured local scheduler panel, with separate model measurement boundaries."
+      "reason": "Host-integrated partial original Headspace source checks and complete adverse/adapted concurrent-commit evidence, separately from prior native source."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -36,8 +44,10 @@
   "deterministicStaticRebuild": true,
   "publicFileHashes": {
     "dist/LICENSE.txt": "3c21321c5e4a7183b62a138f581a78202bfad89f1b7b4f54aa64976bd7ca95a8",
-    "dist/app.mjs": "4eaf03f7f6280bca62bc4ff427264541e8ede43a3b1e90bfb5e0ba8190d506a7",
+    "dist/app.mjs": "3e287670797dcc40ea5ce9a196bd205c17f720295f2e8abb6df5ca49954398ac",
     "dist/data/catalog.json": "f6091548179bee0789f67307d4bf090857d3def4c12adca2750b7d807bd3491d",
+    "dist/data/headspace-evidence.json": "71e95d1f59b46934e089a47d830c0213fc061c80518de007afdfcd2506059ee4",
+    "dist/data/headspace-trace.json": "e631791770d89ddb2aedaf31802d44eaa2ea4918821a9f42766e66c17ec12aa3",
     "dist/data/publication.json": "cacb22d5a424f344bfad19ce2724dae6dc9314cf6f90d4df240584f3a3c9ade0",
     "dist/data/results.json": "2eaa47e11ca25a546097c5afe599e5b1792380bb24fcfc81002c75fa14bbc680",
     "dist/data/runtime-evidence.json": "785938610be216d450c260050031b8d65ba853d654ba4584a7d74ce18d87b084",

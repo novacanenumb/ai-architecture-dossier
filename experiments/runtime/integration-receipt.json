@@ -6,8 +6,8 @@
     {
       "path": "dist/app.mjs",
       "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
-      "currentSourceHash": "4eaf03f7f6280bca62bc4ff427264541e8ede43a3b1e90bfb5e0ba8190d506a7",
-      "reason": "Host-integrated partial runtime coverage and frozen measured local scheduler panel, with separate model measurement boundaries."
+      "currentSourceHash": "3e287670797dcc40ea5ce9a196bd205c17f720295f2e8abb6df5ca49954398ac",
+      "reason": "Host-integrated partial original Headspace source checks and complete adverse/adapted concurrent-commit evidence, separately from prior native source."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "d0c0f47fbc9edbe2d0e55c76d5602f736bd0552a1b6899e6d5d1901a6702799b",
-    "reason": "Host evidence additions for 45 probes, retained historical receipts and the matched local scheduler comparison; prior native README preserved."
+    "currentSourceHash": "f7f8972420b48b766cf8317a51ec99485ab6175a8ccdd12c3368820dcd85c8f9",
+    "reason": "Host-expanded public introduction, component-family explanations, repository navigation, reproduction, original Headspace checks, adverse diagnostic, evidence interpretation and contribution guidance. Original native README retained unchanged."
   },
   "history": [
     {
@@ -44,7 +44,30 @@
         "currentSourceHash": "676553103ace3ce3d979d5e46cc4f73f186b72e86c466f764971797b166b4530",
         "reason": "Host-added supplied-runtime evidence section with executed test links; prior native README artifact preserved unchanged."
       }
+    },
+    {
+      "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "4eaf03f7f6280bca62bc4ff427264541e8ede43a3b1e90bfb5e0ba8190d506a7",
+          "reason": "Host-integrated partial runtime coverage and frozen measured local scheduler panel, with separate model measurement boundaries."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "d0c0f47fbc9edbe2d0e55c76d5602f736bd0552a1b6899e6d5d1901a6702799b",
+        "reason": "Host evidence additions for 45 probes, retained historical receipts and the matched local scheduler comparison; prior native README preserved."
+      }
     }
   ],
-  "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3"
+  "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
+  "headspaceSourceRunId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3"
 }
