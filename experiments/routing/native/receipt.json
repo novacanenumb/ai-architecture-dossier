@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "plugin": "hypervisor-standalone@hypervisor-standalone-local",
+  "packageVersion": "2.1.0",
+  "nativeRuntime": "2.1",
+  "runtimeProtocol": "2.0",
+  "schema": 2,
+  "selectedSkill": "hypervisor-run",
+  "sessionId": "b074b675-0dfe-4969-b397-5027e4251eb9",
+  "runId": "run-65f1786a-fc1c-454d-8c60-6ff0cec2e952",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "sourceCharacters": 16264,
+  "sourceTextHash": "sha256:5ee979bc2859df4b71fa125ead0b7033cede3a465a174d0eb28c7c4a0d760e4e",
+  "artifactHash": "sha256:a88ea186fda712ba7dcab74cbf2541d3cb88c7fe277d66c6f48662bb57cbc0ef",
+  "manifestHash": "sha256:79437cbe8ced53485a25dc461a3f51a3b8cd13e13475584f6e8bfe0abffd435a",
+  "sourceFiles": [
+    "docs/CONTEXT_ROUTING.md",
+    "experiments/routing/handoff.test.mjs"
+  ],
+  "hostProposalContracts": 2,
+  "actualHostProposalTurns": 2,
+  "modelId": "gpt-5.6-sol",
+  "independentSemanticValidator": "UNAVAILABLE",
+  "validationScope": "Native schema, anchor and GTFL structural checks; seven behavioral tests separately executed by parent.",
+  "parentCorrections": [
+    "Corrected runtime import to declared owning module.",
+    "Used returned FAILED outcome for invalid parent rather than expecting an exception.",
+    "Matched ledger stage_id and nested tokens/cost schema.",
+    "Corrected fixture reservation budget from 100000 to 200000 after retaining first failure.",
+    "Corrected guide distinction between missing graph dependencies and invalid parent output.",
+    "Added complete public packet diagnostic to proposed test."
+  ]
+}
+

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-runtime-context-routing-evidence",
+  "status": "FAILED",
+  "command": "npm run test:routing",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "exitCode": 1,
+  "error": null,
+  "passed": 4,
+  "failed": 3,
+  "skipped": 0,
+  "total": 7,
+  "tests": [
+    {
+      "name": "C04 child receives exactly its two validated committed parents with complete final sections",
+      "status": "FAILED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 invalid parent output prevents child dispatch and yields no trusted artifact",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 preparation fails closed when a required source alias is absent",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 preparation rejects a declared graph dependency that does not exist",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 taskPacket clones and freezes caller-supplied parents without asserting commit authority",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 source IDs are mandatory aliases rather than restrictive filters in a small public archive",
+      "status": "FAILED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 all fixture callbacks have one ledger event and complete delivered packet accounting",
+      "status": "FAILED",
+      "componentIds": [
+        "C04"
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "experiments/routing/handoff.test.mjs": "sha256:1131c4df8d600eec0628d0888676d8404e1027dfb0b16755df3813bd5a27dcbf",
+    "scripts/test-routing-source.mjs": "sha256:91867665a1b3a7528245bbb6a5456ae0d04b9cc8cef48d6838f5efc00598ecf5",
+    "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df"
+  },
+  "dependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1",
+    "verifiedFiles": 85
+  },
+  "originalModuleHashes": {
+    "01_ASTRA_CONTROL_PLANE/runtime.mjs": "sha256:0308ab6010e6462c821a60fd43d798f14a2c6ff1deb56743a8de0ca4d4a9d661",
+    "02_CONTEXT_PLANE/context.mjs": "sha256:c9fdea2990e993b86e22731bc027bb7481054c9741fef3b17d00e6360b93f0fe",
+    "03_GENERATION_PLANE/generation.mjs": "sha256:5129843112715230ee31ed71224ff522a3eea3bec71456bd89900702403e2081",
+    "shared/core.mjs": "sha256:51461380ad25350db8a1db1c75c104d480c4912936749ff4011d2958afe00f0d"
+  },
+  "diagnostic": null,
+  "coverage": {
+    "componentId": "C04",
+    "status": "PARTIAL_ORIGINAL_SOURCE",
+    "acceptanceIds": [
+      "C04-T01",
+      "C04-T03",
+      "C04-T04"
+    ],
+    "boundary": "Committed-parent selection, missing alias/dependency rejection and complete four-callback fixture accounting; source aliases are not restrictive permission filters. Automatic global contradiction discovery, private source isolation and hosted comparisons remain unverified."
+  },
+  "provenance": {
+    "measurements": "locally executed public synthetic behavior and canonical packet bytes",
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "sourceRedistributed": false
+  }
+}

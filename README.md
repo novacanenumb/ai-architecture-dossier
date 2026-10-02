@@ -59,6 +59,7 @@ ai-architecture-dossier/
   experiments/headspace/            Original-source checks and commit diagnostic
   experiments/agentdb/              Original offline tests and paired cache experiment
   experiments/language/             Fixed-window C14 analyser and eligibility checks
+  experiments/routing/              Original-source committed-parent handoff probes
   dist/                             Static site and downloadable derived evidence
   .openai/hosting.json               Existing Sites project and output declaration
   LICENSE                           Custom licence for this repository's additions
@@ -99,7 +100,7 @@ The [component registry](component-registry.json) preserves historical source st
 | C01 | Hypervisor control plane | Design |
 | C02 | Sparse context compression compiler | Reference slice |
 | C03 | Exact archive and context materializer | Reference slice |
-| C04 | Multi-agent context routing | Model-free packet-routing demonstration |
+| C04 | Multi-agent context routing | Seven original-source handoff checks; source-selection limits disclosed |
 | C05 | Cache hierarchy and invalidation | Design |
 | C06 | Anchor compiler and sealed boundary graph | Design |
 | C07 | Anchor-bounded parallel generation: ABES | Design |
@@ -340,6 +341,24 @@ npm run test:agentdb
 Set `AGENTDB_SOURCE_PATH` for source location, `DOSSIER_PYTHON_PATH` for the interpreter and `DOSSIER_RUNTIME_PATH` for the dependency. The recorded library versions are pytest 9.1.1, pydantic 2.13.5, cryptography 50.0.1 and rfc8785 0.1.4. Source or dependency mismatch fails explicitly. The runner disables plugin autoload and bytecode writes, uses an allowlisted child environment, and applies a best-effort audit hook to reject network, subprocess and writes outside its temporary copy. Operating-system confinement remains unavailable. Static builds copy the frozen report and do not invoke Python or rerun the experiment.
 
 The source-proposal receipt records two native candidate contracts and three actual host proposal turns, including a clarification follow-up. The native ledger does not account for that extra host turn or prove enforcement of a host call limit. Token usage and cost remain unknown. Native schema/anchor validation and the separately executed Python tests have different scopes.
+
+## C04: committed parent handoffs and source-selection boundaries
+
+The [original-source routing suite](experiments/routing/handoff.test.mjs) adds **seven passing behavioral checks** against the supplied Hypervisor 2.1.0 implementation. It is separate from the existing 45 runtime tests. The new probes import the same immutable, separately licensed runtime after its complete manifest and content hashes are verified; no original source is redistributed.
+
+The four-anchor fixture produces sections for `a`, `b`, `unrelated` and `child`. The child depends on `a` and `b`. Actual execution delivers both complete committed parent sections, with content hashes matching the final artifact, and excludes the unrelated parent section. An invalid parent proposal prevents dependent child dispatch. Missing required source aliases and graph dependencies fail preparation with `ANCHOR_SOURCE_UNAVAILABLE` and `MISSING_DEPENDENCY`.
+
+The source diagnostic exposes a separate boundary. Both tiny approved public source records appear in every materialized context, even where an anchor names only one alias. `sourceIds` preserve mandatory records; they are not a restrictive permission filter. Dependency selection for committed parent sections does not prove private source isolation. The lower-level `taskPacket` helper also accepts caller-supplied parent sections; its clone, freeze and byte-budget checks do not independently prove those sections were committed or authorized.
+
+The [recorded diagnostic](experiments/routing/test-receipt.json) accounts for all four local callbacks and their four ledger events. Actual delivered packets total **15,445 bytes**. A constructed broadcast control containing the same archive and all prior outputs totals **16,040 bytes**. The 595-byte difference comes from the child's unrelated parent section. Both controls retain duplicated source contents: 156 delivered source-content bytes from 39 unique bytes. The broadcast packet is an accounting construction, not a separately executed model or a measured broadcast workflow.
+
+```sh
+npm run test:routing
+```
+
+Use Node 26 or later and the approved runtime, with `DOSSIER_RUNTIME_PATH` when necessary. The [source guide](docs/CONTEXT_ROUTING.md) maps partial C04-T01, C04-T03 and C04-T04 evidence and keeps automatic global contradiction discovery unresolved. The first run's reservation-budget failure, its receipt and its exact probe/runner bytes remain in history; the corrected allowance keeps the same scenarios and public inputs. Native source validation and parent behavioral testing have separate receipts.
+
+These counts describe public synthetic packets and exclude hidden host prompts, provider framing and tokenizer behavior. They do not establish model token savings, billed cost, hosted latency, answer quality, private context non-disclosure or a complete component acceptance pass.
 
 ## C14: controlled language analysis
 

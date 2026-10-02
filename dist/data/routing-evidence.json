@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-runtime-context-routing-evidence",
+  "status": "PASSED",
+  "command": "npm run test:routing",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "exitCode": 0,
+  "error": null,
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "total": 7,
+  "tests": [
+    {
+      "name": "C04 child receives exactly its two validated committed parents with complete final sections",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 invalid parent output prevents child dispatch and yields no trusted artifact",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 preparation fails closed when a required source alias is absent",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 preparation rejects a declared graph dependency that does not exist",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 taskPacket clones and freezes caller-supplied parents without asserting commit authority",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 source IDs are mandatory aliases rather than restrictive filters in a small public archive",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    },
+    {
+      "name": "C04 all fixture callbacks have one ledger event and complete delivered packet accounting",
+      "status": "PASSED",
+      "componentIds": [
+        "C04"
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "experiments/routing/handoff.test.mjs": "sha256:24eaa315b7e99c5ab5a2c8cb393f5e4b00bfeae645c80638453bc1aff3085548",
+    "scripts/test-routing-source.mjs": "sha256:e09220019f109804b006d1ce9ed97d9abd7533c3ca5e197f4a7a40eb5242d16f",
+    "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df"
+  },
+  "dependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1",
+    "verifiedFiles": 85
+  },
+  "originalModuleHashes": {
+    "01_ASTRA_CONTROL_PLANE/runtime.mjs": "sha256:0308ab6010e6462c821a60fd43d798f14a2c6ff1deb56743a8de0ca4d4a9d661",
+    "02_CONTEXT_PLANE/context.mjs": "sha256:c9fdea2990e993b86e22731bc027bb7481054c9741fef3b17d00e6360b93f0fe",
+    "03_GENERATION_PLANE/generation.mjs": "sha256:5129843112715230ee31ed71224ff522a3eea3bec71456bd89900702403e2081",
+    "shared/core.mjs": "sha256:51461380ad25350db8a1db1c75c104d480c4912936749ff4011d2958afe00f0d"
+  },
+  "diagnostic": {
+    "kind": "FOUR_ROLE_PUBLIC_SYNTHETIC_PACKET_DIAGNOSTIC",
+    "baselineKind": "CONSTRUCTED_BROADCAST_PACKET",
+    "baselineExecuted": false,
+    "candidateExecution": "LOCAL_FIXTURE_CALLBACKS",
+    "packets": [
+      {
+        "logicalId": "a",
+        "taskId": "sha256:8c4a3956c78fddd00fd2e7071541bed26dcae85c7e82f2f83ae37a46f7a760ab:candidate:1",
+        "actualPacketBytes": 3529,
+        "constructedBroadcastPacketBytes": 3529,
+        "actualParentIds": [],
+        "constructedBroadcastParentIds": [],
+        "actualParentSectionBytes": 2,
+        "constructedBroadcastParentSectionBytes": 2,
+        "deliveredSourceAliases": [
+          "source:left",
+          "source:right"
+        ],
+        "sourceContentBytes": 39
+      },
+      {
+        "logicalId": "b",
+        "taskId": "sha256:d6e724fcb12f224dfa8d0d3fa32ea9fde87aa577feb43f893f4d9ff93b216ce6:candidate:1",
+        "actualPacketBytes": 3529,
+        "constructedBroadcastPacketBytes": 3529,
+        "actualParentIds": [],
+        "constructedBroadcastParentIds": [],
+        "actualParentSectionBytes": 2,
+        "constructedBroadcastParentSectionBytes": 2,
+        "deliveredSourceAliases": [
+          "source:left",
+          "source:right"
+        ],
+        "sourceContentBytes": 39
+      },
+      {
+        "logicalId": "child",
+        "taskId": "sha256:1578cd0ef297662ba73c9963d28b85c8e484b847cbcec431703bba5faf46fb50:candidate:1",
+        "actualPacketBytes": 4842,
+        "constructedBroadcastPacketBytes": 5437,
+        "actualParentIds": [
+          "a",
+          "b"
+        ],
+        "constructedBroadcastParentIds": [
+          "a",
+          "b",
+          "unrelated"
+        ],
+        "actualParentSectionBytes": 1159,
+        "constructedBroadcastParentSectionBytes": 1754,
+        "deliveredSourceAliases": [
+          "source:left",
+          "source:right"
+        ],
+        "sourceContentBytes": 39
+      },
+      {
+        "logicalId": "unrelated",
+        "taskId": "sha256:34ad698fd0289450554a16050280f97f3cd2055d3632195a8215a2e8254e483c:candidate:1",
+        "actualPacketBytes": 3545,
+        "constructedBroadcastPacketBytes": 3545,
+        "actualParentIds": [],
+        "constructedBroadcastParentIds": [],
+        "actualParentSectionBytes": 2,
+        "constructedBroadcastParentSectionBytes": 2,
+        "deliveredSourceAliases": [
+          "source:left",
+          "source:right"
+        ],
+        "sourceContentBytes": 39
+      }
+    ],
+    "denominator": {
+      "requestedCallbacks": 4,
+      "recordedCallbacks": 4,
+      "ledgerEvents": 4,
+      "failedCallbacks": 0,
+      "omittedCallbacks": 0
+    },
+    "totals": {
+      "actualPacketBytes": 15445,
+      "constructedBroadcastPacketBytes": 16040,
+      "packetByteReduction": 0.037094763092269334,
+      "sourceContentBytes": 156,
+      "uniqueSourceContentBytes": 39,
+      "sourceDeliveryCopies": 8,
+      "sourceDuplicationCopies": 6
+    },
+    "dependencyRecall": {
+      "delivered": 2,
+      "declared": 2,
+      "ratio": 1
+    },
+    "unrelatedParentSectionsDelivered": 0,
+    "privateContextLeakCount": null,
+    "ledger": [
+      {
+        "taskId": "sha256:34ad698fd0289450554a16050280f97f3cd2055d3632195a8215a2e8254e483c:candidate:1",
+        "tokens": {
+          "cache_write": null,
+          "cached_input": null,
+          "input": null,
+          "output": null,
+          "retrieval": null,
+          "synthetic_context": null
+        },
+        "cost": {
+          "currency": "USD",
+          "value": null
+        }
+      },
+      {
+        "taskId": "sha256:8c4a3956c78fddd00fd2e7071541bed26dcae85c7e82f2f83ae37a46f7a760ab:candidate:1",
+        "tokens": {
+          "cache_write": null,
+          "cached_input": null,
+          "input": null,
+          "output": null,
+          "retrieval": null,
+          "synthetic_context": null
+        },
+        "cost": {
+          "currency": "USD",
+          "value": null
+        }
+      },
+      {
+        "taskId": "sha256:d6e724fcb12f224dfa8d0d3fa32ea9fde87aa577feb43f893f4d9ff93b216ce6:candidate:1",
+        "tokens": {
+          "cache_write": null,
+          "cached_input": null,
+          "input": null,
+          "output": null,
+          "retrieval": null,
+          "synthetic_context": null
+        },
+        "cost": {
+          "currency": "USD",
+          "value": null
+        }
+      },
+      {
+        "taskId": "sha256:1578cd0ef297662ba73c9963d28b85c8e484b847cbcec431703bba5faf46fb50:candidate:1",
+        "tokens": {
+          "cache_write": null,
+          "cached_input": null,
+          "input": null,
+          "output": null,
+          "retrieval": null,
+          "synthetic_context": null
+        },
+        "cost": {
+          "currency": "USD",
+          "value": null
+        }
+      }
+    ],
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null
+  },
+  "coverage": {
+    "componentId": "C04",
+    "status": "PARTIAL_ORIGINAL_SOURCE",
+    "acceptanceIds": [
+      "C04-T01",
+      "C04-T03",
+      "C04-T04"
+    ],
+    "boundary": "Committed-parent selection, missing alias/dependency rejection and complete four-callback fixture accounting; source aliases are not restrictive permission filters. Automatic global contradiction discovery, private source isolation and hosted comparisons remain unverified."
+  },
+  "provenance": {
+    "measurements": "locally executed public synthetic behavior and canonical packet bytes",
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "sourceRedistributed": false
+  }
+}

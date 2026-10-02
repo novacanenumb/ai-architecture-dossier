@@ -6,8 +6,8 @@
     {
       "path": "dist/app.mjs",
       "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
-      "currentSourceHash": "ba584e925dc18bbb13c51f00d9b9a3162534e4ac61f6be5688406c61c5ce87ba",
-      "reason": "Host-integrated C14 language controls and evidence, preserving supplied runtime, Headspace and Agent Database panels; separate from retained native source."
+      "currentSourceHash": "ae258de9056f68e65d72762554a62b9c7e3b96ad0c95e0ce12d174b5f375d069",
+      "reason": "Parent-integrated runtime, Headspace, Agent Database, C14 and C04 source evidence panels; finite local measurements and unavailable model comparisons kept separate from prior native source."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "c256d92b6dae02e7c3cad6b0985fef795abb805fb7bfdbc3307f15259a18fe1a",
-    "reason": "Host-expanded README with C14 output-level reference, fixed samples, separate annotated text, matching gates, complete results and unavailable semantic/human/provider outcomes; prior native README unchanged."
+    "currentSourceHash": "12edafe4866a4b52eb45d4457d91b177de92d305882f6013db123b4a4246365b",
+    "reason": "Parent-expanded public README including seven C04 source-routing probes, complete packet diagnostic and unresolved source filtering; original native README retained."
   },
   "history": [
     {
@@ -110,10 +110,33 @@
         "currentSourceHash": "3861e014b58e9f0ca47126610167c34c318898a4f3b710fa403e673f108064fc",
         "reason": "Host-expanded README with original Agent Database ownership, 39 offline tests, ten probes, paired cache protocol, retained failures, reproduction and measurement limits; original native README unchanged."
       }
+    },
+    {
+      "languageSourceRunId": "run-5e837bbe-1908-4cc7-84af-3c3a78e65140",
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "ae258de9056f68e65d72762554a62b9c7e3b96ad0c95e0ce12d174b5f375d069",
+          "reason": "Parent-integrated runtime, Headspace, Agent Database, C14 and C04 source evidence panels; finite local measurements and unavailable model comparisons kept separate from prior native source."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "12edafe4866a4b52eb45d4457d91b177de92d305882f6013db123b4a4246365b",
+        "reason": "Parent-expanded public README including seven C04 source-routing probes, complete packet diagnostic and unresolved source filtering; original native README retained."
+      }
     }
   ],
   "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
   "headspaceSourceRunId": "run-4a2f22e7-b715-4f2c-994b-7b68fd92cad3",
   "agentdbSourceRunId": "run-1a4b676d-02b1-4843-8b7d-8962e6d5bdc7",
-  "languageSourceRunId": "run-5e837bbe-1908-4cc7-84af-3c3a78e65140"
+  "languageSourceRunId": "run-5e837bbe-1908-4cc7-84af-3c3a78e65140",
+  "routingSourceRunId": "run-65f1786a-fc1c-454d-8c60-6ff0cec2e952"
 }

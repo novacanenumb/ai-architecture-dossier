@@ -1,0 +1,36 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {verifyRuntime} from '../experiments/runtime/tests/runtime-helper.mjs';
+const root = path.resolve(import.meta.dirname,'..'), verified = await verifyRuntime();
+const files = ['experiments/routing/handoff.test.mjs','scripts/test-routing-source.mjs','experiments/runtime/tests/runtime-helper.mjs'];
+const digest = bytes => 'sha256:'+createHash('sha256').update(bytes).digest('hex');
+const sourceHashes = {};
+for(const file of files)sourceHashes[file]=digest(await readFile(path.join(root,file)));
+const result = spawnSync(process.execPath,['--test','--test-reporter=tap',files[0]],{cwd:root,encoding:'utf8',timeout:60000,env:{...process.env,DOSSIER_RUNTIME_PATH:verified.root}});
+const output = (result.stdout||'')+(result.stderr||'');
+const count = key => Number(output.match(new RegExp('^# '+key+' (\\d+)$','m'))?.[1] ?? NaN);
+const tests = [...output.matchAll(/^(ok|not ok) \d+ - (.+)$/gm)].map(m => ({name:m[2],status:m[1]==='ok'?'PASSED':'FAILED',componentIds:['C04']}));
+const diagnosticLine = output.split(/\r?\n/).find(line => line.startsWith('# C04_PACKET_ACCOUNTING '));
+const diagnostic = diagnosticLine ? JSON.parse(diagnosticLine.slice('# C04_PACKET_ACCOUNTING '.length)) : null;
+const receipt = {schemaVersion:1,kind:'original-runtime-context-routing-evidence',
+  status:result.status===0 && count('pass')===7 && count('fail')===0 && count('skipped')===0 && tests.length===7 && diagnostic ? 'PASSED':'FAILED',
+  command:'npm run test:routing',nodeVersion:process.version,platform:process.platform,exitCode:result.status,error:result.error?.code??null,
+  passed:count('pass'),failed:count('fail'),skipped:count('skipped'),total:count('tests'),tests,sourceHashes,
+  dependency:{version:verified.version,manifestHash:verified.manifestHash,contentRoot:verified.contentRoot,verifiedFiles:verified.verifiedFiles},
+  originalModuleHashes:Object.fromEntries(['01_ASTRA_CONTROL_PLANE/runtime.mjs','02_CONTEXT_PLANE/context.mjs','03_GENERATION_PLANE/generation.mjs','shared/core.mjs'].map(file => [file,verified.sourceHashes['plugins/hypervisor-standalone/runtime/'+file]])),
+  diagnostic,coverage:{componentId:'C04',status:'PARTIAL_ORIGINAL_SOURCE',acceptanceIds:['C04-T01','C04-T03','C04-T04'],
+    boundary:'Committed-parent selection, missing alias/dependency rejection and complete four-callback fixture accounting; source aliases are not restrictive permission filters. Automatic global contradiction discovery, private source isolation and hosted comparisons remain unverified.'},
+  provenance:{measurements:'locally executed public synthetic behavior and canonical packet bytes',providerCalls:0,hostedTokens:null,billedCost:null,hostedLatencyMs:null,modelQuality:null,sourceRedistributed:false}};
+await mkdir(path.join(root,'experiments/routing'),{recursive:true});
+if(receipt.status!=='PASSED') {
+  await mkdir(path.join(root,'experiments/routing/history'),{recursive:true});
+  const name='failed-'+Date.now();await writeFile(path.join(root,'experiments/routing/history',name+'.json'),JSON.stringify(receipt,null,2)+'\n');
+  await writeFile(path.join(root,'experiments/routing/history',name+'.tap.txt'),output);
+} else {
+  assert.equal(count('tests'),7);await writeFile(path.join(root,'experiments/routing/test-receipt.json'),JSON.stringify(receipt,null,2)+'\n');
+}
+console.log(output);console.log(JSON.stringify({status:receipt.status,passed:receipt.passed,failed:receipt.failed,diagnostic:receipt.diagnostic}));
+if(receipt.status!=='PASSED')process.exitCode=1;

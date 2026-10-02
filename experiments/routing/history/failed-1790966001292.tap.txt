@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: C04 child receives exactly its two validated committed parents with complete final sections
+not ok 1 - C04 child receives exactly its two validated committed parents with complete final sections
+  ---
+  duration_ms: 127.934
+  type: 'test'
+  location: 'N:\\Development\\Architecture\\Architecture Dossier\\ai-architecture-dossier\\experiments\\routing\\handoff.test.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'BUDGET_EXHAUSTED'
+    - 'REPORTED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'REPORTED'
+  actual: 'BUDGET_EXHAUSTED'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///N:/Development/Architecture/Architecture%20Dossier/ai-architecture-dossier/experiments/routing/handoff.test.mjs:42:32)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: C04 invalid parent output prevents child dispatch and yields no trusted artifact
+ok 2 - C04 invalid parent output prevents child dispatch and yields no trusted artifact
+  ---
+  duration_ms: 52.0841
+  type: 'test'
+  ...
+# Subtest: C04 preparation fails closed when a required source alias is absent
+ok 3 - C04 preparation fails closed when a required source alias is absent
+  ---
+  duration_ms: 20.0492
+  type: 'test'
+  ...
+# Subtest: C04 preparation rejects a declared graph dependency that does not exist
+ok 4 - C04 preparation rejects a declared graph dependency that does not exist
+  ---
+  duration_ms: 20.2467
+  type: 'test'
+  ...
+# Subtest: C04 taskPacket clones and freezes caller-supplied parents without asserting commit authority
+ok 5 - C04 taskPacket clones and freezes caller-supplied parents without asserting commit authority
+  ---
+  duration_ms: 24.1264
+  type: 'test'
+  ...
+# Subtest: C04 source IDs are mandatory aliases rather than restrictive filters in a small public archive
+not ok 6 - C04 source IDs are mandatory aliases rather than restrictive filters in a small public archive
+  ---
+  duration_ms: 96.0826
+  type: 'test'
+  location: 'N:\\Development\\Architecture\\Architecture Dossier\\ai-architecture-dossier\\experiments\\routing\\handoff.test.mjs:77:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'BUDGET_EXHAUSTED'
+    - 'REPORTED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'REPORTED'
+  actual: 'BUDGET_EXHAUSTED'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///N:/Development/Architecture/Architecture%20Dossier/ai-architecture-dossier/experiments/routing/handoff.test.mjs:78:32)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: C04 all fixture callbacks have one ledger event and complete delivered packet accounting
+not ok 7 - C04 all fixture callbacks have one ledger event and complete delivered packet accounting
+  ---
+  duration_ms: 95.9628
+  type: 'test'
+  location: 'N:\\Development\\Architecture\\Architecture Dossier\\ai-architecture-dossier\\experiments\\routing\\handoff.test.mjs:86:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'BUDGET_EXHAUSTED'
+    - 'REPORTED'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'REPORTED'
+  actual: 'BUDGET_EXHAUSTED'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///N:/Development/Architecture/Architecture%20Dossier/ai-architecture-dossier/experiments/routing/handoff.test.mjs:87:32)
+    async Test.run (node:internal/test_runner/test:1389:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 4
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 587.8163

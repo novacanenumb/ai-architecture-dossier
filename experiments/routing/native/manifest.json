@@ -1,0 +1,65 @@
+{
+  "anchor_graph_hash": "sha256:f49c846df53d6aedc5ca737250291c4a2a52db6fe8bf982bf2a4cf9f18281b23",
+  "candidate_hashes": [
+    "sha256:aab496a787dacd729da063980a5fb154f06aa24697149d7f5d61f46ef0026aff",
+    "sha256:da4cb541339a330638fb0fea55cd870e063809aca82b93c6eb2be3255a371afe"
+  ],
+  "checkpoint_chain_root": "sha256:60db0af94cda06a49fc8e6ebbd50c57b8e4e6ebeb123bb462703b26846ee016d",
+  "collapse_record_hash": "sha256:8882e2023a099bc5c58830a577daaefdc9c7e72e5041b251238b8e505bfc57eb",
+  "completion_record_hash": "sha256:8126324be6a56aec80a3a06c9cfca9953f7e6ffeed7a7318f8d827956782303d",
+  "context_snapshot_hash": "sha256:de8bcdbf1d4381193e5046104c59ad6341411433e15a680c2bad62e7a268f379",
+  "final_artifact_hash": "sha256:a88ea186fda712ba7dcab74cbf2541d3cb88c7fe277d66c6f48662bb57cbc0ef",
+  "fixture": false,
+  "gtfl_capsule_ir_hash": "sha256:d6ddf81d1062825aec5a3399eb41f6b2709f34b1ee8a11b1197582d17d6e3dd4",
+  "model_provider_revisions": [
+    {
+      "instance_id": "sha256:6137a18d487be5037354454a9fb841a3e49d4f032162a795ba30fca38dc5dec3:candidate:1",
+      "model_id": "gpt-5.6-sol",
+      "provider": "native_codex_host",
+      "role": "sol"
+    },
+    {
+      "instance_id": "sha256:97fa0d7072c09e71a2918edd1124c87ed8183003490895b8571b2b21cebec9cf:candidate:1",
+      "model_id": "gpt-5.6-sol",
+      "provider": "native_codex_host",
+      "role": "sol"
+    }
+  ],
+  "normalized_request_hash": "sha256:07e133dcb47c7e3af2ffdb932bf87844fd2303859217a395e0edcec60c6eb8f9",
+  "object_refs": {
+    "anchorAudits": [
+      "sha256:ae5a7406f8c49a5d9231e88fedbf77bb8ce582d800563d9f94a285636a3b99e6",
+      "sha256:948175e6437179faa69a11a5978314224e79dff55bbadcf24cb3abf9c7214584"
+    ],
+    "archive": "sha256:298f50ef899e40c5f632ff0f8d5678c33c2e696bd25eb8da3f53bd82476bafea",
+    "candidates": [
+      "sha256:bad0bc1b4fc820fae141f798e8f53136671857e130b16de324149ab1207ecf2b",
+      "sha256:2b20eba456a217c533d638751defb21af4748de6768b2fb7e84ae2959da25b92"
+    ],
+    "capsule": "sha256:d6ddf81d1062825aec5a3399eb41f6b2709f34b1ee8a11b1197582d17d6e3dd4",
+    "contexts": "sha256:de8bcdbf1d4381193e5046104c59ad6341411433e15a680c2bad62e7a268f379",
+    "evidence": "sha256:c4a34591d0079d86133e40b3d4ef7f50d394fd2b92f677832fda06c67764a779",
+    "graph": "sha256:d7acf4af9f94623ef020cc9c1c48e16ffbc9e44406adc61bc6db4bdecfb697df",
+    "header": "sha256:f0ea5ce060663903cf609ae4c68608f90b0593f71c8096545a2498dfbf4f24d3",
+    "pageTable": "sha256:8eecbffb877c2323ccfc6762e2d8e18e8d6fabd803fce082053a32c2ecc5025e",
+    "patches": [],
+    "plan": "sha256:5c9aaa577a0d9d954cc44a6bc9abd88dfb9ac1094ff714efbcb2e93cc70dd762",
+    "policy": "sha256:f0172cdbf0a9c05371361e047a6d329272a663b93924db98258216d313fea946",
+    "request": "sha256:07e133dcb47c7e3af2ffdb932bf87844fd2303859217a395e0edcec60c6eb8f9",
+    "traces": "sha256:d98c87c56c2bc1abf67414f9847d272db902d0a6678a36a1280f249953aa2939"
+  },
+  "ordered_evidence_hashes": [],
+  "patch_hashes": [],
+  "performance_report_hash": "sha256:e961a7ea8427adf2fcf5a459b3f333886c886ad48827e413dbb86b4dafd0c9d9",
+  "plugin_hash": "sha256:9179eaace6b80929dbf12864147bfd0710f4cc7861ff3645182643f856661d0e",
+  "plugin_version": "2.1.0",
+  "policy_hash": "sha256:f0172cdbf0a9c05371361e047a6d329272a663b93924db98258216d313fea946",
+  "reconstruction_header_hash": "sha256:b243c774dc994c84fc824e4de85f1cbc213228c78e55e2ece48f2a5f193d7644",
+  "routing_plan_hash": "sha256:d5a36826a67d09a8dec89d6a75ad1dec8c5a931172cf1b119afd7ee3f25f0341",
+  "runId": "run-65f1786a-fc1c-454d-8c60-6ff0cec2e952",
+  "runtime_protocol": "2.0",
+  "schemaVersion": 2,
+  "token_ledger_hash": "sha256:0538a6f5286696e2af32a32c8596d31fffa4cb84eed8d4061279ab8402f28478",
+  "trace_export_hash": "sha256:d98c87c56c2bc1abf67414f9847d272db902d0a6678a36a1280f249953aa2939"
+}
+

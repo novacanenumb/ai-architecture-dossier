@@ -1,0 +1,231 @@
+{
+  "anchors": [
+    {
+      "id": "sha256:6137a18d487be5037354454a9fb841a3e49d4f032162a795ba30fca38dc5dec3",
+      "status": "COMMITTED"
+    },
+    {
+      "id": "sha256:97fa0d7072c09e71a2918edd1124c87ed8183003490895b8571b2b21cebec9cf",
+      "status": "COMMITTED"
+    }
+  ],
+  "contentHash": "sha256:2e6dff15a4d340ca279de11681228b0e580fc89872c3f987aa05c56f0395713f",
+  "cost": {
+    "provenance": "unavailable",
+    "reason": "missing_measurement",
+    "value": null
+  },
+  "gpu_seconds": {
+    "provenance": "unavailable",
+    "reason": "no_gpu_counter",
+    "value": null
+  },
+  "gtfl": {
+    "capsules_aborted": 0,
+    "capsules_collapsed": 1,
+    "capsules_created": 1,
+    "checkpoint_count": 21,
+    "collapse_validity": "VALID",
+    "domain_overflow_count": 0,
+    "gates_activated": 21,
+    "gates_evaluated": 21,
+    "parallel_frames": 0,
+    "provenance_edges": 64,
+    "provenance_nodes": 65,
+    "replay_hash": "sha256:60db0af94cda06a49fc8e6ebbd50c57b8e4e6ebeb123bb462703b26846ee016d",
+    "threshold_frames_executed": 21,
+    "unresolved_domain_count": 0
+  },
+  "kind": "performance-report",
+  "metrics": {
+    "AFPR": {
+      "provenance": "locally_measured",
+      "sources": [
+        "locally_measured"
+      ],
+      "value": 1
+    },
+    "CS": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_dense_baseline",
+      "value": null
+    },
+    "ECF": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "HE": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "MR": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "RL": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "RP": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "RY": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "TAF": {
+      "provenance": "unavailable",
+      "reason": "zero_or_missing_denominator",
+      "value": null
+    },
+    "UEC": {
+      "astra": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "luna": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "sol": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "terra": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      }
+    },
+    "barrier_idle_time": {
+      "provenance": "unavailable",
+      "reason": "missing_worker_measurement",
+      "value": null
+    },
+    "critical_path_duration": {
+      "provenance": "locally_measured",
+      "sources": [
+        "locally_measured"
+      ],
+      "value": 395023.64529999904
+    },
+    "latency_percentiles": {
+      "p50": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 393357.5
+      },
+      "p95": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 394857.35
+      },
+      "p99": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 394990.67
+      }
+    },
+    "maximum_simultaneous_workers": {
+      "provenance": "locally_measured",
+      "sources": [
+        "locally_measured"
+      ],
+      "value": 2
+    },
+    "observed_wall_time": {
+      "provenance": "locally_measured",
+      "sources": [
+        "locally_measured"
+      ],
+      "value": 395023.73519999906
+    },
+    "routing_overhead": {
+      "provenance": "unavailable",
+      "reason": "missing_worker_measurement",
+      "value": null
+    },
+    "serial_execution_estimate": {
+      "provenance": "estimated",
+      "sources": [
+        "estimated"
+      ],
+      "value": 786714.5322999991
+    },
+    "speedup": {
+      "provenance": "locally_measured",
+      "sources": [
+        "locally_measured"
+      ],
+      "value": 1.99156268901586
+    },
+    "straggler_delay": {
+      "provenance": "unavailable",
+      "reason": "missing_worker_measurement",
+      "value": null
+    },
+    "total_worker_execution_time": {
+      "provenance": "locally_measured",
+      "sources": [
+        "locally_measured"
+      ],
+      "value": 786714.5322999991
+    },
+    "ttft_percentiles": {
+      "p50": {
+        "provenance": "unavailable",
+        "reason": "no_observations",
+        "value": null
+      },
+      "p95": {
+        "provenance": "unavailable",
+        "reason": "no_observations",
+        "value": null
+      },
+      "p99": {
+        "provenance": "unavailable",
+        "reason": "no_observations",
+        "value": null
+      }
+    }
+  },
+  "profile": "FAST",
+  "provenance": {
+    "context_savings": "estimated",
+    "generated": "deterministic_telemetry_derivation"
+  },
+  "roles": {
+    "astra": 0,
+    "luna": 0,
+    "sol": 2,
+    "terra": 0
+  },
+  "run_id": "run-65f1786a-fc1c-454d-8c60-6ff0cec2e952",
+  "schemaVersion": 2,
+  "usage": {
+    "cache_write": null,
+    "cached_input": null,
+    "input": null,
+    "output": null,
+    "retrieval": null,
+    "synthetic_context": null
+  },
+  "usage_provenance": "unavailable"
+}
+
