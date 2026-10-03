@@ -6,6 +6,23 @@ This release documents the whole design programme and implements a dependency-fr
 
 **Explore the [public architectural dossier](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site), [context lab](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/lab), and [evidence view](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/evidence).** The existing [Headspace PRSR laboratory](https://headspace-prsr-lab.novacanenumb.chatgpt.site) is a separate experimental project whose original fixture source has now been inspected and tested.
 
+<details>
+<summary>README navigation</summary>
+
+- [Contribution and design intent](#what-this-work-contributes)
+- [Guided reading routes](#guided-reading-routes)
+- [Illustrative workflow](#illustrative-research-assistant-workflow)
+- [Reproduction and repository navigation](#reproduce)
+- [The 28-component guide](#component-guide)
+- [Observed comparisons](#comparison-api-and-observed-results)
+- [Original-source evidence](#supplied-hypervisor-runtime-probes)
+- [Claim interpretation](#reading-an-efficiency-claim)
+- [Evaluator checklist](#practical-evaluator-checklist)
+- [Matched model experiment design](#designing-a-matched-model-experiment)
+- [Contributions and licence](#next-experiments-and-contributions)
+
+</details>
+
 ## What this work contributes
 
 The central design question is how an agent workflow can carry less redundant input, preserve exact requirements, coordinate bounded work, and make its eventual output easier to verify. Those goals interact. A small context packet is useful only if it still contains the facts the task needs. Parallel workers are useful only if their outputs can be reconciled within a shared boundary. A convincing performance result needs the cost of retries, reviews, duplicated context and failed attempts as well as the successful final response.
@@ -15,6 +32,65 @@ The architecture therefore makes intermediate state explicit. History has versio
 For developers, this repository supplies runnable reference modules, source-bound probes and experiment records. For reviewers, it supplies component contracts, acceptance IDs, failure cases and limitations. For collaborators, it identifies which parts can be extended locally and which need a separate provider experiment or native implementation. The catalogue preserves the broader research programme while the evidence sections identify the behavior actually executed in this release.
 
 Authorship is deliberately traceable: the architectural programme is credited to **novacanenumb**; the portfolio, reference modules and additional probes are AI-assisted work with parent integration. Existing Hypervisor and Headspace implementations retain their own source identity and licensing boundaries. Finding a missing implementation, a failed diagnostic or an unavailable measurement remains part of the contribution record.
+
+## Guided reading routes
+
+The dossier is easier to assess when read as an evidence map. It catalogues 28 components, 122 acceptance requirements, and 154 model-comparison endpoints whose measurements remain `null`. Those numbers describe the scope of the catalogue; they do not mean that every component is implemented, every acceptance requirement passed, or live models were benchmarked.
+
+### Portfolio reviewer
+
+Start with the [component registry](component-registry.json) to see the complete architecture programme and each component's source status and claim boundary. Then read the [contribution map](docs/CONTRIBUTION_MAP.md), which separates the novacanenumb architecture and research programme from the newly authored, AI-assisted dossier implementation.
+
+Continue with the [source inventory](docs/SOURCE_INVENTORY.md) to understand which materials were supplied, which were inspected, and which remain historical designs or uninspected code. The [evidence guide](docs/EVIDENCE.md) explains the receipt vocabulary and the difference between a documented design, an executable reference, an original-source probe, and an unresolved claim. Finish with the [limitations](docs/LIMITATIONS.md) before interpreting an entry's implementation, privacy or validation status.
+
+For a visual tour, open the hosted [Lab](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/lab) and [Evidence](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/evidence) views. These pages present the same bounded public evidence; hosting does not strengthen the underlying claims.
+
+### Engineer
+
+Begin with the small dependency-free reference lab in [packages/lab/core.mjs](packages/lab/core.mjs). Its purpose is to make selected mechanics inspectable with ordinary Node.js. The default workflow requires Node.js 22 or newer and does not require package dependencies, API keys, provider accounts, or model downloads.
+
+```text
+npm test
+npm run build
+npm run verify
+npm run verify:public
+npm run preview
+```
+
+The default suite currently contains 40 tests, including 16 tests for the newly authored C14 output-level language-analysis reference. Review the frozen comparison setup in [experiments/protocol.json](experiments/protocol.json), the derived results in [dist/data/results.json](dist/data/results.json), and the test record in [experiments/test-receipt.json](experiments/test-receipt.json).
+
+The separate deterministic comparison bundle contains 17 context configurations, including one combined configuration that fails its overflow gate and does not dispatch. Its failure remains in the total configuration denominator. Repetition across configurations demonstrates reproducibility of the fixture mechanics; it does not create independent model trials.
+
+The source-oriented suites have stronger environment requirements than the default lab. The recorded runners use Node.js 26 and the exact original dependencies named by their manifests and receipts. They must not silently run against replacement source or packages.
+
+### Evaluator
+
+Read [docs/CONTEXT_ROUTING.md](docs/CONTEXT_ROUTING.md) before assessing C04. The current record includes 45 supplied-runtime probes plus seven separate C04 tests. The former establish selected behavior against the supplied original implementation; the latter examine additional routing questions. The scheduler record is available at [experiments/runtime/scheduler-results.json](experiments/runtime/scheduler-results.json), and the routing receipt is at [experiments/routing/test-receipt.json](experiments/routing/test-receipt.json).
+
+Across the wider source work, 20 components have partial original-source evidence. That component count is separate from the number of tests. C14 is a new public reference implementation, with original source still unavailable and human or model-performance outcomes unmeasured. Evaluators should preserve those provenance distinctions when comparing coverage.
+
+## Illustrative research-assistant workflow
+
+The following sequence is conceptual. It has not been executed as a validated end-to-end research-assistant DAG, and the arrows do not demonstrate that every architecture layer is implemented.
+
+```mermaid
+flowchart LR
+    A[Exact requirement archive] --> B[Pinned sparse context]
+    B --> C[Sealed anchors and dependencies]
+    C --> D[Committed parent sections]
+    D --> E[Untrusted worker proposals]
+    E --> F[Evidence and contradiction checks]
+    F --> G[Bounded completion decision]
+    G --> H[Complete ledger and replay record]
+```
+
+Imagine a researcher asking for a source-backed comparison with one exact quotation and an unresolved disagreement. The archive would retain the original request and source bytes. A context compiler would select pinned requirements, recent history, and source pointers while preserving the required quotation. The task would be divided into sealed anchors whose dependencies identify the committed parent sections available to later work.
+
+Workers would return proposals. Their text would remain untrusted until checked against the anchor, source receipts, contradiction records, and applicable completion rules. If a required source were absent, preparation would fail or the dependent claim would remain unresolved according to the declared contract. If a parent failed validation, a child depending on its committed output would not receive that output as trusted evidence.
+
+A completion step would accept, reject, or retain unresolved material. The ledger would account for accepted evidence, rejected proposals, failures, corrections, and replay hashes. A later source correction would create a new revision and require affected descendants to be reconsidered, while the earlier accepted record remained addressable.
+
+The dossier retains corrections and failed cases because they make the record useful to audit. A corrected receipt does not rewrite an earlier receipt as though it had always been correct. A failed configuration stays visible in its total attempt count. Missing hosted usage, cost, latency and quality measurements remain `null`. This treatment lets a reader distinguish what was planned, what ran locally, what failed, and what still lacks evidence.
 
 ## Reproduce
 
@@ -390,6 +466,65 @@ Every result should identify the work unit, baseline, measurement and acceptance
 A smaller byte count does not establish fewer billed tokens unless provider usage is observed. A faster asynchronous fixture does not establish faster neural inference. Deterministic event replay does not establish semantic noninferiority. The records keep these quantities separate so future provider-backed work can add measurements without rewriting the meaning of the existing results.
 
 For a matched model comparison, freeze the task corpus, protected requirements, model and backend revisions, arm configuration, quality rubric, tolerance, call limit and budget before dispatch. Retain all successful, failed, cancelled, retry and review calls. Define cache inclusion and token subsets explicitly. Compute ratios only with known nonzero denominators, and report missing observations as null. A combined Hypervisor comparison must include its orchestration and review overhead as well as the final answer.
+
+## Practical evaluator checklist
+
+Evaluate each claim against the evidence class it uses. A passing fixture shows that a bounded mechanism behaved as recorded under that fixture. Broader conclusions require their own population, experiment and validation.
+
+1. Run `npm run verify:public` to check the public release without the private specification or original runtime. Confirm that files, source hashes, schemas, denominators and unavailable fields remain consistent.
+2. Read [EVIDENCE.md](docs/EVIDENCE.md), [LIMITATIONS.md](docs/LIMITATIONS.md), and [CONTRIBUTION_MAP.md](docs/CONTRIBUTION_MAP.md). Follow the relevant [runtime](docs/RUNTIME_EVIDENCE.md), [Headspace](docs/HEADSPACE_EVIDENCE.md), [Agent Database](docs/AGENTDB_EVIDENCE.md), or [language-analysis](docs/LANGUAGE_ANALYSIS.md) guide for its precise execution boundary.
+3. Identify whether the claim concerns a deterministic output, local wall time, or hosted generation. Preserve that classification when reporting the result.
+4. Inspect [protocol.json](experiments/protocol.json), [results.json](dist/data/results.json), and [test-receipt.json](experiments/test-receipt.json). Check the frozen inputs and every attempted configuration. Report total attempts and eligible comparisons separately, with failed and excluded cases retained.
+5. For scheduling, inspect the [protocol](experiments/runtime/scheduler-protocol.json) and [results](experiments/runtime/scheduler-results.json). The record contains 16 actual timer attempts across eight counterbalanced pairs with equal deterministic callback outputs. It measures this local scheduler fixture.
+6. For retrieval caching, inspect the [cache protocol](experiments/agentdb/cache-protocol.json) and [Agent Database receipt](experiments/agentdb/test-receipt.json). The record distinguishes 16 arms, 256 measured queries, eight priming calls and eight eligible pairs.
+7. For language analysis, inspect the [frozen results](experiments/language/results.json). C14 is a new reference implementation; the authored synthetic patterns and caller-supplied segment labels remain separate from measured model or human outcomes.
+
+The default public suite has 40 tests, including 16 C14 tests. Its separate context comparison bundle has 17 configurations and one retained combined-overflow failure. Optional original-source commands include `npm run test:runtime`, `npm run test:routing`, `npm run test:headspace`, `npm run test:agentdb`, and `npm run benchmark:scheduler`. Their manifests and receipts declare the required original source, runtime and environment. Missing source or a version or hash mismatch fails explicitly.
+
+## Claim review template
+
+Use this compact record when contributing or assessing a material claim:
+
+```text
+Claim:
+Evidence class: deterministic fixture | local timing | hosted generation | unavailable
+Source files and hashes:
+Protocol and frozen revisions:
+Population and denominator:
+Failed, retried, cancelled and excluded attempts:
+Observed value and unit:
+Null or unavailable measurements:
+Validator or reviewer and validation scope:
+Supported scope:
+Unsupported extrapolations:
+Reproduction command:
+```
+
+The catalogue's 154 model-comparison endpoints retain `null` baseline and candidate values because matched model runs have not occurred. Zero provider calls is an observed call count; an unavailable token, cost, latency or quality value is a missing measurement. A null field preserves the work still needed to establish a result.
+
+## Deterministic outputs, timing and generation
+
+A content hash, replay equality, or fixed callback result can be deterministic while elapsed time varies. Timing claims therefore need per-attempt observations, a declared clock, complete failure accounting, and an analysis tied to the tested workload. Hosted model generation needs additional provider identity, backend revisions, usage, latency and quality evidence. Local fixture arithmetic cannot supply those observations.
+
+Headspace illustrates the distinction. Its record contains 16 original fixture checks and 17 mocked comparison checks. The original competing-commit behavior fails the stated requirement in 12 of 12 diagnostic pairs; the new serialized adapter fails in zero of 12, while the original source remains unchanged. That supports the bounded adapter result. Cross-process coordination, rollback and durable distributed transaction behavior need separate implementation and tests.
+
+Replaying a retained artifact verifies its recorded content and bindings. Regenerating a hosted response is a different operation, even when the prompt and requested seed are unchanged. Statistical intervals over local wall times describe the sampled local workload; they do not establish answer quality or generalize automatically to another machine or provider.
+
+## Designing a matched model experiment
+
+Before either arm runs, freeze the corpus, protected requirements, model and backend revisions, quality rubric, tolerance, cache policy and stopping rules. Both arms must solve the same task. Account for each arm's actual orchestration, retries, reviews, failures and validation overhead. The combined Hypervisor arm must include the work required to produce its accepted answer.
+
+Counterbalance paired arm order. Record cache state per arm, including any priming whose time is excluded from a query measurement. Retain every attempt, including cancelled and undispatched work, with exact total and eligible denominators. Usage subsets must state how input, cached input, cache writes, retrieval and output are counted. Byte totals and estimated tokens do not substitute for provider usage or streamed throughput.
+
+Declare the quality gate and analysis before observing results. Check output equality where appropriate, or use the frozen quality rubric and tolerance, before interpreting a speed comparison as an efficiency benefit. If the gate fails or lacks evidence, report timing and quality separately. Recompute paired statistics from eligible observations, disclose exclusions, and keep undefined ratios null when a required denominator is absent or zero.
+
+## Reproduction and contribution troubleshooting
+
+A public checkout runs the dependency-free lab with Node.js 22 or newer. Original-source checks require the exact environments described in their guides; the recorded optional runners use Node.js 26, and Agent Database checks also require the declared Python libraries. A static build copies frozen optional evidence rather than rerunning those private-source experiments. Rebuilding the site therefore does not refresh every measurement.
+
+When a source hash differs, identify the changed source and create a new experiment revision before claiming comparability. When a test fails, preserve the trigger, receipt and affected denominator. When a protocol changes after execution, retain the earlier protocol and start a separately identified comparison. Content hashes establish consistency with recorded bytes; publisher authentication needs an independently trusted signature.
+
+A hypothetical contribution could add a cache policy in the existing owner. Its proposed protocol would freeze a synthetic corpus, paired arms, query order, priming, complete failure accounting and a quality-equivalence gate. Tests would check the policy and schema before an authorized measurement run. The raw receipt and derived comparison would be added only after execution, labelled with their observed scope. Until then, the contribution would remain an implementation and experiment proposal.
 
 ## Next experiments and contributions
 

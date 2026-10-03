@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "kind": "parent-readme-integration",
+  "nativeSourceRunId": "run-10b77d08-45a5-4763-9518-47df7e39311a",
+  "previousReadmeHash": "sha256:12edafe4866a4b52eb45d4457d91b177de92d305882f6013db123b4a4246365b",
+  "currentReadmeHash": "sha256:a914f7738abdd21d97a34b58db5a98255b183affcf5b5a963605a70f6e509d8f",
+  "previousWords": 6010,
+  "currentWords": 7803,
+  "fragments": [
+    {
+      "insertionBefore": "## Next experiments and contributions",
+      "nativeContentHash": "sha256:643a2f216b2f9381ea10a5f1f31f83c4643889aaab6786b03b3dc34d07161723",
+      "contentHash": "sha256:1f541a4d318aa70f34cb45af4f9565f9e7ba80a8fcf55036a425d18f6ea2c3dc",
+      "words": 968
+    },
+    {
+      "insertionBefore": "## Reproduce",
+      "nativeContentHash": "sha256:a198de36fec4af0f457d2575a0c1b5940a230646b405904a9be5ccc9a6753bd2",
+      "contentHash": "sha256:40ba51ee6798c8996cddd3117a9f90783ee37678f3fcf3e77d5d513d7f383fe0",
+      "words": 779
+    }
+  ],
+  "fragmentCorrections": [
+    {
+      "from": "experiments/results.json",
+      "to": "dist/data/results.json",
+      "reason": "The pre-write internal-link check caught the nonexistent experiment results path; the actual frozen bundle is dist/data/results.json. Native draft bytes remain unchanged."
+    }
+  ],
+  "retainedIntegrationFailures": [
+    {
+      "code": "ENOENT",
+      "path": "experiments/results.json",
+      "stage": "internal-link check",
+      "canonicalWrites": false
+    }
+  ],
+  "hostNavigation": {
+    "insertionBefore": "## What this work contributes",
+    "content": "<details>\n<summary>README navigation</summary>\n\n- [Contribution and design intent](#what-this-work-contributes)\n- [Guided reading routes](#guided-reading-routes)\n- [Illustrative workflow](#illustrative-research-assistant-workflow)\n- [Reproduction and repository navigation](#reproduce)\n- [The 28-component guide](#component-guide)\n- [Observed comparisons](#comparison-api-and-observed-results)\n- [Original-source evidence](#supplied-hypervisor-runtime-probes)\n- [Claim interpretation](#reading-an-efficiency-claim)\n- [Evaluator checklist](#practical-evaluator-checklist)\n- [Matched model experiment design](#designing-a-matched-model-experiment)\n- [Contributions and licence](#next-experiments-and-contributions)\n\n</details>\n"
+  },
+  "validationScope": "Two retained native drafts incorporated with the disclosed parent results-path correction and navigation after public evidence and link review; prior README text retained. Final file integration is separate from native structural validation.",
+  "newModelMeasurements": false,
+  "pendingRotorDraftsIncluded": false,
+  "publicCopyValidation": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "status": "FAILED",
+        "stage": "copied headspace trace JSON parsing",
+        "defaultTestsPassed": 40,
+        "error": "SyntaxError in temporary copied trace; canonical trace not modified",
+        "temporaryCopyCheckedCleanup": true
+      },
+      {
+        "attempt": 2,
+        "status": "PASSED",
+        "defaultTestsPassed": 40,
+        "privateMasterPresent": false,
+        "suppliedRuntimePresent": false,
+        "temporaryCopyCheckedCleanup": true
+      }
+    ],
+    "canonicalTraceVerifiedBeforeRetry": {
+      "path": "experiments/headspace/public-trace.json",
+      "bytes": 2597098,
+      "hash": "sha256:e631791770d89ddb2aedaf31802d44eaa2ea4918821a9f42766e66c17ec12aa3",
+      "jsonValid": true
+    },
+    "cause": "UNRESOLVED: first temporary copy failed parsing; canonical and controlled retry passed"
+  }
+}
