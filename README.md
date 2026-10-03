@@ -67,7 +67,7 @@ The source-oriented suites have stronger environment requirements than the defau
 
 Read [docs/CONTEXT_ROUTING.md](docs/CONTEXT_ROUTING.md) before assessing C04. The current record includes 45 supplied-runtime probes plus seven separate C04 tests. The former establish selected behavior against the supplied original implementation; the latter examine additional routing questions. The scheduler record is available at [experiments/runtime/scheduler-results.json](experiments/runtime/scheduler-results.json), and the routing receipt is at [experiments/routing/test-receipt.json](experiments/routing/test-receipt.json).
 
-Across the wider source work, 20 components have partial original-source evidence. That component count is separate from the number of tests. C14 is a new public reference implementation, with original source still unavailable and human or model-performance outcomes unmeasured. Evaluators should preserve those provenance distinctions when comparing coverage.
+Across the wider source work, 21 components have partial original-source evidence. That component count is separate from the number of tests. C14 is a new public reference implementation, with original source still unavailable and human or model-performance outcomes unmeasured. Evaluators should preserve those provenance distinctions when comparing coverage.
 
 ## Illustrative research-assistant workflow
 
@@ -435,6 +435,24 @@ npm run test:routing
 Use Node 26 or later and the approved runtime, with `DOSSIER_RUNTIME_PATH` when necessary. The [source guide](docs/CONTEXT_ROUTING.md) maps partial C04-T01, C04-T03 and C04-T04 evidence and keeps automatic global contradiction discovery unresolved. The first run's reservation-budget failure, its receipt and its exact probe/runner bytes remain in history; the corrected allowance keeps the same scenarios and public inputs. Native source validation and parent behavioral testing have separate receipts.
 
 These counts describe public synthetic packets and exclude hidden host prompts, provider framing and tokenizer behavior. They do not establish model token savings, billed cost, hosted latency, answer quality, private context non-disclosure or a complete component acceptance pass.
+
+## C24: original rotor and lattice mechanics
+
+The [C24 source suite](docs/ROTOR_EVIDENCE.md) now passes **nine original tests** and **six additional probes** against the original `rtl360_gtfl` pure-math modules from `neo-sfr-lab` 0.1.0. Seven source files are pinned, copied into an owned directory and rechecked unchanged afterward. Original code, neural weights, checkpoints and training are excluded from publication.
+
+Original tests cover axle counts two through five, Hilbert bijection and adjacency at three small depths, exact prototype mass with provisional policy, and bounded DDA axis ties. Added probes check repeated route/hash equality, unchanged inputs, import overflow, current/future rejection, malformed phase inputs, required local-window admission, support/ray bounds and detached source-root lists. The six added test functions contain multiple assertions; the recorded denominator remains six.
+
+The [frozen trace](experiments/rotor/trace.json) contains four public synthetic cases at token times 2, 10, 33 and 65. All eight repeated route calls are retained, with zero failures or excluded cases. Required local records match delivered records in every case; results and original CBOR hashes reproduce exactly. JSON byte counts exclude their own count field and are not provider tokens.
+
+Open [C24 on the Site](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/component/C24) and choose Lab to inspect each recorded result. The control reads frozen original execution rather than running a browser substitute for the private source. Tests show partial C24-T01 geometry and C24-T03 causal evidence. Camera isolation, cross-sequence privacy and matched dense/sparse semantic comparisons remain unverified.
+
+```text
+npm run test:rotor
+```
+
+Reproduction requires Node 26, Python 3.12, pytest 9.1.1, exact original source and the approved dossier dependency. The receipt retains a native timeout and a failed dependency preflight before Python dispatch. A damaged bundled Node binary was preserved locally and the identical approved release restored through its verified installer; the lock stayed unchanged. The original project launcher and legacy runtime gate were not invoked or changed.
+
+The policy remains `PROPOSED_LOCAL_MECHANICS_NOT_S0`; local mathematics does not establish a trained model or measured model benefit. Hosted usage, cost, latency, default-model quality and whole C23–C26 acceptance remain unavailable. This raises partial original-source component coverage from 20 to 21, while C14 remains a separate new reference implementation.
 
 ## C14: controlled language analysis
 

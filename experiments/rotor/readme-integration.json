@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "nativeSourceRunId": "run-23c82d4a-20a7-4db3-8b91-19319d3fdda1",
+  "previousReadmeHash": "sha256:a914f7738abdd21d97a34b58db5a98255b183affcf5b5a963605a70f6e509d8f",
+  "currentReadmeHash": "sha256:1ec5d40e76b75a63d5e62c864ed1507db8a840268a3bc2d8c87168e7ea7a255f",
+  "addition": {
+    "insertionBefore": "## C14: controlled language analysis",
+    "content": "## C24: original rotor and lattice mechanics\n\nThe [C24 source suite](docs/ROTOR_EVIDENCE.md) now passes **nine original tests** and **six additional probes** against the original `rtl360_gtfl` pure-math modules from `neo-sfr-lab` 0.1.0. Seven source files are pinned, copied into an owned directory and rechecked unchanged afterward. Original code, neural weights, checkpoints and training are excluded from publication.\n\nOriginal tests cover axle counts two through five, Hilbert bijection and adjacency at three small depths, exact prototype mass with provisional policy, and bounded DDA axis ties. Added probes check repeated route/hash equality, unchanged inputs, import overflow, current/future rejection, malformed phase inputs, required local-window admission, support/ray bounds and detached source-root lists. The six added test functions contain multiple assertions; the recorded denominator remains six.\n\nThe [frozen trace](experiments/rotor/trace.json) contains four public synthetic cases at token times 2, 10, 33 and 65. All eight repeated route calls are retained, with zero failures or excluded cases. Required local records match delivered records in every case; results and original CBOR hashes reproduce exactly. JSON byte counts exclude their own count field and are not provider tokens.\n\nOpen [C24 on the Site](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/component/C24) and choose Lab to inspect each recorded result. The control reads frozen original execution rather than running a browser substitute for the private source. Tests show partial C24-T01 geometry and C24-T03 causal evidence. Camera isolation, cross-sequence privacy and matched dense/sparse semantic comparisons remain unverified.\n\n```text\nnpm run test:rotor\n```\n\nReproduction requires Node 26, Python 3.12, pytest 9.1.1, exact original source and the approved dossier dependency. The receipt retains a native timeout and a failed dependency preflight before Python dispatch. A damaged bundled Node binary was preserved locally and the identical approved release restored through its verified installer; the lock stayed unchanged. The original project launcher and legacy runtime gate were not invoked or changed.\n\nThe policy remains `PROPOSED_LOCAL_MECHANICS_NOT_S0`; local mathematics does not establish a trained model or measured model benefit. Hosted usage, cost, latency, default-model quality and whole C23–C26 acceptance remain unavailable. This raises partial original-source component coverage from 20 to 21, while C14 remains a separate new reference implementation.\n"
+  },
+  "replacements": [
+    {
+      "from": "Across the wider source work, 20 components",
+      "to": "Across the wider source work, 21 components"
+    }
+  ],
+  "scope": "Parent README addition after original-source fifteen-test execution; prior README expansion and native artifacts retained."
+}

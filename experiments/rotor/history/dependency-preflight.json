@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "FAILED",
+  "stage": "approved project dependency verification",
+  "code": "ERR_ASSERTION",
+  "member": "plugins/hypervisor-standalone/bin/node.exe",
+  "expectedHash": "sha256:2e5b4362a7ea3478cb408a07189c19c16e487f188ac96db2e9e0f45ad8e21837",
+  "observedHash": "sha256:bc2a86656d8f41ec9a8ac5c344f6e3b582e2ce73f6b43de488146c6c248922b8",
+  "bytes": 102615880,
+  "independentlyConfirmed": true,
+  "pythonExecutions": 0,
+  "originalRotorImports": 0,
+  "resolution": "Mismatched copy preserved locally; identical approved release restored using its fully verified release installer.",
+  "lockUnchanged": true,
+  "sourceVerifiedFiles": 85,
+  "publisherAuthentication": "UNVERIFIED"
+}

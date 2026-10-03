@@ -1,5 +1,7 @@
 # Source inventory
 
+The latest C24 addition inspects the original `rtl360_gtfl` pure-math owner from `neo-sfr-lab` 0.1.0. Seven source files are pinned, with package metadata hashed separately. Nine original tests and six added probes passed in an owned copy; original hashes remained unchanged. The public [rotor guide](ROTOR_EVIDENCE.md), [manifest](../experiments/rotor/source-manifest.json) and [receipt](../experiments/rotor/test-receipt.json) retain partial C24-T01/T03 coverage and the omitted camera, cross-sequence and model-comparison evidence. Original source and model state are excluded from redistribution.
+
 Inspection date: 2026-10-03 Australia/Brisbane.
 
 Inspected local sources: `../CODEX_START.md` (implementation handoff), `../MASTER_SPEC.md` (HYP-PORTFOLIO-1.0, 28 component specifications), and `../HYPERVISOR-2.1-STABLE` (2.1.0 project dependency). The installed desktop plugin reports native runtime 2.1, protocol 2.0, schema 2 and verified packaged content.

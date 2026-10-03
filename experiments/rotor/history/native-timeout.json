@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "state": "FAILED",
+  "code": "TASK_TIMEOUT",
+  "sessionId": "552e4436-dbe9-4cf8-a161-815e61905ad8",
+  "runId": "run-4cb97b5e-a1f1-4a36-b905-379378017411",
+  "performance": {
+    "anchors": [],
+    "contentHash": "sha256:5c0b653d6060fa0435a1e87609a899a2b1af18c6e5308ab9a98176c100e70e09",
+    "cost": {
+      "provenance": "unavailable",
+      "reason": "missing_measurement",
+      "value": null
+    },
+    "gpu_seconds": {
+      "provenance": "unavailable",
+      "reason": "no_gpu_counter",
+      "value": null
+    },
+    "gtfl": {
+      "capsules_aborted": 0,
+      "capsules_collapsed": 0,
+      "capsules_created": 1,
+      "checkpoint_count": 12,
+      "collapse_validity": "PENDING",
+      "domain_overflow_count": 0,
+      "gates_activated": 12,
+      "gates_evaluated": 12,
+      "parallel_frames": 0,
+      "provenance_edges": 35,
+      "provenance_nodes": 36,
+      "replay_hash": "sha256:031a5d9681b7ff1ac7e05cfc40a246f05e06f0d29ff8fbb7018786674e793504",
+      "threshold_frames_executed": 12,
+      "unresolved_domain_count": 1
+    },
+    "kind": "performance-report",
+    "metrics": {
+      "AFPR": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "CS": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_dense_baseline",
+        "value": null
+      },
+      "ECF": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "HE": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "MR": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RL": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RP": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RY": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "TAF": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "UEC": {
+        "astra": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "luna": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "sol": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "terra": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        }
+      },
+      "barrier_idle_time": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "critical_path_duration": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "latency_percentiles": {
+        "p50": {
+          "provenance": "locally_measured",
+          "sources": [
+            "locally_measured"
+          ],
+          "value": 900010.5
+        },
+        "p95": {
+          "provenance": "locally_measured",
+          "sources": [
+            "locally_measured"
+          ],
+          "value": 900010.95
+        },
+        "p99": {
+          "provenance": "locally_measured",
+          "sources": [
+            "locally_measured"
+          ],
+          "value": 900010.99
+        }
+      },
+      "maximum_simultaneous_workers": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 2
+      },
+      "observed_wall_time": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 900010.7441999998
+      },
+      "routing_overhead": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "serial_execution_estimate": {
+        "provenance": "estimated",
+        "sources": [
+          "estimated"
+        ],
+        "value": 1800020.8902999999
+      },
+      "speedup": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 1.999999335452378
+      },
+      "straggler_delay": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "total_worker_execution_time": {
+        "provenance": "locally_measured",
+        "sources": [
+          "locally_measured"
+        ],
+        "value": 1800020.8902999999
+      },
+      "ttft_percentiles": {
+        "p50": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p95": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p99": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        }
+      }
+    },
+    "profile": "FAST",
+    "provenance": {
+      "context_savings": "estimated",
+      "generated": "deterministic_telemetry_derivation"
+    },
+    "roles": {
+      "astra": 0,
+      "luna": 0,
+      "sol": 2,
+      "terra": 0
+    },
+    "run_id": "run-4cb97b5e-a1f1-4a36-b905-379378017411",
+    "schemaVersion": 2,
+    "usage": {
+      "cache_write": null,
+      "cached_input": null,
+      "input": null,
+      "output": null,
+      "retrieval": null,
+      "synthetic_context": null
+    },
+    "usage_provenance": "unavailable"
+  },
+  "hostProposalTurns": 2,
+  "candidateSubmissions": 0,
+  "reason": "Source proposals were retained locally but not submitted before this native task deadline; no validated rotor artifact was produced."
+}

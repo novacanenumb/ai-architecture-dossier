@@ -16,7 +16,15 @@ export async function verifyReadmeEvidence(root) {
   const fragments=[...artifact.matchAll(/```\n([\s\S]*?)\n```/g)].map(match=>JSON.parse(match[1]));
   assert.equal(fragments.length,2);
   const integration=await json('experiments/readme/integration-receipt.json');
-  const current=await read('README.md'); let previous=current;
+  const latest=await read('README.md');
+  const rotor=await json('experiments/rotor/readme-integration.json');
+  assert.equal(hash(latest),rotor.currentReadmeHash);
+  assert.equal(latest.split(rotor.addition.content).length,2);
+  let current=latest.replace(rotor.addition.content+'\n','');
+  assert.deepEqual(rotor.replacements,[{from:'Across the wider source work, 20 components',to:'Across the wider source work, 21 components'}]);
+  for(const replacement of rotor.replacements){assert.equal(current.split(replacement.to).length,2);current=current.replace(replacement.to,replacement.from);}
+  assert.equal(hash(current),rotor.previousReadmeHash);
+  let previous=current;
   assert.equal(hash(current),integration.currentReadmeHash);
   assert.equal(current.trim().split(/\s+/).length,integration.currentWords);
   assert.deepEqual(integration.fragmentCorrections.map(({from,to})=>({from,to})),[{from:'experiments/results.json',to:'dist/data/results.json'}]);
@@ -34,7 +42,7 @@ export async function verifyReadmeEvidence(root) {
   assert.equal(hash(previous),integration.previousReadmeHash,'Prior README was modified beyond declared additions');
   assert.equal(previous.trim().split(/\s+/).length,integration.previousWords);
   let links=0;
-  for(const match of current.matchAll(/\]\(([^)]+)\)/g)) {
+  for(const match of latest.matchAll(/\]\(([^)]+)\)/g)) {
     const target=match[1]; if(target.startsWith('http')||target.startsWith('#'))continue;
     const resolved=path.resolve(root,target); assert.ok(resolved.startsWith(root+path.sep));
     assert.ok(!(await lstat(resolved)).isSymbolicLink()); links++;

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "componentId": "C24",
+  "classification": "PARTIAL_ORIGINAL_SOURCE_EVIDENCE",
+  "acceptanceIds": ["C24-T01", "C24-T03"],
+  "unverifiedAcceptanceIds": ["C24-T02", "C24-T04"],
+  "scope": "Fixed-point, bounded geometry and current/future rejection; camera isolation, cross-sequence identity, neural semantics and matched dense/sparse comparisons remain unverified."
+}

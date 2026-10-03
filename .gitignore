@@ -1,5 +1,6 @@
 node_modules/
 .sites-runtime/
+.rotor-source-check-*/
 .sites-checkout*/
 .credentials/
 *.tar.gz

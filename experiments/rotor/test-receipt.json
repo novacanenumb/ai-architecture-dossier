@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-rotor-lattice-source-evidence",
+  "status": "PASSED",
+  "command": "npm run test:rotor",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "sourcePackage": {
+    "name": "neo-sfr-lab",
+    "version": "0.1.0",
+    "nativePackage": "rtl360_gtfl",
+    "specification": "RTL360-GTFL-NATIVE-1.0",
+    "sourceRedistributed": false
+  },
+  "sourceManifestHash": "sha256:edca7951cbfb8d9297aea85fe0918ca02d7f41940aafc7fb211adcaadcdd13aa",
+  "sourceFiles": [
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/__init__.py",
+      "bytes": 221,
+      "hash": "sha256:8e1a2ee5b0b34ce896a2fe114dd5bf3e0ce9638c84d55a401da6b88cc1d7b2fd"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/canonical.py",
+      "bytes": 2573,
+      "hash": "sha256:d3a53963a30a50d1e957db7dae13710a7beed2a51409644ccd880b8cfb36d46f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/numeric.py",
+      "bytes": 4066,
+      "hash": "sha256:1e73ccb37a37f9c5c95656170142506b3420a8e86d135997274adba0d54fbcae"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/config.py",
+      "bytes": 5566,
+      "hash": "sha256:743c5fa029c7f4472bba407d356ecf697e8a6ddc89ee3b03cb51d35b2eb12688"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/rotor.py",
+      "bytes": 4142,
+      "hash": "sha256:5180804ff2f6b9c0251ace03f21eb311ac6ee4c9f933e0db89c6167137008f4b"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/lattice.py",
+      "bytes": 10557,
+      "hash": "sha256:2cc42237f480d1c3788207837ae015dd32c01838c3f85c77a406e66d777b1130"
+    },
+    {
+      "path": "tests/test_gtfl_rotor_lattice.py",
+      "bytes": 3115,
+      "hash": "sha256:dd3c19a7c07caecfc17d8d1faccdd6a936be89684d8c9516bc26728b43518687"
+    }
+  ],
+  "sourceMetadata": {
+    "path": "pyproject.toml",
+    "bytes": 1261,
+    "hash": "sha256:ba040dc95357cb4eb57194a35bba3065b48375d7cfc6f59bf32f509c247f1f15"
+  },
+  "sourceHashes": {
+    "scripts/test-rotor-source.mjs": "sha256:125c936e9f80c3a39c968e32b867a540b267c18e39963d0f183f4fd28c0d5694",
+    "experiments/rotor/execute.py": "sha256:bcef5c7b010e1abb29f664eaeca622534cb53b4dee1d0c5785795901dfc7ed4b",
+    "experiments/rotor/probe.py": "sha256:2cd43c1c05f284bc3fb7752d4d069a0aeaaccbaa235ad4f871af1db14791ed34",
+    "experiments/rotor/source-manifest.json": "sha256:edca7951cbfb8d9297aea85fe0918ca02d7f41940aafc7fb211adcaadcdd13aa",
+    "experiments/rotor/protocol.json": "sha256:b48f8a9be92fbbc732ba26b12e511d5de923a216c7798ae9d6ecc5ca27f4390c",
+    "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df"
+  },
+  "sourceUnchanged": true,
+  "temporaryCopyRemoved": true,
+  "hypervisorDependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1",
+    "verifiedFiles": 85
+  },
+  "protocol": {
+    "path": "experiments/rotor/protocol.json",
+    "hashBefore": "sha256:b48f8a9be92fbbc732ba26b12e511d5de923a216c7798ae9d6ecc5ca27f4390c",
+    "hashAfter": "sha256:b48f8a9be92fbbc732ba26b12e511d5de923a216c7798ae9d6ecc5ca27f4390c",
+    "parsed": {
+      "schemaVersion": 1,
+      "id": "public-dossier-rotor/1",
+      "source": "public_synthetic_fixture",
+      "times": [
+        2,
+        10,
+        33,
+        65
+      ],
+      "phases": [
+        [
+          10000,
+          20000
+        ],
+        [
+          30000,
+          40000
+        ],
+        [
+          50000,
+          60000
+        ]
+      ],
+      "eta": [
+        [
+          16777215,
+          16777215,
+          16777215,
+          16777215
+        ],
+        [
+          16777215,
+          16777215,
+          16777215,
+          16777215
+        ],
+        [
+          16777215,
+          16777215,
+          16777215,
+          16777215
+        ]
+      ],
+      "config": {
+        "preset": "tiny",
+        "maximum_imports": 16,
+        "maximum_ray_cells": 8,
+        "axles": 3,
+        "harmonics": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "phase_resolution": 360000,
+        "lattice_levels": 5
+      },
+      "callsPerCase": 2,
+      "cases": 4
+    }
+  },
+  "execution": {
+    "exitCode": 0,
+    "error": null,
+    "signal": null,
+    "timeoutMs": 120000,
+    "interpreterHash": "sha256:d55736b9f3d6b4ca7985b82db8ce11edfa09994cf93ce31c6b506543b74f32eb",
+    "pythonVersion": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "libraries": {
+      "pytest": "9.1.1"
+    },
+    "pytestExitCode": 0,
+    "stdoutBytes": 150,
+    "stderrBytes": 0
+  },
+  "tests": {
+    "collected": 15,
+    "collectionErrors": [],
+    "errors": 0,
+    "failed": 0,
+    "passed": 15,
+    "results": [
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_rotor_axle_shape_phase_wrap_and_exact_positive_resonance[2]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_rotor_axle_shape_phase_wrap_and_exact_positive_resonance[3]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_rotor_axle_shape_phase_wrap_and_exact_positive_resonance[4]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_rotor_axle_shape_phase_wrap_and_exact_positive_resonance[5]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_hilbert_curve_is_bijective_and_every_consecutive_cell_is_adjacent[1]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_hilbert_curve_is_bijective_and_every_consecutive_cell_is_adjacent[2]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_hilbert_curve_is_bijective_and_every_consecutive_cell_is_adjacent[3]",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_fixed_prototypes_have_exact_mass_and_explicit_provisional_policy",
+        "status": "PASSED"
+      },
+      {
+        "id": "tests/test_gtfl_rotor_lattice.py::test_ray_integer_dda_is_bounded_and_axis_ties_are_simultaneous",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_repeated_public_routes_and_hashes_are_identical_without_input_changes",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_candidate_domain_overflow_rejects_instead_of_silently_truncating",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_current_and_future_imports_reject_before_a_trusted_route_result",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_phase_shape_and_boolean_inputs_reject_with_bounded_valid_support",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_local_window_recall_and_every_admitted_ceiling_and_ray_are_bounded",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_returned_source_roots_are_detached_from_later_input_mutation",
+        "status": "PASSED"
+      }
+    ],
+    "skipped": 0
+  },
+  "originalTests": {
+    "total": 9,
+    "passed": 9
+  },
+  "additionalTests": {
+    "total": 6,
+    "passed": 6
+  },
+  "executionError": null,
+  "controls": {
+    "auditHook": "BEST_EFFORT",
+    "operatingSystemConfinement": "UNAVAILABLE",
+    "childEnvironment": "allowlisted noncredential variables with owned TEMP/TMP",
+    "pytestPluginAutoload": false,
+    "originalWrites": false,
+    "legacyProjectLaunch": false,
+    "training": false,
+    "modelWeights": false
+  },
+  "provenance": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "defaultModelBaseline": null,
+    "sourceCodeRedistributed": false
+  },
+  "traceFile": {
+    "path": "experiments/rotor/trace.json",
+    "hash": "sha256:b9c88b72114e85eefe3dad48f4a38bc6a38019cd97239ee0c0b1742dd1d2906c",
+    "bytes": 94739
+  }
+}

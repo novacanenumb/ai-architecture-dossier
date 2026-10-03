@@ -1,0 +1,3974 @@
+{
+  "billedCost": null,
+  "cameraIsolation": null,
+  "canonicalJsonByteScope": "case object before adding canonicalJsonBytes; sorted compact JSON with literal Unicode",
+  "cases": [
+    {
+      "canonicalJsonBytes": 3183,
+      "deliveredLocalCount": 2,
+      "failures": [],
+      "inputUnchanged": true,
+      "publicInput": {
+        "eta": [
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ]
+        ],
+        "phases": [
+          [
+            10000,
+            20000
+          ],
+          [
+            30000,
+            40000
+          ],
+          [
+            50000,
+            60000
+          ]
+        ],
+        "records": [
+          {
+            "lattice_cell": [
+              0,
+              0,
+              0
+            ],
+            "record_hash": "sha256:8d6733d7b604b7b6756cdd3d55f9f7c775f1e42fc99a367a9b03e6892c9953ad",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:8d6733d7b604b7b6756cdd3d55f9f7c775f1e42fc99a367a9b03e6892c9953ad"
+            ],
+            "token_time": 0
+          },
+          {
+            "lattice_cell": [
+              0,
+              1,
+              0
+            ],
+            "record_hash": "sha256:b61f1e842df03ea34739466094bcf01a74445a86a160b492e7cfb3247c1bf096",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:b61f1e842df03ea34739466094bcf01a74445a86a160b492e7cfb3247c1bf096"
+            ],
+            "token_time": 1
+          }
+        ],
+        "token_time": 2
+      },
+      "replayEqual": true,
+      "replayTraceHash": "sha256:f1e9b8960e91c2ed8406656aa8609aa3940bedb79331278a5deba9f135051c3c",
+      "requiredLocalCount": 2,
+      "result": {
+        "arrivals": [
+          {
+            "arrival_ceiling": 5592405,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 5592405,
+            "record_hash": "sha256:8d6733d7b604b7b6756cdd3d55f9f7c775f1e42fc99a367a9b03e6892c9953ad",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW",
+              "SAME_ANCESTOR"
+            ],
+            "source_roots": [
+              "sha256:8d6733d7b604b7b6756cdd3d55f9f7c775f1e42fc99a367a9b03e6892c9953ad"
+            ],
+            "token_time": 0,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 8388608,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 8388608,
+            "record_hash": "sha256:b61f1e842df03ea34739466094bcf01a74445a86a160b492e7cfb3247c1bf096",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW",
+              "SAME_ANCESTOR"
+            ],
+            "source_roots": [
+              "sha256:b61f1e842df03ea34739466094bcf01a74445a86a160b492e7cfb3247c1bf096"
+            ],
+            "token_time": 1,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          }
+        ],
+        "hierarchy_path": [
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "origin_cell": [
+          1,
+          1,
+          0
+        ],
+        "rays": [
+          {
+            "axle": 0,
+            "cells": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                1
+              ],
+              [
+                4,
+                1,
+                1
+              ],
+              [
+                5,
+                1,
+                1
+              ],
+              [
+                5,
+                2,
+                1
+              ],
+              [
+                6,
+                2,
+                1
+              ]
+            ]
+          },
+          {
+            "axle": 1,
+            "cells": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                1
+              ],
+              [
+                2,
+                2,
+                1
+              ],
+              [
+                3,
+                2,
+                1
+              ],
+              [
+                3,
+                2,
+                2
+              ],
+              [
+                4,
+                2,
+                2
+              ],
+              [
+                4,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "axle": 2,
+            "cells": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                2,
+                1
+              ],
+              [
+                2,
+                2,
+                1
+              ],
+              [
+                2,
+                2,
+                2
+              ],
+              [
+                2,
+                3,
+                2
+              ],
+              [
+                3,
+                3,
+                2
+              ],
+              [
+                3,
+                3,
+                3
+              ]
+            ]
+          }
+        ],
+        "soft_branches": [
+          [
+            1855544,
+            2551374,
+            2319431,
+            1855544,
+            1855544,
+            1932859,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2191618,
+            2493910,
+            1813753,
+            2267191,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            1855544,
+            2551374,
+            1932859,
+            2319431,
+            1855544,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2267191,
+            2191618,
+            1813753,
+            2493910,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            2319431,
+            1855544,
+            1855544,
+            2551374,
+            1855545,
+            1932859,
+            2551374
+          ]
+        ]
+      },
+      "routeCount": 2,
+      "tokenTime": 2,
+      "traceHash": "sha256:f1e9b8960e91c2ed8406656aa8609aa3940bedb79331278a5deba9f135051c3c"
+    },
+    {
+      "canonicalJsonBytes": 9549,
+      "deliveredLocalCount": 8,
+      "failures": [],
+      "inputUnchanged": true,
+      "publicInput": {
+        "eta": [
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ]
+        ],
+        "phases": [
+          [
+            10000,
+            20000
+          ],
+          [
+            30000,
+            40000
+          ],
+          [
+            50000,
+            60000
+          ]
+        ],
+        "records": [
+          {
+            "lattice_cell": [
+              0,
+              0,
+              0
+            ],
+            "record_hash": "sha256:8d6733d7b604b7b6756cdd3d55f9f7c775f1e42fc99a367a9b03e6892c9953ad",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:8d6733d7b604b7b6756cdd3d55f9f7c775f1e42fc99a367a9b03e6892c9953ad"
+            ],
+            "token_time": 0
+          },
+          {
+            "lattice_cell": [
+              0,
+              1,
+              0
+            ],
+            "record_hash": "sha256:b61f1e842df03ea34739466094bcf01a74445a86a160b492e7cfb3247c1bf096",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:b61f1e842df03ea34739466094bcf01a74445a86a160b492e7cfb3247c1bf096"
+            ],
+            "token_time": 1
+          },
+          {
+            "lattice_cell": [
+              1,
+              1,
+              0
+            ],
+            "record_hash": "sha256:b5ee7ea34fb16ec28f5e73678f0ee055459ca15b1c890a27b5fad1d6dcf7ca99",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:b5ee7ea34fb16ec28f5e73678f0ee055459ca15b1c890a27b5fad1d6dcf7ca99"
+            ],
+            "token_time": 2
+          },
+          {
+            "lattice_cell": [
+              1,
+              0,
+              0
+            ],
+            "record_hash": "sha256:0d336033c0d1e18b7599627c6d83972e6ee902666bd34ca2ac784880f100b287",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:0d336033c0d1e18b7599627c6d83972e6ee902666bd34ca2ac784880f100b287"
+            ],
+            "token_time": 3
+          },
+          {
+            "lattice_cell": [
+              1,
+              0,
+              1
+            ],
+            "record_hash": "sha256:ca838d7c11c66bd6360200f2a87207e35b380ab5542e92a7adc89eb68753cc5c",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:ca838d7c11c66bd6360200f2a87207e35b380ab5542e92a7adc89eb68753cc5c"
+            ],
+            "token_time": 4
+          },
+          {
+            "lattice_cell": [
+              1,
+              1,
+              1
+            ],
+            "record_hash": "sha256:33916001549421f4d3cda42320ee4147d61daf8b2c49a2f03183e2faaf338761",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:33916001549421f4d3cda42320ee4147d61daf8b2c49a2f03183e2faaf338761"
+            ],
+            "token_time": 5
+          },
+          {
+            "lattice_cell": [
+              0,
+              1,
+              1
+            ],
+            "record_hash": "sha256:b00a1ed0adc6d0ae4d26039e1936130c26b1dc0f980fcbe76bc9d96bbf5fa814",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:b00a1ed0adc6d0ae4d26039e1936130c26b1dc0f980fcbe76bc9d96bbf5fa814"
+            ],
+            "token_time": 6
+          },
+          {
+            "lattice_cell": [
+              0,
+              0,
+              1
+            ],
+            "record_hash": "sha256:4290d986212c2c45c10dcc3e002ef65f4353fe5f2c37b3b7e407aa73abb834b0",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:4290d986212c2c45c10dcc3e002ef65f4353fe5f2c37b3b7e407aa73abb834b0"
+            ],
+            "token_time": 7
+          },
+          {
+            "lattice_cell": [
+              0,
+              0,
+              2
+            ],
+            "record_hash": "sha256:e47998b7bec94e620e1cd290ed3732ea4ea9f95818556e70eca12f72e7b4bbe9",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:e47998b7bec94e620e1cd290ed3732ea4ea9f95818556e70eca12f72e7b4bbe9"
+            ],
+            "token_time": 8
+          },
+          {
+            "lattice_cell": [
+              0,
+              0,
+              3
+            ],
+            "record_hash": "sha256:5341ebcb397f686a5a42b3c19eca977efc856e6fafe138c2c54de547b4ce945e",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:5341ebcb397f686a5a42b3c19eca977efc856e6fafe138c2c54de547b4ce945e"
+            ],
+            "token_time": 9
+          }
+        ],
+        "token_time": 10
+      },
+      "replayEqual": true,
+      "replayTraceHash": "sha256:8d2dd9d65a7253e302cf99d439ec62403458401df50994b9f19f3b8d4e9f533f",
+      "requiredLocalCount": 8,
+      "result": {
+        "arrivals": [
+          {
+            "arrival_ceiling": 1864135,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 1864135,
+            "record_hash": "sha256:b5ee7ea34fb16ec28f5e73678f0ee055459ca15b1c890a27b5fad1d6dcf7ca99",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:b5ee7ea34fb16ec28f5e73678f0ee055459ca15b1c890a27b5fad1d6dcf7ca99"
+            ],
+            "token_time": 2,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2097152,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2097152,
+            "record_hash": "sha256:0d336033c0d1e18b7599627c6d83972e6ee902666bd34ca2ac784880f100b287",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:0d336033c0d1e18b7599627c6d83972e6ee902666bd34ca2ac784880f100b287"
+            ],
+            "token_time": 3,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2396745,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2396745,
+            "record_hash": "sha256:ca838d7c11c66bd6360200f2a87207e35b380ab5542e92a7adc89eb68753cc5c",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:ca838d7c11c66bd6360200f2a87207e35b380ab5542e92a7adc89eb68753cc5c"
+            ],
+            "token_time": 4,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2796203,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2796203,
+            "record_hash": "sha256:33916001549421f4d3cda42320ee4147d61daf8b2c49a2f03183e2faaf338761",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:33916001549421f4d3cda42320ee4147d61daf8b2c49a2f03183e2faaf338761"
+            ],
+            "token_time": 5,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 3355443,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 3355443,
+            "record_hash": "sha256:b00a1ed0adc6d0ae4d26039e1936130c26b1dc0f980fcbe76bc9d96bbf5fa814",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:b00a1ed0adc6d0ae4d26039e1936130c26b1dc0f980fcbe76bc9d96bbf5fa814"
+            ],
+            "token_time": 6,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 4194304,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 4194304,
+            "record_hash": "sha256:4290d986212c2c45c10dcc3e002ef65f4353fe5f2c37b3b7e407aa73abb834b0",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:4290d986212c2c45c10dcc3e002ef65f4353fe5f2c37b3b7e407aa73abb834b0"
+            ],
+            "token_time": 7,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 5592405,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 5592405,
+            "record_hash": "sha256:e47998b7bec94e620e1cd290ed3732ea4ea9f95818556e70eca12f72e7b4bbe9",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW",
+              "SAME_ANCESTOR"
+            ],
+            "source_roots": [
+              "sha256:e47998b7bec94e620e1cd290ed3732ea4ea9f95818556e70eca12f72e7b4bbe9"
+            ],
+            "token_time": 8,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 8388608,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 8388608,
+            "record_hash": "sha256:5341ebcb397f686a5a42b3c19eca977efc856e6fafe138c2c54de547b4ce945e",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW",
+              "SAME_ANCESTOR"
+            ],
+            "source_roots": [
+              "sha256:5341ebcb397f686a5a42b3c19eca977efc856e6fafe138c2c54de547b4ce945e"
+            ],
+            "token_time": 9,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          }
+        ],
+        "hierarchy_path": [
+          0,
+          0,
+          0,
+          1,
+          2
+        ],
+        "origin_cell": [
+          1,
+          0,
+          3
+        ],
+        "rays": [
+          {
+            "axle": 0,
+            "cells": [
+              [
+                1,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                3
+              ],
+              [
+                3,
+                0,
+                3
+              ],
+              [
+                3,
+                0,
+                4
+              ],
+              [
+                4,
+                0,
+                4
+              ],
+              [
+                5,
+                0,
+                4
+              ],
+              [
+                5,
+                1,
+                4
+              ],
+              [
+                6,
+                1,
+                4
+              ]
+            ]
+          },
+          {
+            "axle": 1,
+            "cells": [
+              [
+                1,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                3
+              ],
+              [
+                2,
+                0,
+                4
+              ],
+              [
+                2,
+                1,
+                4
+              ],
+              [
+                3,
+                1,
+                4
+              ],
+              [
+                3,
+                1,
+                5
+              ],
+              [
+                4,
+                1,
+                5
+              ],
+              [
+                4,
+                2,
+                5
+              ]
+            ]
+          },
+          {
+            "axle": 2,
+            "cells": [
+              [
+                1,
+                0,
+                3
+              ],
+              [
+                1,
+                0,
+                4
+              ],
+              [
+                1,
+                1,
+                4
+              ],
+              [
+                2,
+                1,
+                4
+              ],
+              [
+                2,
+                1,
+                5
+              ],
+              [
+                2,
+                2,
+                5
+              ],
+              [
+                3,
+                2,
+                5
+              ],
+              [
+                3,
+                2,
+                6
+              ]
+            ]
+          }
+        ],
+        "soft_branches": [
+          [
+            1855544,
+            2551374,
+            2319431,
+            1855544,
+            1855544,
+            1932859,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2191618,
+            2493910,
+            1813753,
+            2267191,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            1855544,
+            2551374,
+            1932859,
+            2319431,
+            1855544,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2267191,
+            2191618,
+            1813753,
+            2493910,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            2319431,
+            1855544,
+            1855544,
+            2551374,
+            1855545,
+            1932859,
+            2551374
+          ]
+        ]
+      },
+      "routeCount": 8,
+      "tokenTime": 10,
+      "traceHash": "sha256:8d2dd9d65a7253e302cf99d439ec62403458401df50994b9f19f3b8d4e9f533f"
+    },
+    {
+      "canonicalJsonBytes": 11225,
+      "deliveredLocalCount": 8,
+      "failures": [],
+      "inputUnchanged": true,
+      "publicInput": {
+        "eta": [
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ]
+        ],
+        "phases": [
+          [
+            10000,
+            20000
+          ],
+          [
+            30000,
+            40000
+          ],
+          [
+            50000,
+            60000
+          ]
+        ],
+        "records": [
+          {
+            "lattice_cell": [
+              0,
+              2,
+              3
+            ],
+            "record_hash": "sha256:4dece65b30e0ed6cd996773d5ddb5d353f7159083003d0dd04c3cd7e9782757c",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:4dece65b30e0ed6cd996773d5ddb5d353f7159083003d0dd04c3cd7e9782757c"
+            ],
+            "token_time": 17
+          },
+          {
+            "lattice_cell": [
+              0,
+              3,
+              3
+            ],
+            "record_hash": "sha256:a330d20edf2f61bcc80028b7232209bdfaf9663f3ff6c41bd44de432a123870d",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:a330d20edf2f61bcc80028b7232209bdfaf9663f3ff6c41bd44de432a123870d"
+            ],
+            "token_time": 18
+          },
+          {
+            "lattice_cell": [
+              0,
+              3,
+              2
+            ],
+            "record_hash": "sha256:fd3bee512fcf3dad3653aea7f98a85a38745956718824b6210bf506c9e45e0cb",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:fd3bee512fcf3dad3653aea7f98a85a38745956718824b6210bf506c9e45e0cb"
+            ],
+            "token_time": 19
+          },
+          {
+            "lattice_cell": [
+              1,
+              3,
+              2
+            ],
+            "record_hash": "sha256:4eb31f0e0a0288322bb3663488c7478436091a367f99629b1edb72b06da3571d",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:4eb31f0e0a0288322bb3663488c7478436091a367f99629b1edb72b06da3571d"
+            ],
+            "token_time": 20
+          },
+          {
+            "lattice_cell": [
+              1,
+              3,
+              3
+            ],
+            "record_hash": "sha256:4e0a33ddc334e1efbe67bebecd9917d633045735d1125b7e48985845a0fde837",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:4e0a33ddc334e1efbe67bebecd9917d633045735d1125b7e48985845a0fde837"
+            ],
+            "token_time": 21
+          },
+          {
+            "lattice_cell": [
+              1,
+              2,
+              3
+            ],
+            "record_hash": "sha256:2e9257da4b77d908101fbfb63e125f1f815b0a949790ba0399eda02a72109b84",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:2e9257da4b77d908101fbfb63e125f1f815b0a949790ba0399eda02a72109b84"
+            ],
+            "token_time": 22
+          },
+          {
+            "lattice_cell": [
+              1,
+              2,
+              2
+            ],
+            "record_hash": "sha256:bbd38ad0f105ceaddc27fba079581d719f0af730a8f171c258525e4908da72cd",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:bbd38ad0f105ceaddc27fba079581d719f0af730a8f171c258525e4908da72cd"
+            ],
+            "token_time": 23
+          },
+          {
+            "lattice_cell": [
+              1,
+              2,
+              1
+            ],
+            "record_hash": "sha256:fcc986b80083fa3aee33aff82e6d689dea4ae82782029474e6d412206ad3f3e5",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:fcc986b80083fa3aee33aff82e6d689dea4ae82782029474e6d412206ad3f3e5"
+            ],
+            "token_time": 24
+          },
+          {
+            "lattice_cell": [
+              0,
+              2,
+              1
+            ],
+            "record_hash": "sha256:42a8be64dd48f5f3f0bc68b0a408765faafd4e7d27ce87c6e97d6bdca54306a3",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:42a8be64dd48f5f3f0bc68b0a408765faafd4e7d27ce87c6e97d6bdca54306a3"
+            ],
+            "token_time": 25
+          },
+          {
+            "lattice_cell": [
+              0,
+              3,
+              1
+            ],
+            "record_hash": "sha256:eb94067bcbeb0101082bf0f0dbebdc111e10f8d0a5c6951111a30a1e0608f177",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:eb94067bcbeb0101082bf0f0dbebdc111e10f8d0a5c6951111a30a1e0608f177"
+            ],
+            "token_time": 26
+          },
+          {
+            "lattice_cell": [
+              1,
+              3,
+              1
+            ],
+            "record_hash": "sha256:bdb750bdec322d41ba7e91fb563d860c1c8e266bbbffdc4e8c1f2aa36aa28f6c",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:bdb750bdec322d41ba7e91fb563d860c1c8e266bbbffdc4e8c1f2aa36aa28f6c"
+            ],
+            "token_time": 27
+          },
+          {
+            "lattice_cell": [
+              1,
+              3,
+              0
+            ],
+            "record_hash": "sha256:25c1cef1208b0ca75645335ab3eb2d7d922a13836570d379f87d2ae534926ac5",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:25c1cef1208b0ca75645335ab3eb2d7d922a13836570d379f87d2ae534926ac5"
+            ],
+            "token_time": 28
+          },
+          {
+            "lattice_cell": [
+              0,
+              3,
+              0
+            ],
+            "record_hash": "sha256:155f9486be46e45e58b98fe8e3e7fd400ea3468abe4d06107669645095e77466",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:155f9486be46e45e58b98fe8e3e7fd400ea3468abe4d06107669645095e77466"
+            ],
+            "token_time": 29
+          },
+          {
+            "lattice_cell": [
+              0,
+              2,
+              0
+            ],
+            "record_hash": "sha256:61780186d4be1184a6d2e6ee4d0af11afe73e39ed926730d44251ebe13316651",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:61780186d4be1184a6d2e6ee4d0af11afe73e39ed926730d44251ebe13316651"
+            ],
+            "token_time": 30
+          },
+          {
+            "lattice_cell": [
+              1,
+              2,
+              0
+            ],
+            "record_hash": "sha256:0a7f39f22c0d05dfe0346ace1785789b01853a31c636207de35a57217a9a041b",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:0a7f39f22c0d05dfe0346ace1785789b01853a31c636207de35a57217a9a041b"
+            ],
+            "token_time": 31
+          },
+          {
+            "lattice_cell": [
+              2,
+              2,
+              0
+            ],
+            "record_hash": "sha256:08a43b1b12afef5d76ad2d0f82dbe42d18b8893acf0106a66089fe30439db710",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:08a43b1b12afef5d76ad2d0f82dbe42d18b8893acf0106a66089fe30439db710"
+            ],
+            "token_time": 32
+          }
+        ],
+        "token_time": 33
+      },
+      "replayEqual": true,
+      "replayTraceHash": "sha256:710d1f294093091572e65038e9711bb9eb464ece7a52391fa4012dfd5c600374",
+      "requiredLocalCount": 8,
+      "result": {
+        "arrivals": [
+          {
+            "arrival_ceiling": 1864135,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 1864135,
+            "record_hash": "sha256:42a8be64dd48f5f3f0bc68b0a408765faafd4e7d27ce87c6e97d6bdca54306a3",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:42a8be64dd48f5f3f0bc68b0a408765faafd4e7d27ce87c6e97d6bdca54306a3"
+            ],
+            "token_time": 25,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2097152,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2097152,
+            "record_hash": "sha256:eb94067bcbeb0101082bf0f0dbebdc111e10f8d0a5c6951111a30a1e0608f177",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:eb94067bcbeb0101082bf0f0dbebdc111e10f8d0a5c6951111a30a1e0608f177"
+            ],
+            "token_time": 26,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2396745,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2396745,
+            "record_hash": "sha256:bdb750bdec322d41ba7e91fb563d860c1c8e266bbbffdc4e8c1f2aa36aa28f6c",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:bdb750bdec322d41ba7e91fb563d860c1c8e266bbbffdc4e8c1f2aa36aa28f6c"
+            ],
+            "token_time": 27,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2796203,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2796203,
+            "record_hash": "sha256:25c1cef1208b0ca75645335ab3eb2d7d922a13836570d379f87d2ae534926ac5",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:25c1cef1208b0ca75645335ab3eb2d7d922a13836570d379f87d2ae534926ac5"
+            ],
+            "token_time": 28,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 3355443,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 3355443,
+            "record_hash": "sha256:155f9486be46e45e58b98fe8e3e7fd400ea3468abe4d06107669645095e77466",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:155f9486be46e45e58b98fe8e3e7fd400ea3468abe4d06107669645095e77466"
+            ],
+            "token_time": 29,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 4194304,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 4194304,
+            "record_hash": "sha256:61780186d4be1184a6d2e6ee4d0af11afe73e39ed926730d44251ebe13316651",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:61780186d4be1184a6d2e6ee4d0af11afe73e39ed926730d44251ebe13316651"
+            ],
+            "token_time": 30,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 5592405,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 5592405,
+            "record_hash": "sha256:0a7f39f22c0d05dfe0346ace1785789b01853a31c636207de35a57217a9a041b",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:0a7f39f22c0d05dfe0346ace1785789b01853a31c636207de35a57217a9a041b"
+            ],
+            "token_time": 31,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 8388608,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 8388608,
+            "record_hash": "sha256:08a43b1b12afef5d76ad2d0f82dbe42d18b8893acf0106a66089fe30439db710",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW",
+              "SAME_ANCESTOR"
+            ],
+            "source_roots": [
+              "sha256:08a43b1b12afef5d76ad2d0f82dbe42d18b8893acf0106a66089fe30439db710"
+            ],
+            "token_time": 32,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          }
+        ],
+        "hierarchy_path": [
+          0,
+          0,
+          0,
+          4,
+          1
+        ],
+        "origin_cell": [
+          3,
+          2,
+          0
+        ],
+        "rays": [
+          {
+            "axle": 0,
+            "cells": [
+              [
+                3,
+                2,
+                0
+              ],
+              [
+                4,
+                2,
+                0
+              ],
+              [
+                5,
+                2,
+                0
+              ],
+              [
+                5,
+                2,
+                1
+              ],
+              [
+                6,
+                2,
+                1
+              ],
+              [
+                7,
+                2,
+                1
+              ],
+              [
+                7,
+                3,
+                1
+              ],
+              [
+                8,
+                3,
+                1
+              ]
+            ]
+          },
+          {
+            "axle": 1,
+            "cells": [
+              [
+                3,
+                2,
+                0
+              ],
+              [
+                4,
+                2,
+                0
+              ],
+              [
+                4,
+                2,
+                1
+              ],
+              [
+                4,
+                3,
+                1
+              ],
+              [
+                5,
+                3,
+                1
+              ],
+              [
+                5,
+                3,
+                2
+              ],
+              [
+                6,
+                3,
+                2
+              ],
+              [
+                6,
+                4,
+                2
+              ]
+            ]
+          },
+          {
+            "axle": 2,
+            "cells": [
+              [
+                3,
+                2,
+                0
+              ],
+              [
+                3,
+                2,
+                1
+              ],
+              [
+                3,
+                3,
+                1
+              ],
+              [
+                4,
+                3,
+                1
+              ],
+              [
+                4,
+                3,
+                2
+              ],
+              [
+                4,
+                4,
+                2
+              ],
+              [
+                5,
+                4,
+                2
+              ],
+              [
+                5,
+                4,
+                3
+              ]
+            ]
+          }
+        ],
+        "soft_branches": [
+          [
+            1855544,
+            2551374,
+            2319431,
+            1855544,
+            1855544,
+            1932859,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2191618,
+            2493910,
+            1813753,
+            2267191,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            1855544,
+            2551374,
+            1932859,
+            2319431,
+            1855544,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2267191,
+            2191618,
+            1813753,
+            2493910,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            2319431,
+            1855544,
+            1855544,
+            2551374,
+            1855545,
+            1932859,
+            2551374
+          ]
+        ]
+      },
+      "routeCount": 8,
+      "tokenTime": 33,
+      "traceHash": "sha256:710d1f294093091572e65038e9711bb9eb464ece7a52391fa4012dfd5c600374"
+    },
+    {
+      "canonicalJsonBytes": 11225,
+      "deliveredLocalCount": 8,
+      "failures": [],
+      "inputUnchanged": true,
+      "publicInput": {
+        "eta": [
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ],
+          [
+            16777215,
+            16777215,
+            16777215,
+            16777215
+          ]
+        ],
+        "phases": [
+          [
+            10000,
+            20000
+          ],
+          [
+            30000,
+            40000
+          ],
+          [
+            50000,
+            60000
+          ]
+        ],
+        "records": [
+          {
+            "lattice_cell": [
+              3,
+              1,
+              3
+            ],
+            "record_hash": "sha256:c49bbadf4aaf14d74efc836147a55029c3e030610b6621e09246f0c4649b0b1c",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:c49bbadf4aaf14d74efc836147a55029c3e030610b6621e09246f0c4649b0b1c"
+            ],
+            "token_time": 49
+          },
+          {
+            "lattice_cell": [
+              2,
+              1,
+              3
+            ],
+            "record_hash": "sha256:b6acd73b0dfa7be982aef1c5907a011c60553fc8ea5062f5dbc6381a74b355ba",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:b6acd73b0dfa7be982aef1c5907a011c60553fc8ea5062f5dbc6381a74b355ba"
+            ],
+            "token_time": 50
+          },
+          {
+            "lattice_cell": [
+              2,
+              1,
+              2
+            ],
+            "record_hash": "sha256:904fc726e8dfa84ff1bfe11dee6cced23caf495de39038de77a306522904bb51",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:904fc726e8dfa84ff1bfe11dee6cced23caf495de39038de77a306522904bb51"
+            ],
+            "token_time": 51
+          },
+          {
+            "lattice_cell": [
+              2,
+              0,
+              2
+            ],
+            "record_hash": "sha256:80d6559fe495db7e90d28e20a3819f063babfb9c4ae42a303b8021c3fe032441",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:80d6559fe495db7e90d28e20a3819f063babfb9c4ae42a303b8021c3fe032441"
+            ],
+            "token_time": 52
+          },
+          {
+            "lattice_cell": [
+              2,
+              0,
+              3
+            ],
+            "record_hash": "sha256:6ddcc734c2291356e0246d793a109ad0b1e07adc40e5c0303110995e0a8edc67",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:6ddcc734c2291356e0246d793a109ad0b1e07adc40e5c0303110995e0a8edc67"
+            ],
+            "token_time": 53
+          },
+          {
+            "lattice_cell": [
+              3,
+              0,
+              3
+            ],
+            "record_hash": "sha256:929210aaa3b80998a2a03e22ebded7d0d2a19cc78f9fe061ff5603c9f5514e08",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:929210aaa3b80998a2a03e22ebded7d0d2a19cc78f9fe061ff5603c9f5514e08"
+            ],
+            "token_time": 54
+          },
+          {
+            "lattice_cell": [
+              3,
+              0,
+              2
+            ],
+            "record_hash": "sha256:3fc3ee4544dbf31b82d2bb9e451c7261b8a16aeff46f5e9e7c6f81847f9b0eb6",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:3fc3ee4544dbf31b82d2bb9e451c7261b8a16aeff46f5e9e7c6f81847f9b0eb6"
+            ],
+            "token_time": 55
+          },
+          {
+            "lattice_cell": [
+              3,
+              0,
+              1
+            ],
+            "record_hash": "sha256:db95b8d02330079bcfffe4214f81b0a398ca27bf32ae13c1c129e57fb1f2dabd",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:db95b8d02330079bcfffe4214f81b0a398ca27bf32ae13c1c129e57fb1f2dabd"
+            ],
+            "token_time": 56
+          },
+          {
+            "lattice_cell": [
+              3,
+              1,
+              1
+            ],
+            "record_hash": "sha256:d3efa5707ecff77fc026af40aaf3c5f6f2de7d923819f5969f322aa457f04e3e",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:d3efa5707ecff77fc026af40aaf3c5f6f2de7d923819f5969f322aa457f04e3e"
+            ],
+            "token_time": 57
+          },
+          {
+            "lattice_cell": [
+              2,
+              1,
+              1
+            ],
+            "record_hash": "sha256:0b1640e72429f15c00fa98ad33c540f99e460bd7f0c6cf9981fa157781ad6095",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:0b1640e72429f15c00fa98ad33c540f99e460bd7f0c6cf9981fa157781ad6095"
+            ],
+            "token_time": 58
+          },
+          {
+            "lattice_cell": [
+              2,
+              0,
+              1
+            ],
+            "record_hash": "sha256:accfcc6dd2cd1458a5d53dd325dd8e9d04524dcf3f8077dbc251e74d6a492ee4",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:accfcc6dd2cd1458a5d53dd325dd8e9d04524dcf3f8077dbc251e74d6a492ee4"
+            ],
+            "token_time": 59
+          },
+          {
+            "lattice_cell": [
+              2,
+              0,
+              0
+            ],
+            "record_hash": "sha256:82f341eeda2d65a230b08f451349621f30b762a60efec200f447a91310a88df9",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:82f341eeda2d65a230b08f451349621f30b762a60efec200f447a91310a88df9"
+            ],
+            "token_time": 60
+          },
+          {
+            "lattice_cell": [
+              2,
+              1,
+              0
+            ],
+            "record_hash": "sha256:e467cf039a9441d86537b17ff5e7c8be5243fef7e82ed8fb692e4a2cfb716d04",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:e467cf039a9441d86537b17ff5e7c8be5243fef7e82ed8fb692e4a2cfb716d04"
+            ],
+            "token_time": 61
+          },
+          {
+            "lattice_cell": [
+              3,
+              1,
+              0
+            ],
+            "record_hash": "sha256:15f6c0726cf1cdf504ae162fadcdcfd22761ad67424f0027cf1c14948a5606e6",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:15f6c0726cf1cdf504ae162fadcdcfd22761ad67424f0027cf1c14948a5606e6"
+            ],
+            "token_time": 62
+          },
+          {
+            "lattice_cell": [
+              3,
+              0,
+              0
+            ],
+            "record_hash": "sha256:cbf556b883d0039c8d180b52b03a5f8075014dbfbc7297ec399ba203b5208e15",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:cbf556b883d0039c8d180b52b03a5f8075014dbfbc7297ec399ba203b5208e15"
+            ],
+            "token_time": 63
+          },
+          {
+            "lattice_cell": [
+              4,
+              0,
+              0
+            ],
+            "record_hash": "sha256:d43a6cbaa32e381f573de62513fdfeb5bc200459b82fcbd179c569b3d560bd0b",
+            "rotor_phases": [
+              [
+                10000,
+                20000
+              ],
+              [
+                30000,
+                40000
+              ],
+              [
+                50000,
+                60000
+              ]
+            ],
+            "source_roots": [
+              "sha256:d43a6cbaa32e381f573de62513fdfeb5bc200459b82fcbd179c569b3d560bd0b"
+            ],
+            "token_time": 64
+          }
+        ],
+        "token_time": 65
+      },
+      "replayEqual": true,
+      "replayTraceHash": "sha256:bba3b0e655b4bd03eeb2db47d60d70dea9b4474d4f66333f6d4f4a4d32d1fb61",
+      "requiredLocalCount": 8,
+      "result": {
+        "arrivals": [
+          {
+            "arrival_ceiling": 1864135,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 1864135,
+            "record_hash": "sha256:d3efa5707ecff77fc026af40aaf3c5f6f2de7d923819f5969f322aa457f04e3e",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:d3efa5707ecff77fc026af40aaf3c5f6f2de7d923819f5969f322aa457f04e3e"
+            ],
+            "token_time": 57,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2097152,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2097152,
+            "record_hash": "sha256:0b1640e72429f15c00fa98ad33c540f99e460bd7f0c6cf9981fa157781ad6095",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:0b1640e72429f15c00fa98ad33c540f99e460bd7f0c6cf9981fa157781ad6095"
+            ],
+            "token_time": 58,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2396745,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2396745,
+            "record_hash": "sha256:accfcc6dd2cd1458a5d53dd325dd8e9d04524dcf3f8077dbc251e74d6a492ee4",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:accfcc6dd2cd1458a5d53dd325dd8e9d04524dcf3f8077dbc251e74d6a492ee4"
+            ],
+            "token_time": 59,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 2796203,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 2796203,
+            "record_hash": "sha256:82f341eeda2d65a230b08f451349621f30b762a60efec200f447a91310a88df9",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:82f341eeda2d65a230b08f451349621f30b762a60efec200f447a91310a88df9"
+            ],
+            "token_time": 60,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 3355443,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 3355443,
+            "record_hash": "sha256:e467cf039a9441d86537b17ff5e7c8be5243fef7e82ed8fb692e4a2cfb716d04",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:e467cf039a9441d86537b17ff5e7c8be5243fef7e82ed8fb692e4a2cfb716d04"
+            ],
+            "token_time": 61,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 4194304,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 4194304,
+            "record_hash": "sha256:15f6c0726cf1cdf504ae162fadcdcfd22761ad67424f0027cf1c14948a5606e6",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:15f6c0726cf1cdf504ae162fadcdcfd22761ad67424f0027cf1c14948a5606e6"
+            ],
+            "token_time": 62,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 5592405,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 5592405,
+            "record_hash": "sha256:cbf556b883d0039c8d180b52b03a5f8075014dbfbc7297ec399ba203b5208e15",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW"
+            ],
+            "source_roots": [
+              "sha256:cbf556b883d0039c8d180b52b03a5f8075014dbfbc7297ec399ba203b5208e15"
+            ],
+            "token_time": 63,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          },
+          {
+            "arrival_ceiling": 8388608,
+            "capacity_support": 16777215,
+            "reach_support": 16777215,
+            "recency_support": 8388608,
+            "record_hash": "sha256:d43a6cbaa32e381f573de62513fdfeb5bc200459b82fcbd179c569b3d560bd0b",
+            "resonance": 16777215,
+            "route_classes": [
+              "LOCAL_WINDOW",
+              "SAME_ANCESTOR"
+            ],
+            "source_roots": [
+              "sha256:d43a6cbaa32e381f573de62513fdfeb5bc200459b82fcbd179c569b3d560bd0b"
+            ],
+            "token_time": 64,
+            "trust_support": 16777215,
+            "winning_harmonics": [
+              {
+                "axle": 0,
+                "harmonic": 1
+              },
+              {
+                "axle": 0,
+                "harmonic": 2
+              },
+              {
+                "axle": 0,
+                "harmonic": 4
+              },
+              {
+                "axle": 0,
+                "harmonic": 8
+              },
+              {
+                "axle": 1,
+                "harmonic": 1
+              },
+              {
+                "axle": 1,
+                "harmonic": 2
+              },
+              {
+                "axle": 1,
+                "harmonic": 4
+              },
+              {
+                "axle": 1,
+                "harmonic": 8
+              },
+              {
+                "axle": 2,
+                "harmonic": 1
+              },
+              {
+                "axle": 2,
+                "harmonic": 2
+              },
+              {
+                "axle": 2,
+                "harmonic": 4
+              },
+              {
+                "axle": 2,
+                "harmonic": 8
+              }
+            ]
+          }
+        ],
+        "hierarchy_path": [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "origin_cell": [
+          4,
+          1,
+          0
+        ],
+        "rays": [
+          {
+            "axle": 0,
+            "cells": [
+              [
+                4,
+                1,
+                0
+              ],
+              [
+                5,
+                1,
+                0
+              ],
+              [
+                6,
+                1,
+                0
+              ],
+              [
+                6,
+                1,
+                1
+              ],
+              [
+                7,
+                1,
+                1
+              ],
+              [
+                8,
+                1,
+                1
+              ],
+              [
+                8,
+                2,
+                1
+              ],
+              [
+                9,
+                2,
+                1
+              ]
+            ]
+          },
+          {
+            "axle": 1,
+            "cells": [
+              [
+                4,
+                1,
+                0
+              ],
+              [
+                5,
+                1,
+                0
+              ],
+              [
+                5,
+                1,
+                1
+              ],
+              [
+                5,
+                2,
+                1
+              ],
+              [
+                6,
+                2,
+                1
+              ],
+              [
+                6,
+                2,
+                2
+              ],
+              [
+                7,
+                2,
+                2
+              ],
+              [
+                7,
+                3,
+                2
+              ]
+            ]
+          },
+          {
+            "axle": 2,
+            "cells": [
+              [
+                4,
+                1,
+                0
+              ],
+              [
+                4,
+                1,
+                1
+              ],
+              [
+                4,
+                2,
+                1
+              ],
+              [
+                5,
+                2,
+                1
+              ],
+              [
+                5,
+                2,
+                2
+              ],
+              [
+                5,
+                3,
+                2
+              ],
+              [
+                6,
+                3,
+                2
+              ],
+              [
+                6,
+                3,
+                3
+              ]
+            ]
+          }
+        ],
+        "soft_branches": [
+          [
+            1855544,
+            2551374,
+            2319431,
+            1855544,
+            1855544,
+            1932859,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2191618,
+            2493910,
+            1813753,
+            2267191,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            1855544,
+            2551374,
+            1932859,
+            2319431,
+            1855544,
+            1855545,
+            2551374
+          ],
+          [
+            1889326,
+            2267191,
+            2191618,
+            1813753,
+            2493910,
+            1813753,
+            1813753,
+            2493911
+          ],
+          [
+            1855544,
+            2319431,
+            1855544,
+            1855544,
+            2551374,
+            1855545,
+            1932859,
+            2551374
+          ]
+        ]
+      },
+      "routeCount": 8,
+      "tokenTime": 65,
+      "traceHash": "sha256:bba3b0e655b4bd03eeb2db47d60d70dea9b4474d4f66333f6d4f4a4d32d1fb61"
+    }
+  ],
+  "classification": "ORIGINAL_PURE_MATH_PUBLIC_SYNTHETIC_TRACE",
+  "crossSequenceIsolation": null,
+  "defaultModelBaseline": null,
+  "denominator": {
+    "cases": 4,
+    "excludedCases": 0,
+    "failedRouteCalls": 0,
+    "recordedRouteCalls": 8,
+    "requestedRouteCalls": 8
+  },
+  "hostedLatencyMs": null,
+  "hostedTokens": null,
+  "modelQuality": null,
+  "protocol": {
+    "callsPerCase": 2,
+    "cases": 4,
+    "config": {
+      "axles": 3,
+      "harmonics": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "lattice_levels": 5,
+      "maximum_imports": 16,
+      "maximum_ray_cells": 8,
+      "phase_resolution": 360000,
+      "preset": "tiny"
+    },
+    "eta": [
+      [
+        16777215,
+        16777215,
+        16777215,
+        16777215
+      ],
+      [
+        16777215,
+        16777215,
+        16777215,
+        16777215
+      ],
+      [
+        16777215,
+        16777215,
+        16777215,
+        16777215
+      ]
+    ],
+    "id": "public-dossier-rotor/1",
+    "phases": [
+      [
+        10000,
+        20000
+      ],
+      [
+        30000,
+        40000
+      ],
+      [
+        50000,
+        60000
+      ]
+    ],
+    "schemaVersion": 1,
+    "source": "public_synthetic_fixture",
+    "times": [
+      2,
+      10,
+      33,
+      65
+    ]
+  },
+  "providerCalls": 0,
+  "schemaVersion": 1,
+  "trainingOrCheckpointBehavior": null
+}

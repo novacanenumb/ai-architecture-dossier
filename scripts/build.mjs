@@ -13,6 +13,10 @@ await writeFile(path.join(root, 'dist/data/runtime-evidence.json'), JSON.stringi
 // Preserve frozen observed wall times; a deterministic static build never reruns timing experiments.
 await copyFile(path.join(root, 'experiments/runtime/scheduler-results.json'), path.join(root, 'dist/data/scheduler-results.json'));
 await copyFile(path.join(root, 'experiments/routing/test-receipt.json'), path.join(root, 'dist/data/routing-evidence.json'));
+const rotorReceipt=JSON.parse(await readFile(path.join(root,'experiments/rotor/test-receipt.json'),'utf8'));
+const rotorCoverage=JSON.parse(await readFile(path.join(root,'experiments/rotor/coverage.json'),'utf8'));
+await writeFile(path.join(root,'dist/data/rotor-evidence.json'),JSON.stringify({...rotorReceipt,coverage:rotorCoverage},null,2)+'\n');
+await copyFile(path.join(root,'experiments/rotor/trace.json'),path.join(root,'dist/data/rotor-trace.json'));
 // Original source stays outside publication; these are frozen derived synthetic evidence.
 await copyFile(path.join(root, 'experiments/headspace/test-receipt.json'), path.join(root, 'dist/data/headspace-evidence.json'));
 await copyFile(path.join(root, 'experiments/headspace/public-trace.json'), path.join(root, 'dist/data/headspace-trace.json'));
