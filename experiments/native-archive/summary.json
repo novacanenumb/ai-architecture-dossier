@@ -1,0 +1,559 @@
+{
+  "arms": [
+    {
+      "durationMs": 18.1865,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 0,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:a75cd57545de1f772478d9a98f8b7b3d8f6edd04c7ad671ca9ee0762c82eaaf0",
+        "crscRecord": "sha256:dd841a60f929f2264b901d975c9d6364e7b93bb2f8401c8905682a373d272fad",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:3bf901129494ab561b2edc93217d9edde3a602f1f6dcadebfd5e30361375d04e",
+        "frameCount": 3,
+        "frames": "sha256:2d52df65a95906a1653e85bcf0202e523a48f97a3aeed73cfbbae02e2e31610b"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 263.5135,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 0,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:a75cd57545de1f772478d9a98f8b7b3d8f6edd04c7ad671ca9ee0762c82eaaf0",
+        "crscRecord": "sha256:dd841a60f929f2264b901d975c9d6364e7b93bb2f8401c8905682a373d272fad",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:3bf901129494ab561b2edc93217d9edde3a602f1f6dcadebfd5e30361375d04e",
+        "frameCount": 3,
+        "frames": "sha256:2d52df65a95906a1653e85bcf0202e523a48f97a3aeed73cfbbae02e2e31610b"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 262.8819,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 1,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:6caf1385255ee68589d06f0f50309ca57d065126de80a0219dba1a3916898739",
+        "crscRecord": "sha256:a3717d762d48d6d34de754badf7a9228763e278feeeba0307c7324c892397a0a",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:cab46487b9945d927f0b89952e60c2a134944b73e593f7dbcf725fce7ef87672",
+        "frameCount": 3,
+        "frames": "sha256:9ff8c994000e84d8c9b8fba2b3dafd1d5ea5c2064fe6410ec6dcba4d91c43a0c"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 17.2212,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 1,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:6caf1385255ee68589d06f0f50309ca57d065126de80a0219dba1a3916898739",
+        "crscRecord": "sha256:a3717d762d48d6d34de754badf7a9228763e278feeeba0307c7324c892397a0a",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:cab46487b9945d927f0b89952e60c2a134944b73e593f7dbcf725fce7ef87672",
+        "frameCount": 3,
+        "frames": "sha256:9ff8c994000e84d8c9b8fba2b3dafd1d5ea5c2064fe6410ec6dcba4d91c43a0c"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 17.892,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 2,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:918902f5aef4d59b3854626b467cd95d71ad412a61153034e2bcb70cece26db8",
+        "crscRecord": "sha256:d8ef36052d4dae73685ef3a2c39d0676343e2d932e6f26d2da57c0bc46ce3874",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:3d06f96f52de4a79c75efeee9136f06887fe8f046f5c418a43551f1799155c96",
+        "frameCount": 3,
+        "frames": "sha256:84b922329dcb551d3b8b154e554a7bc8c1857207f96363daf6b39adb657d3d53"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 269.8122,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 2,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:918902f5aef4d59b3854626b467cd95d71ad412a61153034e2bcb70cece26db8",
+        "crscRecord": "sha256:d8ef36052d4dae73685ef3a2c39d0676343e2d932e6f26d2da57c0bc46ce3874",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:3d06f96f52de4a79c75efeee9136f06887fe8f046f5c418a43551f1799155c96",
+        "frameCount": 3,
+        "frames": "sha256:84b922329dcb551d3b8b154e554a7bc8c1857207f96363daf6b39adb657d3d53"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 270.9995,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 3,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:e62a903c34f7355055815d6f357db128df1d5f3aa02ef2c771f78edcd26c8318",
+        "crscRecord": "sha256:c4009ac9c858a9a97c6c83aedc0a553ad19842e947056fb2a1ea473f19ebc6e3",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:6e6767d4e0384639f87fc7d9c9eb8005e6499aa18800379bd8ba6276eb6548a3",
+        "frameCount": 3,
+        "frames": "sha256:09809b4e5e5902756bc4a4fe22d436129eb6043e768768ba450ad6926eddb880"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 17.9936,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 3,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:e62a903c34f7355055815d6f357db128df1d5f3aa02ef2c771f78edcd26c8318",
+        "crscRecord": "sha256:c4009ac9c858a9a97c6c83aedc0a553ad19842e947056fb2a1ea473f19ebc6e3",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:6e6767d4e0384639f87fc7d9c9eb8005e6499aa18800379bd8ba6276eb6548a3",
+        "frameCount": 3,
+        "frames": "sha256:09809b4e5e5902756bc4a4fe22d436129eb6043e768768ba450ad6926eddb880"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 17.3211,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 4,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:318d24aca62fce91109ac5fac085bf7f44ab7721093e708ceb109aa22e2382ee",
+        "crscRecord": "sha256:eacedc3775fb999cc3319a7b8e275375090c23ce3fdb8908a856590b4e9f6d17",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:dc49668ee718703536513ab85ea36477f34721326a2746957c38852053aa2b43",
+        "frameCount": 3,
+        "frames": "sha256:6d8ef41419eeae8293ed90d77ea0abc2721719cdfc219d0603d00cf62b95863b"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 259.9717,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 4,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:318d24aca62fce91109ac5fac085bf7f44ab7721093e708ceb109aa22e2382ee",
+        "crscRecord": "sha256:eacedc3775fb999cc3319a7b8e275375090c23ce3fdb8908a856590b4e9f6d17",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:dc49668ee718703536513ab85ea36477f34721326a2746957c38852053aa2b43",
+        "frameCount": 3,
+        "frames": "sha256:6d8ef41419eeae8293ed90d77ea0abc2721719cdfc219d0603d00cf62b95863b"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 257.9707,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 5,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:a313ade6341268e6ae6648225deb4dca88c1fd18769794b1bc5c236727fa04d7",
+        "crscRecord": "sha256:39539e5d7f53c993a1f84e64b97cbc5ab88bd5e6f4ca86130260da716d151724",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:97f41a683b4a8f31d66cc96cb8f33ab4e9a9fe3c9c69814ee8b755eca6647ed4",
+        "frameCount": 3,
+        "frames": "sha256:c96ef30c412f8abbcbdf87e41b96b08bc97284cc3c54475ae9944addee964649"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 18.475,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 5,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:a313ade6341268e6ae6648225deb4dca88c1fd18769794b1bc5c236727fa04d7",
+        "crscRecord": "sha256:39539e5d7f53c993a1f84e64b97cbc5ab88bd5e6f4ca86130260da716d151724",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:97f41a683b4a8f31d66cc96cb8f33ab4e9a9fe3c9c69814ee8b755eca6647ed4",
+        "frameCount": 3,
+        "frames": "sha256:c96ef30c412f8abbcbdf87e41b96b08bc97284cc3c54475ae9944addee964649"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 17.4559,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 6,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:4e5a5175f4695b793c9b3fe3dfc8c6bf510e79132d8cfb876bc7da745ee56b8c",
+        "crscRecord": "sha256:1121f819d595fc81f1dfec7c2380dc7cb8f3ebe0316a82d3ab34fa5c24c66c52",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:6bcef75c7cbb706aa0d7efdf3027d8e089f1601a795c97c4a70b4d9c74407366",
+        "frameCount": 3,
+        "frames": "sha256:608f4a2db1b4ee47b896bc3bcc1b61f7b1ca8c5f6828c27b66a4574f86d45892"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 258.5659,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 6,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:4e5a5175f4695b793c9b3fe3dfc8c6bf510e79132d8cfb876bc7da745ee56b8c",
+        "crscRecord": "sha256:1121f819d595fc81f1dfec7c2380dc7cb8f3ebe0316a82d3ab34fa5c24c66c52",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:6bcef75c7cbb706aa0d7efdf3027d8e089f1601a795c97c4a70b4d9c74407366",
+        "frameCount": 3,
+        "frames": "sha256:608f4a2db1b4ee47b896bc3bcc1b61f7b1ca8c5f6828c27b66a4574f86d45892"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 286.8669,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": 7,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110046,
+      "sharedHashes": {
+        "collapseRecord": "sha256:1a1504ed5a40fd4692d7a0b5143b7e16b561c1e780cf87e244c5d65a8244b973",
+        "crscRecord": "sha256:792fc635c61181ea5338acac1b97031c4b698d0e6cc4a96de206487a7a4555fd",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:772bbf22f42a7bea9ede1df2fda55858554d961571726ea7a9a63d63e0a2b2bd",
+        "frameCount": 3,
+        "frames": "sha256:a4cf21a0fadd337c60d4150b8ea702bbe1a1f3339f9fb65535b9fa4ccc9d8ec7"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190515,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7356
+    },
+    {
+      "durationMs": 17.4899,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": 7,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127755,
+      "sharedHashes": {
+        "collapseRecord": "sha256:1a1504ed5a40fd4692d7a0b5143b7e16b561c1e780cf87e244c5d65a8244b973",
+        "crscRecord": "sha256:792fc635c61181ea5338acac1b97031c4b698d0e6cc4a96de206487a7a4555fd",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:772bbf22f42a7bea9ede1df2fda55858554d961571726ea7a9a63d63e0a2b2bd",
+        "frameCount": 3,
+        "frames": "sha256:a4cf21a0fadd337c60d4150b8ea702bbe1a1f3339f9fb65535b9fa4ccc9d8ec7"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    }
+  ],
+  "classification": "fresh_cpu_synthetic_native_archive_representation",
+  "cost": null,
+  "defaultModelBaseline": null,
+  "hostedLatencyMs": null,
+  "hostedTokens": null,
+  "interpretationLimits": {
+    "crscEvictionTested": false,
+    "optimizerSteps": 0,
+    "originalSuiteInferenceCalls": null,
+    "rawCapturesPublished": false,
+    "sourceRedistributed": false,
+    "telemetryDisabledArm": false
+  },
+  "measurementProtocol": {
+    "baseline": "full_capture_v1",
+    "bootstrap": {
+      "confidence": 0.95,
+      "effect": "candidate_minus_baseline_local_ms",
+      "iterations": 4000,
+      "seed": 1729
+    },
+    "byteAccounting": "Matched returned JSON; candidate disk includes all sealed objects/metadata plus separate observed timing sidecar; baseline disk null. No cross-format disk compression ratio.",
+    "candidate": "sealed_archive_v2",
+    "counterbalance": "alternate_full_first_archive_first",
+    "id": "native-capture-archive/1",
+    "measuredArmsPerPair": 2,
+    "originalSuiteInferenceCalls": null,
+    "pairs": 8,
+    "schemaVersion": 1,
+    "seed": 2718,
+    "sharedSemanticFields": [
+      "distribution",
+      "crscRecord",
+      "collapseRecord",
+      "frames",
+      "events",
+      "frameCount",
+      "eventCount"
+    ],
+    "smallConfig": {
+      "actualParameters": 404,
+      "occupiedThresholdBanks": 3,
+      "positiveStateLanes": 8,
+      "vocabularySize": 16
+    },
+    "telemetryBothArms": true,
+    "timingScope": "infer_token only; excludes allocation, directory preparation, semantic expansion, hashing for comparison, reopen and byte enumeration; includes in-call capture, hashing and seal",
+    "tokenId": 3,
+    "tokenTime": 0,
+    "warmupArms": 2
+  },
+  "modelQuality": null,
+  "pairs": [
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 18.1865,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 263.5135,
+      "eligible": true,
+      "order": [
+        "full_capture_v1",
+        "sealed_archive_v2"
+      ],
+      "pair": 0,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 17.2212,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 262.8819,
+      "eligible": true,
+      "order": [
+        "sealed_archive_v2",
+        "full_capture_v1"
+      ],
+      "pair": 1,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 17.892,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 269.8122,
+      "eligible": true,
+      "order": [
+        "full_capture_v1",
+        "sealed_archive_v2"
+      ],
+      "pair": 2,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 17.9936,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 270.9995,
+      "eligible": true,
+      "order": [
+        "sealed_archive_v2",
+        "full_capture_v1"
+      ],
+      "pair": 3,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 17.3211,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 259.9717,
+      "eligible": true,
+      "order": [
+        "full_capture_v1",
+        "sealed_archive_v2"
+      ],
+      "pair": 4,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 18.475,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 257.9707,
+      "eligible": true,
+      "order": [
+        "sealed_archive_v2",
+        "full_capture_v1"
+      ],
+      "pair": 5,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 17.4559,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 258.5659,
+      "eligible": true,
+      "order": [
+        "full_capture_v1",
+        "sealed_archive_v2"
+      ],
+      "pair": 6,
+      "reason": null,
+      "sharedHashesEqual": true
+    },
+    {
+      "baselineJsonBytes": 127755,
+      "baselineMs": 17.4899,
+      "candidateJsonBytes": 110046,
+      "candidateMs": 286.8669,
+      "eligible": true,
+      "order": [
+        "sealed_archive_v2",
+        "full_capture_v1"
+      ],
+      "pair": 7,
+      "reason": null,
+      "sharedHashesEqual": true
+    }
+  ],
+  "qualityGate": {
+    "allWarmupsFulfilled": true,
+    "eligiblePairs": 8,
+    "failedPairs": 0,
+    "totalPairs": 8
+  },
+  "recordedArms": 18,
+  "requestedInferenceCalls": 18,
+  "schemaVersion": 1,
+  "warmups": [
+    {
+      "durationMs": 17.8172,
+      "errorType": null,
+      "mode": "full_capture_v1",
+      "pair": -1,
+      "reopenedSharedHashesEqual": null,
+      "returnedJsonBytes": 127823,
+      "sharedHashes": {
+        "collapseRecord": "sha256:43d190ef9036d5897a2864ff0ee77a9f5ff3772b5318b4533fdd25da6991df72",
+        "crscRecord": "sha256:8ffe769fca56be8c36d1bbc0f36c62c9a6a4c6f7b14c970e8fab67b9d7dc06b8",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:175add8c6f42adc6a55c064037725c0f9f16f25d167a391f587c4951aa758f18",
+        "frameCount": 3,
+        "frames": "sha256:c928fa5990fc8f8c1495d5bba67662a0e25ac8b79487e08d3a1778aff16a62df"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": null,
+      "storedFilesIncludingTiming": null,
+      "timingSidecarBytes": null
+    },
+    {
+      "durationMs": 265.16,
+      "errorType": null,
+      "mode": "sealed_archive_v2",
+      "pair": -1,
+      "reopenedSharedHashesEqual": true,
+      "returnedJsonBytes": 110104,
+      "sharedHashes": {
+        "collapseRecord": "sha256:43d190ef9036d5897a2864ff0ee77a9f5ff3772b5318b4533fdd25da6991df72",
+        "crscRecord": "sha256:8ffe769fca56be8c36d1bbc0f36c62c9a6a4c6f7b14c970e8fab67b9d7dc06b8",
+        "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+        "eventCount": 37,
+        "events": "sha256:175add8c6f42adc6a55c064037725c0f9f16f25d167a391f587c4951aa758f18",
+        "frameCount": 3,
+        "frames": "sha256:c928fa5990fc8f8c1495d5bba67662a0e25ac8b79487e08d3a1778aff16a62df"
+      },
+      "status": "FULFILLED",
+      "storedArchiveAndTimingBytes": 190623,
+      "storedFilesIncludingTiming": 44,
+      "timingSidecarBytes": 7357
+    }
+  ]
+}

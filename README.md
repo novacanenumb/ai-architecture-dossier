@@ -547,6 +547,22 @@ Reproduction requires Node 26, exact pinned source and existing Python 3.12/Torc
 
 C23 module inventory does not prove the whole semantic graph; C25 tokenizer/cache-eviction/missing-archive guarantees and C26 held-out learning/promotion/observer overhead remain unverified. Hosted metrics remain null. This expands partial original-source coverage to 24 components, while C14 remains a separate new reference.
 
+## C25: original native archive integrity and representation
+
+The [native archive guide](docs/NATIVE_ARCHIVE_EVIDENCE.md) records **30 passing cases**: 26 expanded unchanged original cases and four new dossier probes. Sixteen source inputs are pinned and rechecked unchanged. The tests cover full/archive parity, read-only reopen, tamper/missing/extra/nonregular/link rejection, bounded capture failures, warmed digest-cache checks and detached returned objects. Original source and raw captures remain excluded.
+
+Eight matched pairs retain all 16 measured arms and two separate warmups. Fresh 404-parameter Tiny models use seed 2718, token 3/time 0 and alternate execution order. Shared distribution, CRSC record, collapse, three frames and 37 events match, including reopened archive materialization without further inference.
+
+The observed trade-off is explicit: returned JSON falls from 127,755 to 110,046 bytes (13.8617% less), while mean timed inference rises from 17.7544 to 266.3227875 ms (15.0004 times longer). Candidate disk storage adds 190,515 bytes including all sealed objects/metadata and 7,356 bytes of observed timing sidecar; baseline disk is null. The paired timing difference is 248.5683875 ms, 95% seeded bootstrap [243.029335,255.63211375] ms using 4,000 iterations/seed 1729. These are local synthetic CPU/disk results, not provider efficiency or language quality.
+
+```text
+npm run test:native-archive
+npm run derive:native-archive
+npm run test:native-archive:analytics
+```
+
+See the [source receipt](experiments/native-archive/test-receipt.json), [retained observations](experiments/native-archive/summary.json), [derived statistics](experiments/native-archive/results.json), and [partial acceptance mapping](experiments/native-archive/coverage.json). Four analytics tests check negative timing interpretation, failed-pair denominators and malformed semantic/protocol controls. The C25 Site lab inspects frozen pairs and original/new case families. Missing generated-object rejection supplies partial C25-T04 evidence; CRSC eviction/C25-T03 and telemetry-off overhead/C26-T05 remain NOT_RUN. The earlier native timeout is retained. All 154 hosted endpoints remain null.
+
 ## C14: controlled language analysis
 
 The dossier now includes a real local [output-level language analyser](packages/lab/language-analysis.mjs), supported by the existing statistical functions. This is a new reference implementation of C14's specified first deliverable. Original C14 source was not recovered, and the longitudinal research hypothesis remains untested.

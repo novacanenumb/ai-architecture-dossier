@@ -1,0 +1,947 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-native-archive-source-evidence",
+  "status": "PASSED",
+  "command": "npm run test:native-archive",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "sourcePackage": {
+    "name": "neo-sfr-lab",
+    "version": "0.1.0",
+    "nativePackage": "rtl360_gtfl",
+    "specification": "RTL360-GTFL-NATIVE-1.0",
+    "sourceRedistributed": false
+  },
+  "sourceManifestHash": "sha256:97cca4af633a73272df57e263a0c48a5c2ca17d5672bf04a4637f3746fb79e04",
+  "sourceFiles": [
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/__init__.py",
+      "bytes": 221,
+      "hash": "sha256:8e1a2ee5b0b34ce896a2fe114dd5bf3e0ce9638c84d55a401da6b88cc1d7b2fd"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/canonical.py",
+      "bytes": 2573,
+      "hash": "sha256:d3a53963a30a50d1e957db7dae13710a7beed2a51409644ccd880b8cfb36d46f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/numeric.py",
+      "bytes": 4066,
+      "hash": "sha256:1e73ccb37a37f9c5c95656170142506b3420a8e86d135997274adba0d54fbcae"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/config.py",
+      "bytes": 5566,
+      "hash": "sha256:743c5fa029c7f4472bba407d356ecf697e8a6ddc89ee3b03cb51d35b2eb12688"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/rotor.py",
+      "bytes": 4142,
+      "hash": "sha256:5180804ff2f6b9c0251ace03f21eb311ac6ee4c9f933e0db89c6167137008f4b"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/lattice.py",
+      "bytes": 10557,
+      "hash": "sha256:2cc42237f480d1c3788207837ae015dd32c01838c3f85c77a406e66d777b1130"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/types.py",
+      "bytes": 4186,
+      "hash": "sha256:89c54639390123a2d849672690a040147ea2d5574611aa1851dadeba558d6d9c"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/observability.py",
+      "bytes": 14964,
+      "hash": "sha256:f6542abb5672c86a788a7af9d01ad0deb1213346ec2416d182b44abb8e560146"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/archive.py",
+      "bytes": 23051,
+      "hash": "sha256:35592bfb84fd6e5636b96edb5fa678cc313f251a2c7d9f421f947d0cbb83418f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/language.py",
+      "bytes": 28009,
+      "hash": "sha256:a9b8972249983086c7998870fb7af0c188d8906e33e0a77b6f287ee50f67ded2"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/ir.py",
+      "bytes": 51790,
+      "hash": "sha256:fdb8f7dfb50ba75656f19b272ae911edb90db0595913ebcc7dd14daa5a7e621c"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/model.py",
+      "bytes": 143675,
+      "hash": "sha256:7a541830b85cd0a8743507e6a1369543c38936f17a7cc2382371afa865986d6e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/reference.py",
+      "bytes": 70257,
+      "hash": "sha256:adc3b5bb911948212be460f5f62464a30b31b5f4e089f21e79c3d1002001cd9e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/capture.py",
+      "bytes": 55645,
+      "hash": "sha256:945b7f7f93d4b55c10971a1328db03cf6b38c3c9cbab7d9398155b0f72f2071e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/serialization.py",
+      "bytes": 1251,
+      "hash": "sha256:836750792e29cf5b076e4e7f455e2c0ef1b42e4cea2b29df8c2c3b1e26f899f7"
+    },
+    {
+      "path": "tests/test_gtfl_archive_model.py",
+      "bytes": 14533,
+      "hash": "sha256:8c8674157e9148d3973236e3ecb5d91b002bb8d6da19b8af1f8aeb156938354b"
+    }
+  ],
+  "sourceMetadata": {
+    "path": "pyproject.toml",
+    "bytes": 1261,
+    "hash": "sha256:ba040dc95357cb4eb57194a35bba3065b48375d7cfc6f59bf32f509c247f1f15"
+  },
+  "sourceHashes": {
+    "scripts/test-native-archive-source.mjs": "sha256:fb0389a0b528e76d8a786d2f493deb5fa0b9e2c44bbaff383feca4b0af4c6dfe",
+    "experiments/native-archive/execute.py": "sha256:0595fe6d4cccf7d17289f0c8de837b9dc3a4f3f797ee8920f77e500774ac6dd4",
+    "experiments/native-archive/probe.py": "sha256:54413f8f73d3c6a8a52676b76101a27e67856f76152bf06ab16e63a9df9f3b65",
+    "experiments/native-archive/source-manifest.json": "sha256:97cca4af633a73272df57e263a0c48a5c2ca17d5672bf04a4637f3746fb79e04",
+    "experiments/native-archive/protocol.json": "sha256:09aaf703fa196cb988325fec4fee6fde99c95389e439f51400f7f187a4fa564e",
+    "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df"
+  },
+  "sourceUnchanged": true,
+  "temporaryCopyRemoved": true,
+  "hypervisorDependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1",
+    "verifiedFiles": 85
+  },
+  "protocol": {
+    "path": "experiments/native-archive/protocol.json",
+    "hashBefore": "sha256:09aaf703fa196cb988325fec4fee6fde99c95389e439f51400f7f187a4fa564e",
+    "hashAfter": "sha256:09aaf703fa196cb988325fec4fee6fde99c95389e439f51400f7f187a4fa564e",
+    "parsed": {
+      "schemaVersion": 1,
+      "id": "public-dossier-native-archive/1",
+      "classification": "fresh_synthetic_archive_conformance",
+      "originalTests": [
+        "tests/test_gtfl_archive_model.py"
+      ],
+      "originalTestFunctions": 17,
+      "expandedOriginalCases": null,
+      "additionalTestFunctions": 4,
+      "cpuThreads": 1,
+      "optimizerSteps": 0,
+      "trainingJob": false,
+      "externalCheckpoints": false,
+      "providerCalls": 0,
+      "hostedModelComparisons": false,
+      "expectedVersions": {
+        "python": "3.12",
+        "torch": "2.14.0",
+        "numpy": "2.5.3",
+        "safetensors": "0.8.0",
+        "pytest": "9.1.1"
+      },
+      "timeoutMs": 600000,
+      "measurement": {
+        "schemaVersion": 1,
+        "id": "native-capture-archive/1",
+        "pairs": 8,
+        "measuredArmsPerPair": 2,
+        "warmupArms": 2,
+        "seed": 2718,
+        "tokenId": 3,
+        "tokenTime": 0,
+        "smallConfig": {
+          "vocabularySize": 16,
+          "positiveStateLanes": 8,
+          "occupiedThresholdBanks": 3,
+          "actualParameters": 404
+        },
+        "baseline": "full_capture_v1",
+        "candidate": "sealed_archive_v2",
+        "counterbalance": "alternate_full_first_archive_first",
+        "timingScope": "infer_token only; excludes allocation, directory preparation, semantic expansion, hashing for comparison, reopen and byte enumeration; includes in-call capture, hashing and seal",
+        "sharedSemanticFields": [
+          "distribution",
+          "crscRecord",
+          "collapseRecord",
+          "frames",
+          "events",
+          "frameCount",
+          "eventCount"
+        ],
+        "byteAccounting": "Matched returned JSON; candidate disk includes all sealed objects/metadata plus separate observed timing sidecar; baseline disk null. No cross-format disk compression ratio.",
+        "telemetryBothArms": true,
+        "originalSuiteInferenceCalls": null,
+        "bootstrap": {
+          "iterations": 4000,
+          "seed": 1729,
+          "confidence": 0.95,
+          "effect": "candidate_minus_baseline_local_ms"
+        }
+      }
+    }
+  },
+  "execution": {
+    "exitCode": 0,
+    "error": null,
+    "signal": null,
+    "timeoutMs": 600000,
+    "interpreterHash": "sha256:d55736b9f3d6b4ca7985b82db8ce11edfa09994cf93ce31c6b506543b74f32eb",
+    "pythonVersion": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "libraries": {
+      "numpy": "2.5.3",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0"
+    },
+    "pytestSiteRole": "Read-only AgentDB pytest library appended after NEO environment libraries; no installation",
+    "pytestExitCode": 0,
+    "stdoutBytes": 68,
+    "stderrBytes": 0,
+    "privateTestOutputBytes": 99,
+    "privateTestErrorBytes": 0
+  },
+  "tests": {
+    "collected": 30,
+    "collectionErrors": [],
+    "errors": 0,
+    "failed": 0,
+    "passed": 30,
+    "results": [
+      {
+        "id": "test_gtfl_archive_model.py::test_full_semantics_match_v1_and_reopen_without_inference::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_observed_timings_are_separate_and_do_not_change_roots::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_tamper_missing_or_extra_files::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_tamper_missing_or_extra_files::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_tamper_missing_or_extra_files::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_tamper_missing_or_extra_files::case-4",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_tamper_missing_or_extra_files::case-5",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_tamper_missing_or_extra_files::case-6",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_resolver_and_summary_reject_substitution::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_budget_failure_never_seals_or_issues_authority::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_budget_failure_never_seals_or_issues_authority::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_budget_failure_never_seals_or_issues_authority::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_atomic_seal_failure_never_issues_authority::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_atomic_seal_failure_never_issues_authority::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_atomic_seal_failure_never_issues_authority::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_time_budget_rejects_without_seal::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_writer_directory_is_fresh_and_limits_cannot_expand::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_causal_context_v1_archive_parity::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_default_8_bank_64_lane_profile_has_exact_archive_parity::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_nonregular_object::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_reader_rejects_object_symlink::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_extended_deadline_is_explicit_bounded_and_reopenable::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_warmed_hash_cache_validates_current_event_and_resigned_claim::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_warmed_cache_rejects_invalid_data_before_lookup::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_warmed_cache_does_not_turn_resigned_state_into_semantic_authority::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_archive_model.py::test_hash_cache_is_bounded_to_digest_strings::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_full_and_archive_shared_semantics_match::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_reopen_materializes_without_inference::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_missing_generated_object_rejects_reopen::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_snapshot_and_resolved_objects_are_detached::case-1",
+        "status": "PASSED"
+      }
+    ],
+    "skipped": 0
+  },
+  "originalTests": {
+    "total": 26,
+    "passed": 26
+  },
+  "additionalTests": {
+    "total": 4,
+    "passed": 4
+  },
+  "executionError": null,
+  "controls": {
+    "auditHook": "BEST_EFFORT",
+    "operatingSystemConfinement": "UNAVAILABLE",
+    "childEnvironment": "Allowlisted noncredential variables, CPU threads1 and owned TEMP/TMP",
+    "pytestPluginAutoload": false,
+    "originalWrites": false,
+    "legacyProjectLaunch": false,
+    "optimizerSteps": 0,
+    "trainingJob": false,
+    "freshSyntheticWeights": true,
+    "externalCheckpointLoaded": false
+  },
+  "provenance": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "defaultModelBaseline": null,
+    "sourceCodeRedistributed": false
+  },
+  "ownedLinkEntriesRemoved": 22,
+  "summaryFile": {
+    "path": "experiments/native-archive/summary.json",
+    "hash": "sha256:9356d674948303f9f08207aa3f2dbea316027173556f1bd28027f4bd3c823fa5",
+    "bytes": 20873
+  },
+  "coverage": {
+    "schemaVersion": 1,
+    "classification": "PARTIAL_ORIGINAL_SOURCE_EVIDENCE",
+    "componentId": "C25",
+    "acceptanceIds": [
+      "C25-T04"
+    ],
+    "unverifiedAcceptanceIds": [
+      "C25-T03"
+    ],
+    "testCommand": "npm run test:native-archive",
+    "testFile": "experiments/native-archive/probe.py",
+    "receipt": "experiments/native-archive/test-receipt.json",
+    "boundary": "Explicit rejection of missing generated archive objects only; no general missing CRSC recovery or eviction/recomputation. Read-only reopen and closed-object integrity are additional bounded source observations. C26-T05 NOT_RUN: both measured arms emit telemetry."
+  },
+  "summary": {
+    "arms": [
+      {
+        "durationMs": 18.1865,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 0,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:a75cd57545de1f772478d9a98f8b7b3d8f6edd04c7ad671ca9ee0762c82eaaf0",
+          "crscRecord": "sha256:dd841a60f929f2264b901d975c9d6364e7b93bb2f8401c8905682a373d272fad",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:3bf901129494ab561b2edc93217d9edde3a602f1f6dcadebfd5e30361375d04e",
+          "frameCount": 3,
+          "frames": "sha256:2d52df65a95906a1653e85bcf0202e523a48f97a3aeed73cfbbae02e2e31610b"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 263.5135,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 0,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:a75cd57545de1f772478d9a98f8b7b3d8f6edd04c7ad671ca9ee0762c82eaaf0",
+          "crscRecord": "sha256:dd841a60f929f2264b901d975c9d6364e7b93bb2f8401c8905682a373d272fad",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:3bf901129494ab561b2edc93217d9edde3a602f1f6dcadebfd5e30361375d04e",
+          "frameCount": 3,
+          "frames": "sha256:2d52df65a95906a1653e85bcf0202e523a48f97a3aeed73cfbbae02e2e31610b"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 262.8819,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 1,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:6caf1385255ee68589d06f0f50309ca57d065126de80a0219dba1a3916898739",
+          "crscRecord": "sha256:a3717d762d48d6d34de754badf7a9228763e278feeeba0307c7324c892397a0a",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:cab46487b9945d927f0b89952e60c2a134944b73e593f7dbcf725fce7ef87672",
+          "frameCount": 3,
+          "frames": "sha256:9ff8c994000e84d8c9b8fba2b3dafd1d5ea5c2064fe6410ec6dcba4d91c43a0c"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 17.2212,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 1,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:6caf1385255ee68589d06f0f50309ca57d065126de80a0219dba1a3916898739",
+          "crscRecord": "sha256:a3717d762d48d6d34de754badf7a9228763e278feeeba0307c7324c892397a0a",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:cab46487b9945d927f0b89952e60c2a134944b73e593f7dbcf725fce7ef87672",
+          "frameCount": 3,
+          "frames": "sha256:9ff8c994000e84d8c9b8fba2b3dafd1d5ea5c2064fe6410ec6dcba4d91c43a0c"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 17.892,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 2,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:918902f5aef4d59b3854626b467cd95d71ad412a61153034e2bcb70cece26db8",
+          "crscRecord": "sha256:d8ef36052d4dae73685ef3a2c39d0676343e2d932e6f26d2da57c0bc46ce3874",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:3d06f96f52de4a79c75efeee9136f06887fe8f046f5c418a43551f1799155c96",
+          "frameCount": 3,
+          "frames": "sha256:84b922329dcb551d3b8b154e554a7bc8c1857207f96363daf6b39adb657d3d53"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 269.8122,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 2,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:918902f5aef4d59b3854626b467cd95d71ad412a61153034e2bcb70cece26db8",
+          "crscRecord": "sha256:d8ef36052d4dae73685ef3a2c39d0676343e2d932e6f26d2da57c0bc46ce3874",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:3d06f96f52de4a79c75efeee9136f06887fe8f046f5c418a43551f1799155c96",
+          "frameCount": 3,
+          "frames": "sha256:84b922329dcb551d3b8b154e554a7bc8c1857207f96363daf6b39adb657d3d53"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 270.9995,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 3,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:e62a903c34f7355055815d6f357db128df1d5f3aa02ef2c771f78edcd26c8318",
+          "crscRecord": "sha256:c4009ac9c858a9a97c6c83aedc0a553ad19842e947056fb2a1ea473f19ebc6e3",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:6e6767d4e0384639f87fc7d9c9eb8005e6499aa18800379bd8ba6276eb6548a3",
+          "frameCount": 3,
+          "frames": "sha256:09809b4e5e5902756bc4a4fe22d436129eb6043e768768ba450ad6926eddb880"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 17.9936,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 3,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:e62a903c34f7355055815d6f357db128df1d5f3aa02ef2c771f78edcd26c8318",
+          "crscRecord": "sha256:c4009ac9c858a9a97c6c83aedc0a553ad19842e947056fb2a1ea473f19ebc6e3",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:6e6767d4e0384639f87fc7d9c9eb8005e6499aa18800379bd8ba6276eb6548a3",
+          "frameCount": 3,
+          "frames": "sha256:09809b4e5e5902756bc4a4fe22d436129eb6043e768768ba450ad6926eddb880"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 17.3211,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 4,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:318d24aca62fce91109ac5fac085bf7f44ab7721093e708ceb109aa22e2382ee",
+          "crscRecord": "sha256:eacedc3775fb999cc3319a7b8e275375090c23ce3fdb8908a856590b4e9f6d17",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:dc49668ee718703536513ab85ea36477f34721326a2746957c38852053aa2b43",
+          "frameCount": 3,
+          "frames": "sha256:6d8ef41419eeae8293ed90d77ea0abc2721719cdfc219d0603d00cf62b95863b"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 259.9717,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 4,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:318d24aca62fce91109ac5fac085bf7f44ab7721093e708ceb109aa22e2382ee",
+          "crscRecord": "sha256:eacedc3775fb999cc3319a7b8e275375090c23ce3fdb8908a856590b4e9f6d17",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:dc49668ee718703536513ab85ea36477f34721326a2746957c38852053aa2b43",
+          "frameCount": 3,
+          "frames": "sha256:6d8ef41419eeae8293ed90d77ea0abc2721719cdfc219d0603d00cf62b95863b"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 257.9707,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 5,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:a313ade6341268e6ae6648225deb4dca88c1fd18769794b1bc5c236727fa04d7",
+          "crscRecord": "sha256:39539e5d7f53c993a1f84e64b97cbc5ab88bd5e6f4ca86130260da716d151724",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:97f41a683b4a8f31d66cc96cb8f33ab4e9a9fe3c9c69814ee8b755eca6647ed4",
+          "frameCount": 3,
+          "frames": "sha256:c96ef30c412f8abbcbdf87e41b96b08bc97284cc3c54475ae9944addee964649"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 18.475,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 5,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:a313ade6341268e6ae6648225deb4dca88c1fd18769794b1bc5c236727fa04d7",
+          "crscRecord": "sha256:39539e5d7f53c993a1f84e64b97cbc5ab88bd5e6f4ca86130260da716d151724",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:97f41a683b4a8f31d66cc96cb8f33ab4e9a9fe3c9c69814ee8b755eca6647ed4",
+          "frameCount": 3,
+          "frames": "sha256:c96ef30c412f8abbcbdf87e41b96b08bc97284cc3c54475ae9944addee964649"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 17.4559,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 6,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:4e5a5175f4695b793c9b3fe3dfc8c6bf510e79132d8cfb876bc7da745ee56b8c",
+          "crscRecord": "sha256:1121f819d595fc81f1dfec7c2380dc7cb8f3ebe0316a82d3ab34fa5c24c66c52",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:6bcef75c7cbb706aa0d7efdf3027d8e089f1601a795c97c4a70b4d9c74407366",
+          "frameCount": 3,
+          "frames": "sha256:608f4a2db1b4ee47b896bc3bcc1b61f7b1ca8c5f6828c27b66a4574f86d45892"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 258.5659,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 6,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:4e5a5175f4695b793c9b3fe3dfc8c6bf510e79132d8cfb876bc7da745ee56b8c",
+          "crscRecord": "sha256:1121f819d595fc81f1dfec7c2380dc7cb8f3ebe0316a82d3ab34fa5c24c66c52",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:6bcef75c7cbb706aa0d7efdf3027d8e089f1601a795c97c4a70b4d9c74407366",
+          "frameCount": 3,
+          "frames": "sha256:608f4a2db1b4ee47b896bc3bcc1b61f7b1ca8c5f6828c27b66a4574f86d45892"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 286.8669,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": 7,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110046,
+        "sharedHashes": {
+          "collapseRecord": "sha256:1a1504ed5a40fd4692d7a0b5143b7e16b561c1e780cf87e244c5d65a8244b973",
+          "crscRecord": "sha256:792fc635c61181ea5338acac1b97031c4b698d0e6cc4a96de206487a7a4555fd",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:772bbf22f42a7bea9ede1df2fda55858554d961571726ea7a9a63d63e0a2b2bd",
+          "frameCount": 3,
+          "frames": "sha256:a4cf21a0fadd337c60d4150b8ea702bbe1a1f3339f9fb65535b9fa4ccc9d8ec7"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190515,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7356
+      },
+      {
+        "durationMs": 17.4899,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": 7,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127755,
+        "sharedHashes": {
+          "collapseRecord": "sha256:1a1504ed5a40fd4692d7a0b5143b7e16b561c1e780cf87e244c5d65a8244b973",
+          "crscRecord": "sha256:792fc635c61181ea5338acac1b97031c4b698d0e6cc4a96de206487a7a4555fd",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:772bbf22f42a7bea9ede1df2fda55858554d961571726ea7a9a63d63e0a2b2bd",
+          "frameCount": 3,
+          "frames": "sha256:a4cf21a0fadd337c60d4150b8ea702bbe1a1f3339f9fb65535b9fa4ccc9d8ec7"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      }
+    ],
+    "classification": "fresh_cpu_synthetic_native_archive_representation",
+    "cost": null,
+    "defaultModelBaseline": null,
+    "hostedLatencyMs": null,
+    "hostedTokens": null,
+    "interpretationLimits": {
+      "crscEvictionTested": false,
+      "optimizerSteps": 0,
+      "originalSuiteInferenceCalls": null,
+      "rawCapturesPublished": false,
+      "sourceRedistributed": false,
+      "telemetryDisabledArm": false
+    },
+    "measurementProtocol": {
+      "baseline": "full_capture_v1",
+      "bootstrap": {
+        "confidence": 0.95,
+        "effect": "candidate_minus_baseline_local_ms",
+        "iterations": 4000,
+        "seed": 1729
+      },
+      "byteAccounting": "Matched returned JSON; candidate disk includes all sealed objects/metadata plus separate observed timing sidecar; baseline disk null. No cross-format disk compression ratio.",
+      "candidate": "sealed_archive_v2",
+      "counterbalance": "alternate_full_first_archive_first",
+      "id": "native-capture-archive/1",
+      "measuredArmsPerPair": 2,
+      "originalSuiteInferenceCalls": null,
+      "pairs": 8,
+      "schemaVersion": 1,
+      "seed": 2718,
+      "sharedSemanticFields": [
+        "distribution",
+        "crscRecord",
+        "collapseRecord",
+        "frames",
+        "events",
+        "frameCount",
+        "eventCount"
+      ],
+      "smallConfig": {
+        "actualParameters": 404,
+        "occupiedThresholdBanks": 3,
+        "positiveStateLanes": 8,
+        "vocabularySize": 16
+      },
+      "telemetryBothArms": true,
+      "timingScope": "infer_token only; excludes allocation, directory preparation, semantic expansion, hashing for comparison, reopen and byte enumeration; includes in-call capture, hashing and seal",
+      "tokenId": 3,
+      "tokenTime": 0,
+      "warmupArms": 2
+    },
+    "modelQuality": null,
+    "pairs": [
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 18.1865,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 263.5135,
+        "eligible": true,
+        "order": [
+          "full_capture_v1",
+          "sealed_archive_v2"
+        ],
+        "pair": 0,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 17.2212,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 262.8819,
+        "eligible": true,
+        "order": [
+          "sealed_archive_v2",
+          "full_capture_v1"
+        ],
+        "pair": 1,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 17.892,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 269.8122,
+        "eligible": true,
+        "order": [
+          "full_capture_v1",
+          "sealed_archive_v2"
+        ],
+        "pair": 2,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 17.9936,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 270.9995,
+        "eligible": true,
+        "order": [
+          "sealed_archive_v2",
+          "full_capture_v1"
+        ],
+        "pair": 3,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 17.3211,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 259.9717,
+        "eligible": true,
+        "order": [
+          "full_capture_v1",
+          "sealed_archive_v2"
+        ],
+        "pair": 4,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 18.475,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 257.9707,
+        "eligible": true,
+        "order": [
+          "sealed_archive_v2",
+          "full_capture_v1"
+        ],
+        "pair": 5,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 17.4559,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 258.5659,
+        "eligible": true,
+        "order": [
+          "full_capture_v1",
+          "sealed_archive_v2"
+        ],
+        "pair": 6,
+        "reason": null,
+        "sharedHashesEqual": true
+      },
+      {
+        "baselineJsonBytes": 127755,
+        "baselineMs": 17.4899,
+        "candidateJsonBytes": 110046,
+        "candidateMs": 286.8669,
+        "eligible": true,
+        "order": [
+          "sealed_archive_v2",
+          "full_capture_v1"
+        ],
+        "pair": 7,
+        "reason": null,
+        "sharedHashesEqual": true
+      }
+    ],
+    "qualityGate": {
+      "allWarmupsFulfilled": true,
+      "eligiblePairs": 8,
+      "failedPairs": 0,
+      "totalPairs": 8
+    },
+    "recordedArms": 18,
+    "requestedInferenceCalls": 18,
+    "schemaVersion": 1,
+    "warmups": [
+      {
+        "durationMs": 17.8172,
+        "errorType": null,
+        "mode": "full_capture_v1",
+        "pair": -1,
+        "reopenedSharedHashesEqual": null,
+        "returnedJsonBytes": 127823,
+        "sharedHashes": {
+          "collapseRecord": "sha256:43d190ef9036d5897a2864ff0ee77a9f5ff3772b5318b4533fdd25da6991df72",
+          "crscRecord": "sha256:8ffe769fca56be8c36d1bbc0f36c62c9a6a4c6f7b14c970e8fab67b9d7dc06b8",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:175add8c6f42adc6a55c064037725c0f9f16f25d167a391f587c4951aa758f18",
+          "frameCount": 3,
+          "frames": "sha256:c928fa5990fc8f8c1495d5bba67662a0e25ac8b79487e08d3a1778aff16a62df"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": null,
+        "storedFilesIncludingTiming": null,
+        "timingSidecarBytes": null
+      },
+      {
+        "durationMs": 265.16,
+        "errorType": null,
+        "mode": "sealed_archive_v2",
+        "pair": -1,
+        "reopenedSharedHashesEqual": true,
+        "returnedJsonBytes": 110104,
+        "sharedHashes": {
+          "collapseRecord": "sha256:43d190ef9036d5897a2864ff0ee77a9f5ff3772b5318b4533fdd25da6991df72",
+          "crscRecord": "sha256:8ffe769fca56be8c36d1bbc0f36c62c9a6a4c6f7b14c970e8fab67b9d7dc06b8",
+          "distribution": "sha256:03b2a4c13b0ee9b3b1e78e8cd0792cbf3c486fbbcf182b59cdb29ebdc6112e13",
+          "eventCount": 37,
+          "events": "sha256:175add8c6f42adc6a55c064037725c0f9f16f25d167a391f587c4951aa758f18",
+          "frameCount": 3,
+          "frames": "sha256:c928fa5990fc8f8c1495d5bba67662a0e25ac8b79487e08d3a1778aff16a62df"
+        },
+        "status": "FULFILLED",
+        "storedArchiveAndTimingBytes": 190623,
+        "storedFilesIncludingTiming": 44,
+        "timingSidecarBytes": 7357
+      }
+    ]
+  }
+}

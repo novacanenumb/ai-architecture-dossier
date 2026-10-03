@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "description": "novacanenumb AI architecture designs, deterministic labs and evidence dossier",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node scripts/test-and-record.mjs",
@@ -19,7 +21,10 @@
     "measure:language": "node scripts/measure-language-fixture.mjs",
     "verify": "node scripts/verify-release.mjs",
     "verify:public": "node scripts/verify-public-checkout.mjs",
-    "preview": "node scripts/serve.mjs"
+    "preview": "node scripts/serve.mjs",
+    "test:native-archive": "node scripts/test-native-archive-source.mjs",
+    "derive:native-archive": "node scripts/derive-native-archive-results.mjs",
+    "test:native-archive:analytics": "node --test experiments/native-archive/derive.test.mjs"
   },
   "license": "LicenseRef-Novacanenumb-Open-Design-1.0"
 }

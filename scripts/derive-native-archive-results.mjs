@@ -1,0 +1,11 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+import { deriveArchiveResults } from '../experiments/native-archive/derive.mjs';
+const root=path.resolve(import.meta.dirname,'..');
+const summaryBytes=await readFile(path.join(root,'experiments/native-archive/summary.json'));
+const derived=deriveArchiveResults(JSON.parse(summaryBytes));
+const digest=value=>'sha256:'+createHash('sha256').update(value).digest('hex');
+const result={...derived,sourceSummaryHash:digest(summaryBytes),derivationSources:{'experiments/native-archive/derive.mjs':digest(await readFile(path.join(root,'experiments/native-archive/derive.mjs'))),'packages/lab/analytics.mjs':digest(await readFile(path.join(root,'packages/lab/analytics.mjs')))}};
+await writeFile(path.join(root,'experiments/native-archive/results.json'),JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({denominators:result.denominators,localInferenceTime:result.localInferenceTime,returnedJson:result.returnedJson,storedArchive:result.storedArchive}));

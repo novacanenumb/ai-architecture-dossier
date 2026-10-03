@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "classification": "PARTIAL_ORIGINAL_SOURCE_EVIDENCE",
+  "componentId": "C25",
+  "acceptanceIds": [
+    "C25-T04"
+  ],
+  "unverifiedAcceptanceIds": [
+    "C25-T03"
+  ],
+  "testCommand": "npm run test:native-archive",
+  "testFile": "experiments/native-archive/probe.py",
+  "receipt": "experiments/native-archive/test-receipt.json",
+  "boundary": "Explicit rejection of missing generated archive objects only; no general missing CRSC recovery or eviction/recomputation. Read-only reopen and closed-object integrity are additional bounded source observations. C26-T05 NOT_RUN: both measured arms emit telemetry."
+}

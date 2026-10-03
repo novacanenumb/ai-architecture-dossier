@@ -32,5 +32,10 @@ const agentdbCoverage=JSON.parse(await readFile(path.join(root,'experiments/agen
 await writeFile(path.join(root,'dist/data/agentdb-evidence.json'),JSON.stringify({...agentdbReceipt,coverage:agentdbCoverage},null,2)+'\n');
 try { await readFile(path.join(root, 'dist/data/publication.json')); }
 catch (error) { if (error.code !== 'ENOENT') throw error; await writeFile(path.join(root, 'dist/data/publication.json'), JSON.stringify({ author: 'novacanenumb', repositoryUrl: null, siteUrl: null, profileLinkStatus: 'UNAVAILABLE' }, null, 2) + '\n'); }
+const archiveReceipt=JSON.parse(await readFile(path.join(root,'experiments/native-archive/test-receipt.json'),'utf8'));
+const archiveCoverage=JSON.parse(await readFile(path.join(root,'experiments/native-archive/coverage.json'),'utf8'));
+const archiveSummary=JSON.parse(await readFile(path.join(root,'experiments/native-archive/summary.json'),'utf8'));
+await writeFile(path.join(root,'dist/data/native-archive-evidence.json'),JSON.stringify({...archiveReceipt,coverage:archiveCoverage,summary:archiveSummary},null,2)+'\n');
+await copyFile(path.join(root,'experiments/native-archive/results.json'),path.join(root,'dist/data/native-archive-results.json'));
 run('scripts/benchmark.mjs');
 console.log('Static dossier built in dist; no provider calls.');

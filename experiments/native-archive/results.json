@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "classification": "fresh_cpu_synthetic_native_archive_representation",
+  "measurementCalls": 18,
+  "warmupArms": 2,
+  "measuredArms": 16,
+  "pairs": [
+    {
+      "pair": 0,
+      "eligible": true,
+      "baselineMs": 18.1865,
+      "candidateMs": 263.5135,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 1,
+      "eligible": true,
+      "baselineMs": 17.2212,
+      "candidateMs": 262.8819,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 2,
+      "eligible": true,
+      "baselineMs": 17.892,
+      "candidateMs": 269.8122,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 3,
+      "eligible": true,
+      "baselineMs": 17.9936,
+      "candidateMs": 270.9995,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 4,
+      "eligible": true,
+      "baselineMs": 17.3211,
+      "candidateMs": 259.9717,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 5,
+      "eligible": true,
+      "baselineMs": 18.475,
+      "candidateMs": 257.9707,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 6,
+      "eligible": true,
+      "baselineMs": 17.4559,
+      "candidateMs": 258.5659,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    },
+    {
+      "pair": 7,
+      "eligible": true,
+      "baselineMs": 17.4899,
+      "candidateMs": 286.8669,
+      "baselineJsonBytes": 127755,
+      "candidateJsonBytes": 110046,
+      "candidateDiskBytes": 190515,
+      "candidateTimingBytes": 7356,
+      "reason": null
+    }
+  ],
+  "denominators": {
+    "totalPairs": 8,
+    "eligiblePairs": 8,
+    "excludedPairs": 0,
+    "failedArms": 0
+  },
+  "localInferenceTime": {
+    "unit": "ms",
+    "baselineMean": 17.7544,
+    "candidateMean": 266.3227875,
+    "candidateToBaselineRatio": {
+      "value": 15.000382299598973,
+      "reason": null
+    },
+    "bootstrap": {
+      "meanDifference": 248.56838749999997,
+      "interval": [
+        243.029335,
+        255.63211375
+      ],
+      "sampleSize": 8,
+      "confidence": 0.95,
+      "iterations": 4000,
+      "seed": 1729,
+      "method": "task-paired percentile bootstrap; candidate minus baseline"
+    }
+  },
+  "returnedJson": {
+    "unit": "UTF8_bytes",
+    "baselineMean": 127755,
+    "candidateMean": 110046,
+    "reduction": {
+      "value": 0.13861688387930027,
+      "reason": null
+    },
+    "sameFormat": true
+  },
+  "storedArchive": {
+    "candidateMeanBytes": 190515,
+    "candidateTimingMeanBytes": 7356,
+    "baselineBytes": null,
+    "ratio": null,
+    "inclusion": "Every sealed object and capture/manifest/seal plus separate observed timing sidecar; baseline creates no disk artifact."
+  },
+  "provenance": {
+    "qualityGate": "Exact shared synthetic distribution/record/collapse/frame/event hashes and read-only reopen parity",
+    "wallTimes": "Observed local CPU and disk fixture; allocation/directory preparation/reopen/semantic expansion/comparison hashing/byte enumeration excluded",
+    "statistics": "Deterministic derivation of frozen observations; timing remeasurement not deterministic",
+    "originalSuiteInferenceCalls": null,
+    "modelQuality": null,
+    "hostedTokens": null,
+    "hostedLatency": null,
+    "cost": null,
+    "providerCalls": 0,
+    "telemetryOffArm": false,
+    "crscEvictionTested": false
+  },
+  "sourceSummaryHash": "sha256:9356d674948303f9f08207aa3f2dbea316027173556f1bd28027f4bd3c823fa5",
+  "derivationSources": {
+    "experiments/native-archive/derive.mjs": "sha256:ce4da68ce6468dc60a9342f6462a6003dc6d279e84bfe36a4cd9131f8a7e23b8",
+    "packages/lab/analytics.mjs": "sha256:262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9"
+  }
+}

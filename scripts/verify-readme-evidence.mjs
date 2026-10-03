@@ -16,7 +16,13 @@ export async function verifyReadmeEvidence(root) {
   const fragments=[...artifact.matchAll(/```\n([\s\S]*?)\n```/g)].map(match=>JSON.parse(match[1]));
   assert.equal(fragments.length,2);
   const integration=await json('experiments/readme/integration-receipt.json');
-  const currentReadme=await read('README.md');
+  const finalReadme=await read('README.md');
+  const archiveReadme=await json('experiments/native-archive/readme-integration.json');
+  assert.equal(hash(finalReadme),archiveReadme.currentReadmeHash);
+  assert.equal(finalReadme.trim().split(/\s+/).length,archiveReadme.currentWords);
+  assert.equal(finalReadme.split(archiveReadme.addition.content).length,2);
+  const currentReadme=finalReadme.replace(archiveReadme.addition.content+'\n','');
+  assert.equal(hash(currentReadme),archiveReadme.previousReadmeHash);
   const walkthrough=await json('experiments/readme/walkthrough/integration-receipt.json');
   const walkthroughNative=await json('experiments/readme/walkthrough/native/receipt.json');
   const walkthroughText=(await read('experiments/readme/walkthrough/native/validated-source.txt')).slice(0,walkthroughNative.sourceCharacters);
@@ -70,12 +76,12 @@ export async function verifyReadmeEvidence(root) {
   assert.equal(hash(previous),integration.previousReadmeHash,'Prior README was modified beyond declared additions');
   assert.equal(previous.trim().split(/\s+/).length,integration.previousWords);
   let links=0;
-  for(const match of currentReadme.matchAll(/\]\(([^)]+)\)/g)) {
+  for(const match of finalReadme.matchAll(/\]\(([^)]+)\)/g)) {
     const target=match[1]; if(target.startsWith('http')||target.startsWith('#'))continue;
     const resolved=path.resolve(root,target); assert.ok(resolved.startsWith(root+path.sep));
     assert.ok(!(await lstat(resolved)).isSymbolicLink()); links++;
   }
   assert.equal(integration.newModelMeasurements,false);
   assert.equal(integration.pendingRotorDraftsIncluded,false);
-  return {readmeExpansionNativeFragments:2,readmePriorTextPreserved:true,readmeInternalFileLinksChecked:links,readmeExpansionRunId:receipt.runId,readmeWalkthroughNativeFragments:1,readmeWalkthroughRunId:walkthroughNative.runId,readmeWalkthroughPriorTextPreserved:true};
+  return {readmeExpansionNativeFragments:2,readmePriorTextPreserved:true,readmeInternalFileLinksChecked:links,readmeExpansionRunId:receipt.runId,readmeWalkthroughNativeFragments:1,readmeWalkthroughRunId:walkthroughNative.runId,readmeWalkthroughPriorTextPreserved:true,readmeArchivePriorTextPreserved:true};
 }

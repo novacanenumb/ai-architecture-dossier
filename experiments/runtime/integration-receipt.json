@@ -6,8 +6,8 @@
     {
       "path": "dist/app.mjs",
       "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
-      "currentSourceHash": "4208a2bc98201201675183f4a01231a13a56661eb9928441e18a4533896fec3a",
-      "reason": "Parent integrated frozen original Tiny tensor/reference/compiler evidence and recorded-case filters for C23/C25/C26; no model improvement inferred."
+      "currentSourceHash": "d24114647330c78431459de3723e7dd52a33273142a502f65ec6f9d77ee89357",
+      "reason": "Parent integrated native archive cases, frozen pair controls, full representation/timing trade-off and partial missing-object coverage."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "89154d7860238fcf48ba6a67a1cf7bd20bc78ca9abcbf858cfa430ab5e68424f",
-    "reason": "Parent integrated a1261word README implementation walkthrough; all prior text and source evidence records preserved."
+    "currentSourceHash": "d41205d1717c9a46056ea6f63639a079b239e39a8b8d4aad306da5632c0f6749",
+    "reason": "Parent added observed30case archive study and paired byte/time trade-off; all prior README retained."
   },
   "history": [
     {
@@ -223,6 +223,28 @@
         "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
         "currentSourceHash": "6bf004a02a88685fc55488bda78335e1157600653002b2aba733d7e5def3abb7",
         "reason": "Parent added62case native conformance evidence and updated partial source coverage to24; prior README expansion retained with reconstruction hashes."
+      }
+    },
+    {
+      "archiveSourceRunId": "run-6df0b7f0-9a1e-49a2-9283-9d4c00f31dc4",
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "4208a2bc98201201675183f4a01231a13a56661eb9928441e18a4533896fec3a",
+          "reason": "Parent integrated frozen original Tiny tensor/reference/compiler evidence and recorded-case filters for C23/C25/C26; no model improvement inferred."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "89154d7860238fcf48ba6a67a1cf7bd20bc78ca9abcbf858cfa430ab5e68424f",
+        "reason": "Parent integrated a1261word README implementation walkthrough; all prior text and source evidence records preserved."
       }
     }
   ],

@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+import { deriveArchiveResults } from '../experiments/native-archive/derive.mjs';
+export async function verifyNativeArchiveEvidence(root) {
+  const read=p=>readFile(path.join(root,p)),json=async p=>JSON.parse(await read(p)),hash=b=>'sha256:'+createHash('sha256').update(b).digest('hex');
+  const receipt=await json('experiments/native-archive/test-receipt.json'),manifest=await json('experiments/native-archive/source-manifest.json'),coverage=await json('experiments/native-archive/coverage.json');
+  assert.equal(receipt.status,'PASSED');assert.equal(receipt.sourceUnchanged,true);assert.equal(receipt.temporaryCopyRemoved,true);
+  assert.equal(receipt.tests.collected,30);assert.equal(receipt.tests.passed,30);for(const field of ['failed','skipped','errors'])assert.equal(receipt.tests[field],0);
+  assert.equal(receipt.originalTests.passed,26);assert.equal(receipt.additionalTests.passed,4);assert.equal(new Set(receipt.tests.results.map(t=>t.id)).size,30);
+  assert.equal(manifest.files.length,16);assert.deepEqual(receipt.sourceFiles,manifest.files);assert.equal(hash(await read('experiments/native-archive/source-manifest.json')),receipt.sourceManifestHash);
+  assert.equal(hash(await read('experiments/native-model/source-manifest.json')),manifest.parentSourceManifestHash);
+  for(const [file,digest]of Object.entries(receipt.sourceHashes))assert.equal(hash(await read(file)),digest,'Stale archive execution source: '+file);
+  assert.equal(receipt.protocol.hashBefore,receipt.protocol.hashAfter);assert.equal(receipt.protocol.hashBefore,hash(await read(receipt.protocol.path)));
+  assert.equal(receipt.hypervisorDependency.verifiedFiles,85);assert.equal(receipt.controls.auditHook,'BEST_EFFORT');assert.equal(receipt.controls.operatingSystemConfinement,'UNAVAILABLE');assert.equal(receipt.provenance.providerCalls,0);
+  const summaryBytes=await read(receipt.summaryFile.path),summary=JSON.parse(summaryBytes);assert.equal(hash(summaryBytes),receipt.summaryFile.hash);
+  const result=await json('experiments/native-archive/results.json'),{sourceSummaryHash,derivationSources,...derived}=result;
+  assert.equal(sourceSummaryHash,hash(summaryBytes));for(const[file,digest]of Object.entries(derivationSources))assert.equal(hash(await read(file)),digest);
+  assert.deepEqual(deriveArchiveResults(summary),derived);
+  assert.deepEqual(result.denominators,{totalPairs:8,eligiblePairs:8,excludedPairs:0,failedArms:0});
+  assert.ok(result.localInferenceTime.bootstrap.interval[0]>0);assert.equal(result.storedArchive.baselineBytes,null);assert.equal(result.storedArchive.ratio,null);
+  assert.deepEqual(coverage.acceptanceIds,['C25-T04']);assert.deepEqual(coverage.unverifiedAcceptanceIds,['C25-T03']);
+  assert.deepEqual(await json('dist/data/native-archive-evidence.json'),{...receipt,coverage,summary});
+  assert.deepEqual(await json('dist/data/native-archive-results.json'),result);
+  const native=await json('experiments/native-archive/native/receipt.json'),text=(await read('experiments/native-archive/native/validated-source.txt')).toString('utf8').slice(0,native.sourceCharacters);
+  assert.equal(hash(JSON.stringify(text)),native.sourceTextHash);assert.equal(native.completionState,'REPORTED');assert.equal(native.persisted,false);
+  const fragments=[...text.matchAll(/```\n([\s\S]*?)\n```/g)].map(m=>JSON.parse(m[1]));assert.equal(fragments.length,1);assert.equal(fragments[0].path,'docs/NATIVE_ARCHIVE_EVIDENCE.md');assert.equal((await read(fragments[0].path)).toString('utf8'),fragments[0].content);
+  assert.equal((await json('experiments/native-archive/native/manifest.json')).final_artifact_hash,native.artifactHash);assert.equal((await json('experiments/native-archive/native/performance.json')).gtfl.collapse_validity,'VALID');
+  assert.equal((await json('experiments/native-archive/history/native-timeout.json')).code,'TASK_TIMEOUT');
+  const analytics=await json('experiments/native-archive/analytics-test-receipt.json');assert.equal(analytics.passed,4);assert.equal(analytics.failed,0);for(const[file,digest]of Object.entries(analytics.sourceHashes))assert.equal(hash(await read(file)),digest);
+  return {nativeArchiveOriginalCases:26,nativeArchiveAdditionalProbes:4,nativeArchiveTotalPassed:30,nativeArchivePairs:8,nativeArchiveMeasurementCalls:18,nativeArchiveAnalyticsTests:4,nativeArchiveMissingObjectCoverage:'PARTIAL_C25_T04',nativeArchiveSourceMatch:1,nativeArchiveTimingRemeasurement:'Not deterministic; frozen derivation and seeded bootstrap are reproducible'};
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "public-dossier-native-archive/1",
+  "classification": "fresh_synthetic_archive_conformance",
+  "originalTests": [
+    "tests/test_gtfl_archive_model.py"
+  ],
+  "originalTestFunctions": 17,
+  "expandedOriginalCases": null,
+  "additionalTestFunctions": 4,
+  "cpuThreads": 1,
+  "optimizerSteps": 0,
+  "trainingJob": false,
+  "externalCheckpoints": false,
+  "providerCalls": 0,
+  "hostedModelComparisons": false,
+  "expectedVersions": {
+    "python": "3.12",
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0",
+    "pytest": "9.1.1"
+  },
+  "timeoutMs": 600000,
+  "measurement": {
+    "schemaVersion": 1,
+    "id": "native-capture-archive/1",
+    "pairs": 8,
+    "measuredArmsPerPair": 2,
+    "warmupArms": 2,
+    "seed": 2718,
+    "tokenId": 3,
+    "tokenTime": 0,
+    "smallConfig": {
+      "vocabularySize": 16,
+      "positiveStateLanes": 8,
+      "occupiedThresholdBanks": 3,
+      "actualParameters": 404
+    },
+    "baseline": "full_capture_v1",
+    "candidate": "sealed_archive_v2",
+    "counterbalance": "alternate_full_first_archive_first",
+    "timingScope": "infer_token only; excludes allocation, directory preparation, semantic expansion, hashing for comparison, reopen and byte enumeration; includes in-call capture, hashing and seal",
+    "sharedSemanticFields": [
+      "distribution",
+      "crscRecord",
+      "collapseRecord",
+      "frames",
+      "events",
+      "frameCount",
+      "eventCount"
+    ],
+    "byteAccounting": "Matched returned JSON; candidate disk includes all sealed objects/metadata plus separate observed timing sidecar; baseline disk null. No cross-format disk compression ratio.",
+    "telemetryBothArms": true,
+    "originalSuiteInferenceCalls": null,
+    "bootstrap": {
+      "iterations": 4000,
+      "seed": 1729,
+      "confidence": 0.95,
+      "effect": "candidate_minus_baseline_local_ms"
+    }
+  }
+}

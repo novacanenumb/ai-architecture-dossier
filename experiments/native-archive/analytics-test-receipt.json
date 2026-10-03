@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "command": "node --test experiments/native-archive/derive.test.mjs",
+  "passed": 4,
+  "failed": 0,
+  "skipped": 0,
+  "exitCode": 0,
+  "sourceHashes": {
+    "experiments/native-archive/derive.test.mjs": "sha256:338b28b28508091eb3d46cac3e50f909c4c2553da83e40c98ee7e65cf0a5c8c8",
+    "experiments/native-archive/derive.mjs": "sha256:ce4da68ce6468dc60a9342f6462a6003dc6d279e84bfe36a4cd9131f8a7e23b8",
+    "packages/lab/analytics.mjs": "sha256:262495123a07b47b242764d20ea3678dd343d5a520d226e29254694b941768e9",
+    "experiments/native-archive/summary.json": "sha256:9356d674948303f9f08207aa3f2dbea316027173556f1bd28027f4bd3c823fa5"
+  },
+  "scope": "Negative timing/bytes, retained failed-pair denominator, semantic mismatch, missing/order/control rejection"
+}
