@@ -17,6 +17,10 @@ const rotorReceipt=JSON.parse(await readFile(path.join(root,'experiments/rotor/t
 const rotorCoverage=JSON.parse(await readFile(path.join(root,'experiments/rotor/coverage.json'),'utf8'));
 await writeFile(path.join(root,'dist/data/rotor-evidence.json'),JSON.stringify({...rotorReceipt,coverage:rotorCoverage},null,2)+'\n');
 await copyFile(path.join(root,'experiments/rotor/trace.json'),path.join(root,'dist/data/rotor-trace.json'));
+const nativeModelReceipt=JSON.parse(await readFile(path.join(root,'experiments/native-model/test-receipt.json'),'utf8'));
+const nativeModelCoverage=JSON.parse(await readFile(path.join(root,'experiments/native-model/coverage.json'),'utf8'));
+await writeFile(path.join(root,'dist/data/native-model-evidence.json'),JSON.stringify({...nativeModelReceipt,coverage:nativeModelCoverage},null,2)+'\n');
+await copyFile(path.join(root,'experiments/native-model/summary.json'),path.join(root,'dist/data/native-model-summary.json'));
 // Original source stays outside publication; these are frozen derived synthetic evidence.
 await copyFile(path.join(root, 'experiments/headspace/test-receipt.json'), path.join(root, 'dist/data/headspace-evidence.json'));
 await copyFile(path.join(root, 'experiments/headspace/public-trace.json'), path.join(root, 'dist/data/headspace-trace.json'));

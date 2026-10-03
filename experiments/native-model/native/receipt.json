@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "native-model-source-fragments",
+  "plugin": "hypervisor-standalone@hypervisor-standalone-local",
+  "packageVersion": "2.1.0",
+  "nativeRuntime": "2.1",
+  "runtimeProtocol": "2.0",
+  "schemaVersionNative": 2,
+  "selectedSkill": "hypervisor-run",
+  "sessionId": "005522e1-7aad-478c-8416-fc5735ce8bf8",
+  "runId": "run-ece33140-9034-46a0-afd5-e53bea4b81f3",
+  "completionState": "REPORTED",
+  "persisted": false,
+  "artifactHash": "sha256:f1621a710318e44e605301521104810dfe0fc151d148996a4928958578089cb9",
+  "manifestHash": "sha256:1f9550752869193e320b3f4a97398ed16995313e27e1c70b89fe10232c08482c",
+  "sourceTextHash": "sha256:e6b6dca69716d1cd9a9eff012168d56855ed8b3a818e1f1c93fb6a8040236be2",
+  "sourceCharacters": 12829,
+  "sourceFragmentCount": 2,
+  "nativeCandidateContracts": 2,
+  "actualHostProposalTurns": 2,
+  "priorTimedOutHostProposalTurns": 2,
+  "modelId": "gpt-5.6-sol",
+  "usage": null,
+  "cost": null,
+  "independentSemanticValidator": "UNAVAILABLE",
+  "validationScope": "Native nonempty/schema/anchor/GTFL structural checks; parent original-source tests separately establish bounded behavior.",
+  "parentCorrections": [
+    "Retained executed probe rather than untested worker variations; actual crsc_record field, seed2718, tuple defaults, reference_25m factory, valid-domain mutation and frozen public summary schema.",
+    "Retained tested810word guide, correcting worker misreading404parameter/vocabulary16 as vocabulary4016;20sourceinputs are15modules3tests2compilerinputs plus separately hashed package metadata."
+  ],
+  "sessionState": "CLOSED"
+}

@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "kind": "original-native-model-source-evidence",
+  "status": "PASSED",
+  "command": "npm run test:native-model",
+  "nodeVersion": "v26.3.1",
+  "platform": "win32",
+  "sourcePackage": {
+    "name": "neo-sfr-lab",
+    "version": "0.1.0",
+    "nativePackage": "rtl360_gtfl",
+    "specification": "RTL360-GTFL-NATIVE-1.0",
+    "sourceRedistributed": false
+  },
+  "sourceManifestHash": "sha256:8e034ac646e156ab1b91448728df903ceb97a7ac15ec54b9404b1b29f3beeb98",
+  "sourceFiles": [
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/__init__.py",
+      "bytes": 221,
+      "hash": "sha256:8e1a2ee5b0b34ce896a2fe114dd5bf3e0ce9638c84d55a401da6b88cc1d7b2fd"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/canonical.py",
+      "bytes": 2573,
+      "hash": "sha256:d3a53963a30a50d1e957db7dae13710a7beed2a51409644ccd880b8cfb36d46f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/numeric.py",
+      "bytes": 4066,
+      "hash": "sha256:1e73ccb37a37f9c5c95656170142506b3420a8e86d135997274adba0d54fbcae"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/config.py",
+      "bytes": 5566,
+      "hash": "sha256:743c5fa029c7f4472bba407d356ecf697e8a6ddc89ee3b03cb51d35b2eb12688"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/rotor.py",
+      "bytes": 4142,
+      "hash": "sha256:5180804ff2f6b9c0251ace03f21eb311ac6ee4c9f933e0db89c6167137008f4b"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/lattice.py",
+      "bytes": 10557,
+      "hash": "sha256:2cc42237f480d1c3788207837ae015dd32c01838c3f85c77a406e66d777b1130"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/types.py",
+      "bytes": 4186,
+      "hash": "sha256:89c54639390123a2d849672690a040147ea2d5574611aa1851dadeba558d6d9c"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/observability.py",
+      "bytes": 14964,
+      "hash": "sha256:f6542abb5672c86a788a7af9d01ad0deb1213346ec2416d182b44abb8e560146"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/archive.py",
+      "bytes": 23051,
+      "hash": "sha256:35592bfb84fd6e5636b96edb5fa678cc313f251a2c7d9f421f947d0cbb83418f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/language.py",
+      "bytes": 28009,
+      "hash": "sha256:a9b8972249983086c7998870fb7af0c188d8906e33e0a77b6f287ee50f67ded2"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/ir.py",
+      "bytes": 51790,
+      "hash": "sha256:fdb8f7dfb50ba75656f19b272ae911edb90db0595913ebcc7dd14daa5a7e621c"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/model.py",
+      "bytes": 143675,
+      "hash": "sha256:7a541830b85cd0a8743507e6a1369543c38936f17a7cc2382371afa865986d6e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/reference.py",
+      "bytes": 70257,
+      "hash": "sha256:adc3b5bb911948212be460f5f62464a30b31b5f4e089f21e79c3d1002001cd9e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/capture.py",
+      "bytes": 55645,
+      "hash": "sha256:945b7f7f93d4b55c10971a1328db03cf6b38c3c9cbab7d9398155b0f72f2071e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/serialization.py",
+      "bytes": 1251,
+      "hash": "sha256:836750792e29cf5b076e4e7f455e2c0ef1b42e4cea2b29df8c2c3b1e26f899f7"
+    },
+    {
+      "path": "tests/test_gtfl_model.py",
+      "bytes": 13851,
+      "hash": "sha256:84a67f859bbc9ad3b4704a3c09e3b61da0f4fc37ad591f699821647be2af0f64"
+    },
+    {
+      "path": "tests/test_gtfl_reference.py",
+      "bytes": 10611,
+      "hash": "sha256:17afb2aa866734d2bc26b33e9eaaa4e4346d954a00ea8f32bbeb51576edfe8db"
+    },
+    {
+      "path": "tests/test_gtfl_native_lowering.py",
+      "bytes": 6922,
+      "hash": "sha256:f925ec74501fc368e5fb12973e969269d2f404edaa1f19e84ebadabc56efe0fa"
+    },
+    {
+      "path": "configs/gtfl/section17_network.gtfln",
+      "bytes": 2141,
+      "hash": "sha256:48374a10e23ece92fafb4e039da963154aeed5bfcc1fee58e47812da431da17c"
+    },
+    {
+      "path": "configs/gtfl/section17_relation.gtfln",
+      "bytes": 2422,
+      "hash": "sha256:08455457c5b0bc4fb8ab8b71b170311d8ef5fc2b27a3fe1575d9fa156cf6c44d"
+    }
+  ],
+  "sourceMetadata": {
+    "path": "pyproject.toml",
+    "bytes": 1261,
+    "hash": "sha256:ba040dc95357cb4eb57194a35bba3065b48375d7cfc6f59bf32f509c247f1f15"
+  },
+  "sourceHashes": {
+    "scripts/test-native-model-source.mjs": "sha256:ad25ce18821f1053449a6000783d5f9b8aa016bd5de242cc7f5acd2a9ac0d98c",
+    "experiments/native-model/execute.py": "sha256:f36c58e1aae806ff274134fe270a1d6a2cfa7608eeaa8cc16e773195b2390223",
+    "experiments/native-model/probe.py": "sha256:176241184ae111d0a577f531f92c31c2f8d9f65ce7cdb6bce3e49371a16a106e",
+    "experiments/native-model/source-manifest.json": "sha256:8e034ac646e156ab1b91448728df903ceb97a7ac15ec54b9404b1b29f3beeb98",
+    "experiments/native-model/protocol.json": "sha256:04d99a3c794efb06723c4d3d59571b35930db500494a58e431600cc4712743d1",
+    "experiments/runtime/tests/runtime-helper.mjs": "sha256:5f7c52bb03ab782bcc4387c8894eaf84c9bc7f4d7542bd48d37c03a3445dd8df"
+  },
+  "sourceUnchanged": true,
+  "temporaryCopyRemoved": true,
+  "hypervisorDependency": {
+    "version": "2.1.0",
+    "manifestHash": "sha256:31add3a0cd6d6ee09a98a1bce2b32289e2e20673739df466cee7aa91d263da2c",
+    "contentRoot": "sha256:ca9b10af213bfd69bd8f8e2994eef6e2a6313f91ccd2f9bcca5c6cddee39e0c1",
+    "verifiedFiles": 85
+  },
+  "protocol": {
+    "path": "experiments/native-model/protocol.json",
+    "hashBefore": "sha256:04d99a3c794efb06723c4d3d59571b35930db500494a58e431600cc4712743d1",
+    "hashAfter": "sha256:04d99a3c794efb06723c4d3d59571b35930db500494a58e431600cc4712743d1",
+    "parsed": {
+      "schemaVersion": 1,
+      "id": "public-dossier-native-model/1",
+      "classification": "fresh_synthetic_tensor_conformance",
+      "originalTests": [
+        "tests/test_gtfl_model.py",
+        "tests/test_gtfl_reference.py",
+        "tests/test_gtfl_native_lowering.py"
+      ],
+      "additionalTestFunctions": 4,
+      "cpuThreads": 1,
+      "seed": 2718,
+      "summaryRepeats": 2,
+      "defaultTinyParameters": 50060,
+      "reference25mConfiguredParameters": 25005068,
+      "reference25mInstantiated": false,
+      "optimizerSteps": 0,
+      "trainingJob": false,
+      "externalCheckpoints": false,
+      "providerCalls": 0,
+      "hostedModelComparisons": false,
+      "expectedVersions": {
+        "python": "3.12",
+        "torch": "2.14.0",
+        "numpy": "2.5.3",
+        "safetensors": "0.8.0",
+        "pytest": "9.1.1"
+      },
+      "timeoutMs": 600000
+    }
+  },
+  "execution": {
+    "exitCode": 0,
+    "error": null,
+    "signal": null,
+    "timeoutMs": 600000,
+    "interpreterHash": "sha256:d55736b9f3d6b4ca7985b82db8ce11edfa09994cf93ce31c6b506543b74f32eb",
+    "pythonVersion": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+    "libraries": {
+      "numpy": "2.5.3",
+      "pytest": "9.1.1",
+      "safetensors": "0.8.0",
+      "torch": "2.14.0"
+    },
+    "pytestSiteRole": "Read-only AgentDB pytest library appended after NEO environment libraries; no installation",
+    "pytestExitCode": 0,
+    "stdoutBytes": 68,
+    "stderrBytes": 0,
+    "privateTestOutputBytes": 99,
+    "privateTestErrorBytes": 0
+  },
+  "tests": {
+    "collected": 62,
+    "collectionErrors": [],
+    "errors": 0,
+    "failed": 0,
+    "passed": 62,
+    "results": [
+      {
+        "id": "test_gtfl_model.py::test_profiles_count_real_parameter_families_and_exclude_legacy_keys::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_exact_capsule_mass_checkpoint_chain_tied_readout_and_replay::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_equal_winner_function_identities_and_shared_source_are_preserved::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_causal_record_imports_are_immutable_isolated_and_duplicate_idempotent::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_pytorch_hard_forward_matches_exact_and_backward_is_finite_without_update::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_compact_training_matches_full_forward_without_capture_or_authority_side_effects::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_zero_domain_and_invalid_parameters_reject_without_parameter_mutation::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_selection_capsule_handles_full_mass_zero_mass_and_address_aliases::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_checkpoint_tensor_reload_preserves_exact_native_roots::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_over_budget_capture_profile_rejects_before_parameter_quantization::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_failed_capture_does_not_issue_trusted_import_authority::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_prior_record_authority_requires_an_issued_or_explicit_root_pinned_seal::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_model.py::test_semantic_ledger_binds_real_staged_claims_and_every_atomic_commit::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_fraction_projection_has_exact_hand_calculated_ties_and_domain_locality::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-4",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-5",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-6",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-7",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-8",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-9",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-10",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-11",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-12",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-13",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-14",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_every_bank_and_tied_readout_match_tensor_execution_with_varied_context::case-15",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_default_tiny_profile_all_eight_banks_have_independent_scalar_agreement::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_crossing_is_inclusive_and_zero_support_never_emits_a_state::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_preframe_context_is_combined_without_reading_staged_output::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_all_equal_winning_lanes_match_production_without_identity_loss::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_rejected_second_bank_has_no_partial_generation_and_matches_production_failure::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_zero_tied_readout_rejects_after_a_valid_final_hidden_generation::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_zero_and_invalid_mixture_inputs_fail_closed::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_zero_and_invalid_mixture_inputs_fail_closed::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_zero_and_invalid_mixture_inputs_fail_closed::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_zero_and_invalid_mixture_inputs_fail_closed::case-4",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_parameter_shapes_ids_and_oracle_resource_scope_are_explicit::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_reference.py::test_oracle_imports_no_production_or_tensor_modules_and_works_when_helpers_are_disabled::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_canonical_25m_sources_lower_configuration_without_model_allocation::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_canonical_25m_sources_lower_configuration_without_model_allocation::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_generated_module_is_compiled_and_bound_through_model_checkpoint_and_capture::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_nonsemantic_runtime_limits_cannot_override_compiled_dimensions::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_every_additional_declaration_is_rejected_instead_of_ignored::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_every_additional_declaration_is_rejected_instead_of_ignored::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_every_additional_declaration_is_rejected_instead_of_ignored::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_every_additional_declaration_is_rejected_instead_of_ignored::case-4",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_noncanonical_neural_semantics_cannot_silently_reuse_native_kernel::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_noncanonical_neural_semantics_cannot_silently_reuse_native_kernel::case-2",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_noncanonical_neural_semantics_cannot_silently_reuse_native_kernel::case-3",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_noncanonical_neural_semantics_cannot_silently_reuse_native_kernel::case-4",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_noncanonical_neural_semantics_cannot_silently_reuse_native_kernel::case-5",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_noncanonical_neural_semantics_cannot_silently_reuse_native_kernel::case-6",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_canonical_relation_template_lowering_and_mutated_guard_rejection::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_ir_payload_tampering_and_memory_ingress_fail_closed::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "test_gtfl_native_lowering.py::test_explicit_template_rejects_unresolved_absent_lane_context_revival::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_tiny_parameter_count_and_partial_module_inventory::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_same_seed_reproduces_parameter_root_and_inference_without_parameter_change::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_codebook_parameter_change_invalidates_a_previously_issued_record::case-1",
+        "status": "PASSED"
+      },
+      {
+        "id": "probe.py::test_native_inference_rejects_sequence_time_and_unsupported_memory_imports::case-1",
+        "status": "PASSED"
+      }
+    ],
+    "skipped": 0
+  },
+  "originalTests": {
+    "total": 58,
+    "passed": 58
+  },
+  "additionalTests": {
+    "total": 4,
+    "passed": 4
+  },
+  "executionError": null,
+  "controls": {
+    "auditHook": "BEST_EFFORT",
+    "operatingSystemConfinement": "UNAVAILABLE",
+    "childEnvironment": "Allowlisted noncredential variables, CPU threads1 and owned TEMP/TMP",
+    "pytestPluginAutoload": false,
+    "originalWrites": false,
+    "legacyProjectLaunch": false,
+    "optimizerSteps": 0,
+    "trainingJob": false,
+    "freshSyntheticWeights": true,
+    "externalCheckpointLoaded": false
+  },
+  "provenance": {
+    "providerCalls": 0,
+    "hostedTokens": null,
+    "billedCost": null,
+    "hostedLatencyMs": null,
+    "modelQuality": null,
+    "defaultModelBaseline": null,
+    "sourceCodeRedistributed": false
+  },
+  "summaryFile": {
+    "path": "experiments/native-model/summary.json",
+    "hash": "sha256:3ffba9c7fdd4979d42bec9e6b15a840aaa256d1eba1697636b0c58bfa255d031",
+    "bytes": 2046
+  }
+}

@@ -67,7 +67,7 @@ The source-oriented suites have stronger environment requirements than the defau
 
 Read [docs/CONTEXT_ROUTING.md](docs/CONTEXT_ROUTING.md) before assessing C04. The current record includes 45 supplied-runtime probes plus seven separate C04 tests. The former establish selected behavior against the supplied original implementation; the latter examine additional routing questions. The scheduler record is available at [experiments/runtime/scheduler-results.json](experiments/runtime/scheduler-results.json), and the routing receipt is at [experiments/routing/test-receipt.json](experiments/routing/test-receipt.json).
 
-Across the wider source work, 21 components have partial original-source evidence. That component count is separate from the number of tests. C14 is a new public reference implementation, with original source still unavailable and human or model-performance outcomes unmeasured. Evaluators should preserve those provenance distinctions when comparing coverage.
+Across the wider source work, 24 components have partial original-source evidence. That component count is separate from the number of tests. C14 is a new public reference implementation, with original source still unavailable and human or model-performance outcomes unmeasured. Evaluators should preserve those provenance distinctions when comparing coverage.
 
 ## Illustrative research-assistant workflow
 
@@ -453,6 +453,24 @@ npm run test:rotor
 Reproduction requires Node 26, Python 3.12, pytest 9.1.1, exact original source and the approved dossier dependency. The receipt retains a native timeout and a failed dependency preflight before Python dispatch. A damaged bundled Node binary was preserved locally and the identical approved release restored through its verified installer; the lock stayed unchanged. The original project launcher and legacy runtime gate were not invoked or changed.
 
 The policy remains `PROPOSED_LOCAL_MECHANICS_NOT_S0`; local mathematics does not establish a trained model or measured model benefit. Hosted usage, cost, latency, default-model quality and whole C23–C26 acceptance remain unavailable. This raises partial original-source component coverage from 20 to 21, while C14 remains a separate new reference implementation.
+
+## C23, C25 and C26: actual Tiny tensor conformance
+
+The [native-model source guide](docs/NATIVE_MODEL_EVIDENCE.md) records **62 passing cases**: 58 unchanged original cases—13 model, 28 independent-reference and 17 native-lowering cases—and four new dossier probes. Twenty source inputs are pinned: 15 modules, 3 original test files and 2 canonical compiler inputs. Tests run in an owned copy and recheck original hashes unchanged. Public records exclude original source, private test payloads, tensor values and hidden states.
+
+The default Tiny model has **50,060 actually instantiated parameters**, across codebook 16,384; relations 32,768; kappa 512; u_alpha 192; u_beta 192; eta 12. Their sum matches the original model and configuration counts. The repeat fixture has 404 parameters, vocabulary 16, 8 lanes and 3 banks, with public seed 2718. Two fresh copies produce matching parameter roots and record hashes without parameter mutation. The reference 25M configuration reports 25,005,068 parameters, but its tensors were never allocated. Configured scale is not a trained or evaluated model.
+
+Original tests compare the tensor bank/readout path against a separate scalar/Fraction oracle, including ties, invalid mixtures, zero domains and failed generation. They exercise exact-forward and finite backward behavior without an optimizer step, compact forward-training computation, compiler rejection, prior-record seals and fresh in-memory state-dictionary reload. The new probes check actual Tiny counts, partial module exclusions, same-seed reproducibility, old-record rejection after an in-domain parameter change, cross-sequence/current-time rejection and explicit unsupported S3L memory. These cases are local source conformance, not held-out learning results.
+
+Three earlier local attempts remain in [the history](experiments/native-model/history): 57/62 twice, then 61/62. Missing copied compiler inputs, an incorrect new-probe record key and an invalid-domain fixture mutation were corrected without patching original source. A native timeout and context preflight failures are retained separately; the successful source-fragment run is REPORTED and ephemeral.
+
+```text
+npm run test:native-model
+```
+
+Reproduction requires Node 26, exact pinned source and existing Python 3.12/Torch 2.14.0 libraries with read-only appended pytest 9.1.1. It runs no optimizer, external checkpoint, legacy project launcher or provider. See the [receipt](experiments/native-model/test-receipt.json), [derived summary](experiments/native-model/summary.json) and [partial acceptance mapping](experiments/native-model/coverage.json). The Site Lab views inspect frozen original cases for [C23](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/component/C23), [C25](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/component/C25) and [C26](https://novacanenumb-ai-architecture-dossier.novacanenumb.chatgpt.site/#/component/C26).
+
+C23 module inventory does not prove the whole semantic graph; C25 tokenizer/cache-eviction/missing-archive guarantees and C26 held-out learning/promotion/observer overhead remain unverified. Hosted metrics remain null. This expands partial original-source coverage to 24 components, while C14 remains a separate new reference.
 
 ## C14: controlled language analysis
 

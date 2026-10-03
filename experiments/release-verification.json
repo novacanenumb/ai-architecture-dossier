@@ -1,4 +1,14 @@
 {
+  "nativeModelOriginalCases": 58,
+  "nativeModelAdditionalProbes": 4,
+  "nativeModelTotalPassed": 62,
+  "nativeModelSourcePins": 20,
+  "nativeModelPartialComponents": 3,
+  "nativeModelDefaultTinyParameters": 50060,
+  "nativeModel25mInstantiated": false,
+  "nativeModelFailedAttempts": 3,
+  "nativeModelSourceMatches": 2,
+  "nativeModelPortableVerification": "Checks retained source bindings and counts; does not independently instantiate Torch or recompute original CBOR roots.",
   "rotorOriginalTests": 9,
   "rotorAdditionalProbes": 6,
   "rotorRouteCalls": 8,
@@ -14,7 +24,7 @@
   "rotorCanonicalCborRecomputation": "UNAVAILABLE in portable verifier; original Python execution and whole-file binding retained",
   "readmeExpansionNativeFragments": 2,
   "readmePriorTextPreserved": true,
-  "readmeInternalFileLinksChecked": 83,
+  "readmeInternalFileLinksChecked": 88,
   "readmeExpansionRunId": "run-10b77d08-45a5-4763-9518-47df7e39311a",
   "routingTests": 7,
   "routingDiagnosticCallbacks": 4,
@@ -55,14 +65,14 @@
   "headspaceDiagnosticPairs": 12,
   "headspaceSourceMatches": 3,
   "headspacePortableTraceHashVerification": true,
-  "readmeWords": 8144,
+  "readmeWords": 8524,
   "components": 28,
   "acceptanceRequirements": 122,
   "metricEndpoints": 154,
   "fixtureConfigurations": 17,
   "providerCalls": 0,
-  "syntaxChecked": 40,
-  "publicFiles": 20,
+  "syntaxChecked": 42,
+  "publicFiles": 22,
   "nativeSourceMatches": [
     "packages/lab/core.mjs",
     "packages/lab/analytics.mjs",
@@ -74,7 +84,7 @@
   "hostSourceChanges": [
     {
       "path": "dist/app.mjs",
-      "reason": "Parent integrated C24 original pure-math evidence, recorded trace selection and partial acceptance alongside prior component evidence; no model measurements inferred."
+      "reason": "Parent integrated frozen original Tiny tensor/reference/compiler evidence and recorded-case filters for C23/C25/C26; no model improvement inferred."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -84,12 +94,14 @@
   "deterministicStaticRebuild": true,
   "publicFileHashes": {
     "dist/LICENSE.txt": "3c21321c5e4a7183b62a138f581a78202bfad89f1b7b4f54aa64976bd7ca95a8",
-    "dist/app.mjs": "8fa4a3511c947714580abf113e8c6e5628c087f1b2f625f6fe825504ca368dac",
+    "dist/app.mjs": "4208a2bc98201201675183f4a01231a13a56661eb9928441e18a4533896fec3a",
     "dist/data/agentdb-evidence.json": "bf179fa952cd3faead7f8385a472ff37c8e65ed1a6108dc67b5381151e0a2789",
     "dist/data/catalog.json": "f6091548179bee0789f67307d4bf090857d3def4c12adca2750b7d807bd3491d",
     "dist/data/headspace-evidence.json": "71e95d1f59b46934e089a47d830c0213fc061c80518de007afdfcd2506059ee4",
     "dist/data/headspace-trace.json": "e631791770d89ddb2aedaf31802d44eaa2ea4918821a9f42766e66c17ec12aa3",
     "dist/data/language-results.json": "9fe1e9dd3e1de9f3b431025a5f50b150fee92c749304812156e2c2fb942db96b",
+    "dist/data/native-model-evidence.json": "cc80f3e930d50db28a322d38d1e9e12e53cb6071f4b53118980aaa9c54e443e3",
+    "dist/data/native-model-summary.json": "3ffba9c7fdd4979d42bec9e6b15a840aaa256d1eba1697636b0c58bfa255d031",
     "dist/data/publication.json": "cacb22d5a424f344bfad19ce2724dae6dc9314cf6f90d4df240584f3a3c9ade0",
     "dist/data/results.json": "c5dfe3017b633d48c44f909b2265be72f421d167bc998e6bcc6a254566d47307",
     "dist/data/rotor-evidence.json": "5c0cd5181ad1f1d740475771a5a39f4f3a231ebbdb07836e8093bcb3028c16ae",

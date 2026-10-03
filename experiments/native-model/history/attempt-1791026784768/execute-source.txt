@@ -1,0 +1,88 @@
+from __future__ import annotations
+import contextlib, importlib.metadata, importlib.util, io, json, os, sys
+from pathlib import Path
+ROOT = Path(sys.argv[1]).resolve(strict=True)
+PYTEST_SITE = Path(sys.argv[2]).resolve(strict=True)
+if not ROOT.name.startswith('.native-model-source-check-'):
+    raise RuntimeError('OWNED_COPY_REQUIRED')
+sys.dont_write_bytecode = True
+os.environ['PYTEST_DISABLE_PLUGIN_AUTOLOAD'] = '1'
+sys.path.insert(0, str(ROOT / '04_NEURAL_CORE'))
+sys.path.append(str(PYTEST_SITE))
+FLAGS = os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND
+def checked(value):
+    if isinstance(value, int): return
+    if isinstance(value, bytes): value = os.fsdecode(value)
+    if isinstance(value, str):
+        target = Path(value).resolve(strict=False)
+        if target != ROOT and ROOT not in target.parents:
+            raise PermissionError('WRITE_OUTSIDE_OWNED_COPY')
+def guard(event, args):
+    if event.startswith('socket.') or event in ('subprocess.Popen', 'os.system', 'os.posix_spawn', 'os.posix_spawnp'):
+        raise PermissionError('NETWORK_OR_SUBPROCESS_DISABLED')
+    if event == 'open' and args:
+        mode, flags = args[1] if len(args) > 1 else None, args[2] if len(args) > 2 else 0
+        if (isinstance(mode, str) and any(c in mode for c in 'wax+')) or (isinstance(flags, int) and flags & FLAGS): checked(args[0])
+    if event in ('os.remove', 'os.unlink', 'os.mkdir', 'os.rmdir', 'os.rename', 'os.replace') and args:
+        for item in args[:2] if event in ('os.rename', 'os.replace') else args[:1]: checked(item)
+sys.addaudithook(guard)
+class Results:
+    def __init__(self): self.collected, self.phases, self.names, self.collection_errors, self.diagnostics = [], {}, {}, [], {}
+    def pytest_runtest_makereport(self, item, call):
+        if call.excinfo is not None:
+            error = call.excinfo.value
+            entry = {'phase': call.when, 'type': type(error).__name__}
+            if isinstance(error, FileNotFoundError): entry['missingFileName'] = Path(error.filename).name if error.filename else None
+            if call.excinfo.traceback:
+                frame = call.excinfo.traceback[-1]
+                entry['location'] = {'file': Path(str(frame.path)).name, 'line': frame.lineno + 1}
+            self.diagnostics.setdefault(item.nodeid, []).append(entry)
+    def pytest_collection_finish(self, session):
+        self.collected = [item.nodeid for item in session.items]
+        counters = {}
+        for item in session.items:
+            base = Path(str(item.path)).name + '::' + item.originalname
+            counters[base] = counters.get(base, 0) + 1
+            self.names[item.nodeid] = base + '::case-' + str(counters[base])
+    def pytest_collectreport(self, report):
+        if report.failed: self.collection_errors.append({'file': Path(report.nodeid).name.split('::')[0], 'status': 'ERROR'})
+    def pytest_runtest_logreport(self, report):
+        status = 'PASSED' if report.passed else 'SKIPPED' if report.skipped else 'FAILED' if report.when == 'call' else 'ERROR'
+        self.phases.setdefault(report.nodeid, []).append({'phase': report.when, 'status': status})
+    def summary(self):
+        items = []
+        for node in self.collected:
+            phases = self.phases.get(node, [])
+            states = {p['status'] for p in phases}
+            state = next((s for s in ('ERROR', 'FAILED', 'SKIPPED') if s in states), 'PASSED' if any(p['phase'] == 'call' and p['status'] == 'PASSED' for p in phases) else 'ERROR')
+            item = {'id': self.names[node], 'status': state}
+            if node in self.diagnostics: item['diagnostics'] = self.diagnostics[node]
+            items.append(item)
+        return {'collected': len(items), 'passed': sum(i['status']=='PASSED' for i in items), 'failed': sum(i['status']=='FAILED' for i in items), 'skipped': sum(i['status']=='SKIPPED' for i in items), 'errors': sum(i['status']=='ERROR' for i in items)+len(self.collection_errors), 'results': items, 'collectionErrors': self.collection_errors}
+results, summary_data, failure, code, libraries = Results(), None, None, None, {}
+output, errors = io.StringIO(), io.StringIO()
+protocol = json.loads((ROOT / 'protocol.json').read_text(encoding='utf-8'))
+with contextlib.redirect_stdout(output), contextlib.redirect_stderr(errors):
+    try:
+        import torch, pytest
+        libraries = {name: importlib.metadata.version(name) for name in ('torch', 'pytest', 'numpy', 'safetensors')}
+        if sys.version_info[:2] != (3,12) or any(libraries[name] != expected for name, expected in protocol['expectedVersions'].items() if name != 'python'):
+            raise RuntimeError('DEPENDENCY_VERSION_MISMATCH')
+        torch.set_num_threads(protocol['cpuThreads'])
+        torch.set_num_interop_threads(protocol['cpuThreads'])
+        paths = [str(ROOT / relative) for relative in protocol['originalTests']] + [str(ROOT / 'probe.py')]
+        code = int(pytest.main(['-q','-p','no:cacheprovider','-p','no:logging','--basetemp',str(ROOT / 'pytest-state'),*paths], plugins=[results]))
+        if code == 0:
+            spec = importlib.util.spec_from_file_location('dossier_native_probe', ROOT / 'probe.py')
+            module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+            summary_data = module.capture_public_summary()
+    except BaseException as error:
+        failure = {'type': type(error).__name__, 'code': getattr(error,'code',None)}
+summary = results.summary()
+added = [r for r in summary['results'] if r['id'].startswith('probe.py::')]
+original = [r for r in summary['results'] if not r['id'].startswith('probe.py::')]
+passed = code == 0 and summary['collected'] <= 128 and summary['passed'] == summary['collected'] and summary['failed']==summary['skipped']==summary['errors']==0 and len(added)==4 and len(original)>=32 and failure is None and summary_data is not None
+report = {'schemaVersion':1,'status':'PASSED' if passed else 'FAILED','pythonVersion':sys.version,'libraries':libraries,'pytestExitCode':code,'tests':summary,'summary':summary_data,'executionError':failure,'privateOutputBytes':len(output.getvalue().encode('utf-8')),'privateErrorBytes':len(errors.getvalue().encode('utf-8')),'outputRedaction':'Raw original test output and parametrized literal labels are not exported.'}
+(ROOT / 'reports/execution.json').write_text(json.dumps(report,indent=2,sort_keys=True,allow_nan=False)+'\n',encoding='utf-8')
+print(json.dumps({'status':report['status'],'tests':summary['collected'],'passed':summary['passed'],'errorType':failure['type'] if failure else None}))
+raise SystemExit(0 if passed else 1)

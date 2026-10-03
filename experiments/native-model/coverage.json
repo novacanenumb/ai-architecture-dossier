@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "classification": "PARTIAL_ORIGINAL_SOURCE_EVIDENCE",
+  "components": [
+    {"componentId":"C23","acceptanceIds":["C23-T01","C23-T02","C23-T04","C23-T05"],"unverifiedAcceptanceIds":["C23-T03"],"boundary":"Partial compiler/module exclusion, causal imports, zero-domain mechanics and actual Tiny tensor counts. Whole semantic graph, held-out learning and 25M instantiated model remain unverified."},
+    {"componentId":"C25","acceptanceIds":["C25-T01","C25-T02"],"unverifiedAcceptanceIds":["C25-T03","C25-T04"],"boundary":"Parameter-root, sequence/time and issued-seal checks only. Tokenizer binding, CRSC eviction/recomputation, missing archive and human identity remain unverified."},
+    {"componentId":"C26","acceptanceIds":["C26-T02","C26-T03"],"unverifiedAcceptanceIds":["C26-T01","C26-T04","C26-T05"],"boundary":"Frozen exact-forward, finite backward without update, compact forward and zero/nonfinite checks only. Learning, checkpoint promotion and observer overhead remain unverified."}
+  ]
+}

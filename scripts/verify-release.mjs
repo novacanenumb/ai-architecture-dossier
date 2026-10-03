@@ -10,10 +10,12 @@ import { verifyLanguageEvidence } from './verify-language-evidence.mjs';
 import { verifyRoutingEvidence } from './verify-routing-evidence.mjs';
 import { verifyReadmeEvidence } from './verify-readme-evidence.mjs';
 import { verifyRotorEvidence } from './verify-rotor-evidence.mjs';
+import { verifyNativeModelEvidence } from './verify-native-model-evidence.mjs';
 const root=path.resolve(import.meta.dirname,'..'), hash=data=>createHash('sha256').update(data).digest('hex');
 const routingVerification = await verifyRoutingEvidence(root);
 const readmeExpansionVerification = await verifyReadmeEvidence(root);
 const rotorVerification = await verifyRotorEvidence(root);
+const nativeModelVerification = await verifyNativeModelEvidence(root);
 const json=async file=>JSON.parse(await readFile(path.join(root,file),'utf8'));
 async function tree(directory) {
   const result=[];
@@ -191,6 +193,6 @@ const credentialPattern=/(?:sk-proj-[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9]{20,
 for(const file of publicFiles) { assert.ok(!forbiddenNames.test(file),file); assert.ok(!credentialPattern.test(await readFile(path.join(root,file),'utf8')),'Credential pattern found: '+file); }
 const manifest=async()=>Object.fromEntries(await Promise.all((await tree('dist')).map(async f=>[f,hash(await readFile(path.join(root,f)))])));
 const before=await manifest(); const build=spawnSync(process.execPath,['scripts/build.mjs'],{cwd:root,encoding:'utf8'}); assert.equal(build.status,0,build.stdout+build.stderr); const after=await manifest(); assert.deepEqual(after,before,'Static rebuild differs');
-const report={...rotorVerification,...readmeExpansionVerification,...routingVerification,...languageChecks,...agentdbChecks,schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,headspaceOriginalFixtureChecks:16,headspaceMockComparisonChecks:17,headspaceOriginalConcurrentFailures:12,headspaceAdaptedConcurrentFailures:0,headspaceDiagnosticPairs:12,headspaceSourceMatches,headspacePortableTraceHashVerification:true,readmeWords:currentReadme.trim().split(/\s+/).length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
+const report={...nativeModelVerification,...rotorVerification,...readmeExpansionVerification,...routingVerification,...languageChecks,...agentdbChecks,schemaVersion:1,status:'PASSED',tests:receipt.passed,suppliedRuntimeTests:runtimeReceipt.passed,suppliedRuntimeComponents:runtimeCoverage.components.length,runtimeSourceMatches,schedulerSourceMatches,schedulerAttempts:scheduler.attempts.length,schedulerPairs:eligible.length,headspaceOriginalFixtureChecks:16,headspaceMockComparisonChecks:17,headspaceOriginalConcurrentFailures:12,headspaceAdaptedConcurrentFailures:0,headspaceDiagnosticPairs:12,headspaceSourceMatches,headspacePortableTraceHashVerification:true,readmeWords:currentReadme.trim().split(/\s+/).length,components:28,acceptanceRequirements:122,metricEndpoints:154,fixtureConfigurations:17,providerCalls:0,syntaxChecked:codeFiles.length,publicFiles:publicFiles.length,nativeSourceMatches,hostSourceChanges,deterministicStaticRebuild:true,publicFileHashes:after,securityCheck:'Finite filename and credential pattern checks, not a comprehensive security audit.'};
 await writeFile(path.join(root,'experiments/release-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({...report,publicFileHashes:undefined}));

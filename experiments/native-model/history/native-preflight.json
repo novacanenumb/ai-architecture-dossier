@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "attempts": [
+    {
+      "state": "ERROR",
+      "code": "INVALID_TEXT",
+      "sessionId": null,
+      "hostProposalTurns": 0
+    },
+    {
+      "state": "PINNED_OVERFLOW",
+      "runId": "run-a221aa1f-1686-4ce2-aa15-648103a59d3c",
+      "sessionId": null,
+      "hostProposalTurns": 0,
+      "artifactAvailable": false
+    }
+  ],
+  "resolution": "Split the oversized source requirement and increase explicit context/token reservations; no pinned controls dropped.",
+  "providerCalls": 0
+}

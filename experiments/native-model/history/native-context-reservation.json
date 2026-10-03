@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "state": "PINNED_OVERFLOW",
+  "runId": "run-67b9bbbf-d7c4-45ff-9249-4d4d2cee6e38",
+  "sessionId": null,
+  "hostProposalTurns": 0,
+  "artifactAvailable": false,
+  "reason": "LOCAL window includes all pinned requirement bytes and output reserve; raising the anchor packet budget alone did not enlarge that window.",
+  "resolution": "Retain every pinned requirement and use8000outputreserve for6076/6469-character drafts instead of16000.",
+  "providerCalls": 0
+}

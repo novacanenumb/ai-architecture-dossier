@@ -11,6 +11,7 @@
     "test:runtime": "node scripts/test-supplied-runtime.mjs",
     "test:routing": "node scripts/test-routing-source.mjs",
     "test:rotor": "node scripts/test-rotor-source.mjs",
+    "test:native-model": "node scripts/test-native-model-source.mjs",
     "test:headspace": "node scripts/test-headspace-source.mjs",
     "test:agentdb": "node scripts/test-agentdb-source.mjs",
     "benchmark": "node scripts/benchmark.mjs",

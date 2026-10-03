@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "public-dossier-native-model/1",
+  "classification": "fresh_synthetic_tensor_conformance",
+  "originalTests": [
+    "tests/test_gtfl_model.py",
+    "tests/test_gtfl_reference.py",
+    "tests/test_gtfl_native_lowering.py"
+  ],
+  "additionalTestFunctions": 4,
+  "cpuThreads": 1,
+  "seed": 2718,
+  "summaryRepeats": 2,
+  "defaultTinyParameters": 50060,
+  "reference25mConfiguredParameters": 25005068,
+  "reference25mInstantiated": false,
+  "optimizerSteps": 0,
+  "trainingJob": false,
+  "externalCheckpoints": false,
+  "providerCalls": 0,
+  "hostedModelComparisons": false,
+  "expectedVersions": {
+    "python": "3.12",
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0",
+    "pytest": "9.1.1"
+  },
+  "timeoutMs": 600000
+}

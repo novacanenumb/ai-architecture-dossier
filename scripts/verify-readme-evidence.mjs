@@ -17,10 +17,17 @@ export async function verifyReadmeEvidence(root) {
   assert.equal(fragments.length,2);
   const integration=await json('experiments/readme/integration-receipt.json');
   const latest=await read('README.md');
+  const nativeModel=await json('experiments/native-model/readme-integration.json');
+  assert.equal(hash(latest),nativeModel.currentReadmeHash);
+  assert.equal(latest.split(nativeModel.addition.content).length,2);
+  let priorRotor=latest.replace(nativeModel.addition.content+'\n','');
+  assert.deepEqual(nativeModel.replacements,[{from:'Across the wider source work, 21 components',to:'Across the wider source work, 24 components'}]);
+  for(const replacement of nativeModel.replacements){assert.equal(priorRotor.split(replacement.to).length,2);priorRotor=priorRotor.replace(replacement.to,replacement.from);}
+  assert.equal(hash(priorRotor),nativeModel.previousReadmeHash);
   const rotor=await json('experiments/rotor/readme-integration.json');
-  assert.equal(hash(latest),rotor.currentReadmeHash);
-  assert.equal(latest.split(rotor.addition.content).length,2);
-  let current=latest.replace(rotor.addition.content+'\n','');
+  assert.equal(hash(priorRotor),rotor.currentReadmeHash);
+  assert.equal(priorRotor.split(rotor.addition.content).length,2);
+  let current=priorRotor.replace(rotor.addition.content+'\n','');
   assert.deepEqual(rotor.replacements,[{from:'Across the wider source work, 20 components',to:'Across the wider source work, 21 components'}]);
   for(const replacement of rotor.replacements){assert.equal(current.split(replacement.to).length,2);current=current.replace(replacement.to,replacement.from);}
   assert.equal(hash(current),rotor.previousReadmeHash);

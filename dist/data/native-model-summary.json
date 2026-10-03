@@ -1,0 +1,65 @@
+{
+  "classification": "fresh_cpu_synthetic_native_model_fixture",
+  "defaultModelBaseline": null,
+  "fixture": {
+    "device": "cpu",
+    "seed": 2718,
+    "smallConfig": {
+      "occupiedThresholdBanks": 3,
+      "positiveStateLanes": 8,
+      "vocabularySize": 16
+    },
+    "summaryRepeats": 2
+  },
+  "hostedCost": null,
+  "hostedLatency": null,
+  "interpretationLimits": {
+    "externalCheckpointLoaded": false,
+    "hiddenStatesIncluded": false,
+    "moduleInventoryIsWholeGraphProof": false,
+    "optimizerOrTrainingLoopRun": false,
+    "originalSourceRedistributed": false,
+    "privateFixturesIncluded": false,
+    "rawTensorsIncluded": false,
+    "trainedOutcomeMeasured": false
+  },
+  "modelQuality": null,
+  "modelTokens": null,
+  "observed": {
+    "defaultTinyActualParameters": 50060,
+    "defaultTinyFamilyCounts": {
+      "codebook": 16384,
+      "eta": 12,
+      "kappa": 512,
+      "relations": 32768,
+      "u_alpha": 192,
+      "u_beta": 192
+    },
+    "defaultTinyModuleTypeNames": [
+      "RTL360GTFLModel"
+    ],
+    "inferenceDidNotChangeParameters": true,
+    "parameterRootsAfter": [
+      "sha256:8f2e9f8d44cc1a16b9264280cd2b30db7becedca086aaafd4c034b2da2593c18",
+      "sha256:8f2e9f8d44cc1a16b9264280cd2b30db7becedca086aaafd4c034b2da2593c18"
+    ],
+    "parameterRootsBefore": [
+      "sha256:8f2e9f8d44cc1a16b9264280cd2b30db7becedca086aaafd4c034b2da2593c18",
+      "sha256:8f2e9f8d44cc1a16b9264280cd2b30db7becedca086aaafd4c034b2da2593c18"
+    ],
+    "prohibitedPartialInventoryTypesPresent": [],
+    "recordHashes": [
+      "sha256:6c5c77e1b9b5191bc510ecd09aabb89a8e47813cd91381af405cb0fbd9e6455f",
+      "sha256:6c5c77e1b9b5191bc510ecd09aabb89a8e47813cd91381af405cb0fbd9e6455f"
+    ],
+    "reference25mConfiguredParameters": 25005068,
+    "reference25mInstantiated": false,
+    "sameSeedParameterRootsEqual": true,
+    "sameSeedRecordsEqual": true,
+    "smallActualParameters": 404,
+    "smallConfiguredParameters": 404
+  },
+  "probeId": "public-dossier-native-model/1",
+  "providerCalls": 0,
+  "schemaVersion": 1
+}

@@ -1,0 +1,112 @@
+from __future__ import annotations
+from collections import Counter
+import pytest
+import torch
+from torch import nn
+from rtl360_gtfl.config import GTFLModelConfig
+from rtl360_gtfl.model import RTL360GTFLModel, GTFLNativeExecutionError
+from rtl360_gtfl.canonical import content_hash
+
+PUBLIC_SEED = 2718
+SEQUENCE_ID = 'public-dossier-native-sequence'
+CAPSULE_ID = 'public-dossier-native-capsule'
+
+def _small_config():
+    return GTFLModelConfig.tiny(vocabulary_size=16, positive_state_lanes=8, occupied_threshold_banks=3)
+
+def _model(config):
+    return RTL360GTFLModel(config, seed=PUBLIC_SEED).cpu()
+
+def _infer(model, token_id, token_time, *, prior_records=(), sequence_id=SEQUENCE_ID, approved_memory_records=()):
+    return model.infer_token(token_id, token_time=token_time, prior_records=prior_records,
+                            sequence_id=sequence_id, capsule_id=CAPSULE_ID,
+                            approved_memory_records=approved_memory_records, archive=None)
+
+def _record(result):
+    assert isinstance(result, dict) and isinstance(result.get('crsc_record'), dict)
+    return result['crsc_record']
+
+def _family_counts(model):
+    counts = Counter()
+    for name, parameter in model.named_parameters():
+        counts[name.split('.', 1)[0]] += parameter.numel()
+    return dict(sorted(counts.items()))
+
+def test_tiny_parameter_count_and_partial_module_inventory():
+    config = GTFLModelConfig.tiny()
+    model = _model(config)
+    assert sum(p.numel() for p in model.parameters()) == model.parameter_count == config.parameter_count == 50060
+    prohibited = (nn.Linear, nn.MultiheadAttention, nn.LayerNorm, nn.GELU, nn.Softmax)
+    assert not any(isinstance(module, prohibited) for module in model.modules())
+
+def test_same_seed_reproduces_parameter_root_and_inference_without_parameter_change():
+    first, second = _model(_small_config()), _model(_small_config())
+    before = (first.parameter_root(), second.parameter_root())
+    first_result, second_result = _infer(first, 3, 0), _infer(second, 3, 0)
+    assert before[0] == before[1]
+    assert before == (first.parameter_root(), second.parameter_root())
+    assert _record(first_result) == _record(second_result)
+
+def test_codebook_parameter_change_invalidates_a_previously_issued_record():
+    model = _model(_small_config())
+    issued = _record(_infer(model, 2, 0))
+    # Establish a valid import before deliberately corrupting this fresh fixture.
+    _infer(model, 4, 1, prior_records=[issued])
+    before = model.parameter_root()
+    parameter = dict(model.named_parameters())['codebook']
+    with torch.no_grad():
+        flat = parameter.reshape(-1)
+        flat[0] = 0.25 if float(flat[0]) >= 0.5 else 0.75
+    assert model.parameter_root() != before
+    with pytest.raises((GTFLNativeExecutionError, ValueError)):
+        _infer(model, 4, 1, prior_records=[issued])
+
+def test_native_inference_rejects_sequence_time_and_unsupported_memory_imports():
+    model = _model(_small_config())
+    at_zero = _record(_infer(model, 1, 0))
+    with pytest.raises((GTFLNativeExecutionError, ValueError)):
+        _infer(model, 2, 1, prior_records=[at_zero], sequence_id='other-public-dossier-sequence')
+    at_one = _record(_infer(model, 2, 1, prior_records=[at_zero]))
+    with pytest.raises((GTFLNativeExecutionError, ValueError)):
+        _infer(model, 3, 1, prior_records=[at_one])
+    with pytest.raises((GTFLNativeExecutionError, ValueError), match='UNAVAILABLE_IMPORT'):
+        _infer(model, 3, 2, prior_records=[at_zero, at_one], approved_memory_records=[at_zero])
+
+def capture_public_summary():
+    config = _small_config()
+    first, second = _model(config), _model(config)
+    before = [first.parameter_root(), second.parameter_root()]
+    records = [_record(_infer(first, 3, 0)), _record(_infer(second, 3, 0))]
+    after = [first.parameter_root(), second.parameter_root()]
+    hashes = [content_hash(record) for record in records]
+    default_config = GTFLModelConfig.tiny()
+    default_model = _model(default_config)
+    actual_default = sum(p.numel() for p in default_model.parameters())
+    family_counts = _family_counts(default_model)
+    assert actual_default == default_model.parameter_count == default_config.parameter_count == 50060
+    assert sum(family_counts.values()) == actual_default and len(family_counts) == 6
+    reference = GTFLModelConfig.reference_25m()
+    assert reference.parameter_count == 25005068
+    module_types = sorted({type(module).__name__ for module in default_model.modules()})
+    prohibited = {'Linear', 'MultiheadAttention', 'LayerNorm', 'GELU', 'Softmax'}
+    assert before == after and before[0] == before[1] and records[0] == records[1] and hashes[0] == hashes[1]
+    return {
+        'schemaVersion': 1, 'probeId': 'public-dossier-native-model/1',
+        'classification': 'fresh_cpu_synthetic_native_model_fixture',
+        'fixture': {'seed': PUBLIC_SEED, 'device': 'cpu', 'summaryRepeats': 2,
+                    'smallConfig': {'vocabularySize': 16, 'positiveStateLanes': 8, 'occupiedThresholdBanks': 3}},
+        'observed': {'defaultTinyActualParameters': actual_default, 'defaultTinyFamilyCounts': family_counts,
+                     'defaultTinyModuleTypeNames': module_types,
+                     'prohibitedPartialInventoryTypesPresent': sorted(prohibited.intersection(module_types)),
+                     'smallActualParameters': sum(p.numel() for p in first.parameters()),
+                     'smallConfiguredParameters': config.parameter_count,
+                     'parameterRootsBefore': before, 'parameterRootsAfter': after, 'recordHashes': hashes,
+                     'sameSeedParameterRootsEqual': before[0] == before[1],
+                     'inferenceDidNotChangeParameters': before == after, 'sameSeedRecordsEqual': records[0] == records[1],
+                     'reference25mConfiguredParameters': reference.parameter_count, 'reference25mInstantiated': False},
+        'providerCalls': 0, 'hostedCost': None, 'modelTokens': None, 'hostedLatency': None,
+        'modelQuality': None, 'defaultModelBaseline': None,
+        'interpretationLimits': {'moduleInventoryIsWholeGraphProof': False, 'trainedOutcomeMeasured': False,
+                                'optimizerOrTrainingLoopRun': False, 'externalCheckpointLoaded': False,
+                                'rawTensorsIncluded': False, 'hiddenStatesIncluded': False,
+                                'privateFixturesIncluded': False, 'originalSourceRedistributed': False}}

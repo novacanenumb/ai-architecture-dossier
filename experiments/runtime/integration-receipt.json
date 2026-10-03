@@ -6,8 +6,8 @@
     {
       "path": "dist/app.mjs",
       "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
-      "currentSourceHash": "8fa4a3511c947714580abf113e8c6e5628c087f1b2f625f6fe825504ca368dac",
-      "reason": "Parent integrated C24 original pure-math evidence, recorded trace selection and partial acceptance alongside prior component evidence; no model measurements inferred."
+      "currentSourceHash": "4208a2bc98201201675183f4a01231a13a56661eb9928441e18a4533896fec3a",
+      "reason": "Parent integrated frozen original Tiny tensor/reference/compiler evidence and recorded-case filters for C23/C25/C26; no model improvement inferred."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "1ec5d40e76b75a63d5e62c864ed1507db8a840268a3bc2d8c87168e7ea7a255f",
-    "reason": "Parent added executed C24 mechanics evidence and updated partial original-source coverage to21; prior README source and corrections retained with reconstruction hashes."
+    "currentSourceHash": "6bf004a02a88685fc55488bda78335e1157600653002b2aba733d7e5def3abb7",
+    "reason": "Parent added62case native conformance evidence and updated partial source coverage to24; prior README expansion retained with reconstruction hashes."
   },
   "history": [
     {
@@ -176,6 +176,46 @@
         "currentSourceHash": "a914f7738abdd21d97a34b58db5a98255b183affcf5b5a963605a70f6e509d8f",
         "reason": "Parent-integrated two retained native README drafts with a disclosed results-path correction and navigation, preserving existing text, evidence counts and null model endpoints; source validation and final integration have separate scopes."
       }
+    },
+    {
+      "rotorSourceRunId": "run-23c82d4a-20a7-4db3-8b91-19319d3fdda1",
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "8fa4a3511c947714580abf113e8c6e5628c087f1b2f625f6fe825504ca368dac",
+          "reason": "Parent integrated C24 original pure-math evidence, recorded trace selection and partial acceptance alongside prior component evidence; no model measurements inferred."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "1ec5d40e76b75a63d5e62c864ed1507db8a840268a3bc2d8c87168e7ea7a255f",
+        "reason": "Parent added executed C24 mechanics evidence and updated partial original-source coverage to21; prior README source and corrections retained with reconstruction hashes."
+      }
+    },
+    {
+      "nativeModelSourceRunId": "run-ece33140-9034-46a0-afd5-e53bea4b81f3",
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "614aacb162048286ce23c1cc16f9d9bde79966d02e8271b90f52af2fe9e7b308",
+          "reason": "Parent integrated frozen original Tiny tensor/reference/compiler evidence and recorded-case filters for C23/C25/C26; no model improvement inferred."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "reason": "Final public wording spacing correction; native source fragments unchanged."
     }
   ],
   "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
@@ -184,5 +224,6 @@
   "languageSourceRunId": "run-5e837bbe-1908-4cc7-84af-3c3a78e65140",
   "routingSourceRunId": "run-65f1786a-fc1c-454d-8c60-6ff0cec2e952",
   "readmeExpansionRunId": "run-10b77d08-45a5-4763-9518-47df7e39311a",
-  "rotorSourceRunId": "run-23c82d4a-20a7-4db3-8b91-19319d3fdda1"
+  "rotorSourceRunId": "run-23c82d4a-20a7-4db3-8b91-19319d3fdda1",
+  "nativeModelSourceRunId": "run-ece33140-9034-46a0-afd5-e53bea4b81f3"
 }
