@@ -24,7 +24,8 @@
     "preview": "node scripts/serve.mjs",
     "test:native-archive": "node scripts/test-native-archive-source.mjs",
     "derive:native-archive": "node scripts/derive-native-archive-results.mjs",
-    "test:native-archive:analytics": "node --test experiments/native-archive/derive.test.mjs"
+    "test:native-archive:analytics": "node --test experiments/native-archive/derive.test.mjs",
+    "test:native-observer": "node scripts/test-native-observer-source.mjs"
   },
   "license": "LicenseRef-Novacanenumb-Open-Design-1.0"
 }

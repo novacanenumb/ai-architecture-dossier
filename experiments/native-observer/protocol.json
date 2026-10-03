@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "public-dossier-native-observer/1",
+  "classification": "original_source_observability_conformance",
+  "originalTests": [
+    "tests/test_gtfl_observability.py"
+  ],
+  "originalTestFunctions": 13,
+  "expandedOriginalCases": null,
+  "additionalTestFunctions": 4,
+  "cpuThreads": 1,
+  "optimizerSteps": 0,
+  "trainingJob": false,
+  "externalCheckpoints": false,
+  "providerCalls": 0,
+  "hostedModelComparisons": false,
+  "telemetryOffMode": "UNAVAILABLE_IN_INSPECTED_CONFIG_AND_INFER_TOKEN_INTERFACE",
+  "observerOverhead": null,
+  "expectedVersions": {
+    "python": "3.12",
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0",
+    "pytest": "9.1.1"
+  },
+  "timeoutMs": 600000,
+  "originalSuiteInferenceCalls": null,
+  "historicalFixture": "One exact pinned local golden scalar record is read only for replay conformance; no fixture contents exported",
+  "excludedExecution": [
+    "sealed historical observation batches",
+    "teacher labels",
+    "private archive/checkpoint loading",
+    "legacy launcher",
+    "optimizer",
+    "training",
+    "hosted providers"
+  ],
+  "output": "Sanitized test function names, ordinal case labels, counts, source hashes and inspected API field names only"
+}

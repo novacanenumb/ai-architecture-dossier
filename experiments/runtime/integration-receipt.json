@@ -6,8 +6,8 @@
     {
       "path": "dist/app.mjs",
       "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
-      "currentSourceHash": "d24114647330c78431459de3723e7dd52a33273142a502f65ec6f9d77ee89357",
-      "reason": "Parent integrated native archive cases, frozen pair controls, full representation/timing trade-off and partial missing-object coverage."
+      "currentSourceHash": "da9d16719b19f9850cc049319bfe590eb55887a771b64008002dada978d86fba",
+      "reason": "Parent integrated18observability cases and explicit unavailable observer overhead, with frozen case controls."
     },
     {
       "path": "scripts/build-catalog.mjs",
@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "d41205d1717c9a46056ea6f63639a079b239e39a8b8d4aad306da5632c0f6749",
-    "reason": "Parent added observed30case archive study and paired byte/time trade-off; all prior README retained."
+    "currentSourceHash": "93ba5c7b4f827ac9bbcd0eebdc8b6b3859f1ea973c9872cf5f378502846e76ce",
+    "reason": "Parent appended observed18case observer conformance; all prior README retained."
   },
   "history": [
     {
@@ -246,6 +246,27 @@
         "currentSourceHash": "89154d7860238fcf48ba6a67a1cf7bd20bc78ca9abcbf858cfa430ab5e68424f",
         "reason": "Parent integrated a1261word README implementation walkthrough; all prior text and source evidence records preserved."
       }
+    },
+    {
+      "hostSourceChanges": [
+        {
+          "path": "dist/app.mjs",
+          "previousSourceHash": "059beefb79b6983f9bb62ffee542777324b1c8e9f80e7eea3d602f98bd86e0f2",
+          "currentSourceHash": "d24114647330c78431459de3723e7dd52a33273142a502f65ec6f9d77ee89357",
+          "reason": "Parent integrated native archive cases, frozen pair controls, full representation/timing trade-off and partial missing-object coverage."
+        },
+        {
+          "path": "scripts/build-catalog.mjs",
+          "previousSourceHash": "3ef83056cf8dd202e206c3834c8962ec071d5aeadb50eb8ffc10b2a2d23029cc",
+          "currentSourceHash": "3c3a0e55723e279a0e24c7d20e39ca6de403eb9fd21da6154662cc609a2c04db",
+          "reason": "Public-registry rebuild fallback added and independently checked by host."
+        }
+      ],
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "d41205d1717c9a46056ea6f63639a079b239e39a8b8d4aad306da5632c0f6749",
+        "reason": "Parent added observed30case archive study and paired byte/time trade-off; all prior README retained."
+      }
     }
   ],
   "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",
@@ -255,5 +276,6 @@
   "routingSourceRunId": "run-65f1786a-fc1c-454d-8c60-6ff0cec2e952",
   "readmeExpansionRunId": "run-10b77d08-45a5-4763-9518-47df7e39311a",
   "rotorSourceRunId": "run-23c82d4a-20a7-4db3-8b91-19319d3fdda1",
-  "nativeModelSourceRunId": "run-ece33140-9034-46a0-afd5-e53bea4b81f3"
+  "nativeModelSourceRunId": "run-ece33140-9034-46a0-afd5-e53bea4b81f3",
+  "nativeObserverSourceRunId": "run-542faf1a-0b6b-40d5-9457-29c1e09938c0"
 }

@@ -35,3 +35,7 @@ The original native model owner is `N:/Development/Production/[NEO]/04_NEURAL_CO
 Current partial original-source evidence touches 24 distinct components, adding C23, C25 and C26 to the prior 21. This count is coverage, not full acceptance or model improvement. C14 remains new reference work. All 154 hosted comparison endpoints and held-out learning results remain unavailable.
 
 The original native archive owner adds 26 expanded original cases and four new probes, with 16 source pins and eight local full/archive representation pairs. All 30 cases pass; original source is unchanged and excluded. JSON payload is smaller while observed archive inference is slower because it includes disk writes and sealing. Missing-generated-object rejection is partial C25-T04 evidence; CRSC eviction and telemetry-off observer overhead remain untested. See [native archive evidence](NATIVE_ARCHIVE_EVIDENCE.md).
+
+## Original native observability conformance
+
+The separately pinned observer suite passed18cases(14expanded original cases from13functions plus four new contract probes) with18source inputs. Original code and one read-only historical scalar golden record stay nonpublic. Re-signed tampering and replay checks provide partial C28-T02/C28-T03 evidence. Inspected configuration and infer_token expose no telemetry-off mode; C26-T05 observer overhead remains NOT_RUN. No training, hosted model or original-source redistribution occurs. See [the evidence guide](NATIVE_OBSERVER_EVIDENCE.md).

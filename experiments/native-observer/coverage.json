@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "classification": "PARTIAL_ORIGINAL_SOURCE_EVIDENCE",
+  "componentIds": [
+    "C22",
+    "C26",
+    "C27",
+    "C28"
+  ],
+  "acceptanceIds": [
+    "C28-T02",
+    "C28-T03"
+  ],
+  "unverifiedAcceptanceIds": [
+    "C26-T05"
+  ],
+  "boundary": "Re-signed scalar/native record tamper rejection and read-only scalar replay only. No observer-disabled mode, provider accounting, complete metric coverage, trained model comparison or all-exported-artifact proof."
+}

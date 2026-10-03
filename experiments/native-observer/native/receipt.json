@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "native-observer-probe-source",
+  "plugin": "hypervisor-standalone@hypervisor-standalone-local",
+  "packageVersion": "2.1.0",
+  "nativeRuntime": "2.1",
+  "runtimeProtocol": "2.0",
+  "schemaVersionNative": 2,
+  "selectedSkill": "hypervisor-run",
+  "sessionId": "3f547978-b193-4ccb-9df2-ebb36571997c",
+  "runId": "run-542faf1a-0b6b-40d5-9457-29c1e09938c0",
+  "completionState": "REPORTED",
+  "sessionState": "CLOSED",
+  "persisted": false,
+  "artifactHash": "sha256:f2595489d515441d1d1b1e8fc395bf94ff44615d69c79e14da626403fcd6a62e",
+  "sourceTextHash": "sha256:f049e060275027fa506908b81b22a30e03f65baa08dd24327249262cdd928dff",
+  "sourceCharacters": 3548,
+  "nativeCandidateContracts": 1,
+  "actualHostProposalTurns": 1,
+  "modelId": "gpt-5.6-sol",
+  "usage": null,
+  "cost": null,
+  "parentCorrections": [
+    "Corrected worker import rtl360_gtfl.observer to observed rtl360_gtfl.observability before submission; reformatted source without changing four test assertions"
+  ],
+  "preflightFailure": {
+    "code": "UNREPRESENTED_REQUIREMENT",
+    "sessionId": null
+  },
+  "independentSemanticValidator": "UNAVAILABLE",
+  "validationScope": "Native nonempty/schema/anchor/GTFL structural validation of corrected probe source; parent separately executed tests and authored integration, guide and UI."
+}

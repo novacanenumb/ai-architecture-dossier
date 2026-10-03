@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "previousReadmeHash": "sha256:d41205d1717c9a46056ea6f63639a079b239e39a8b8d4aad306da5632c0f6749",
+  "currentReadmeHash": "sha256:93ba5c7b4f827ac9bbcd0eebdc8b6b3859f1ea973c9872cf5f378502846e76ce",
+  "previousWords": 10039,
+  "currentWords": 10272,
+  "addition": {
+    "content": "## Native observer coordinates, tamper rejection and replay\n\nThe separately executed [original observability suite](docs/NATIVE_OBSERVER_EVIDENCE.md) passed **18 cases**: 14 expanded original cases from 13 test functions and four new public contract probes. Eighteen source inputs are pinned, including one local historical scalar golden record used for read-only replay. Original source and golden-record contents are excluded from the public repository. Source hashes matched after execution, with zero failures, errors or skips and the temporary copy removed.\n\nThe original cases check exact checkpoint coordinates, declared replay order, structured failure ledgers, critical-ledger reservation and both native capture representations. Several tampering tests recompute affected hashes before verification. Rejection therefore checks bounded semantic crosslinks and the declared contract as well as content integrity. The new probes check independent returned contract lists, same-frame clock stability, frame/source-epoch clock transitions, epoch identity and integer-coordinate rejection. They issue no model inference calls.\n\nThe [inspected interface inventory](experiments/native-observer/summary.json) retains configuration fields and inference argument names. Neither inspected surface provides a telemetry-off selector. Full and archive modes both emit telemetry, so **C26-T05 remains NOT_RUN** and observer overhead remains null. The replay/tamper cases supply partial C28-T02/C28-T03 evidence; they do not establish every external-effect or exported-artifact boundary.\n\nReproduce with `npm run test:native-observer`, Node 26 and the exact separately available source/environment. The [frozen protocol](experiments/native-observer/protocol.json), [source manifest](experiments/native-observer/source-manifest.json) and [sanitized receipt](experiments/native-observer/test-receipt.json) document the controls. No training, external checkpoint, legacy launcher or hosted provider runs. All 154 hosted model endpoints remain null.\n",
+    "contentHash": "sha256:d04d5ff7e25589bc893a55723fd8fa2d19ec40b4838873d7bce60d82d490d29d"
+  },
+  "nativeSourceScope": "Probe only; README addition parent-authored from observed execution",
+  "newModelMeasurements": false
+}

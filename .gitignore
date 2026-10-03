@@ -14,3 +14,4 @@ MASTER_SPEC.md
 CODEX_START.md
 .env*
 !.env.example
+.native-observer-source-check-*/

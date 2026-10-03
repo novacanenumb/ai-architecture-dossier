@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import { readFile, lstat } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+export async function verifyNativeObserverEvidence(root) {
+  const read=p=>readFile(path.join(root,p)),json=async p=>JSON.parse(await read(p));
+  const hash=b=>'sha256:'+createHash('sha256').update(b).digest('hex');
+  const receipt=await json('experiments/native-observer/test-receipt.json'),manifest=await json('experiments/native-observer/source-manifest.json');
+  assert.equal(receipt.status,'PASSED');assert.equal(receipt.sourceUnchanged,true);assert.equal(receipt.temporaryCopyRemoved,true);
+  assert.equal(receipt.tests.collected,18);assert.equal(receipt.tests.passed,18);
+  for(const field of ['failed','errors','skipped'])assert.equal(receipt.tests[field],0);
+  assert.equal(receipt.originalTests.passed,14);assert.equal(receipt.originalTests.total,14);assert.equal(receipt.additionalTests.passed,4);
+  assert.equal(new Set(receipt.tests.results.map(t=>t.id)).size,18);
+  assert.ok(receipt.tests.results.every(t=>/^\w+\.py::test_\w+::case-\d+$/.test(t.id)&&t.status==='PASSED'));
+  assert.equal(new Set(receipt.tests.results.filter(t=>!t.id.startsWith('probe.py::')).map(t=>t.id.split('::')[1])).size,13);
+  assert.equal(manifest.files.length,18);assert.deepEqual(receipt.sourceFiles,manifest.files);
+  assert.equal(hash(await read('experiments/native-observer/source-manifest.json')),receipt.sourceManifestHash);
+  assert.equal(hash(await read(manifest.parentSourceManifestPath)),manifest.parentSourceManifestHash);
+  assert.deepEqual(manifest.nonpublicInputs,['tests/golden/gtfl_observability/scalar-v1.0.json']);
+  for(const file of manifest.files){assert.equal(await lstat(path.join(root,file.path)).then(()=>true,e=>{if(e.code!=='ENOENT')throw e;return false;}),false,'Original source input must not be published');}
+  for(const[file,digest]of Object.entries(receipt.sourceHashes))assert.equal(hash(await read(file)),digest,'Stale observer execution source: '+file);
+  assert.equal(receipt.protocol.hashBefore,receipt.protocol.hashAfter);assert.equal(hash(await read(receipt.protocol.path)),receipt.protocol.hashBefore);
+  assert.equal(receipt.protocol.parsed.originalTestFunctions,13);assert.equal(receipt.protocol.parsed.originalSuiteInferenceCalls,null);
+  assert.equal(receipt.hypervisorDependency.verifiedFiles,85);assert.equal(receipt.controls.auditHook,'BEST_EFFORT');
+  assert.equal(receipt.controls.operatingSystemConfinement,'UNAVAILABLE');assert.equal(receipt.provenance.providerCalls,0);
+  const summary=await json(receipt.summaryFile.path);assert.equal(hash(await read(receipt.summaryFile.path)),receipt.summaryFile.hash);
+  assert.equal(summary.telemetryOffComparison,false);assert.equal(summary.observerOverheadMs,null);assert.equal(summary.originalSuiteInferenceCalls,null);
+  assert.equal(summary.historicalFixtureExported,false);assert.equal(summary.rawCaptureExported,false);
+  assert.deepEqual(summary.inferTokenArguments,['self','token_id','token_time','prior_records','sequence_id','capsule_id','approved_memory_records','archive']);
+  assert.equal(summary.configurationFields.length,15);
+  const coverage=await json('experiments/native-observer/coverage.json');assert.deepEqual(coverage.acceptanceIds,['C28-T02','C28-T03']);
+  assert.deepEqual(coverage.unverifiedAcceptanceIds,['C26-T05']);
+  assert.deepEqual(await json('dist/data/native-observer-evidence.json'),{...receipt,coverage,summary});
+  const native=await json('experiments/native-observer/native/receipt.json'),text=(await read('experiments/native-observer/native/validated-source.txt')).toString('utf8').slice(0,native.sourceCharacters);
+  assert.equal(hash(JSON.stringify(text)),native.sourceTextHash);assert.equal(native.completionState,'REPORTED');assert.equal(native.sessionState,'CLOSED');
+  const match=text.match(/^```\n```\n([\s\S]*?)\n```\n```$/);assert.ok(match,'Exact retained native nested-code render');const fragments=[JSON.parse(match[1])];assert.equal(fragments.length,1);
+  assert.equal(fragments[0].path,'experiments/native-observer/probe.py');assert.equal((await read(fragments[0].path)).toString('utf8'),fragments[0].content);
+  assert.equal((await json('experiments/native-observer/native/manifest.json')).final_artifact_hash,native.artifactHash);
+  assert.equal((await json('experiments/native-observer/native/performance.json')).gtfl.collapse_validity,'VALID');
+  return {nativeObserverCases:18,nativeObserverOriginalCases:14,nativeObserverNewCases:4,nativeObserverPins:18,nativeObserverOverhead:null,nativeObserverSourceMatches:1};
+}

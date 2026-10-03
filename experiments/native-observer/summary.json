@@ -1,0 +1,35 @@
+{
+  "classification": "inspected_native_observer_interface",
+  "configurationFields": [
+    "vocabulary_size",
+    "positive_state_lanes",
+    "occupied_threshold_banks",
+    "alternatives_per_domain",
+    "axles",
+    "harmonics",
+    "threshold_resolution",
+    "support_resolution",
+    "phase_resolution",
+    "lattice_levels",
+    "maximum_sequence_length",
+    "maximum_batch_size",
+    "maximum_imports",
+    "maximum_ray_cells",
+    "maximum_capture_bytes"
+  ],
+  "historicalFixtureExported": false,
+  "inferTokenArguments": [
+    "self",
+    "token_id",
+    "token_time",
+    "prior_records",
+    "sequence_id",
+    "capsule_id",
+    "approved_memory_records",
+    "archive"
+  ],
+  "observerOverheadMs": null,
+  "originalSuiteInferenceCalls": null,
+  "rawCaptureExported": false,
+  "telemetryOffComparison": false
+}

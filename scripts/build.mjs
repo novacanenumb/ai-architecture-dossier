@@ -37,5 +37,9 @@ const archiveCoverage=JSON.parse(await readFile(path.join(root,'experiments/nati
 const archiveSummary=JSON.parse(await readFile(path.join(root,'experiments/native-archive/summary.json'),'utf8'));
 await writeFile(path.join(root,'dist/data/native-archive-evidence.json'),JSON.stringify({...archiveReceipt,coverage:archiveCoverage,summary:archiveSummary},null,2)+'\n');
 await copyFile(path.join(root,'experiments/native-archive/results.json'),path.join(root,'dist/data/native-archive-results.json'));
+const observerReceipt=JSON.parse(await readFile(path.join(root,'experiments/native-observer/test-receipt.json'),'utf8'));
+const observerCoverage=JSON.parse(await readFile(path.join(root,'experiments/native-observer/coverage.json'),'utf8'));
+const observerSummary=JSON.parse(await readFile(path.join(root,'experiments/native-observer/summary.json'),'utf8'));
+await writeFile(path.join(root,'dist/data/native-observer-evidence.json'),JSON.stringify({...observerReceipt,coverage:observerCoverage,summary:observerSummary},null,2)+'\n');
 run('scripts/benchmark.mjs');
 console.log('Static dossier built in dist; no provider calls.');

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "sourcePackage": {
+    "name": "neo-sfr-lab",
+    "version": "0.1.0",
+    "nativePackage": "rtl360_gtfl",
+    "specification": "RTL360-GTFL-NATIVE-1.0",
+    "sourceRedistributed": false
+  },
+  "metadata": {
+    "path": "pyproject.toml",
+    "bytes": 1261,
+    "hash": "sha256:ba040dc95357cb4eb57194a35bba3065b48375d7cfc6f59bf32f509c247f1f15"
+  },
+  "parentSourceManifestPath": "experiments/native-archive/source-manifest.json",
+  "parentSourceManifestHash": "sha256:97cca4af633a73272df57e263a0c48a5c2ca17d5672bf04a4637f3746fb79e04",
+  "files": [
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/__init__.py",
+      "bytes": 221,
+      "hash": "sha256:8e1a2ee5b0b34ce896a2fe114dd5bf3e0ce9638c84d55a401da6b88cc1d7b2fd"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/canonical.py",
+      "bytes": 2573,
+      "hash": "sha256:d3a53963a30a50d1e957db7dae13710a7beed2a51409644ccd880b8cfb36d46f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/numeric.py",
+      "bytes": 4066,
+      "hash": "sha256:1e73ccb37a37f9c5c95656170142506b3420a8e86d135997274adba0d54fbcae"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/config.py",
+      "bytes": 5566,
+      "hash": "sha256:743c5fa029c7f4472bba407d356ecf697e8a6ddc89ee3b03cb51d35b2eb12688"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/rotor.py",
+      "bytes": 4142,
+      "hash": "sha256:5180804ff2f6b9c0251ace03f21eb311ac6ee4c9f933e0db89c6167137008f4b"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/lattice.py",
+      "bytes": 10557,
+      "hash": "sha256:2cc42237f480d1c3788207837ae015dd32c01838c3f85c77a406e66d777b1130"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/types.py",
+      "bytes": 4186,
+      "hash": "sha256:89c54639390123a2d849672690a040147ea2d5574611aa1851dadeba558d6d9c"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/observability.py",
+      "bytes": 14964,
+      "hash": "sha256:f6542abb5672c86a788a7af9d01ad0deb1213346ec2416d182b44abb8e560146"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/archive.py",
+      "bytes": 23051,
+      "hash": "sha256:35592bfb84fd6e5636b96edb5fa678cc313f251a2c7d9f421f947d0cbb83418f"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/language.py",
+      "bytes": 28009,
+      "hash": "sha256:a9b8972249983086c7998870fb7af0c188d8906e33e0a77b6f287ee50f67ded2"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/ir.py",
+      "bytes": 51790,
+      "hash": "sha256:fdb8f7dfb50ba75656f19b272ae911edb90db0595913ebcc7dd14daa5a7e621c"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/model.py",
+      "bytes": 143675,
+      "hash": "sha256:7a541830b85cd0a8743507e6a1369543c38936f17a7cc2382371afa865986d6e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/reference.py",
+      "bytes": 70257,
+      "hash": "sha256:adc3b5bb911948212be460f5f62464a30b31b5f4e089f21e79c3d1002001cd9e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/capture.py",
+      "bytes": 55645,
+      "hash": "sha256:945b7f7f93d4b55c10971a1328db03cf6b38c3c9cbab7d9398155b0f72f2071e"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/serialization.py",
+      "bytes": 1251,
+      "hash": "sha256:836750792e29cf5b076e4e7f455e2c0ef1b42e4cea2b29df8c2c3b1e26f899f7"
+    },
+    {
+      "path": "04_NEURAL_CORE/rtl360_gtfl/runtime.py",
+      "bytes": 58708,
+      "hash": "sha256:ac4f4d680677677c97c0609be340feae0aed61421e8a2fb764c8b5ee0f5fc2ff"
+    },
+    {
+      "path": "tests/test_gtfl_observability.py",
+      "bytes": 15485,
+      "hash": "sha256:eee0f77579914a3cb878c17d03e3cdeef30c88d187ae5f04573cc155a7b1a26d"
+    },
+    {
+      "path": "tests/golden/gtfl_observability/scalar-v1.0.json",
+      "bytes": 12647,
+      "hash": "sha256:51870f929ac2f2a9bc08d951709cf85fe4da11693a96b2fb2efa2ce9b254daf2"
+    }
+  ],
+  "nonpublicInputs": [
+    "tests/golden/gtfl_observability/scalar-v1.0.json"
+  ],
+  "redistribution": "Pins only; no original module/test/golden bytes in public repository"
+}

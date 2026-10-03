@@ -563,6 +563,16 @@ npm run test:native-archive:analytics
 
 See the [source receipt](experiments/native-archive/test-receipt.json), [retained observations](experiments/native-archive/summary.json), [derived statistics](experiments/native-archive/results.json), and [partial acceptance mapping](experiments/native-archive/coverage.json). Four analytics tests check negative timing interpretation, failed-pair denominators and malformed semantic/protocol controls. The C25 Site lab inspects frozen pairs and original/new case families. Missing generated-object rejection supplies partial C25-T04 evidence; CRSC eviction/C25-T03 and telemetry-off overhead/C26-T05 remain NOT_RUN. The earlier native timeout is retained. All 154 hosted endpoints remain null.
 
+## Native observer coordinates, tamper rejection and replay
+
+The separately executed [original observability suite](docs/NATIVE_OBSERVER_EVIDENCE.md) passed **18 cases**: 14 expanded original cases from 13 test functions and four new public contract probes. Eighteen source inputs are pinned, including one local historical scalar golden record used for read-only replay. Original source and golden-record contents are excluded from the public repository. Source hashes matched after execution, with zero failures, errors or skips and the temporary copy removed.
+
+The original cases check exact checkpoint coordinates, declared replay order, structured failure ledgers, critical-ledger reservation and both native capture representations. Several tampering tests recompute affected hashes before verification. Rejection therefore checks bounded semantic crosslinks and the declared contract as well as content integrity. The new probes check independent returned contract lists, same-frame clock stability, frame/source-epoch clock transitions, epoch identity and integer-coordinate rejection. They issue no model inference calls.
+
+The [inspected interface inventory](experiments/native-observer/summary.json) retains configuration fields and inference argument names. Neither inspected surface provides a telemetry-off selector. Full and archive modes both emit telemetry, so **C26-T05 remains NOT_RUN** and observer overhead remains null. The replay/tamper cases supply partial C28-T02/C28-T03 evidence; they do not establish every external-effect or exported-artifact boundary.
+
+Reproduce with `npm run test:native-observer`, Node 26 and the exact separately available source/environment. The [frozen protocol](experiments/native-observer/protocol.json), [source manifest](experiments/native-observer/source-manifest.json) and [sanitized receipt](experiments/native-observer/test-receipt.json) document the controls. No training, external checkpoint, legacy launcher or hosted provider runs. All 154 hosted model endpoints remain null.
+
 ## C14: controlled language analysis
 
 The dossier now includes a real local [output-level language analyser](packages/lab/language-analysis.mjs), supported by the existing statistical functions. This is a new reference implementation of C14's specified first deliverable. Original C14 source was not recovered, and the longitudinal research hypothesis remains untested.
