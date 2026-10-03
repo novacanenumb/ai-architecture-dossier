@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "kind": "readme-walkthrough-source-fragment",
+  "plugin": "hypervisor-standalone@hypervisor-standalone-local",
+  "packageVersion": "2.1.0",
+  "nativeRuntime": "2.1",
+  "runtimeProtocol": "2.0",
+  "schemaVersionNative": 2,
+  "selectedSkill": "hypervisor-run",
+  "sessionId": "f6b70c16-8e55-4b27-8d74-91742f553af1",
+  "runId": "run-242cc6ae-d11a-45f5-a9c0-1888b1ebaa3c",
+  "completionState": "REPORTED",
+  "sessionState": "CLOSED",
+  "persisted": false,
+  "artifactHash": "sha256:c0c57b7985ba848f0cb316f2d00424e5432a77fdeff09186bdd0b396a9be5a38",
+  "manifestHash": "sha256:0bdf7f47a4169caf39c4ecaeb506c4e0ae505c353cf2e1fb8390f9bb09aa2197",
+  "sourceTextHash": "sha256:d6e3c329b198e1ffc3263843c237c7874a3f5fc3fbd33d4b4a8caebf2ba81474",
+  "sourceCharacters": 10006,
+  "sourceFragmentCount": 1,
+  "nativeCandidateContracts": 1,
+  "actualHostProposalTurns": 1,
+  "priorFailedHostProposalTurns": 1,
+  "modelId": "gpt-5.6-sol",
+  "usage": null,
+  "cost": null,
+  "independentSemanticValidator": "UNAVAILABLE",
+  "validationScope": "Native nonempty/schema/anchor/GTFL structural validation; parent separately checked public evidence facts, internal file links and exact insertion preconditions.",
+  "parentCorrections": [
+    "Corrected small fixture to404parameters rather than4040.",
+    "Clarified45dossier probes against supplied runtime, rather than original test files.",
+    "Qualified external truth, source permission, conceptual schema and publication authority."
+  ],
+  "priorFailure": {
+    "sessionId": "2db12911-7743-4be6-825e-353fdad2f24b",
+    "runId": "run-dc222d5b-a4d8-48dd-8ef6-5ae149134ede",
+    "state": "BUDGET_EXHAUSTED",
+    "code": "ANCHOR_OUTPUT_BUDGET_EXCEEDED",
+    "sessionState": "CLOSED",
+    "hostProposalTurns": 1,
+    "reason": "Initial6000output estimate was smaller than serialized UTF8 proposal; retry16000 retained the same checked fragment."
+  }
+}

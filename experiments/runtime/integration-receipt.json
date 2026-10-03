@@ -19,8 +19,8 @@
   "validationScope": "Host integration checks; these changes are not the unchanged source text of the prior native run.",
   "readmeChange": {
     "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
-    "currentSourceHash": "6bf004a02a88685fc55488bda78335e1157600653002b2aba733d7e5def3abb7",
-    "reason": "Parent added62case native conformance evidence and updated partial source coverage to24; prior README expansion retained with reconstruction hashes."
+    "currentSourceHash": "89154d7860238fcf48ba6a67a1cf7bd20bc78ca9abcbf858cfa430ab5e68424f",
+    "reason": "Parent integrated a1261word README implementation walkthrough; all prior text and source evidence records preserved."
   },
   "history": [
     {
@@ -216,6 +216,14 @@
         }
       ],
       "reason": "Final public wording spacing correction; native source fragments unchanged."
+    },
+    {
+      "walkthroughSourceRunId": "run-242cc6ae-d11a-45f5-a9c0-1888b1ebaa3c",
+      "readmeChange": {
+        "previousSourceHash": "77ff49a5d28aab0e1acc6dd47cbef070858e6bd431f0374d75b5bb1e8e14880b",
+        "currentSourceHash": "6bf004a02a88685fc55488bda78335e1157600653002b2aba733d7e5def3abb7",
+        "reason": "Parent added62case native conformance evidence and updated partial source coverage to24; prior README expansion retained with reconstruction hashes."
+      }
     }
   ],
   "schedulerSourceRunId": "run-fa556e0d-ea68-49ca-8673-b30b2a0041f3",

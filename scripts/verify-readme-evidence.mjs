@@ -16,7 +16,28 @@ export async function verifyReadmeEvidence(root) {
   const fragments=[...artifact.matchAll(/```\n([\s\S]*?)\n```/g)].map(match=>JSON.parse(match[1]));
   assert.equal(fragments.length,2);
   const integration=await json('experiments/readme/integration-receipt.json');
-  const latest=await read('README.md');
+  const currentReadme=await read('README.md');
+  const walkthrough=await json('experiments/readme/walkthrough/integration-receipt.json');
+  const walkthroughNative=await json('experiments/readme/walkthrough/native/receipt.json');
+  const walkthroughText=(await read('experiments/readme/walkthrough/native/validated-source.txt')).slice(0,walkthroughNative.sourceCharacters);
+  assert.equal(hash(JSON.stringify(walkthroughText)),walkthroughNative.sourceTextHash);
+  assert.equal(walkthroughNative.completionState,'REPORTED'); assert.equal(walkthroughNative.persisted,false);
+  assert.equal(walkthroughNative.nativeCandidateContracts,1); assert.equal(walkthroughNative.actualHostProposalTurns,1);
+  assert.equal((await json('experiments/readme/walkthrough/native/manifest.json')).final_artifact_hash,walkthroughNative.artifactHash);
+  assert.equal((await json('experiments/readme/walkthrough/native/performance.json')).gtfl.collapse_validity,'VALID');
+  const walkthroughFragments=[...walkthroughText.matchAll(/```\n([\s\S]*?)\n```/g)].map(match=>JSON.parse(match[1]));
+  assert.equal(walkthroughFragments.length,1);
+  assert.equal(walkthroughFragments[0].path,'README.md');
+  assert.equal(walkthroughFragments[0].insertionBefore,'## Exact archive API');
+  assert.equal(walkthroughFragments[0].content,walkthrough.addition.content);
+  assert.equal(hash(walkthroughFragments[0].content),walkthrough.addition.contentHash);
+  assert.equal(hash(currentReadme),walkthrough.currentReadmeHash);
+  assert.equal(currentReadme.trim().split(/\s+/).length,walkthrough.currentWords);
+  assert.equal(currentReadme.split(walkthrough.addition.content).length,2);
+  const latest=currentReadme.replace(walkthrough.addition.content+'\n','');
+  assert.equal(hash(latest),walkthrough.previousReadmeHash,'README changed beyond the declared walkthrough addition');
+  assert.equal(latest.trim().split(/\s+/).length,walkthrough.previousWords);
+  assert.equal(walkthrough.newModelMeasurements,false);
   const nativeModel=await json('experiments/native-model/readme-integration.json');
   assert.equal(hash(latest),nativeModel.currentReadmeHash);
   assert.equal(latest.split(nativeModel.addition.content).length,2);
@@ -49,12 +70,12 @@ export async function verifyReadmeEvidence(root) {
   assert.equal(hash(previous),integration.previousReadmeHash,'Prior README was modified beyond declared additions');
   assert.equal(previous.trim().split(/\s+/).length,integration.previousWords);
   let links=0;
-  for(const match of latest.matchAll(/\]\(([^)]+)\)/g)) {
+  for(const match of currentReadme.matchAll(/\]\(([^)]+)\)/g)) {
     const target=match[1]; if(target.startsWith('http')||target.startsWith('#'))continue;
     const resolved=path.resolve(root,target); assert.ok(resolved.startsWith(root+path.sep));
     assert.ok(!(await lstat(resolved)).isSymbolicLink()); links++;
   }
   assert.equal(integration.newModelMeasurements,false);
   assert.equal(integration.pendingRotorDraftsIncluded,false);
-  return {readmeExpansionNativeFragments:2,readmePriorTextPreserved:true,readmeInternalFileLinksChecked:links,readmeExpansionRunId:receipt.runId};
+  return {readmeExpansionNativeFragments:2,readmePriorTextPreserved:true,readmeInternalFileLinksChecked:links,readmeExpansionRunId:receipt.runId,readmeWalkthroughNativeFragments:1,readmeWalkthroughRunId:walkthroughNative.runId,readmeWalkthroughPriorTextPreserved:true};
 }

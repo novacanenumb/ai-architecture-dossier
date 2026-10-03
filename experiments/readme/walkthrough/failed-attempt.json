@@ -1,0 +1,214 @@
+{
+  "sessionId": "2db12911-7743-4be6-825e-353fdad2f24b",
+  "runId": "run-dc222d5b-a4d8-48dd-8ef6-5ae149134ede",
+  "state": "BUDGET_EXHAUSTED",
+  "code": "ANCHOR_OUTPUT_BUDGET_EXCEEDED",
+  "persisted": false,
+  "performance": {
+    "anchors": [],
+    "contentHash": "sha256:1ce315b2a24ec8d6aec235f37674578b0bab568564b4279c9f38d628dc3e1225",
+    "cost": {
+      "provenance": "unavailable",
+      "reason": "missing_measurement",
+      "value": null
+    },
+    "gpu_seconds": {
+      "provenance": "unavailable",
+      "reason": "no_gpu_counter",
+      "value": null
+    },
+    "gtfl": {
+      "capsules_aborted": 0,
+      "capsules_collapsed": 0,
+      "capsules_created": 1,
+      "checkpoint_count": 12,
+      "collapse_validity": "PENDING",
+      "domain_overflow_count": 0,
+      "gates_activated": 12,
+      "gates_evaluated": 12,
+      "parallel_frames": 0,
+      "provenance_edges": 35,
+      "provenance_nodes": 36,
+      "replay_hash": "sha256:1e315fdd5a82ba0fa576c44f78914808f1c34b5805a65225c7968818b2b9ca44",
+      "threshold_frames_executed": 12,
+      "unresolved_domain_count": 1
+    },
+    "kind": "performance-report",
+    "metrics": {
+      "AFPR": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "CS": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_dense_baseline",
+        "value": null
+      },
+      "ECF": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "HE": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "MR": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RL": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RP": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "RY": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "TAF": {
+        "provenance": "unavailable",
+        "reason": "zero_or_missing_denominator",
+        "value": null
+      },
+      "UEC": {
+        "astra": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "luna": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "sol": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        },
+        "terra": {
+          "provenance": "unavailable",
+          "reason": "zero_or_missing_denominator",
+          "value": null
+        }
+      },
+      "barrier_idle_time": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "critical_path_duration": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "latency_percentiles": {
+        "p50": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p95": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p99": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        }
+      },
+      "maximum_simultaneous_workers": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "observed_wall_time": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "routing_overhead": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "serial_execution_estimate": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "speedup": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "straggler_delay": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "total_worker_execution_time": {
+        "provenance": "unavailable",
+        "reason": "missing_worker_measurement",
+        "value": null
+      },
+      "ttft_percentiles": {
+        "p50": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p95": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        },
+        "p99": {
+          "provenance": "unavailable",
+          "reason": "no_observations",
+          "value": null
+        }
+      }
+    },
+    "profile": "FAST",
+    "provenance": {
+      "context_savings": "estimated",
+      "generated": "deterministic_telemetry_derivation"
+    },
+    "roles": {
+      "astra": 0,
+      "luna": 0,
+      "sol": 0,
+      "terra": 0
+    },
+    "run_id": "run-dc222d5b-a4d8-48dd-8ef6-5ae149134ede",
+    "schemaVersion": 2,
+    "usage": {
+      "cache_write": null,
+      "cached_input": null,
+      "input": null,
+      "output": null,
+      "retrieval": null,
+      "synthetic_context": null
+    },
+    "usage_provenance": "unavailable"
+  },
+  "tokenLedger": {
+    "events": [],
+    "kind": "usage-ledger",
+    "runId": "run-dc222d5b-a4d8-48dd-8ef6-5ae149134ede",
+    "schemaVersion": 2
+  }
+}

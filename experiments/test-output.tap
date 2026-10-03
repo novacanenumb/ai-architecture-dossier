@@ -2,241 +2,241 @@ TAP version 13
 # Subtest: ratios preserve missing/nonfinite/zero denominators; amplification and accepted throughput units
 ok 1 - ratios preserve missing/nonfinite/zero denominators; amplification and accepted throughput units
   ---
-  duration_ms: 1.3225
+  duration_ms: 1.3542
   type: 'test'
   ...
 # Subtest: workflow usage includes failed/retry/review calls without double counting reasoning or cache subsets
 ok 2 - workflow usage includes failed/retry/review calls without double counting reasoning or cache subsets
   ---
-  duration_ms: 0.1921
+  duration_ms: 0.2029
   type: 'test'
   ...
 # Subtest: missing usage is null with explicit observed coverage; empty calls cannot mean free execution
 ok 3 - missing usage is null with explicit observed coverage; empty calls cannot mean free execution
   ---
-  duration_ms: 0.0939
+  duration_ms: 0.0969
   type: 'test'
   ...
 # Subtest: costs reject duplicate charge IDs; unknown charges propagate null
 ok 4 - costs reject duplicate charge IDs; unknown charges propagate null
   ---
-  duration_ms: 0.1863
+  duration_ms: 0.1238
   type: 'test'
   ...
 # Subtest: paired bootstrap is seeded and exact for a constant paired effect
 ok 5 - paired bootstrap is seeded and exact for a constant paired effect
   ---
-  duration_ms: 3.5862
+  duration_ms: 3.3556
   type: 'test'
   ...
 # Subtest: paired bootstrap rejects short, nonfinite, unaligned and invalid control inputs
 ok 6 - paired bootstrap rejects short, nonfinite, unaligned and invalid control inputs
   ---
-  duration_ms: 0.1794
+  duration_ms: 0.1402
   type: 'test'
   ...
 # Subtest: Unicode words and apostrophes tokenize precisely
 ok 7 - Unicode words and apostrophes tokenize precisely
   ---
-  duration_ms: 2.7542
+  duration_ms: 2.3772
   type: 'test'
   ...
 # Subtest: MATTR matches hand computed windows; insufficient samples remain null
 ok 8 - MATTR matches hand computed windows; insufficient samples remain null
   ---
-  duration_ms: 0.5001
+  duration_ms: 0.4994
   type: 'test'
   ...
 # Subtest: repeated trigram rate counts overlapping occurrences beyond their first use
 ok 9 - repeated trigram rate counts overlapping occurrences beyond their first use
   ---
-  duration_ms: 0.2645
+  duration_ms: 0.1307
   type: 'test'
   ...
 # Subtest: sample and sentence CV use sample deviation and declared punctuation segmentation
 ok 10 - sample and sentence CV use sample deviation and declared punctuation segmentation
   ---
-  duration_ms: 0.3329
+  duration_ms: 0.2305
   type: 'test'
   ...
 # Subtest: Jensen Shannon matches base 2 known vectors and rejects nonnormalized or misaligned support
 ok 11 - Jensen Shannon matches base 2 known vectors and rejects nonnormalized or misaligned support
   ---
-  duration_ms: 0.2413
+  duration_ms: 0.2046
   type: 'test'
   ...
 # Subtest: stable JSON sorts recursive keys, preserves array order; SHA256 known vector
 ok 12 - stable JSON sorts recursive keys, preserves array order; SHA256 known vector
   ---
-  duration_ms: 14.442
+  duration_ms: 4.5297
   type: 'test'
   ...
 # Subtest: archive preserves Unicode, BOM, null byte and newline exact bytes; copies cannot alter it
 ok 13 - archive preserves Unicode, BOM, null byte and newline exact bytes; copies cannot alter it
   ---
-  duration_ms: 1.0412
+  duration_ms: 0.9343
   type: 'test'
   ...
 # Subtest: UTF8 materialization rejects split code points, including interior empty slices
 ok 14 - UTF8 materialization rejects split code points, including interior empty slices
   ---
-  duration_ms: 0.5358
+  duration_ms: 0.5243
   type: 'test'
   ...
 # Subtest: scope authorization denies private operations and owner filtering isolates permitted scopes
 ok 15 - scope authorization denies private operations and owner filtering isolates permitted scopes
   ---
-  duration_ms: 0.7351
+  duration_ms: 0.6067
   type: 'test'
   ...
 # Subtest: correction preserves exact revision history and invalidates stale preconditions
 ok 16 - correction preserves exact revision history and invalidates stale preconditions
   ---
-  duration_ms: 0.6075
+  duration_ms: 0.448
   type: 'test'
   ...
 # Subtest: concurrent ingestion and correction reject conflicting writers
 ok 17 - concurrent ingestion and correction reject conflicting writers
   ---
-  duration_ms: 0.4218
+  duration_ms: 0.3856
   type: 'test'
   ...
 # Subtest: deletion purges all historic raw bytes and blocks resurrection
 ok 18 - deletion purges all historic raw bytes and blocks resurrection
   ---
-  duration_ms: 0.4572
+  duration_ms: 0.3576
   type: 'test'
   ...
 # Subtest: synthetic fixtures are deterministic, public-safe and explicitly source linked
 ok 19 - synthetic fixtures are deterministic, public-safe and explicitly source linked
   ---
-  duration_ms: 0.7669
+  duration_ms: 0.6856
   type: 'test'
   ...
 # Subtest: lexical rank uses Unicode overlap, deterministic ties, and defensive copies
 ok 20 - lexical rank uses Unicode overlap, deterministic ties, and defensive copies
   ---
-  duration_ms: 1.384
+  duration_ms: 1.3449
   type: 'test'
   ...
 # Subtest: five comparison arms replay exactly; bytes include full serialization and duplicated inputs
 ok 21 - five comparison arms replay exactly; bytes include full serialization and duplicated inputs
   ---
-  duration_ms: 8.2673
+  duration_ms: 8.5495
   type: 'test'
   ...
 # Subtest: pinned and required facts remain atomic; overflow cannot count as efficiency
 ok 22 - pinned and required facts remain atomic; overflow cannot count as efficiency
   ---
-  duration_ms: 1.4669
+  duration_ms: 1.4472
   type: 'test'
   ...
 # Subtest: required unauthorized, missing or deleted sources fail closed; permitted packets omit private sources
 ok 23 - required unauthorized, missing or deleted sources fail closed; permitted packets omit private sources
   ---
-  duration_ms: 1.2294
+  duration_ms: 1.4733
   type: 'test'
   ...
 # Subtest: navigation bridge cannot replace missing exact source; zero recent/retrieval preserves declared emptiness
 ok 24 - navigation bridge cannot replace missing exact source; zero recent/retrieval preserves declared emptiness
   ---
-  duration_ms: 1.4345
+  duration_ms: 1.5672
   type: 'test'
   ...
 # Subtest: C14-T01 fixed authored sample matches known MATTR and retains configuration
 ok 25 - C14-T01 fixed authored sample matches known MATTR and retains configuration
   ---
-  duration_ms: 2.0122
+  duration_ms: 2.0486
   type: 'test'
   ...
 # Subtest: C14-T01 short unique text remains insufficient with null metrics
 ok 26 - C14-T01 short unique text remains insufficient with null metrics
   ---
-  duration_ms: 0.1139
+  duration_ms: 0.1217
   type: 'test'
   ...
 # Subtest: C14-T01 fixed sample keeps first words and reports truncation
 ok 27 - C14-T01 fixed sample keeps first words and reports truncation
   ---
-  duration_ms: 0.111
+  duration_ms: 0.0933
   type: 'test'
   ...
 # Subtest: C14-T02 quotations and required terms remain separate from authored metrics
 ok 28 - C14-T02 quotations and required terms remain separate from authored metrics
   ---
-  duration_ms: 0.1956
+  duration_ms: 0.174
   type: 'test'
   ...
 # Subtest: C14-T02 short authored segments manufacture no cross-boundary trigrams
 ok 29 - C14-T02 short authored segments manufacture no cross-boundary trigrams
   ---
-  duration_ms: 0.1221
+  duration_ms: 0.1402
   type: 'test'
   ...
 # Subtest: C14 known identical and disjoint lexical supports produce JSD zero and one
 ok 30 - C14 known identical and disjoint lexical supports produce JSD zero and one
   ---
-  duration_ms: 0.4866
+  duration_ms: 0.4808
   type: 'test'
   ...
 # Subtest: C14-T03 topic and task mismatches refuse derived differences
 ok 31 - C14-T03 topic and task mismatches refuse derived differences
   ---
-  duration_ms: 0.1732
+  duration_ms: 0.1769
   type: 'test'
   ...
 # Subtest: C14-T01 metric configuration and record identity mismatch are ineligible
 ok 32 - C14-T01 metric configuration and record identity mismatch are ineligible
   ---
-  duration_ms: 0.1135
+  duration_ms: 0.1049
   type: 'test'
   ...
 # Subtest: C14-T04 synthetic model and human descriptors cannot be pooled
 ok 33 - C14-T04 synthetic model and human descriptors cannot be pooled
   ---
-  duration_ms: 0.4588
+  duration_ms: 0.4674
   type: 'test'
   ...
 # Subtest: C14-T04 human descriptors never manufacture human or semantic outcomes
 ok 34 - C14-T04 human descriptors never manufacture human or semantic outcomes
   ---
-  duration_ms: 0.1752
+  duration_ms: 0.1734
   type: 'test'
   ...
 # Subtest: C14 Unicode words and internal apostrophes survive fixed tokenization
 ok 35 - C14 Unicode words and internal apostrophes survive fixed tokenization
   ---
-  duration_ms: 0.0782
+  duration_ms: 0.0795
   type: 'test'
   ...
 # Subtest: C14 invalid kinds quotation annotation and bounds fail explicitly
 ok 36 - C14 invalid kinds quotation annotation and bounds fail explicitly
   ---
-  duration_ms: 0.2011
+  duration_ms: 0.1956
   type: 'test'
   ...
 # Subtest: C14 analysis and comparison preserve caller inputs and options
 ok 37 - C14 analysis and comparison preserve caller inputs and options
   ---
-  duration_ms: 0.1309
+  duration_ms: 0.1463
   type: 'test'
   ...
 # Subtest: C14 forged MATTR invalid counts and malformed tokens cannot yield comparison
 ok 38 - C14 forged MATTR invalid counts and malformed tokens cannot yield comparison
   ---
-  duration_ms: 0.3821
+  duration_ms: 0.2685
   type: 'test'
   ...
 # Subtest: C14 truncated sentence does not become a complete rhythm observation
 ok 39 - C14 truncated sentence does not become a complete rhythm observation
   ---
-  duration_ms: 0.122
+  duration_ms: 0.0925
   type: 'test'
   ...
 # Subtest: C14 repeated trigram count retains real repetition across distinct segments
 ok 40 - C14 repeated trigram count retains real repetition across distinct segments
   ---
-  duration_ms: 0.0872
+  duration_ms: 0.0798
   type: 'test'
   ...
 1..40
@@ -247,4 +247,4 @@ ok 40 - C14 repeated trigram count retains real repetition across distinct segme
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 99.3265
+# duration_ms 79.6063
